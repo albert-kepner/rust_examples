@@ -179,6 +179,109 @@ fn zero_placement(from_location: &Loc, to_location: &Loc) -> Vec<Loc> {
     placements
 }
 
+fn zero_placement_path(
+    puzzle_state: &PuzzleState,
+    from_location: &Loc,
+    target_locations: &[Loc],
+) -> Vec<Loc> {
+    use std::collections::{VecDeque, HashMap};
+
+    let rows = puzzle_state.puzzle.len();
+    let cols = puzzle_state.puzzle[0].len();
+    let start = &puzzle_state.zero_loc;
+
+    // BFS to find shortest path
+    let mut queue = VecDeque::new();
+    let mut visited = vec![vec![false; cols]; rows];
+    let mut parent: HashMap<(usize, usize), (usize, usize)> = HashMap::new();
+
+    queue.push_back((start.row, start.col));
+    visited[start.row][start.col] = true;
+
+    // Helper to check if location is valid and not blocked
+    let is_valid = |r: usize, c: usize| -> bool {
+        if r >= rows || c >= cols {
+            return false;
+        }
+        // Avoid from_location
+        if r == from_location.row && c == from_location.col {
+            return false;
+        }
+        // Avoid frozen locations
+        if puzzle_state.freeze_array[r][c] {
+            return false;
+        }
+        true
+    };
+
+    // Check if we've reached any target location
+    let is_target = |r: usize, c: usize| -> bool {
+        target_locations.iter().any(|loc| loc.row == r && loc.col == c)
+    };
+
+    let mut found_target: Option<(usize, usize)> = None;
+
+    while let Some((row, col)) = queue.pop_front() {
+        if is_target(row, col) {
+            found_target = Some((row, col));
+            break;
+        }
+
+        // Try all four adjacent directions
+        let neighbors = [
+            (row.wrapping_sub(1), col), // up
+            (row + 1, col),              // down
+            (row, col.wrapping_sub(1)), // left
+            (row, col + 1),              // right
+        ];
+
+        for (next_row, next_col) in neighbors {
+            if is_valid(next_row, next_col) && !visited[next_row][next_col] {
+                visited[next_row][next_col] = true;
+                parent.insert((next_row, next_col), (row, col));
+                queue.push_back((next_row, next_col));
+            }
+        }
+    }
+
+    if let Some((end_row, end_col)) = found_target {
+        // Reconstruct path
+        let mut path = Vec::new();
+        let mut current = (end_row, end_col);
+
+        while current != (start.row, start.col) {
+            path.push(Loc {
+                row: current.0,
+                col: current.1,
+            });
+            current = *parent.get(&current).unwrap();
+        }
+
+        path.reverse();
+        path
+    } else {
+        panic!(
+            "No valid path found from zero location ({}, {}) to any target location while avoiding from_location ({}, {})",
+            start.row, start.col, from_location.row, from_location.col
+        );
+    }
+}
+
+fn move_number(puzzle_state: &mut PuzzleState, from_location: Loc, to_location: Loc) {
+    // TODO: Implement move_number
+    // This function should move the number at from_location to to_location
+    // by repeatedly:
+    // 1. Getting zero placement options using zero_placement
+    // 2. Moving zero to one of those positions
+    // 3. Swapping with the target number using move_zero
+    // 4. Repeating until the number reaches to_location
+
+    println!(
+        "move_number stub: moving number from ({}, {}) to ({}, {})",
+        from_location.row, from_location.col, to_location.row, to_location.col
+    );
+}
+
 fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
     println!("Updating goal from {:?}", puzzle_state.goal);
     match puzzle_state.goal {
