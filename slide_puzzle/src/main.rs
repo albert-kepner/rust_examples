@@ -22,7 +22,8 @@ fn main() {
     print_puzzle(&test3);
     let loc = find_item(&test3, 0);
     println!("Location of 0: {:?}", loc);
-    let _solution = slide_puzzle(&test3);
+    let solution = slide_puzzle(&test3);
+    println!("Solution moves: {:?}", solution);
 }
 
 
@@ -42,6 +43,16 @@ fn print_puzzle(arr: &Vec<Vec<u8>>) {
     for row in arr {
         for &val in row {
             print!("[ {:>2} ]", val);
+        }
+        println!();
+    }
+    println!();
+}
+
+fn print_freezarray(arr: &Vec<Vec<bool>>) {
+    for row in arr {
+        for &val in row {
+            print!("[ {:>5} ]", val);
         }
         println!();
     }
@@ -102,7 +113,7 @@ pub fn slide_puzzle(arr: &[Vec<u8>]) -> Option<Vec<u8>> {
     while continue_solving {
         continue_solving = update_goal(&mut puzzle_state);
     }
-    return None;
+    return Some(puzzle_state.number_moved_history);
 }
 
 fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
@@ -138,6 +149,10 @@ fn move_zero(puzzle_state: &mut PuzzleState, target_loc: Loc) {
 
     puzzle_state.zero_loc.row = target_row;
     puzzle_state.zero_loc.col = target_col;
+    puzzle_state.number_moved_history.push(temp);
+
+    // println!("moves: {:?}", puzzle_state.number_moved_history);
+    // print_puzzle(&puzzle_state.puzzle);
 }
 
 fn zero_placement(from_location: &Loc, to_location: &Loc) -> Vec<Loc> {
@@ -339,6 +354,7 @@ fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
         Goal::Finished => {
             println!("Puzzle solved!");
             print_puzzle(&puzzle_state.puzzle);
+            print_freezarray( &puzzle_state.freeze_array);
             false
         }
         _ => false
