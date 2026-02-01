@@ -268,18 +268,52 @@ fn zero_placement_path(
 }
 
 fn move_number(puzzle_state: &mut PuzzleState, from_location: Loc, to_location: Loc) {
-    // TODO: Implement move_number
-    // This function should move the number at from_location to to_location
-    // by repeatedly:
-    // 1. Getting zero placement options using zero_placement
-    // 2. Moving zero to one of those positions
-    // 3. Swapping with the target number using move_zero
-    // 4. Repeating until the number reaches to_location
+    let mut current_location = from_location;
+    println!("Moving number from ({}, {}) to ({}, {})", current_location.row, current_location.col, to_location.row, to_location.col);
+    let mut step = 0;   
+    // Keep moving the number until it reaches the target location
+    while current_location.row != to_location.row || current_location.col != to_location.col {
+        // Get the ideal placement locations for zero
+        let target_placements = zero_placement(&current_location, &to_location);
+        // for tp in &target_placements {
+        //     println!("Target placement ({}, {}) ", tp.row, tp.col);
+        // }
 
-    println!(
-        "move_number stub: moving number from ({}, {}) to ({}, {})",
-        from_location.row, from_location.col, to_location.row, to_location.col
-    );
+        // Find the shortest path from zero to one of the target placements
+        // avoiding the current number location and frozen cells
+        let path = zero_placement_path(puzzle_state, &current_location, &target_placements);
+        // for loc in &path {
+        //     println!("Path step to ({}, {})", loc.row, loc.col);
+        // }
+
+        // Move zero along the path
+        for loc in path {
+            move_zero(puzzle_state, loc);
+            // println!("After moving zero:");
+            // print_puzzle(&puzzle_state.puzzle);
+        }
+        step += 1;
+        if step > 200 {
+            panic!("Too many steps moving number, possible infinite loop");
+        }
+        let zero_loc_row = puzzle_state.zero_loc.row;
+        let zero_loc_col = puzzle_state.zero_loc.col;
+
+        // Now swap zero with the number (this moves the number one step)
+        move_zero(puzzle_state, Loc {
+            row: current_location.row,
+            col: current_location.col,
+        });
+
+        // Update current location - the number is now where zero was before the swap
+        // Zero's current location is now where the number was
+        current_location = Loc {
+            row: zero_loc_row,
+            col: zero_loc_col,
+        };
+    }
+    puzzle_state.freeze_array[to_location.row][to_location.col] = true;
+    println!("Number moved to ({}, {}) and frozen.", to_location.row, to_location.col);
 }
 
 fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
@@ -290,11 +324,21 @@ fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
             true
         }
         Goal::RowNext => {
-            puzzle_state.goal = Goal::Finished;
+            let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 1);
+            let column = puzzle_state.last_number_placed as usize % puzzle_state.square_size;
+            let to_location = Loc { row: puzzle_state.completed_rows, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            puzzle_state.last_number_placed += 1;
+            if puzzle_state.last_number_placed as usize % puzzle_state.square_size >= puzzle_state.square_size - 2 {
+                puzzle_state.goal = Goal::Finished;
+            }
             true
         }
         Goal::Finished => {
             println!("Puzzle solved!");
+            print_puzzle(&puzzle_state.puzzle);
             false
         }
         _ => false
