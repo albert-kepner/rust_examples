@@ -22,6 +22,7 @@ fn main() {
     print_puzzle(&test3);
     let loc = find_item(&test3, 0);
     println!("Location of 0: {:?}", loc);
+    let _solution = slide_puzzle(&test3);
 }
 
 
@@ -53,6 +54,7 @@ struct Loc {
     col: usize,
 }
 
+#[derive(Debug)]
 enum Goal {
     Start,
     RowNext,
@@ -65,8 +67,10 @@ enum Goal {
     ColumnLowPlace,
     EndColumnRotate,
     LastCornerRotate,
+    Finished,
 }
 
+#[derive(Debug)]
 struct PuzzleState {
     goal: Goal,
     puzzle: Vec<Vec<u8>>,
@@ -76,6 +80,7 @@ struct PuzzleState {
     completed_rows: usize,
     completed_cols: usize,
     square_size: usize,
+    last_number_placed: u8,
     number_moved_history: Vec<u8>,
 }
 
@@ -91,7 +96,12 @@ pub fn slide_puzzle(arr: &[Vec<u8>]) -> Option<Vec<u8>> {
         completed_cols: 0,
         square_size: arr.len(),
         number_moved_history: Vec::new(),
+        last_number_placed: 0,
     };
+    let mut continue_solving = true;
+    while continue_solving {
+        continue_solving = update_goal(&mut puzzle_state);
+    }
     return None;
 }
 
@@ -104,4 +114,23 @@ fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
         }
     }
     panic!("Item not found: {}", item);
+}
+
+fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
+    println!("Updating goal from {:?}", puzzle_state.goal);
+    match puzzle_state.goal {
+        Goal::Start => {
+            puzzle_state.goal = Goal::RowNext;
+            true
+        }
+        Goal::RowNext => {
+            puzzle_state.goal = Goal::Finished;
+            true
+        }
+        Goal::Finished => {
+            println!("Puzzle solved!");
+            false
+        }
+        _ => false
+    }
 }
