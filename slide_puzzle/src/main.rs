@@ -116,6 +116,69 @@ fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
     panic!("Item not found: {}", item);
 }
 
+fn move_zero(puzzle_state: &mut PuzzleState, target_loc: Loc) {
+    let zero_row = puzzle_state.zero_loc.row;
+    let zero_col = puzzle_state.zero_loc.col;
+    let target_row = target_loc.row;
+    let target_col = target_loc.col;
+
+    let is_adjacent = (zero_row == target_row && zero_col.abs_diff(target_col) == 1)
+        || (zero_col == target_col && zero_row.abs_diff(target_row) == 1);
+
+    if !is_adjacent {
+        panic!(
+            "Target location ({}, {}) is not adjacent to zero location ({}, {})",
+            target_row, target_col, zero_row, zero_col
+        );
+    }
+
+    let temp = puzzle_state.puzzle[target_row][target_col];
+    puzzle_state.puzzle[target_row][target_col] = 0;
+    puzzle_state.puzzle[zero_row][zero_col] = temp;
+
+    puzzle_state.zero_loc.row = target_row;
+    puzzle_state.zero_loc.col = target_col;
+}
+
+fn zero_placement(from_location: &Loc, to_location: &Loc) -> Vec<Loc> {
+    let mut placements = Vec::new();
+
+    let row_diff = to_location.row as isize - from_location.row as isize;
+    let col_diff = to_location.col as isize - from_location.col as isize;
+
+    // If we need to move vertically
+    if row_diff < 0 {
+        // Need to move up, so zero should be above (row - 1)
+        placements.push(Loc {
+            row: from_location.row - 1,
+            col: from_location.col,
+        });
+    } else if row_diff > 0 {
+        // Need to move down, so zero should be below (row + 1)
+        placements.push(Loc {
+            row: from_location.row + 1,
+            col: from_location.col,
+        });
+    }
+
+    // If we need to move horizontally
+    if col_diff < 0 {
+        // Need to move left, so zero should be to the left (col - 1)
+        placements.push(Loc {
+            row: from_location.row,
+            col: from_location.col - 1,
+        });
+    } else if col_diff > 0 {
+        // Need to move right, so zero should be to the right (col + 1)
+        placements.push(Loc {
+            row: from_location.row,
+            col: from_location.col + 1,
+        });
+    }
+
+    placements
+}
+
 fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
     println!("Updating goal from {:?}", puzzle_state.goal);
     match puzzle_state.goal {
