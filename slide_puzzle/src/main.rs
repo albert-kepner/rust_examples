@@ -21,7 +21,7 @@ fn main() {
     let test3 = puzzle_to_vec(TESTS[2]);
     print_puzzle(&test3);
     let loc = find_item(&test3, 0);
-    println!("Location of 0: {:?}", loc);
+    // println!("Location of 0: {:?}", loc);
     let solution = slide_puzzle(&test3);
     println!("Solution moves: {:?}", solution);
 }
@@ -59,7 +59,7 @@ fn print_freezarray(arr: &Vec<Vec<bool>>) {
     println!();
 }
 
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 struct Loc {
     row: usize,
     col: usize,
@@ -111,11 +111,18 @@ pub fn slide_puzzle(arr: &[Vec<u8>]) -> Option<Vec<u8>> {
         last_number_placed: 0,
         verbose: false,
     };
+    make_goal_array(&mut puzzle_state);
     let mut continue_solving = true;
     while continue_solving {
         continue_solving = update_goal(&mut puzzle_state);
     }
-    return Some(puzzle_state.number_moved_history);
+    if is_goal_reached(&puzzle_state) {
+        println!("Puzzle solved successfully!");
+        return Some(puzzle_state.number_moved_history)
+    } else {
+        println!("Failed to solve the puzzle.");
+        return None;
+    }
 }
 
 fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
@@ -127,6 +134,17 @@ fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
         }
     }
     panic!("Item not found: {}", item);
+}
+
+fn is_goal_reached(puzzle_state: &PuzzleState) -> bool {
+    for row in 0..puzzle_state.square_size {
+        for col in 0..puzzle_state.square_size {
+            if puzzle_state.puzzle[row][col] != puzzle_state.goal_array[row][col] {
+                return false;
+           }
+        }
+    }
+    true
 }
 
 fn make_goal_array(puzzle_state: &mut PuzzleState) {
@@ -146,15 +164,35 @@ fn make_goal_array(puzzle_state: &mut PuzzleState) {
     }
 }
 
-fn is_goal_reached(puzzle_state: &PuzzleState) -> bool {
-    for row in 0..puzzle_state.square_size {
-        for col in 0..puzzle_state.square_size {
-            if puzzle_state.puzzle[row][col] != puzzle_state.goal_array[row][col] {
-                return false;
+fn rotate_last_corner(puzzle_state: &mut PuzzleState) {
+    let size = puzzle_state.square_size;
+    let target_loc = Loc { row: size - 1, col: size - 1 };
+    let target_loc1 = Loc { row: size - 2, col: size - 1 };
+    let target_loc2 = Loc { row: size - 2, col: size - 2 }; // Zero initially here
+    let target_loc3 = Loc { row: size - 1, col: size - 2 };
+    // Moving the zero down this list rotates the zero around the last corner counter-clockwise
+    // which moves the other numbers clockwise.
+    let cells = [
+        target_loc,
+        target_loc1,
+        target_loc2,
+        target_loc3,
+    ];
+
+    let mut zero_index: usize = 2; // Starting position of zero
+
+    for _ in 0..16 {
+        let next_index = (zero_index + 1) % cells.len();
+        move_zero(puzzle_state, cells[next_index]);
+        zero_index = next_index;
+        // When zero is in the lower right corner, check if the puzzle is solved.
+        // When one of the other numbers is correct, the puzzle is either solved or unsolvable.
+        if zero_index == 0 {
+            if puzzle_state.goal_array[size - 2][size - 2] == puzzle_state.puzzle[size - 2][size - 2] {
+                break;
             }
         }
-    }
-    true
+    }  
 }
 
 fn move_zero(puzzle_state: &mut PuzzleState, target_loc: Loc) {
@@ -367,7 +405,7 @@ fn rotate_end_of_col(puzzle_state: &mut PuzzleState, col: usize) {
 
 fn move_number(puzzle_state: &mut PuzzleState, from_location: Loc, to_location: Loc) {
     let mut current_location = from_location;
-    println!("Moving number from ({}, {}) to ({}, {})", current_location.row, current_location.col, to_location.row, to_location.col);
+    // println!("Moving number from ({}, {}) to ({}, {})", current_location.row, current_location.col, to_location.row, to_location.col);
     let mut step = 0;   
     // Keep moving the number until it reaches the target location
     while current_location.row != to_location.row || current_location.col != to_location.col {
@@ -418,11 +456,11 @@ fn move_number(puzzle_state: &mut PuzzleState, from_location: Loc, to_location: 
         };
     }
     puzzle_state.freeze_array[to_location.row][to_location.col] = true;
-    println!("Number moved to ({}, {}) and frozen.", to_location.row, to_location.col);
+    // println!("Number moved to ({}, {}) and frozen.", to_location.row, to_location.col);
 }
 
 fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
-    println!("Updating goal from {:?}", puzzle_state.goal);
+    // println!("Updating goal from {:?}", puzzle_state.goal);
     match puzzle_state.goal {
         Goal::Start => {
             puzzle_state.goal = Goal::RowNext;
@@ -552,13 +590,13 @@ fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
         Goal::LastCornerRotate => {
             // Implement logic for LastCornerRotate
             // Placeholder: move to next goal
+            rotate_last_corner(puzzle_state);
             puzzle_state.goal = Goal::Finished;
             true
         }
         Goal::Finished => {
             println!("Puzzle solved!");
             print_puzzle(&puzzle_state.puzzle);
-            print_freezarray( &puzzle_state.freeze_array);
             false
         }
         _ => false
