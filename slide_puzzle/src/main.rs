@@ -129,6 +129,34 @@ fn find_item(arr: &[Vec<u8>], item: u8) -> Loc {
     panic!("Item not found: {}", item);
 }
 
+fn make_goal_array(puzzle_state: &mut PuzzleState) {
+    let size = puzzle_state.square_size;
+    let mut counter = 1u8;
+
+    for row in 0..size {
+        for col in 0..size {
+            // Last entry should be 0
+            if row == size - 1 && col == size - 1 {
+                puzzle_state.goal_array[row][col] = 0;
+            } else {
+                puzzle_state.goal_array[row][col] = counter;
+                counter += 1;
+            }
+        }
+    }
+}
+
+fn is_goal_reached(puzzle_state: &PuzzleState) -> bool {
+    for row in 0..puzzle_state.square_size {
+        for col in 0..puzzle_state.square_size {
+            if puzzle_state.puzzle[row][col] != puzzle_state.goal_array[row][col] {
+                return false;
+            }
+        }
+    }
+    true
+}
+
 fn move_zero(puzzle_state: &mut PuzzleState, target_loc: Loc) {
     let zero_row = puzzle_state.zero_loc.row;
     let zero_col = puzzle_state.zero_loc.col;
