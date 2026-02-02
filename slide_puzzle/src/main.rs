@@ -93,6 +93,7 @@ struct PuzzleState {
     square_size: usize,
     last_number_placed: u8,
     number_moved_history: Vec<u8>,
+    verbose: bool,
 }
 
 /// Solves the slide puzzle represented by a 2D array `arr`.
@@ -108,6 +109,7 @@ pub fn slide_puzzle(arr: &[Vec<u8>]) -> Option<Vec<u8>> {
         square_size: arr.len(),
         number_moved_history: Vec::new(),
         last_number_placed: 0,
+        verbose: false,
     };
     let mut continue_solving = true;
     while continue_solving {
@@ -282,24 +284,84 @@ fn zero_placement_path(
     }
 }
 
+fn move_zero_to_target(puzzle_state: &mut PuzzleState, target_loc: Loc) {
+    let path = zero_placement_path(puzzle_state, &puzzle_state.zero_loc, &[target_loc]);
+    for loc in path {
+        move_zero(puzzle_state, loc);
+    }
+}
+
+fn rotate_end_of_row(puzzle_state: &mut PuzzleState, row: usize) {
+    let size = puzzle_state.square_size;
+    let col = size - 1;
+    let target_loc = Loc { row, col };
+    let target_loc1 = Loc { row: row, col: col - 1 };
+    let target_loc2 = Loc { row: row + 1, col: col - 1 };
+
+    move_zero_to_target(puzzle_state, target_loc);
+    move_zero(puzzle_state, target_loc1);
+    move_zero(puzzle_state, target_loc2);
+    puzzle_state.freeze_array[row][col] = true;
+    puzzle_state.completed_rows += 1;
+    puzzle_state.last_number_placed = puzzle_state.completed_rows as u8 * puzzle_state.square_size as u8;
+    // unfreeze the number that was at (row + 1, col - 1)
+    puzzle_state.freeze_array[row + 1][col - 1] = false;
+
+    if puzzle_state.verbose {
+        println!("Rotated end of row {}, froze ({}, {})", row, row, col);
+        print_puzzle(&puzzle_state.puzzle);
+    }   
+}
+
+
+fn rotate_end_of_col(puzzle_state: &mut PuzzleState, col: usize) {
+    let row = puzzle_state.square_size - 1; 
+    let target_loc = Loc { row, col };
+    let target_loc1 = Loc { row: row - 1, col: col };
+    let target_loc2 = Loc { row: row - 1, col: col + 1 };
+
+    move_zero_to_target(puzzle_state, target_loc);
+    move_zero(puzzle_state, target_loc1);
+    move_zero(puzzle_state, target_loc2);
+    puzzle_state.freeze_array[row][col] = true;
+    puzzle_state.completed_cols += 1;
+    puzzle_state.last_number_placed = (puzzle_state.completed_cols  
+    +  puzzle_state.square_size  * (puzzle_state.square_size - 2) ) as u8;
+    // unfreeze the number that was at (row - 1, col + 1)
+    puzzle_state.freeze_array[row - 1][col + 1] = false;
+
+    if puzzle_state.verbose {
+        println!("Rotated end of col {}, froze ({}, {})", col, row, col);
+        print_puzzle(&puzzle_state.puzzle);
+    }   
+}
+
+
 fn move_number(puzzle_state: &mut PuzzleState, from_location: Loc, to_location: Loc) {
     let mut current_location = from_location;
     println!("Moving number from ({}, {}) to ({}, {})", current_location.row, current_location.col, to_location.row, to_location.col);
     let mut step = 0;   
     // Keep moving the number until it reaches the target location
     while current_location.row != to_location.row || current_location.col != to_location.col {
+        // print_puzzle(&puzzle_state.puzzle);
         // Get the ideal placement locations for zero
         let target_placements = zero_placement(&current_location, &to_location);
-        // for tp in &target_placements {
-        //     println!("Target placement ({}, {}) ", tp.row, tp.col);
-        // }
+        if puzzle_state.verbose {
+            for tp in &target_placements {
+                println!("Target placement ({}, {}) ", tp.row, tp.col);
+            }
+        }
+        
 
         // Find the shortest path from zero to one of the target placements
         // avoiding the current number location and frozen cells
         let path = zero_placement_path(puzzle_state, &current_location, &target_placements);
-        // for loc in &path {
-        //     println!("Path step to ({}, {})", loc.row, loc.col);
-        // }
+        if puzzle_state.verbose {
+            for loc in &path {
+                println!("Path step to ({}, {})", loc.row, loc.col);
+            }
+        }
+        
 
         // Move zero along the path
         for loc in path {
@@ -347,8 +409,122 @@ fn update_goal(puzzle_state: &mut PuzzleState) -> bool {
                 to_location);
             puzzle_state.last_number_placed += 1;
             if puzzle_state.last_number_placed as usize % puzzle_state.square_size >= puzzle_state.square_size - 2 {
-                puzzle_state.goal = Goal::Finished;
+                puzzle_state.goal = Goal::RowLastButOneMove;
+            } else {
+                puzzle_state.goal = Goal::RowNext;
             }
+            true
+        }
+        Goal::RowLastButOneMove => {
+            // Implement logic for RowLastButOneMove
+            let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 1);
+            let column = puzzle_state.last_number_placed as usize % puzzle_state.square_size + 1;
+            let to_location = Loc { row: puzzle_state.completed_rows + 2, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            // Unfreeze the last placed number to allow for final placement
+            let to_location = Loc { row: puzzle_state.completed_rows + 2, col: column };
+            puzzle_state.freeze_array[to_location.row][to_location.col] = false;
+            puzzle_state.goal = Goal::RowLastPlace;
+            true
+        }
+        Goal::RowLastPlace => {
+            // Implement logic for RowLastPlace
+            let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 2);
+            let column = puzzle_state.last_number_placed as usize % puzzle_state.square_size;
+            let to_location = Loc { row: puzzle_state.completed_rows, col: column };
+            // print_puzzle(&puzzle_state.puzzle);
+            // println!("RowLastPlace: moving number {} to ({}, {})", puzzle_state.last_number_placed + 2, to_location.row, to_location.col); 
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            puzzle_state.goal = Goal::RowLastButOnePlace;
+            true
+        }
+        Goal::RowLastButOnePlace => {
+            // Implement logic for RowLastButOnePlace
+            let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 1);
+            let column = puzzle_state.last_number_placed as usize % puzzle_state.square_size;
+            let to_location = Loc { row: puzzle_state.completed_rows + 1, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            puzzle_state.goal = Goal::EndRowRotate;
+            true
+        }
+        Goal::EndRowRotate => {
+            // Implement logic for EndRowRotate
+            rotate_end_of_row(puzzle_state, puzzle_state.completed_rows);
+            if puzzle_state.completed_rows < puzzle_state.square_size - 2 {
+                puzzle_state.goal = Goal::RowNext;
+            } else {
+                puzzle_state.goal = Goal::ColumnLowMove;
+            }
+            true
+        }
+        Goal::ColumnLowMove => {
+            // Implement logic for ColumnLowMove
+            // Placeholder: move to next goal
+            let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 1);
+            let column = (puzzle_state.completed_cols + 2) as usize;
+            let row = puzzle_state.square_size - 1;
+            let to_location = Loc { row: row, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            // Unfreeze the last placed number to allow for final placement
+            let to_location = Loc { row: row, col: column };
+            puzzle_state.freeze_array[to_location.row][to_location.col] = false;
+            puzzle_state.goal = Goal::ColumnHighPlace;
+            true
+        }
+        Goal::ColumnHighPlace => {
+            // Implement logic for ColumnHighPlace
+            // Placeholder: move to next goal
+                        let from_location = find_item(&puzzle_state.puzzle, 
+                            puzzle_state.last_number_placed + 1 + puzzle_state.square_size as u8);
+            let column = (puzzle_state.completed_cols) as usize;
+            let row = puzzle_state.square_size - 2;
+            let to_location = Loc { row: row, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            puzzle_state.goal = Goal::ColumnLowPlace;
+            true
+        }
+        Goal::ColumnLowPlace => {
+            // Implement logic for ColumnLowPlace
+            // Placeholder: move to next goal
+                        let from_location = find_item(&puzzle_state.puzzle, puzzle_state.last_number_placed + 1);
+            let column = (puzzle_state.completed_cols + 1) as usize;
+            let row = puzzle_state.square_size - 2;
+            let to_location = Loc { row: row, col: column };
+            move_number(puzzle_state,
+                from_location,
+                to_location);
+            // Unfreeze the last placed number to allow for final placement
+            // let to_location = Loc { row: row, col: column };
+            // puzzle_state.freeze_array[to_location.row][to_location.col] = false;
+            puzzle_state.goal = Goal::EndColumnRotate;
+            true
+        }
+        Goal::EndColumnRotate => {
+            // Implement logic for EndColumnRotate
+            // Placeholder: move to next goal
+            puzzle_state.goal = Goal::LastCornerRotate;
+            rotate_end_of_col(puzzle_state, puzzle_state.completed_cols);
+            if puzzle_state.completed_cols < puzzle_state.square_size - 2 {
+                puzzle_state.goal = Goal::ColumnLowMove;
+            } else {
+                puzzle_state.goal = Goal::LastCornerRotate;
+            }
+            true
+        }
+        Goal::LastCornerRotate => {
+            // Implement logic for LastCornerRotate
+            // Placeholder: move to next goal
+            puzzle_state.goal = Goal::Finished;
             true
         }
         Goal::Finished => {
