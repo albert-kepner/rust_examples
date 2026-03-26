@@ -106,34 +106,69 @@ impl Graph {
 
 fn path_finder(area: &[Vec<u32>]) -> u32 {
     // code here
+    println!("");
     print_area(area);
     let mut g: Graph = make_graph(area);
-    print_matrix(&g);
+    //print_matrix(&g);
     make_edges(&mut g, area);
 
-    let best_cost = find_pathes(&mut g);
+    let best_cost = find_paths(&mut g);
 
     //
     best_cost
 }
 
-fn find_pathes(g: &mut Graph) -> u32 {
+fn find_paths(g: &mut Graph) -> u32 {
     /* Find the pathes from the top left corner to the bottom right corner of the graph, 
     and return the cost of the cheapest path, using Dijkstra's algorithm.
     */
     // Mark the starting node a (0,0) as visited.
     g.visit(0, 0, 0); 
 
-    loop {
+    let n = g.matrix.len();
+    let target_node_index = g.matrix[n-1][n-1];
 
-        g.maintain_open_edges();
-        break;
+    loop {
+        // If the bottom right corner is visited, we are done.
+        if g.visited_nodes.contains(&target_node_index) {
+            break;
+        }
+
+        // Otherwise, find the open edge with the lowest cost, and visit the node at the end of that edge.
+        let mut best_edge_index: Option<usize> = None;
+        let mut best_cost: Option<u32> = None;
+        for edge_index in &g.open_edges {
+            let from_node_index: usize = g.edges[*edge_index].from;
+            let to_node_index: usize = g.edges[*edge_index].to;
+            let closed_node_index: usize;
+            if g.nodes[from_node_index].visited {
+                closed_node_index = from_node_index;
+            } else {
+                closed_node_index = to_node_index
+            }
+            let trial_cost: u32 = g.nodes[closed_node_index].cost + g.edges[*edge_index].cost;
+            if best_cost.is_none() || trial_cost < best_cost.unwrap() {
+                best_cost = Some(trial_cost);
+                best_edge_index = Some(*edge_index);
+            }
+        }
+        let best_edge: &Edge = &g.edges[best_edge_index.unwrap()];
+        let node_to_visit: usize;
+        if g.nodes[best_edge.from].visited {
+            node_to_visit = best_edge.to;
+        } else {
+            node_to_visit = best_edge.from;
+        }
+        let node_cost: u32 = best_cost.unwrap();
+        g.visit(g.nodes[node_to_visit].location.0, g.nodes[node_to_visit].location.1, node_cost);
+        
     }
 
-
-
-    // Finally return the best cost
-    0
+    if g.nodes[target_node_index].visited {
+        return g.nodes[target_node_index].cost;
+    } else {
+        panic!("Target node not found");
+    }
 }
 
 fn make_graph(area: &[Vec<u32>]) -> Graph {
