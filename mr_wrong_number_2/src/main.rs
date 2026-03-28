@@ -7,11 +7,39 @@ fn main() {
 use regex::Regex;
 
 pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
-    todo!("Your code here!")
+    parse_conversation(conversation);
+    None
+}
+    
+struct State<'a> {
+    person_names: Vec<&'a str>,
+    persons: Vec<Person<'a>>,
 }
 
-struct State<'a> {
-    persons: Vec<Person<'a>>
+impl<'a> State<'a> {
+    fn new() -> Self {
+        State {
+            person_names: Vec::new(),
+            persons: Vec::new(),
+        }
+    }
+    fn person_index (&mut self, name: &'a str) -> usize {
+        if let Some(index) = self.person_names.iter().position(|&n| n == name) {
+            return index;
+        }  else {
+            let index = self.persons.len();
+            self.person_names.push(name);           
+            self.persons.push(Person {
+                name,
+                index,
+                statements: Vec::new(),
+            });
+            return index;
+        }
+    }
+    fn person_at(&self, index: usize) -> &Person {
+        &self.persons[index]
+    }
 }
 
 enum Statement {
@@ -26,24 +54,45 @@ struct Person<'a> {
 }
 
 fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
-    let mut persons = Vec::new();
+    let mut state = State::new();
     let re1 = Regex::new(r"^(\w+):I'm in (\d+)(\w+) position.$").unwrap();
+    let re2: Regex = Regex::new(r"^(\w+):There (?:is|are) (\d+) people? in front of me.$").unwrap();
+    let re3: Regex = Regex::new(r"^(\w+):There (?:is|are) (\d+) people? behind me.$").unwrap();
+    let re4: Regex = Regex::new(r"^(\w+):The man (in front of|behind) me is (\w+).$").unwrap();
+
 
     for (index,line) in conversation.iter().enumerate() {
         println!("({}) {}", index, line);
         if let Some(caps) = re1.captures(line) {
             let name = caps.get(1).unwrap().as_str();
-            let postion: uzize = caps.get(2)
-                .unwrap()
-                .parse()
-                .expect("position should be a valid integer");
-            println!("Person: {} states position at {}", name, position);)
+            let position_str: &str = caps.get(2).unwrap().as_str();
+            let position: usize = position_str.parse().unwrap();
+
+            println!("Person: {} states position at {}", name, position);
+        } else if let Some(caps) = re2.captures(line) {
+            let name = caps.get(1).unwrap().as_str();
+            let count_str: &str = caps.get(2).unwrap().as_str();
+            let count: usize = count_str.parse().unwrap();
+
+            println!("Person: {} states there are {} people in front of them", name, count);
+        } else if let Some(caps) = re3.captures(line) {
+            let name = caps.get(1).unwrap().as_str();
+            let count_str: &str = caps.get(2).unwrap().as_str();
+            let count: usize = count_str.parse().unwrap();
+
+            println!("Person: {} states there are {} people behind them", name, count);
+        } else if let Some(caps) = re4.captures(line) {
+            let name = caps.get(1).unwrap().as_str();
+            let direction = caps.get(2).unwrap().as_str();
+            let other_person = caps.get(3).unwrap().as_str();
+
+            println!("Person: {} states the man {} me is {}", name, direction, other_person);
         } else {
             println!("Skipped!")
         }
     }
 
-    State { persons }
+    state
 }
 
 
