@@ -213,12 +213,12 @@ impl Trial  {
                             let other_person_index = *person_index;
                             let assignment = &mut assignments[this_person_index];
                             let other_assignment = &mut assignments[other_person_index];
-                            if this_person_index == self.liar_index {
-                                // If this person is the liar, then their statement is false, so we can eliminate the claimed relative positions.
-                               
-                            } else {
-                                // If this person is not the liar, then their statement is true, so we can constrain their position relative to the other person's position.
-                                
+                            let is_liar = this_person_index == self.liar_index;
+                            if self.infer_relative(&mut assignments, 
+                                this_person_index, 
+                                other_person_index,  
+                                *relative, is_liar) {
+                                changed = true;
                             }
                         },
                         Statement::ReversePosition { from_end } => {
@@ -257,7 +257,82 @@ impl Trial  {
         }
         None
     }
-}
+
+    fn infer_relative(&self, 
+        assignments: &mut Vec<Assignment>, 
+        this_person_index: usize, 
+        other_person_index: usize, 
+        relative: i32, 
+        is_liar: bool) -> bool {
+        // Implement logic to infer new constraints based on relative position statements.
+        // Return true if any changes were made to the assignments, false otherwise.
+        let mut changed = false;
+
+        if !is_liar {
+            // if this positon is known, we can constrain the other person's position based on the relative statement.
+            if this_person_index == other_person_index {
+                return changed;
+            }
+
+            let (this_assignment, other_assignment) = if this_person_index < other_person_index {
+                let (left, right) = assignments.split_at_mut(other_person_index);
+                (&mut left[this_person_index], &mut right[0])
+            } else {
+                let (left, right) = assignments.split_at_mut(this_person_index);
+                (&mut right[0], &mut left[other_person_index])
+            };
+            if let Some(this_position) = this_assignment.position {
+                let other_position = match relative {
+                    -1 => this_position.checked_sub(1),
+                    1 => this_position.checked_add(1),
+                    _ => None,
+                };
+                if let Some(other_position) = other_position {
+                    if other_assignment.position.is_none() {
+                        other_assignment.position = Some(other_position);
+                        other_assignment.possible_positions = vec![other_position];
+                        changed = true;
+                    }
+                }
+            
+            }
+            // if the other person's position is known, we can constrain this person's position based on the relative statement.
+            if let Some(other_position) = other_assignment.position {
+                let this_position = match relative {
+                    -1 => other_position.checked_add(1),
+                    1 => other_position.checked_sub(1),
+                    _ => None,
+                };
+                if let Some(this_position) = this_position {
+                    if this_assignment.position.is_none() {
+                        this_assignment.position = Some(this_position);
+                        this_assignment.possible_positions = vec![this_position];
+                        changed = true;
+                    }
+                }
+            }
+
+        } 
+
+        if is_liar {
+            // If this person is the liar, then their statement is false, so we can possibly eliminate
+            // some relative positions.
+        } else {
+            // If this person is not the liar, then their statement is true, so we can
+            // constrain their position relative to the other person's position.
+
+            // If relative is -1, then the other person is in front of this person.
+            // max other_person_position = max this_person_position - 1
+            // Further:
+            // min other person_position = min this_person_position - 1
+            // If relative is 1, then the other person is behind this person.
+            // max other_person_position = max this_person_position + 1
+            // Further:
+            // min other person_position = min this_person_position + 1
+        }
+        changed
+    }
+}   
 
 struct Assignment {
     position: Option<usize>,
