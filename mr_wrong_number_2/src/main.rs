@@ -125,6 +125,34 @@ impl<'a> Trial<'a>  {
     }
 }
 
+struct Assignment<'a> {
+    position: Option<usize>,
+    possible_positions: Vec<usize>,
+    person_index: usize,
+    num_people: usize,
+    state: &'a State<'a>,
+}
+
+impl<'a> Assignment<'a> {
+    fn new(person_index: usize, num_people: usize, state: &'a State) -> Self {
+        Assignment {
+            position: None,
+            possible_positions: (1..=num_people).collect(),
+            person_index,
+            num_people,
+            state,
+        }
+    }
+    fn is_contradictory(&self) -> bool {
+        // Implement logic to check if the assignment leads to a contradiction.
+        false
+    }
+    fn solve(&mut self) -> Option<&'a str> {
+        // Implement logic to solve the assignment and determine if it identifies Mr. Wrong.
+        None
+    }
+}
+
 fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
     let mut state = State::new();
     let re1 = Regex::new(r"^(\w+):I'm in (\d+)(\w+) position.$").unwrap();
