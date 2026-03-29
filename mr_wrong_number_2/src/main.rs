@@ -209,6 +209,17 @@ impl Trial  {
                         },
                         Statement::RelPosition { relative, person_index } => {
                             // Implement logic to update assignments based on relative position statements.
+                            let this_person_index = person.index;
+                            let other_person_index = *person_index;
+                            let assignment = &mut assignments[this_person_index];
+                            let other_assignment = &mut assignments[other_person_index];
+                            if this_person_index == self.liar_index {
+                                // If this person is the liar, then their statement is false, so we can eliminate the claimed relative positions.
+                               
+                            } else {
+                                // If this person is not the liar, then their statement is true, so we can constrain their position relative to the other person's position.
+                                
+                            }
                         },
                         Statement::ReversePosition { from_end } => {
                             // Implement logic to update assignments based on reverse position statements.
