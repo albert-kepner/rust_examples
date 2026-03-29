@@ -7,8 +7,19 @@ fn main() {
 use regex::Regex;
 
 pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
-    let mut state =parse_conversation(conversation);
-    state.solve()
+    let mut state: State<'a> = parse_conversation(conversation);
+    if let Some(name) = state.solve() {
+        println!("Mr. Wrong identified by solve(): {}", name);
+        return None;
+    } else {
+        if let Some(name) = state.solve2() {
+            println!("Mr. Wrong identified by solve2(): {}", name);
+            return None;
+        } else {
+            println!("No contradictions found, unable to identify Mr. Wrong.");
+            return None;
+        }
+    }   
 }
     
 struct State<'a> {
@@ -59,6 +70,21 @@ impl<'a> State<'a> {
             }
         }
         self.make_trials();
+
+        
+        None
+    }
+    fn solve2(self) -> Option<&'a str> {
+        // Implement an alternative logic to solve the puzzle based on the collected statements.
+        for trial in &self.trials {
+            if trial.is_contradictory() {
+                continue;
+            }
+            if let Some(name) = &trial.solve() {
+                println!("Trial solved, identified Mr. Wrong: {}", name);
+                return None; // Return None to indicate that we found a solution, but we won't return the name here for now.
+            }
+        }
         None
     }
 }
@@ -126,18 +152,22 @@ impl Trial  {
             assignments: Vec::new(),
         }
     }
-    fn make_assignments(&mut self) {
+    fn make_assignments(&self) -> Vec<Assignment> {
+        let mut assignments = Vec::new();
         for person_index in 0..self.num_people {
-            self.assignments.push(Assignment::new(person_index, self.num_people));
+            assignments.push(Assignment::new(person_index, self.num_people));
+            print!("*_");
         }
+        println!("make_assignments completed with {} assignments", assignments.len());
+        assignments
     }   
     fn is_contradictory(&self) -> bool {
         // Implement logic to check if the trial leads to a contradiction.
         false
     }
-    fn  solve(&mut self) -> Option<&str> {
+    fn  solve(&self) -> Option<&str> {
         // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
-        self.make_assignments();
+        let mut assignments: Vec<Assignment> = self.make_assignments();
         None
     }
 }
