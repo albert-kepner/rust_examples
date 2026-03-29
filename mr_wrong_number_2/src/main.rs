@@ -7,6 +7,7 @@ fn main() {
 use regex::Regex;
 
 pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
+    let blessed_names: Vec<&'a str> = bless_these_names(conversation);
     let mut state: State<'a> = parse_conversation(conversation);
     if let Some(name) = state.solve() {
         println!("Mr. Wrong identified by solve(): {}", name);
@@ -20,6 +21,20 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
             return None;
         }
     }   
+}
+
+fn bless_these_names<'a>(conversation: &[&'a str]) -> Vec<&'a str> {
+    let mut blessed_names: Vec<&'a str> = Vec::new();
+    let re = Regex::new(r"^(\w+):").unwrap();
+    for line in conversation {
+        if let Some(caps) = re.captures(line) {
+            let name = caps.get(1).unwrap().as_str();
+            if !blessed_names.contains(&name) {
+                blessed_names.push(name);
+            }
+        }
+    }
+    blessed_names
 }
     
 struct State<'a> {
