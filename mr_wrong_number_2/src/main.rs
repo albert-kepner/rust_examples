@@ -14,6 +14,7 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
 struct State<'a> {
     person_names: Vec<&'a str>,
     persons: Vec<Person<'a>>,
+    trials: Vec<Trial>,
 }
 
 impl<'a> State<'a> {
@@ -21,6 +22,12 @@ impl<'a> State<'a> {
         State {
             person_names: Vec::new(),
             persons: Vec::new(),
+            trials: Vec::new(),
+        }
+    }
+    fn make_trials(&mut self) {
+        for person_index in 0..self.persons.len() {
+            self.trials.push(Trial::new(person_index, self.persons.len()));
         }
     }
     fn person_index (&mut self, name: &'a str) -> usize {
@@ -51,6 +58,7 @@ impl<'a> State<'a> {
                 return Some(person.name);
             }
         }
+        self.make_trials();
         None
     }
 }
@@ -103,53 +111,52 @@ impl Person<'_> {
     }
 }
 
-struct Trial<'a> {
+struct Trial {
     liar_index: usize,
-    state: &'a State<'a>
+    num_people: usize,
+    assignments: Vec<Assignment>,
 }
 
-impl<'a> Trial<'a>  {
-    fn new(liar_index: usize, state: &'a State) -> Self {
+impl Trial  {
+    fn new(liar_index: usize, num_people: usize) -> Self {
+        println!("Creating new trial with liar_index: {} and num_people: {}", liar_index, num_people);
         Trial {
             liar_index,
-            state,
+            num_people,
+            assignments: Vec::new(),
         }
     }
+    fn make_assignments(&mut self) {
+        for person_index in 0..self.num_people {
+            self.assignments.push(Assignment::new(person_index, self.num_people));
+        }
+    }   
     fn is_contradictory(&self) -> bool {
         // Implement logic to check if the trial leads to a contradiction.
         false
     }
-    fn  solve(&self) -> Option<&'a str> {
+    fn  solve(&mut self) -> Option<&str> {
         // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
+        self.make_assignments();
         None
     }
 }
 
-struct Assignment<'a> {
+struct Assignment {
     position: Option<usize>,
     possible_positions: Vec<usize>,
     person_index: usize,
     num_people: usize,
-    state: &'a State<'a>,
 }
 
-impl<'a> Assignment<'a> {
-    fn new(person_index: usize, num_people: usize, state: &'a State) -> Self {
+impl Assignment {
+    fn new(person_index: usize, num_people: usize) -> Self {
         Assignment {
             position: None,
             possible_positions: (1..=num_people).collect(),
             person_index,
             num_people,
-            state,
         }
-    }
-    fn is_contradictory(&self) -> bool {
-        // Implement logic to check if the assignment leads to a contradiction.
-        false
-    }
-    fn solve(&mut self) -> Option<&'a str> {
-        // Implement logic to solve the assignment and determine if it identifies Mr. Wrong.
-        None
     }
 }
 
