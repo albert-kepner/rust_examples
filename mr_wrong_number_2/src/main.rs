@@ -103,6 +103,28 @@ impl Person<'_> {
     }
 }
 
+struct Trial<'a> {
+    liar_index: usize,
+    state: &'a State<'a>
+}
+
+impl<'a> Trial<'a>  {
+    fn new(liar_index: usize, state: &'a State) -> Self {
+        Trial {
+            liar_index,
+            state,
+        }
+    }
+    fn is_contradictory(&self) -> bool {
+        // Implement logic to check if the trial leads to a contradiction.
+        false
+    }
+    fn  solve(&self) -> Option<&'a str> {
+        // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
+        None
+    }
+}
+
 fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
     let mut state = State::new();
     let re1 = Regex::new(r"^(\w+):I'm in (\d+)(\w+) position.$").unwrap();
@@ -111,14 +133,14 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
     let re4: Regex = Regex::new(r"^(\w+):The man (in front of|behind) me is (\w+).$").unwrap();
 
 
-    for (index,line) in conversation.iter().enumerate() {
-        println!("({}) {}", index, line);
+    for (_index,line) in conversation.iter().enumerate() {
+        // println!("({}) {}", index, line);
         if let Some(caps) = re1.captures(line) {
             let name = caps.get(1).unwrap().as_str();
             let position_str: &str = caps.get(2).unwrap().as_str();
             let position: usize = position_str.parse().unwrap();
 
-            println!("Person: {} states position at {}", name, position);
+            // println!("Person: {} states position at {}", name, position);
             let person_index = state.person_index(name);
             state.add_statement(person_index, Statement::AbsPosition { position });
 
@@ -127,7 +149,7 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
             let count_str: &str = caps.get(2).unwrap().as_str();
             let count: usize = count_str.parse().unwrap();
 
-            println!("Person: {} states there are {} people in front of them", name, count);
+            // println!("Person: {} states there are {} people in front of them", name, count);
             let person_index = state.person_index(name);
             state.add_statement(person_index, Statement::AbsPosition { position: count });
 
@@ -136,7 +158,7 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
             let count_str: &str = caps.get(2).unwrap().as_str();
             let count: usize = count_str.parse().unwrap();
 
-            println!("Person: {} states there are {} people behind them", name, count);
+            // println!("Person: {} states there are {} people behind them", name, count);
             let person_index = state.person_index(name);
             state.add_statement(person_index, Statement::ReversePosition { from_end: count });
 
@@ -145,14 +167,14 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
             let direction = caps.get(2).unwrap().as_str();
             let other_person = caps.get(3).unwrap().as_str();
 
-            println!("Person: {} states the man {} me is {}", name, direction, other_person);
+            // println!("Person: {} states the man {} me is {}", name, direction, other_person);
             let offset: i32 = if direction == "in front of" { -1 } else { 1 };
             let person_index = state.person_index(name);
             let other_person_index = state.person_index(other_person);
             state.add_statement(person_index, Statement::RelPosition { relative: offset, person_index: other_person_index });
 
         } else {
-            println!("Skipped!")
+            eprintln!("Skipped line: {}", line);
         }
     }
 
