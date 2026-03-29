@@ -95,7 +95,7 @@ impl<'a> State<'a> {
             if trial.is_contradictory() {
                 continue;
             }
-            if let Some(name) = &trial.solve() {
+            if let Some(name) = &trial.solve(&self) {
                 println!("Trial solved, identified Mr. Wrong: {}", name);
                 return None; // Return None to indicate that we found a solution, but we won't return the name here for now.
             }
@@ -143,7 +143,6 @@ impl Person<'_> {
                 },
                 _ => {
                     // otherwise ignore for now.
-
                 },
             }
             relatives.push(statement);
@@ -171,18 +170,80 @@ impl Trial  {
         let mut assignments = Vec::new();
         for person_index in 0..self.num_people {
             assignments.push(Assignment::new(person_index, self.num_people));
-            print!("*_");
         }
-        println!("make_assignments completed with {} assignments", assignments.len());
         assignments
     }   
     fn is_contradictory(&self) -> bool {
         // Implement logic to check if the trial leads to a contradiction.
         false
     }
-    fn  solve(&self) -> Option<&str> {
+    fn  solve(&self, state: &State) -> Option<&str> {
         // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
         let mut assignments: Vec<Assignment> = self.make_assignments();
+        loop {
+            let mut changed = false;
+            for person in &state.persons {
+                for statement in &person.statements {
+                    match statement {
+                        Statement::AbsPosition { position } => {
+                            // Implement logic to update assignments based on absolute position statements.
+                            let person_index = person.index;
+                            let assignment = &mut assignments[person_index];
+                            let claimed_index = *position - 1; // Convert to 0-based index.
+                            if person_index == self.liar_index {
+                                // If this person is the liar, then their statement is false, so we can eliminate the claimed position.
+                                if assignment.possible_positions.contains(&claimed_index) {
+                                    assignment.possible_positions.retain(|&p| p != claimed_index);
+                                    changed = true;
+                                }
+                            } else {
+                                // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
+                                if assignment.position.is_none() {
+                                    assignment.position = Some(claimed_index);
+                                    assignment.possible_positions = vec![claimed_index];
+                                    changed = true;
+                                } else if assignment.position != Some(claimed_index) {
+                                    // Contradiction found, but we will handle contradictions in a separate step.
+                                }
+                            }
+                        },
+                        Statement::RelPosition { relative, person_index } => {
+                            // Implement logic to update assignments based on relative position statements.
+                        },
+                        Statement::ReversePosition { from_end } => {
+                            // Implement logic to update assignments based on reverse position statements.
+                            let person_index = person.index;
+                            let assignment = &mut assignments[person_index];
+                            let claimed_index = self.num_people - *from_end - 1; // Convert to 0-based index.
+                            if person_index == self.liar_index {
+                                // If this person is the liar, then their statement is false, so we can eliminate the claimed position.
+                                if assignment.possible_positions.contains(&claimed_index) {
+                                    assignment.possible_positions.retain(|&p| p != claimed_index);
+                                    changed = true;
+                                }
+                            } else {
+                                // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
+                                if assignment.position.is_none() {
+                                    assignment.position = Some(claimed_index);
+                                    assignment.possible_positions = vec![claimed_index];
+                                    changed = true;
+                                } else if assignment.position != Some(claimed_index) {
+                                    // Contradiction found, but we will handle contradictions in a separate step.
+                                }
+                            }
+                        },
+                    }
+                }
+            }
+            if !changed {
+                break; // No changes made, stop the loop.
+            }
+        }
+
+        println!("Trial with liar_index {}: Initial assignments:", self.liar_index);
+        for assignment in &assignments {
+            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
+        }
         None
     }
 }
