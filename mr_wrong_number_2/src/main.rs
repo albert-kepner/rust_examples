@@ -11,17 +11,26 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
     let mut state: State<'a> = parse_conversation(conversation);
     if let Some(name) = state.solve() {
         println!("Mr. Wrong identified by solve(): {}", name);
-        return None;
+        return Some(get_name(&blessed_names, name))
     } else {
         if let Some(name) = state.solve2() {
             println!("Mr. Wrong identified by solve2(): {}", name);
-            return None;
+            return Some(get_name(&blessed_names, name));
         } else {
             println!("No contradictions found, unable to identify Mr. Wrong.");
             return None;
         }
     }   
 }
+
+fn get_name<'a>(blessed_names: &Vec<&'a str>, name: &'a str) -> &'a str {
+    if let Some(index) = blessed_names.iter().position(|&n| n == name) {
+        return blessed_names[index];
+    }  else {
+        return "Unknown";
+    }
+}
+        
 
 fn bless_these_names<'a>(conversation: &[&'a str]) -> Vec<&'a str> {
     let mut blessed_names: Vec<&'a str> = Vec::new();
@@ -211,8 +220,6 @@ impl Trial  {
                             // Implement logic to update assignments based on relative position statements.
                             let this_person_index = person.index;
                             let other_person_index = *person_index;
-                            let assignment = &mut assignments[this_person_index];
-                            let other_assignment = &mut assignments[other_person_index];
                             let is_liar = this_person_index == self.liar_index;
                             if self.infer_relative(&mut assignments, 
                                 this_person_index, 
