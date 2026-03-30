@@ -269,7 +269,6 @@ impl Trial  {
         let mut changed = false;
 
         if !is_liar {
-            // if this positon is known, we can constrain the other person's position based on the relative statement.
             if this_person_index == other_person_index {
                 return changed;
             }
@@ -281,6 +280,7 @@ impl Trial  {
                 let (left, right) = assignments.split_at_mut(this_person_index);
                 (&mut right[0], &mut left[other_person_index])
             };
+            // if this positon is known, we can constrain the other person's position based on the relative statement.
             if let Some(this_position) = this_assignment.position {
                 let other_position = match relative {
                     -1 => this_position.checked_sub(1),
