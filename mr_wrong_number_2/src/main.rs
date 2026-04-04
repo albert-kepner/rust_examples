@@ -260,7 +260,7 @@ impl Trial  {
                                     *relative,
                                 );
                                 if change_flag {
-                                    change = true;
+                                    changed = true;
                                 }
                                 if contradiction {
                                     if test_the_liar {
@@ -321,7 +321,7 @@ impl Trial  {
                     _ => None,
                 };
                 if let Some(other_position) = other_position {
-                    if !other_assignment.possible_positions.contains(other_position) {
+                    if !other_assignment.possible_positions.contains(&other_position) {
                         contradiction = true;
                         return (contradiction, changed);
                     }
@@ -341,7 +341,7 @@ impl Trial  {
                     _ => None,
                 };
                 if let Some(this_position) = this_position {
-                    if !this_assignment.possible_positions.contains(this_position) {
+                    if !this_assignment.possible_positions.contains(&this_position) {
                         contradiction = true;
                         return (contradiction, changed);
                     }
