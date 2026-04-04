@@ -118,7 +118,7 @@ impl<'a> State<'a> {
             return Some(self.person_names[index]);
         } else if possible_liar_indexes2.len() == 1 {
             let index = possible_liar_indexes2[0];
-            return Some(self.person_name[index]);
+            return Some(self.person_names[index]);
         }
         None
     }
