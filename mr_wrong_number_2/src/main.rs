@@ -254,11 +254,20 @@ impl Trial  {
                             Statement::RelPosition { relative, person_index } => {
                                 let other_person_index = *person_index;
                                 let this_person_index = person.index;
-                                if self.infer_relative(&mut assignments, 
+                                let (contradiction,  change_flag) = self.infer_relative(&mut assignments, 
                                     this_person_index, 
                                     other_person_index,  
-                                    *relative) {
-                                    changed = true;
+                                    *relative,
+                                );
+                                if change_flag {
+                                    change = true;
+                                }
+                                if contradiction {
+                                    if test_the_liar {
+                                        liar_lies = true;
+                                    } else {
+                                        other_lies = true;
+                                    }
                                 }
                             },
                         }
@@ -267,13 +276,16 @@ impl Trial  {
                 if !changed {
                     break; // No changes made, stop the loop.
                 }
+            } // End of loop to consider statements, now check for contradictions.
+
+            println!("Trial ({}) with liar_index: {} other_lies: {} liar_lies: {}", i, self.liar_index, other_lies, liar_lies);
+            for assignment in &assignments {
+                println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
             }
 
-        }
-        println!("Trial with liar_index: {} other_lies: {} liar_lies: {}", self.liar_index, other_lies, liar_lies);
-        for assignment in &assignments {
-            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
-        }
+        } // End of loop to test the liar's statements, now check for contradictions.
+
+       
         (other_lies, liar_lies)
     }
 
@@ -281,17 +293,20 @@ impl Trial  {
         assignments: &mut Vec<Assignment>, 
         this_person_index: usize, 
         other_person_index: usize, 
-        relative: i32) -> bool {
+        relative: i32) -> (bool, bool) {
         // Implement logic to infer new constraints based on relative position statements.
         // Return true if any changes were made to the assignments, false otherwise.
         let mut changed = false;
+        let mut contradiction: bool = false;
 
 
             if this_person_index == other_person_index {
-                return changed;
+                contradiction = true;
+                return (contradiction, changed);
             }
 
-            let (this_assignment, other_assignment) = if this_person_index < other_person_index {
+            let (this_assignment, other_assignment) = 
+            if this_person_index < other_person_index {
                 let (left, right) = assignments.split_at_mut(other_person_index);
                 (&mut left[this_person_index], &mut right[0])
             } else {
@@ -306,6 +321,10 @@ impl Trial  {
                     _ => None,
                 };
                 if let Some(other_position) = other_position {
+                    if !other_assignment.possible_positions.contains(other_position) {
+                        contradiction = true;
+                        return (contradiction, changed);
+                    }
                     if other_assignment.position.is_none() {
                         other_assignment.position = Some(other_position);
                         other_assignment.possible_positions = vec![other_position];
@@ -322,6 +341,10 @@ impl Trial  {
                     _ => None,
                 };
                 if let Some(this_position) = this_position {
+                    if !this_assignment.possible_positions.contains(this_position) {
+                        contradiction = true;
+                        return (contradiction, changed);
+                    }
                     if this_assignment.position.is_none() {
                         this_assignment.position = Some(this_position);
                         this_assignment.possible_positions = vec![this_position];
@@ -344,7 +367,7 @@ impl Trial  {
             // Further:
             // min other person_position = min this_person_position + 1
 
-        changed
+        return (contradiction, changed);
     }
 }   
 
