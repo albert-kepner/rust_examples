@@ -62,7 +62,8 @@ impl<'a> State<'a> {
     }
     fn make_trials(&mut self) {
         for person_index in 0..self.persons.len() {
-            self.trials.push(Trial::new(person_index, self.persons.len()));
+            let person_name = self.persons[person_index].name;
+            self.trials.push(Trial::new(person_index, self.persons.len(), person_name));
         }
     }
     fn person_index (&mut self, name: &'a str) -> usize {
@@ -100,7 +101,7 @@ impl<'a> State<'a> {
     }
     fn solve2(&self) -> Option<&'a str> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
-        let possible_liar_indexes: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes: Vec<usize> = Vec::new();
         for trial in &self.trials {
             if !trial.is_contradictory(&self) {
                 possible_liar_indexes.push(trial.liar_index);
@@ -108,7 +109,7 @@ impl<'a> State<'a> {
         }
         // If statements are only consistent for one liar, we have the villian!
         if possible_liar_indexes.len() == 1 {
-            index = possible_liar_indexes[0];
+            let index = possible_liar_indexes[0];
             return Some(self.person_names[index]);
         }
         None
@@ -169,8 +170,8 @@ struct Trial {
 }
 
 impl Trial  {
-    fn new(liar_index: usize, num_people: usize) -> Self {
-        println!("Creating new trial with liar_index: {} and num_people: {}", liar_index, num_people);
+    fn new(liar_index: usize, num_people: usize, person_name: &str) -> Self {
+        println!("Creating new trial with liar_index: {} liar: {} and num_people: {}", liar_index, person_name, num_people);
         Trial {
             liar_index,
             num_people,
@@ -227,11 +228,11 @@ impl Trial  {
                         },
                         Statement::RelPosition { relative, person_index } => {
                             let other_person_index = *person_index;
-                            let is_liar = this_person_index == self.liar_index;
+                            let this_person_index = person.index;
                             if self.infer_relative(&mut assignments, 
                                 this_person_index, 
                                 other_person_index,  
-                                *relative, is_liar) {
+                                *relative) {
                                 changed = true;
                             }
                         },
@@ -249,102 +250,16 @@ impl Trial  {
         has_contradiction
     }
 
-
-    fn  solve_draft0(&self, state: &State) -> Option<&str> {
-        // Implement logic to solve the trial and determine if 
-        // the assumption of a specific liar leads to a contradiction based on the statements.
-        let mut assignments: Vec<Assignment> = self.make_assignments();
-        loop {
-            let mut changed = false;
-            for person in &state.persons {
-                let person_index = person.index;
-                if person_index == self.liar_index {
-                    continue;
-                }
-                for statement in &person.statements {
-                    match statement {
-                        Statement::AbsPosition { position } => {
-                            // Implement logic to update assignments based on absolute position statements.
-                            let person_index = person.index;
-                            let assignment = &mut assignments[person_index];
-                            let claimed_index = *position - 1; // Convert to 0-based index.
-                            if person_index == self.liar_index {
-                                // If this person is the liar, then their statement is false, so we can eliminate the claimed position.
-                                if assignment.possible_positions.contains(&claimed_index) {
-                                    assignment.possible_positions.retain(|&p| p != claimed_index);
-                                    changed = true;
-                                }
-                            } else {
-                                // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
-                                if assignment.position.is_none() {
-                                    assignment.position = Some(claimed_index);
-                                    assignment.possible_positions = vec![claimed_index];
-                                    changed = true;
-                                } else if assignment.position != Some(claimed_index) {
-                                    // Contradiction found, but we will handle contradictions in a separate step.
-                                }
-                            }
-                        },
-                        Statement::RelPosition { relative, person_index } => {
-                            // Implement logic to update assignments based on relative position statements.
-                            let this_person_index = person.index;
-                            let other_person_index = *person_index;
-                            let is_liar = this_person_index == self.liar_index;
-                            if self.infer_relative(&mut assignments, 
-                                this_person_index, 
-                                other_person_index,  
-                                *relative, is_liar) {
-                                changed = true;
-                            }
-                        },
-                        Statement::ReversePosition { from_end } => {
-                            // Implement logic to update assignments based on reverse position statements.
-                            let person_index = person.index;
-                            let assignment = &mut assignments[person_index];
-                            let claimed_index = self.num_people - *from_end - 1; // Convert to 0-based index.
-                            if person_index == self.liar_index {
-                                // If this person is the liar, then their statement is false, so we can eliminate the claimed position.
-                                if assignment.possible_positions.contains(&claimed_index) {
-                                    assignment.possible_positions.retain(|&p| p != claimed_index);
-                                    changed = true;
-                                }
-                            } else {
-                                // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
-                                if assignment.position.is_none() {
-                                    assignment.position = Some(claimed_index);
-                                    assignment.possible_positions = vec![claimed_index];
-                                    changed = true;
-                                } else if assignment.position != Some(claimed_index) {
-                                    // Contradiction found, but we will handle contradictions in a separate step.
-                                }
-                            }
-                        },
-                    }
-                }
-            }
-            if !changed {
-                break; // No changes made, stop the loop.
-            }
-        }
-
-        println!("Trial with liar_index {}: Initial assignments:", self.liar_index);
-        for assignment in &assignments {
-            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
-        }
-        None
-    }
-
     fn infer_relative(&self, 
         assignments: &mut Vec<Assignment>, 
         this_person_index: usize, 
         other_person_index: usize, 
-        relative: i32, 
-        is_liar: bool) -> bool {
+        relative: i32) -> bool {
         // Implement logic to infer new constraints based on relative position statements.
         // Return true if any changes were made to the assignments, false otherwise.
         let mut changed = false;
 
-        if !is_liar {
+
             if this_person_index == other_person_index {
                 return changed;
             }
@@ -387,13 +302,9 @@ impl Trial  {
                     }
                 }
             }
+ 
 
-        } 
-
-        if is_liar {
-            // If this person is the liar, then their statement is false, so we can possibly eliminate
-            // some relative positions.
-        } else {
+ 
             // If this person is not the liar, then their statement is true, so we can
             // constrain their position relative to the other person's position.
 
@@ -405,7 +316,7 @@ impl Trial  {
             // max other_person_position = max this_person_position + 1
             // Further:
             // min other person_position = min this_person_position + 1
-        }
+
         changed
     }
 }   
