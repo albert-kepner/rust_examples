@@ -210,7 +210,7 @@ impl Trial  {
                             if !assignment.possible_positions.contains(position) {
                                 // If this claimed position is not possible for the Trial we have a contradiction
                                 has_contradiction = true;
-                            } else {
+                            } else if assignment.position.is_none() {
                                 assignment.position = Some(*position);
                                 assignment.possible_positions = vec![*position];
                                 changed = true;
@@ -218,6 +218,15 @@ impl Trial  {
                         },
                         Statement::ReversePosition { from_end } => {
                             let assignment = &mut assignments[person_index];
+                            let position: usize = state.persons.len() - *from_end;
+                            if !assignment.possible_positions.contains(position) {
+                                // If this claimed position is not possible for the Trial we have a contradiction
+                                has_contradiction = true;
+                            } else if assignment.position.is_none() {
+                                assignment.position = Some(position);
+                                assignment.possible_positions = vec![position];
+                                changed = true;
+                            } 
                         },
                         Statement::RelPosition { relative, person_index } => {
                         },
