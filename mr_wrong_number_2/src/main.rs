@@ -98,10 +98,10 @@ impl<'a> State<'a> {
         
         None
     }
-    fn solve2(self) -> Option<&'a str> {
+    fn solve2(&self) -> Option<&'a str> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
         for trial in &self.trials {
-            if trial.is_contradictory() {
+            if trial.is_contradictory(&self) {
                 continue;
             }
             if let Some(name) = &trial.solve(&self) {
@@ -164,7 +164,6 @@ struct Trial {
     liar_index: usize,
     num_people: usize,
     assignments: Vec<Assignment>,
-    has_contradiction: bool,
 }
 
 impl Trial  {
@@ -174,7 +173,6 @@ impl Trial  {
             liar_index,
             num_people,
             assignments: Vec::new(),
-            has_contradiction: false,
         }
     }
     fn make_assignments(&self) -> Vec<Assignment> {
@@ -191,10 +189,11 @@ impl Trial  {
     }
 
     
-    fn is_contradictory(&mut self, state: &State) -> bool {
+    fn is_contradictory(&self, state: &State) -> bool {
         // Implement logic to consider statements in the trial and determine if 
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
+        let mut has_contradiction: bool = false;
         loop {
             let mut changed = false;
             for person in &state.persons {
@@ -210,10 +209,10 @@ impl Trial  {
                             // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
                             if !assignment.possible_positions.contains(position) {
                                 // If this claimed position is not possible for the Trial we have a contradiction
-                                self.has_contradiction = true;
+                                has_contradiction = true;
                             } else {
-                                assignment.position = Some(position);
-                                assignment.possible_positions = vec![position];
+                                assignment.position = Some(*position);
+                                assignment.possible_positions = vec![*position];
                                 changed = true;
                             } 
                         },
@@ -229,7 +228,7 @@ impl Trial  {
                 break; // No changes made, stop the loop.
             }
         }
-        self.has_contradiction
+        has_contradiction
     }
 
 
