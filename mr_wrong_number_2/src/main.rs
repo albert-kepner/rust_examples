@@ -100,14 +100,16 @@ impl<'a> State<'a> {
     }
     fn solve2(&self) -> Option<&'a str> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
+        let possible_liar_indexes: Vec<usize> = Vec::new();
         for trial in &self.trials {
-            if trial.is_contradictory(&self) {
-                continue;
+            if !trial.is_contradictory(&self) {
+                possible_liar_indexes.push(trial.liar_index);
             }
-            if let Some(name) = &trial.solve(&self) {
-                println!("Trial solved, identified Mr. Wrong: {}", name);
-                return None; // Return None to indicate that we found a solution, but we won't return the name here for now.
-            }
+        }
+        // If statements are only consistent for one liar, we have the villian!
+        if possible_liar_indexes.len() == 1 {
+            index = possible_liar_indexes[0];
+            return Some(self.person_names[index]);
         }
         None
     }
@@ -175,6 +177,7 @@ impl Trial  {
             assignments: Vec::new(),
         }
     }
+
     fn make_assignments(&self) -> Vec<Assignment> {
         let mut assignments = Vec::new();
         for person_index in 0..self.num_people {
@@ -183,12 +186,6 @@ impl Trial  {
         assignments
     }
 
-    fn  solve(&self, state: &State) -> Option<&str> {
-        // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
-        None
-    }
-
-    
     fn is_contradictory(&self, state: &State) -> bool {
         // Implement logic to consider statements in the trial and determine if 
         // the assumption of a specific liar leads to a contradiction based on the statements.
@@ -229,6 +226,14 @@ impl Trial  {
                             } 
                         },
                         Statement::RelPosition { relative, person_index } => {
+                            let other_person_index = *person_index;
+                            let is_liar = this_person_index == self.liar_index;
+                            if self.infer_relative(&mut assignments, 
+                                this_person_index, 
+                                other_person_index,  
+                                *relative, is_liar) {
+                                changed = true;
+                            }
                         },
                     }
                 }
@@ -236,6 +241,10 @@ impl Trial  {
             if !changed {
                 break; // No changes made, stop the loop.
             }
+        }
+        println!("Trial with liar_index {} has_contradiction:{} ", self.liar_index, has_contradiction);
+        for assignment in &assignments {
+            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
         }
         has_contradiction
     }
