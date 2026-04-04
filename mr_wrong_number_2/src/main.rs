@@ -164,6 +164,7 @@ struct Trial {
     liar_index: usize,
     num_people: usize,
     assignments: Vec<Assignment>,
+    has_contradiction: bool,
 }
 
 impl Trial  {
@@ -173,6 +174,7 @@ impl Trial  {
             liar_index,
             num_people,
             assignments: Vec::new(),
+            has_contradiction: false,
         }
     }
     fn make_assignments(&self) -> Vec<Assignment> {
@@ -181,17 +183,67 @@ impl Trial  {
             assignments.push(Assignment::new(person_index, self.num_people));
         }
         assignments
-    }   
-    fn is_contradictory(&self) -> bool {
-        // Implement logic to check if the trial leads to a contradiction.
-        false
     }
+
     fn  solve(&self, state: &State) -> Option<&str> {
         // Implement logic to solve the trial and determine if it identifies Mr. Wrong.
+        None
+    }
+
+    
+    fn is_contradictory(&mut self, state: &State) -> bool {
+        // Implement logic to consider statements in the trial and determine if 
+        // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
         loop {
             let mut changed = false;
             for person in &state.persons {
+                let person_index = person.index;
+                // Defer considering the hypothesized liar's staements, until after others.
+                if person_index == self.liar_index {
+                    continue;
+                }
+                for statement in &person.statements {
+                    match statement {
+                        Statement::AbsPosition { position } => {
+                            let assignment = &mut assignments[person_index];
+                            // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
+                            if !assignment.possible_positions.contains(position) {
+                                // If this claimed position is not possible for the Trial we have a contradiction
+                                self.has_contradiction = true;
+                            } else {
+                                assignment.position = Some(position);
+                                assignment.possible_positions = vec![position];
+                                changed = true;
+                            } 
+                        },
+                        Statement::ReversePosition { from_end } => {
+                            let assignment = &mut assignments[person_index];
+                        },
+                        Statement::RelPosition { relative, person_index } => {
+                        },
+                    }
+                }
+            }
+            if !changed {
+                break; // No changes made, stop the loop.
+            }
+        }
+        self.has_contradiction
+    }
+
+
+    fn  solve_draft0(&self, state: &State) -> Option<&str> {
+        // Implement logic to solve the trial and determine if 
+        // the assumption of a specific liar leads to a contradiction based on the statements.
+        let mut assignments: Vec<Assignment> = self.make_assignments();
+        loop {
+            let mut changed = false;
+            for person in &state.persons {
+                let person_index = person.index;
+                if person_index == self.liar_index {
+                    continue;
+                }
                 for statement in &person.statements {
                     match statement {
                         Statement::AbsPosition { position } => {
@@ -351,8 +403,8 @@ struct Assignment {
 impl Assignment {
     fn new(person_index: usize, num_people: usize) -> Self {
         Assignment {
-            position: None,
-            possible_positions: (1..=num_people).collect(),
+            position: None, // 1-based position of person if known.
+            possible_positions: (1..=num_people).collect(), // collection of 1-based positions...
             person_index,
             num_people,
         }
