@@ -103,13 +103,19 @@ impl<'a> State<'a> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
         let mut possible_liar_indexes1: Vec<usize> = Vec::new();
         let mut possible_liar_indexes2: Vec<usize> = Vec::new();
-        for trial in &self.trials {
-            let (other_lies, liar_lies) = trial.is_contradictory(&self);
-            if !other_lies {
-                possible_liar_indexes1.push(trial.liar_index);
+        let mut test_the_liar: bool = false;
+        for i in 0..2 {
+            if i == 1 {
+                test_the_liar = true;
             }
-            if liar_lies {
-                possible_liar_indexes2.push(trial.liar_index);
+            for trial in &self.trials {
+                let (other_lies, liar_lies) = trial.is_contradictory(&self, &test_the_liar);
+                if !other_lies {
+                    possible_liar_indexes1.push(trial.liar_index);
+                }
+                if liar_lies {
+                    possible_liar_indexes2.push(trial.liar_index);
+                }
             }
         }
         // If statements are only consistent for one liar, we have the villian!
@@ -195,19 +201,12 @@ impl Trial  {
         assignments
     }
 
-    fn is_contradictory(&self, state: &State) -> (bool, bool) {
+    fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool) {
         // Implement logic to consider statements in the trial and determine if 
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut other_lies = false;
         let mut liar_lies = false;
-        let mut test_the_liar: bool = false;
-
-        for i in 0..2 {
-
-            if i == 1 {
-                test_the_liar = true;
-            }
 
             loop {
                 let mut changed = false;
@@ -276,14 +275,13 @@ impl Trial  {
                 if !changed {
                     break; // No changes made, stop the loop.
                 }
-            } // End of loop to consider statements, now check for contradictions.
-
-            println!("Trial ({}) with liar_index: {} other_lies: {} liar_lies: {}", i, self.liar_index, other_lies, liar_lies);
+            } // End of loop to consider statements,
+            println!("Trial (test_the_liear = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
             for assignment in &assignments {
                 println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
             }
 
-        } // End of loop to test the liar's statements, now check for contradictions.
+
 
        
         (other_lies, liar_lies)
