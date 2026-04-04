@@ -101,16 +101,24 @@ impl<'a> State<'a> {
     }
     fn solve2(&self) -> Option<&'a str> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
-        let mut possible_liar_indexes: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes1: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes2: Vec<usize> = Vec::new();
         for trial in &self.trials {
-            if !trial.is_contradictory(&self) {
-                possible_liar_indexes.push(trial.liar_index);
+            let (other_lies, liar_lies) = trial.is_contradictory(&self);
+            if !other_lies {
+                possible_liar_indexes1.push(trial.liar_index);
+            }
+            if liar_lies {
+                possible_liar_indexes2.push(trial.liar_index);
             }
         }
         // If statements are only consistent for one liar, we have the villian!
-        if possible_liar_indexes.len() == 1 {
-            let index = possible_liar_indexes[0];
+        if possible_liar_indexes1.len() == 1 {
+            let index = possible_liar_indexes1[0];
             return Some(self.person_names[index]);
+        } else if possible_liar_indexes2.len() == 1 {
+            let index = possible_liar_indexes2[0];
+            return Some(self.person_name[index]);
         }
         None
     }
@@ -187,67 +195,86 @@ impl Trial  {
         assignments
     }
 
-    fn is_contradictory(&self, state: &State) -> bool {
+    fn is_contradictory(&self, state: &State) -> (bool, bool) {
         // Implement logic to consider statements in the trial and determine if 
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
-        let mut has_contradiction: bool = false;
-        loop {
-            let mut changed = false;
-            for person in &state.persons {
-                let person_index = person.index;
-                // Defer considering the hypothesized liar's staements, until after others.
-                if person_index == self.liar_index {
-                    continue;
-                }
-                for statement in &person.statements {
-                    match statement {
-                        Statement::AbsPosition { position } => {
-                            let assignment = &mut assignments[person_index];
-                            // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
-                            if !assignment.possible_positions.contains(position) {
-                                // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
-                            } else if assignment.position.is_none() {
-                                assignment.position = Some(*position);
-                                assignment.possible_positions = vec![*position];
-                                changed = true;
-                            } 
-                        },
-                        Statement::ReversePosition { from_end } => {
-                            let assignment = &mut assignments[person_index];
-                            let position: usize = state.persons.len() - *from_end;
-                            if !assignment.possible_positions.contains(&position) {
-                                // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
-                            } else if assignment.position.is_none() {
-                                assignment.position = Some(position);
-                                assignment.possible_positions = vec![position];
-                                changed = true;
-                            } 
-                        },
-                        Statement::RelPosition { relative, person_index } => {
-                            let other_person_index = *person_index;
-                            let this_person_index = person.index;
-                            if self.infer_relative(&mut assignments, 
-                                this_person_index, 
-                                other_person_index,  
-                                *relative) {
-                                changed = true;
-                            }
-                        },
+        let mut other_lies = false;
+        let mut liar_lies = false;
+        let mut test_the_liar: bool = false;
+
+        for i in 0..2 {
+
+            if i == 1 {
+                test_the_liar = true;
+            }
+
+            loop {
+                let mut changed = false;
+                for person in &state.persons {
+                    let person_index = person.index;
+                    // Defer considering the hypothesized liar's staements, until after others.
+                    if test_the_liar == (person_index == self.liar_index) {
+                        continue;
+                    }
+                    for statement in &person.statements {
+                        match statement {
+                            Statement::AbsPosition { position } => {
+                                let assignment = &mut assignments[person_index];
+                                // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
+                                if !assignment.possible_positions.contains(position) {
+                                    // If this claimed position is not possible for the Trial we have a contradiction
+                                    if test_the_liar {
+                                        liar_lies = true;
+                                    } else {
+                                        other_lies = true;
+                                    }
+                                } else if assignment.position.is_none() {
+                                    assignment.position = Some(*position);
+                                    assignment.possible_positions = vec![*position];
+                                    changed = true;
+                                } 
+                            },
+                            Statement::ReversePosition { from_end } => {
+                                let assignment = &mut assignments[person_index];
+                                let position: usize = state.persons.len() - *from_end;
+                                if !assignment.possible_positions.contains(&position) {
+                                    // If this claimed position is not possible for the Trial we have a contradiction
+                                    if test_the_liar {
+                                        liar_lies = true;
+                                    } else {
+                                        other_lies = true;
+                                    }
+                                } else if assignment.position.is_none() {
+                                    assignment.position = Some(position);
+                                    assignment.possible_positions = vec![position];
+                                    changed = true;
+                                } 
+                            },
+                            Statement::RelPosition { relative, person_index } => {
+                                let other_person_index = *person_index;
+                                let this_person_index = person.index;
+                                if self.infer_relative(&mut assignments, 
+                                    this_person_index, 
+                                    other_person_index,  
+                                    *relative) {
+                                    changed = true;
+                                }
+                            },
+                        }
                     }
                 }
+                if !changed {
+                    break; // No changes made, stop the loop.
+                }
             }
-            if !changed {
-                break; // No changes made, stop the loop.
-            }
+
         }
-        println!("Trial with liar_index {} has_contradiction:{} ", self.liar_index, has_contradiction);
+        println!("Trial with liar_index: {} other_lies: {} liar_lies: {}", self.liar_index, other_lies, liar_lies);
         for assignment in &assignments {
             println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
         }
-        has_contradiction
+        (other_lies, liar_lies)
     }
 
     fn infer_relative(&self, 
