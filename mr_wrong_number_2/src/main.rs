@@ -302,7 +302,7 @@ impl Trial  {
             for assignment in &assignments {
                 println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
             }
-            consistent = !other_lies && is_consistent(&assignments, self.num_people);
+            consistent = !test_the_liar && !other_lies && is_consistent(&assignments, self.num_people);
        
         (other_lies, liar_lies, consistent)
     }
