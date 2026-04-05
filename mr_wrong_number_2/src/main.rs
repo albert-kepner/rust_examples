@@ -209,9 +209,20 @@ impl Trial  {
 
     fn is_consistent(&self) -> bool {
         let mut set: HashSet<usize> = HashSet::new();
+        // for assignment in &self.assignments {
+        //     if let Some(position) = assignment.position {
+        //         set.insert(position);
+        //     }
+        // }
         for assignment in &self.assignments {
-            if let Some(position) = assignment.position {
-                set.insert(position);
+            match assigment.position {
+                Some(position) => {
+                    println!("position = {}", position);
+                    set.insert(position);
+                }
+                None => {
+                    println!("position None");
+                }
             }
         }
         let consistent = set.len() == self.num_people;
