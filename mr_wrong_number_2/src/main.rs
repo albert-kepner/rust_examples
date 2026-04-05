@@ -215,7 +215,7 @@ impl Trial  {
         //     }
         // }
         for assignment in &self.assignments {
-            match assigment.position {
+            match assignment.position {
                 Some(position) => {
                     println!("position = {}", position);
                     set.insert(position);
