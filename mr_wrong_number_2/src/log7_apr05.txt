@@ -1,0 +1,2326 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+warning: value assigned to `consistent` is never read
+   --> src\main.rs:220:36
+    |
+220 |         let mut consistent: bool = false;
+    |                                    ^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: `mr_wrong_number_2` (bin "mr_wrong_number_2" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.70s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-09072e100a14a786.exe)
+
+running 1 test
+
+
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:I'm in 2nd position.
+(2) Tom:I'm in 1st position.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Length of assignments: 3
+position None
+position = 2
+position = 3
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 3}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position = 1
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Length of assignments: 3
+position = 1
+position = 2
+position = 3
+is_consistent: set.len(): 3 num_people 3 consistent true set {2, 1, 3}
+After is_contradictory(2): !other_lies true consistent: true
+FOUND CONSISTENT CONFIGURATION ******************************************************************************************
+Mr. Wrong identified by solve2(): Tom
+1 ==================== Test passed: actual value Some("Tom") matches expected value Some("Tom")
+
+
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:I'm in 2nd position.
+(2) Tom:I'm in 1st position.
+(3) Peter:The man in front of me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position = 2
+position = 1
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position = 1
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position = 1
+position = 2
+position = 1
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(2): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 1
+position None
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Peter claims relative position: -1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position = 2
+position = 1
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(2): !other_lies true consistent: false
+No contradictions found, unable to identify Mr. Wrong.
+2 ******************* Warning: actual value None does not match expected value Some("John")
+
+
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position None
+position = 1
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position = 1
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position = 1
+position = 1
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {1, 2}
+After is_contradictory(2): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 1
+position None
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position None
+position = 1
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {1, 2}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(2): !other_lies true consistent: false
+No contradictions found, unable to identify Mr. Wrong.
+3 ******************* Warning: actual value None does not match expected value Some("Tom")
+
+
+Parsing conversation:
+(0) John:The man behind me is Peter.
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 0: John (test_the_liar = false liar_index = 0)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position None
+position = 1
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter (test_the_liar = false liar_index = 1)
+Considering person_index 2: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Tom (test_the_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = None
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+Considering person_index 0: John (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: John (test_the_liar = false)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = None
+Considering person_index 1: Peter (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Peter (test_the_liar = false)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = None
+Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = None
+Length of assignments: 3
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 3 consistent false set {}
+After is_contradictory(2): !other_lies false consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+Considering person_index 0: John (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: John (test_the_liar = true)
+Person John claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 3 consistent false set {}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+Considering person_index 0: John (test_the_liar = true liar_index = 1)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Peter (test_the_liar = true)
+Person Peter claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Peter claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position None
+position = 1
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John (test_the_liar = true liar_index = 2)
+Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
+Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Tom (test_the_liar = true)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Length of assignments: 3
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(2): !other_lies true consistent: false
+No contradictions found, unable to identify Mr. Wrong.
+4 ==================== Test passed: actual value None matches expected value None
+
+
+Parsing conversation:
+(0) Dowfls:There is 0 people behind me.
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+(7) Tzjlvruhk:There are 2 people in front of me.
+Creating new trial with liar_index: 0 liar: Dowfls and num_people: 4
+Creating new trial with liar_index: 1 liar: Ljiyxbmr and num_people: 4
+Creating new trial with liar_index: 2 liar: Cvvugb and num_people: 4
+Creating new trial with liar_index: 3 liar: Tzjlvruhk and num_people: 4
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 0)
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 0)
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 0)
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Length of assignments: 4
+position = 3
+position = 2
+position = 2
+position = 2
+is_consistent: set.len(): 2 num_people 4 consistent false set {2, 3}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 1)
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 1)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 1)
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 1)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Length of assignments: 4
+position = 4
+position None
+position = 2
+position = 3
+is_consistent: set.len(): 3 num_people 4 consistent false set {4, 2, 3}
+After is_contradictory(1): !other_lies false consistent: false
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 2)
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 2)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 2)
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 2)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Length of assignments: 4
+position = 4
+position = 2
+position None
+position = 3
+is_consistent: set.len(): 3 num_people 4 consistent false set {4, 3, 2}
+After is_contradictory(2): !other_lies false consistent: false
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 3)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 3)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 3)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 3)
+Considering person_index 0: Dowfls (test_the_liar = false liar_index = 3)
+Considering statements of person_index 0: Dowfls (test_the_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = false liar_index = 3)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = false liar_index = 3)
+Considering statements of person_index 2: Cvvugb (test_the_liar = false)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = false liar_index = 3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 3 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position = 4
+position = 2
+position = 2
+position None
+is_consistent: set.len(): 2 num_people 4 consistent false set {4, 2}
+After is_contradictory(3): !other_lies false consistent: false
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Dowfls (test_the_liar = true)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 0)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 0)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 0)
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Dowfls (test_the_liar = true)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 0)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 0)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position = 4
+position None
+position None
+position None
+is_consistent: set.len(): 1 num_people 4 consistent false set {4}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 1)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = true)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 1)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 1)
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 1)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Ljiyxbmr (test_the_liar = true)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 1)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: true
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position = 2
+position None
+position None
+is_consistent: set.len(): 1 num_people 4 consistent false set {2}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 2)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 2)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Cvvugb (test_the_liar = true)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 2)
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 2)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 2)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Cvvugb (test_the_liar = true)
+Person Cvvugb claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 2)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: true
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position None
+position = 2
+position None
+is_consistent: set.len(): 1 num_people 4 consistent false set {2}
+After is_contradictory(2): !other_lies true consistent: false
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 3)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 3)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 3)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 3)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = true)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 3)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 3)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 3)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 3)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = true)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Dowfls (test_the_liar = true liar_index = 3)
+Considering person_index 1: Ljiyxbmr (test_the_liar = true liar_index = 3)
+Considering person_index 2: Cvvugb (test_the_liar = true liar_index = 3)
+Considering person_index 3: Tzjlvruhk (test_the_liar = true liar_index = 3)
+Considering statements of person_index 3: Tzjlvruhk (test_the_liar = true)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Tzjlvruhk claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 3 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Length of assignments: 4
+position = 3
+position None
+position None
+position = 2
+is_consistent: set.len(): 2 num_people 4 consistent false set {3, 2}
+After is_contradictory(3): !other_lies true consistent: false
+No contradictions found, unable to identify Mr. Wrong.
+5 ==================== Test passed: actual value None matches expected value None
+
+
+Parsing conversation:
+(0) Tom:The man behind me is Bob.
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Tom and num_people: 4
+Creating new trial with liar_index: 1 liar: Bob and num_people: 4
+Creating new trial with liar_index: 2 liar: Gary and num_people: 4
+Creating new trial with liar_index: 3 liar: Fred and num_people: 4
+Considering person_index 0: Tom (test_the_liar = false liar_index = 0)
+Considering person_index 1: Bob (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 0)
+Considering person_index 1: Bob (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Gary (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 3: Fred (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 0)
+Considering person_index 1: Bob (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Gary (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 3: Fred (test_the_liar = false liar_index = 0)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Length of assignments: 4
+position None
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 4 consistent false set {1}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = false liar_index = 1)
+Considering person_index 2: Gary (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = false liar_index = 1)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Bob (test_the_liar = false liar_index = 1)
+Considering person_index 2: Gary (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 3: Fred (test_the_liar = false liar_index = 1)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Length of assignments: 4
+position None
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 4 consistent false set {1}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = false liar_index = 2)
+Considering person_index 3: Fred (test_the_liar = false liar_index = 2)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Bob (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Gary (test_the_liar = false liar_index = 2)
+Considering person_index 3: Fred (test_the_liar = false liar_index = 2)
+Considering statements of person_index 3: Fred (test_the_liar = false)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Length of assignments: 4
+position None
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 4 consistent false set {1}
+After is_contradictory(2): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = false liar_index = 3)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = false liar_index = 3)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = false liar_index = 3)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = false liar_index = 3)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 3)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = false liar_index = 3)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = false liar_index = 3)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = false liar_index = 3)
+Considering person_index 0: Tom (test_the_liar = false liar_index = 3)
+Considering statements of person_index 0: Tom (test_the_liar = false)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = false liar_index = 3)
+Considering statements of person_index 1: Bob (test_the_liar = false)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = false liar_index = 3)
+Considering statements of person_index 2: Gary (test_the_liar = false)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = false liar_index = 3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 3 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 4 consistent false set {}
+After is_contradictory(3): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Tom (test_the_liar = true)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = true liar_index = 0)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 0)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 0)
+Considering person_index 0: Tom (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Tom (test_the_liar = true)
+Person Tom claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob (test_the_liar = true liar_index = 0)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 0)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 4 consistent false set {}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = true liar_index = 1)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Bob (test_the_liar = true)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = true liar_index = 1)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 1)
+Considering person_index 0: Tom (test_the_liar = true liar_index = 1)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Bob (test_the_liar = true)
+Person Bob claims relative position: -1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary (test_the_liar = true liar_index = 1)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 4 consistent false set {}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = true liar_index = 2)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 2)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Gary (test_the_liar = true)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = true liar_index = 2)
+Considering person_index 0: Tom (test_the_liar = true liar_index = 2)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 2)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Gary (test_the_liar = true)
+Person Gary claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Fred (test_the_liar = true liar_index = 2)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Length of assignments: 4
+position None
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 4 consistent false set {}
+After is_contradictory(2): !other_lies true consistent: false
+Considering person_index 0: Tom (test_the_liar = true liar_index = 3)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 3)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 3)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 3)
+Considering statements of person_index 3: Fred (test_the_liar = true)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Tom (test_the_liar = true liar_index = 3)
+Considering person_index 1: Bob (test_the_liar = true liar_index = 3)
+Considering person_index 2: Gary (test_the_liar = true liar_index = 3)
+Considering person_index 3: Fred (test_the_liar = true liar_index = 3)
+Considering statements of person_index 3: Fred (test_the_liar = true)
+Person Fred claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 3 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Length of assignments: 4
+position None
+position None
+position None
+position = 1
+is_consistent: set.len(): 1 num_people 4 consistent false set {1}
+After is_contradictory(3): !other_lies true consistent: false
+No contradictions found, unable to identify Mr. Wrong.
+6 ******************* Warning: actual value None does not match expected value Some("Fred")
+
+
+Parsing conversation:
+(0) Wrong:The man behind me is Wrong.
+Mr. Wrong identified by solve(): Wrong
+7 ==================== Test passed: actual value Some("Wrong") matches expected value Some("Wrong")
+
+
+Parsing conversation:
+(0) Charles:The man behind me is Gavin.
+(1) Gavin:I'm in 1st position.
+(2) Ken:The man in front of me is Gavin.
+(3) Charles:The man in front of me is Gavin.
+Mr. Wrong identified by solve(): Charles
+8 ==================== Test passed: actual value Some("Charles") matches expected value Some("Charles")
+
+
+Parsing conversation:
+(0) Greg:I'm in 1st position.
+(1) Daniel:There are 2 people in front of me.
+(2) Ramone:I'm in 3rd position.
+(3) Daniel:There are 2 people behind me.
+Creating new trial with liar_index: 0 liar: Greg and num_people: 3
+Creating new trial with liar_index: 1 liar: Daniel and num_people: 3
+Creating new trial with liar_index: 2 liar: Ramone and num_people: 3
+Considering person_index 0: Greg (test_the_liar = false liar_index = 0)
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Daniel (test_the_liar = false)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Ramone (test_the_liar = false)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: Greg (test_the_liar = false liar_index = 0)
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Daniel (test_the_liar = false)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Ramone (test_the_liar = false)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Length of assignments: 3
+position None
+position = 2
+position = 3
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 3}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: Greg (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Greg (test_the_liar = false)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 1)
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Ramone (test_the_liar = false)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: Greg (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Greg (test_the_liar = false)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 1)
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Ramone (test_the_liar = false)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Length of assignments: 3
+position = 1
+position None
+position = 3
+is_consistent: set.len(): 2 num_people 3 consistent false set {1, 3}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Greg (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Greg (test_the_liar = false)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Daniel (test_the_liar = false)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 2)
+Considering person_index 0: Greg (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Greg (test_the_liar = false)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Daniel (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Daniel (test_the_liar = false)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Ramone (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 1
+position = 2
+position None
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 1}
+After is_contradictory(2): !other_lies false consistent: false
+Considering person_index 0: Greg (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Greg (test_the_liar = true)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 0)
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 0)
+Considering person_index 0: Greg (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Greg (test_the_liar = true)
+Person Greg claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 0)
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 1
+position None
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {1}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Greg (test_the_liar = true liar_index = 1)
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Daniel (test_the_liar = true)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 1)
+Considering person_index 0: Greg (test_the_liar = true liar_index = 1)
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Daniel (test_the_liar = true)
+Person Daniel claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Daniel claims reverse position: 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: true
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position = 2
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {2}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Greg (test_the_liar = true liar_index = 2)
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 2)
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Ramone (test_the_liar = true)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: Greg (test_the_liar = true liar_index = 2)
+Considering person_index 1: Daniel (test_the_liar = true liar_index = 2)
+Considering person_index 2: Ramone (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Ramone (test_the_liar = true)
+Person Ramone claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Length of assignments: 3
+position None
+position None
+position = 3
+is_consistent: set.len(): 1 num_people 3 consistent false set {3}
+After is_contradictory(2): !other_lies true consistent: false
+Mr. Wrong identified by solve2(): Daniel
+9 ==================== Test passed: actual value Some("Daniel") matches expected value Some("Daniel")
+
+
+Parsing conversation:
+(0) Frodo:I'm in 3rd position.
+(1) Gollum:I'm in 3rd position.
+(2) Sam:The man behind me is Frodo.
+(3) Gollum:The man behind me is Frodo.
+Creating new trial with liar_index: 0 liar: Frodo and num_people: 3
+Creating new trial with liar_index: 1 liar: Gollum and num_people: 3
+Creating new trial with liar_index: 2 liar: Sam and num_people: 3
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 0)
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Gollum (test_the_liar = false)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Sam (test_the_liar = false)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 0)
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Gollum (test_the_liar = false)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Sam (test_the_liar = false)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position = 3
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {3}
+After is_contradictory(0): !other_lies false consistent: false
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Frodo (test_the_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 1)
+Considering person_index 2: Sam (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Sam (test_the_liar = false)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Frodo (test_the_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 1)
+Considering person_index 2: Sam (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Sam (test_the_liar = false)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Length of assignments: 3
+position = 3
+position None
+position = 2
+is_consistent: set.len(): 2 num_people 3 consistent false set {2, 3}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Frodo (test_the_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Gollum (test_the_liar = false)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = false liar_index = 2)
+Considering person_index 0: Frodo (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Frodo (test_the_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Gollum (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Gollum (test_the_liar = false)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 3
+position = 3
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {3}
+After is_contradictory(2): !other_lies false consistent: false
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Frodo (test_the_liar = true)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 0)
+Considering person_index 2: Sam (test_the_liar = true liar_index = 0)
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Frodo (test_the_liar = true)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 0)
+Considering person_index 2: Sam (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position = 3
+position None
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {3}
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 1)
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Gollum (test_the_liar = true)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = true liar_index = 1)
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 1)
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Gollum (test_the_liar = true)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Gollum claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Sam (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: true
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position = 3
+position None
+is_consistent: set.len(): 1 num_people 3 consistent false set {3}
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 2)
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 2)
+Considering person_index 2: Sam (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Sam (test_the_liar = true)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Frodo (test_the_liar = true liar_index = 2)
+Considering person_index 1: Gollum (test_the_liar = true liar_index = 2)
+Considering person_index 2: Sam (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Sam (test_the_liar = true)
+Person Sam claims relative position: 1 relative to person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 3 consistent false set {}
+After is_contradictory(2): !other_lies true consistent: false
+Mr. Wrong identified by solve2(): Gollum
+10 ==================== Test passed: actual value Some("Gollum") matches expected value Some("Gollum")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.82s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>

@@ -189,7 +189,7 @@ impl Person<'_> {
 
 struct Trial {
     liar_index: usize,
-    num_people: usize,,
+    num_people: usize,
 }
 
 impl Trial  {
@@ -478,7 +478,7 @@ impl Assignment {
     }
 }
 
-fn is_consistent(assignements: &Vec<Assignment>, num_people: usize) -> bool {
+fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
     let mut set: HashSet<usize> = HashSet::new();
     // for assignment in assignments {
     //     if let Some(position) = assignment.position {
@@ -497,7 +497,7 @@ fn is_consistent(assignements: &Vec<Assignment>, num_people: usize) -> bool {
             }
         }
     }
-    let consistent = set.len() == self.num_people;
+    let consistent = set.len() == num_people;
     println!("is_consistent: set.len(): {} num_people {} consistent {} set {:?}",
         set.len(), num_people, consistent, set);
     return consistent;
