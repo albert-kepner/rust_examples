@@ -376,10 +376,14 @@ impl Trial  {
         // min other person_position = min this_person_position + 1
         if !changed {
 
-            let max_this: Option<&usize> = this_assignment.possible_positions.iter().max();
-            let max_other: Option<&usize> = other_assignment.possible_positions.iter().max();
-            let min_this: Option<&usize> = this_assignment.possible_positions.iter().min();
-            let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
+            // let max_this: Option<&usize> = this_assignment.possible_positions.iter().max();
+            // let max_other: Option<&usize> = other_assignment.possible_positions.iter().max();
+            // let min_this: Option<&usize> = this_assignment.possible_positions.iter().min();
+            // let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
+            let (max_this, 
+                max_other, 
+                min_this, 
+                min_other) = &self.get_ranges(&this_assignment, &other_assignment);
             let max_allowed: Option<usize> = if relative == 1 {
                 max_this.unwrap().checked_add(1)
             } else {
@@ -425,6 +429,14 @@ impl Trial  {
         }
 
         return (contradiction, changed);
+    }
+
+    fn get_ranges(&self, this_assignment: &Assignment, other_assignment: &Assignment) -> (Option<usize>, Option<usize>, Option<usize>, Option<usize>) {
+        let max_this: Option<&usize> = this_assignment.possible_positions.iter().max();
+        let max_other: Option<&usize> = other_assignment.possible_positions.iter().max();
+        let min_this: Option<&usize> = this_assignment.possible_positions.iter().min();
+        let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
+        return (max_this.copied(), max_other.copied(), min_this.copied(), min_other.copied());
     }
 }   
 
