@@ -486,6 +486,7 @@ fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
     //     }
     // }
     println!("Length of assignments: {}", assignments.len());
+    let mut undecided = 0;
     for assignment in assignments {
         match assignment.position {
             Some(position) => {
@@ -494,12 +495,15 @@ fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
             }
             None => {
                 println!("position None");
+                undecided += 1;
             }
         }
     }
-    let consistent = set.len() == num_people;
-    println!("is_consistent: set.len(): {} num_people {} consistent {} set {:?}",
-        set.len(), num_people, consistent, set);
+    // If all but one position is assigned, the last one can be inferred...
+    let consistent = set.len() == num_people  ||
+                (((set.len() + 1) == num_people) && (undecided == 1));
+    println!("is_consistent: set.len(): {} num_people {} consistent {} undecided {} set {:?}",
+        set.len(), num_people, consistent, undecided, set);
     return consistent;
 }
 
