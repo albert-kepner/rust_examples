@@ -110,7 +110,7 @@ impl<'a> State<'a> {
             }
             for trial in &self.trials {
                 let (other_lies, liar_lies) = trial.is_contradictory(&self, &test_the_liar);
-                if trial.is_consistent() {
+                if !other_lies && trial.is_consistent() {
                     return Some(self.person_names[trial.liar_index]);
                 }
                 if !other_lies {
@@ -204,7 +204,7 @@ impl Trial  {
         assignments
     }
     fn is_consistent(&self) -> bool {
-        let mut consistent = !other_lies;
+        let mut consistent = true;
         for assignment in &self.assignments {
             if assignment.position.is_none() {
                 consistent = false;
