@@ -533,7 +533,7 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
 
             // println!("Person: {} states there are {} people in front of them", name, count);
             let person_index = state.person_index(name);
-            state.add_statement(person_index, Statement::AbsPosition { position: count });
+            state.add_statement(person_index, Statement::AbsPosition { position: count+1 });
 
         } else if let Some(caps) = re3.captures(line) {
             let name = caps.get(1).unwrap().as_str();
