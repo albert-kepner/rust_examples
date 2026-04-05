@@ -5,6 +5,7 @@ fn main() {
 }
 
 use regex::Regex;
+use std::collections::HashSet;
 
 pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
     let blessed_names: Vec<&'a str> = bless_these_names(conversation);
@@ -203,15 +204,16 @@ impl Trial  {
         }
         assignments
     }
+    
     fn is_consistent(&self) -> bool {
         let mut consistent = true;
+        let mut set: HashSet<usize> = HashSet::new();
         for assignment in &self.assignments {
-            if assignment.position.is_none() {
-                consistent = false;
-                break;
+            if let Some(position) = assignment.position {
+                set.insert(position);
             }
         }
-        consistent
+        return set.len() == self.num_people;
     }
 
     fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool) {
