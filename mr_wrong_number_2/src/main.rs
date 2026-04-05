@@ -118,7 +118,7 @@ impl<'a> State<'a> {
                     possible_liar_indexes3.push(trial.liar_index);
                 }
                 if !test_the_liar && !other_lies {
-                    println!("Found lack of contradiction for others...")
+                    println!("Found lack of contradiction for others...");
                     possible_liar_indexes1.push(trial.liar_index);
                 }
                 if test_the_liar && liar_lies {
