@@ -214,7 +214,10 @@ impl Trial  {
                 set.insert(position);
             }
         }
-        return set.len() == self.num_people;
+        let consistent = set.len() == self.num_people;
+        println!("is_consistent: set.len(): {} self.num_people {} consistent {} set {:?}",
+            set.len(), self.num_people, consistent, set);
+        return consistent;
     }
 
     fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool) {
@@ -305,7 +308,7 @@ impl Trial  {
             } // End of loop to consider statements,
             println!("END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
             for assignment in &assignments {
-                println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
+                println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
             }
 
 
