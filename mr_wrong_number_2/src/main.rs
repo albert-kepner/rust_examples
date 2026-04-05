@@ -295,7 +295,7 @@ impl Trial  {
                             },
                         }
                         for assignment in &assignments {
-                            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
+                            println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
                         }
                     }
                 }
