@@ -328,6 +328,10 @@ impl Trial  {
                         other_assignment.possible_positions = vec![other_position];
                         changed = true;
                     }
+                } else { // position out of range (if zero)
+                    println!("Contradiction: relative postition: zero 0003");
+                    contradiction = true;
+                    return (contradiction, changed);
                 }
             
             }
@@ -348,22 +352,77 @@ impl Trial  {
                         this_assignment.possible_positions = vec![this_position];
                         changed = true;
                     }
+                } else { // position out of range (if zero)
+                    println!("Contradiction: relative postition: zero 0004");
+                    contradiction = true;
+                    return (contradiction, changed);
                 }
             }
  
 
  
-            // If this person is not the liar, then their statement is true, so we can
-            // constrain their position relative to the other person's position.
+        // If this person is not the liar, then their statement is true, so we can
+        // constrain their position relative to the other person's position.
 
-            // If relative is -1, then the other person is in front of this person.
-            // max other_person_position = max this_person_position - 1
-            // Further:
-            // min other person_position = min this_person_position - 1
-            // If relative is 1, then the other person is behind this person.
-            // max other_person_position = max this_person_position + 1
-            // Further:
-            // min other person_position = min this_person_position + 1
+        // If relative is -1, then the other person is in front of this person.
+        // max other_person_position = max this_person_position - 1
+        // Further:
+        // min other person_position = min this_person_position - 1
+
+
+        // If relative is 1, then the other person is behind this person.
+        // max other_person_position = max this_person_position + 1
+        // Further:
+        // min other person_position = min this_person_position + 1
+        if !changed {
+
+            let max_this = this_assignment.possible_positions.iter.max();
+            let max_other = other_assignment.possible_positions.iter.max();
+            let min_this = this_assignment.possible_positions.iter.min();
+            let min_other = other_assignment.possible_positions.iter.min();
+            let max_allowed = if relative == 1 {
+                max_this.safe_add(1)
+            } else {
+                max_this.safe_sub(1)
+            };
+            let min_allowed: () = if relative == 1 {
+                min_this.safe_add(1)
+            } else {
+                min_this.safe_sub(1)
+            };
+            match (max_allowed, max_other) {
+                (Some(allowed), Some(other)) => {
+                    if other > allowed {
+                        changed = true;
+                        other_assignment.possible_positions.retain(|&x| x <= allowed);
+                    }
+                }
+                _ => {
+                    println!("Contradiction relative max 001");
+                    contradiction = true;
+                    return (contradiction, changed);
+                }
+            }
+            match (min_allowed, min_other) {
+                (Some(allowed), Some(other)) => {
+                    if other < allowed {
+                        changed = true;
+                        other_assignment.possible_positions.retain(|&x| x >= allowed);
+                    }
+                }
+                _ => {
+                    println!("Contradiction relative min 001");
+                    contradiction = true;
+                    return (contradiction, changed);
+                }
+            }
+            if other_assignment.possible_positions.is_empty() {
+                println!("Contradiction relative empty 002");
+                contradiction = true;
+                return (contradiction, changed);
+            }
+
+        }
 
         return (contradiction, changed);
     }
