@@ -104,6 +104,7 @@ impl<'a> State<'a> {
         // Implement an alternative logic to solve the puzzle based on the collected statements.
         let mut possible_liar_indexes1: Vec<usize> = Vec::new();
         let mut possible_liar_indexes2: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes3: Vec<usize> = Vec::new();
         let mut test_the_liar: bool = false;
         for i in 0..2 {
             if i == 1 {
@@ -114,11 +115,7 @@ impl<'a> State<'a> {
                 println!("After is_contradictory({}): !other_lies {} consistent: {}", trial.liar_index, !other_lies, consistent);
                 if consistent && !test_the_liar {
                     println!("FOUND CONSISTENT CONFIGURATION ******************************************************************************************");
-                    return Some(self.person_names[trial.liar_index]);
-                }
-
-                if !other_lies && consistent {
-                    return Some(self.person_names[trial.liar_index]);
+                    possible_liar_indexes3.push(trial.liar_index);
                 }
                 if !other_lies {
                     possible_liar_indexes1.push(trial.liar_index);
@@ -129,7 +126,10 @@ impl<'a> State<'a> {
             }
         }
         // If statements are only consistent for one liar, we have the villian!
-        if possible_liar_indexes1.len() == 1 {
+        if possible_liar_indexes3.len() == 1 {
+            let index = possible_liar_indexes3[0];
+            return Some(self.person_names[index]);
+        } else if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
             return Some(self.person_names[index]);
         } else if possible_liar_indexes2.len() == 1 {
