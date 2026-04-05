@@ -376,23 +376,23 @@ impl Trial  {
         // min other person_position = min this_person_position + 1
         if !changed {
 
-            let max_this = this_assignment.possible_positions.iter.max();
-            let max_other = other_assignment.possible_positions.iter.max();
-            let min_this = this_assignment.possible_positions.iter.min();
-            let min_other = other_assignment.possible_positions.iter.min();
-            let max_allowed = if relative == 1 {
-                max_this.safe_add(1)
+            let max_this: Option<&usize> = this_assignment.possible_positions.iter().max();
+            let max_other: Option<&usize> = other_assignment.possible_positions.iter().max();
+            let min_this: Option<&usize> = this_assignment.possible_positions.iter().min();
+            let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
+            let max_allowed: Option<usize> = if relative == 1 {
+                max_this.unwrap().checked_add(1)
             } else {
-                max_this.safe_sub(1)
+                max_this.unwrap().checked_sub(1)
             };
-            let min_allowed: () = if relative == 1 {
-                min_this.safe_add(1)
+            let min_allowed: Option<usize> = if relative == 1 {
+                min_this.unwrap().checked_add(1)
             } else {
-                min_this.safe_sub(1)
+                min_this.unwrap().checked_sub(1)
             };
             match (max_allowed, max_other) {
                 (Some(allowed), Some(other)) => {
-                    if other > allowed {
+                    if *other > allowed {
                         changed = true;
                         other_assignment.possible_positions.retain(|&x| x <= allowed);
                     }
@@ -405,7 +405,7 @@ impl Trial  {
             }
             match (min_allowed, min_other) {
                 (Some(allowed), Some(other)) => {
-                    if other < allowed {
+                    if *other < allowed {
                         changed = true;
                         other_assignment.possible_positions.retain(|&x| x >= allowed);
                     }
