@@ -111,7 +111,9 @@ impl<'a> State<'a> {
             }
             for trial in &self.trials {
                 let (other_lies, liar_lies) = trial.is_contradictory(&self, &test_the_liar);
-                if !other_lies && trial.is_consistent() {
+                let consistent = trial.is_consistent();
+                println!("After is_contradictory({}): !other_lies {} consistent: {}", trial.liar_index, !other_lies, consistent);
+                if !other_lies && consistent {
                     return Some(self.person_names[trial.liar_index]);
                 }
                 if !other_lies {
@@ -204,9 +206,8 @@ impl Trial  {
         }
         assignments
     }
-    
+
     fn is_consistent(&self) -> bool {
-        let mut consistent = true;
         let mut set: HashSet<usize> = HashSet::new();
         for assignment in &self.assignments {
             if let Some(position) = assignment.position {
