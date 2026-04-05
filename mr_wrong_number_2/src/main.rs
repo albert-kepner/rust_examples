@@ -213,7 +213,7 @@ impl Trial  {
                 for person in &state.persons {
                     let person_index = person.index;
                     // Defer considering the hypothesized liar's staements, until after others.
-                    if test_the_liar == (person_index == self.liar_index) {
+                    if *test_the_liar == (person_index == self.liar_index) {
                         continue;
                     }
                     for statement in &person.statements {
@@ -223,7 +223,7 @@ impl Trial  {
                                 // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
                                 if !assignment.possible_positions.contains(position) {
                                     // If this claimed position is not possible for the Trial we have a contradiction
-                                    if test_the_liar {
+                                    if *test_the_liar {
                                         liar_lies = true;
                                     } else {
                                         other_lies = true;
@@ -239,7 +239,7 @@ impl Trial  {
                                 let position: usize = state.persons.len() - *from_end;
                                 if !assignment.possible_positions.contains(&position) {
                                     // If this claimed position is not possible for the Trial we have a contradiction
-                                    if test_the_liar {
+                                    if *test_the_liar {
                                         liar_lies = true;
                                     } else {
                                         other_lies = true;
@@ -262,7 +262,7 @@ impl Trial  {
                                     changed = true;
                                 }
                                 if contradiction {
-                                    if test_the_liar {
+                                    if *test_the_liar {
                                         liar_lies = true;
                                     } else {
                                         other_lies = true;
