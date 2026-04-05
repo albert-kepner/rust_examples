@@ -49,10 +49,13 @@ Person Tom claims absolute position: 1
 Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
+
 END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: true liar_lies: false
 Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
+
+
 Considering person_index 0: John (test_the_liar = false liar_index = 1)
 Considering statements of person_index 0: John (test_the_liar = false)
 Person John claims absolute position: 1
@@ -79,10 +82,13 @@ Person Tom claims absolute position: 1
 Assignment for person_index 0: possible_positions: [1]
 Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1]
+
 END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
 Assignment for person_index 0: possible_positions: [1]
 Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1]
+
+
 Considering person_index 0: John (test_the_liar = false liar_index = 2)
 Considering statements of person_index 0: John (test_the_liar = false)
 Person John claims absolute position: 1
@@ -117,10 +123,13 @@ Assignment for person_index 0: possible_positions: [1]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
 Considering person_index 2: Tom (test_the_liar = false liar_index = 2)
+
 END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: false liar_lies: false
 Assignment for person_index 0: possible_positions: [1]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
+
+==========================================================================================================================================================
 Considering person_index 0: John (test_the_liar = true liar_index = 0)
 Considering statements of person_index 0: John (test_the_liar = true)
 Person John claims absolute position: 1
@@ -137,10 +146,12 @@ Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1, 2, 3]
 Considering person_index 1: Peter (test_the_liar = true liar_index = 0)
 Considering person_index 2: Tom (test_the_liar = true liar_index = 0)
+
 END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
 Assignment for person_index 0: possible_positions: [1]
 Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1, 2, 3]
+
 Considering person_index 0: John (test_the_liar = true liar_index = 1)
 Considering person_index 1: Peter (test_the_liar = true liar_index = 1)
 Considering statements of person_index 1: Peter (test_the_liar = true)
@@ -165,10 +176,13 @@ Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
 Considering person_index 2: Tom (test_the_liar = true liar_index = 1)
+
 END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
 Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [2]
 Assignment for person_index 2: possible_positions: [3]
+
+
 Considering person_index 0: John (test_the_liar = true liar_index = 2)
 Considering person_index 1: Peter (test_the_liar = true liar_index = 2)
 Considering person_index 2: Tom (test_the_liar = true liar_index = 2)
@@ -185,10 +199,12 @@ Person Tom claims absolute position: 1
 Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1]
+
 END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
 Assignment for person_index 0: possible_positions: [1, 2, 3]
 Assignment for person_index 1: possible_positions: [1, 2, 3]
 Assignment for person_index 2: possible_positions: [1]
+
 No contradictions found, unable to identify Mr. Wrong.
 1 ******************* Warning: actual value None does not match expected value Some("Tom")
 
