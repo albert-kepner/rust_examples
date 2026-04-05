@@ -710,7 +710,7 @@ mod sample_tests {
         ),
     ];
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 2] = [
         (
             &[
                 "John:The man behind me is Peter.",
