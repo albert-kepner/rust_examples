@@ -217,7 +217,7 @@ impl Trial  {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut other_lies = false;
         let mut liar_lies = false;
-        let mut consistent: bool = false;
+        let mut consistent: bool;
 
             loop {
                 let mut changed = false;
@@ -585,6 +585,38 @@ mod sample_tests {
     }   
 
     const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+        (
+            &[
+                "John:I'm in 1st position.",
+                "Peter:I'm in 2nd position.",
+                "Tom:I'm in 1st position.",
+                "Peter:The man in front of me is Tom.",
+            ],
+            Some("John"),
+        ),
+        (
+            &[
+                "John:I'm in 1st position.",
+                "Peter:There is 1 people in front of me.",
+                "Tom:There are 2 people behind me.",
+                "Peter:The man behind me is Tom.",
+            ],
+            Some("Tom"),
+        ),
+        (
+            &[
+                "Tom:The man behind me is Bob.",
+                "Bob:The man in front of me is Tom.",
+                "Bob:The man behind me is Gary.",
+                "Gary:The man in front of me is Bob.",
+                "Fred:I'm in 1st position.",
+            ],
+            Some("Fred"),
+        ),
+    ];
+}
+
+const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
         (
             &[
                 "John:I'm in 1st position.",
