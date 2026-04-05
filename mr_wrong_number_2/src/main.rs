@@ -110,9 +110,13 @@ impl<'a> State<'a> {
                 test_the_liar = true;
             }
             for trial in &self.trials {
-                let (other_lies, liar_lies) = trial.is_contradictory(&self, &test_the_liar);
-                let consistent = trial.is_consistent();
+                let (other_lies, liar_lies, consistent) = trial.is_contradictory(&self, &test_the_liar);
                 println!("After is_contradictory({}): !other_lies {} consistent: {}", trial.liar_index, !other_lies, consistent);
+                if consistent && !test_the_liar {
+                    println!("FOUND CONSISTENT CONFIGURATION ******************************************************************************************");
+                    return Some(self.person_names[trial.liar_index]);
+                }
+
                 if !other_lies && consistent {
                     return Some(self.person_names[trial.liar_index]);
                 }
@@ -185,8 +189,7 @@ impl Person<'_> {
 
 struct Trial {
     liar_index: usize,
-    num_people: usize,
-    assignments: Vec<Assignment>,
+    num_people: usize,,
 }
 
 impl Trial  {
@@ -195,7 +198,6 @@ impl Trial  {
         Trial {
             liar_index,
             num_people,
-            assignments: Vec::new(),
         }
     }
 
@@ -207,36 +209,15 @@ impl Trial  {
         assignments
     }
 
-    fn is_consistent(&self) -> bool {
-        let mut set: HashSet<usize> = HashSet::new();
-        // for assignment in &self.assignments {
-        //     if let Some(position) = assignment.position {
-        //         set.insert(position);
-        //     }
-        // }
-        for assignment in &self.assignments {
-            match assignment.position {
-                Some(position) => {
-                    println!("position = {}", position);
-                    set.insert(position);
-                }
-                None => {
-                    println!("position None");
-                }
-            }
-        }
-        let consistent = set.len() == self.num_people;
-        println!("is_consistent: set.len(): {} self.num_people {} consistent {} set {:?}",
-            set.len(), self.num_people, consistent, set);
-        return consistent;
-    }
+    
 
-    fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool) {
+    fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool, bool) {
         // Implement logic to consider statements in the trial and determine if 
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut other_lies = false;
         let mut liar_lies = false;
+        let mut consistent: bool = false;
 
             loop {
                 let mut changed = false;
@@ -321,11 +302,9 @@ impl Trial  {
             for assignment in &assignments {
                 println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
             }
-
-
-
+            consistent = is_consistent(&assignments, self.num_people);
        
-        (other_lies, liar_lies)
+        (other_lies, liar_lies, consistent)
     }
 
     fn infer_relative(&self, 
@@ -497,6 +476,31 @@ impl Assignment {
             num_people,
         }
     }
+}
+
+fn is_consistent(assignements: &Vec<Assignment>, num_people: usize) -> bool {
+    let mut set: HashSet<usize> = HashSet::new();
+    // for assignment in assignments {
+    //     if let Some(position) = assignment.position {
+    //         set.insert(position);
+    //     }
+    // }
+    println!("Length of assignments: {}", assignments.len());
+    for assignment in assignments {
+        match assignment.position {
+            Some(position) => {
+                println!("position = {}", position);
+                set.insert(position);
+            }
+            None => {
+                println!("position None");
+            }
+        }
+    }
+    let consistent = set.len() == self.num_people;
+    println!("is_consistent: set.len(): {} num_people {} consistent {} set {:?}",
+        set.len(), num_people, consistent, set);
+    return consistent;
 }
 
 fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
