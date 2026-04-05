@@ -213,12 +213,18 @@ impl Trial  {
                 for person in &state.persons {
                     let person_index = person.index;
                     // Defer considering the hypothesized liar's staements, until after others.
-                    if *test_the_liar == (person_index == self.liar_index) {
+                    println!("Considering person_index {}: {} (test_the_liar = {} liar_index = {})", person_index, person.name, test_the_liar, self.liar_index);
+                    if *test_the_liar && (person_index != self.liar_index) {
                         continue;
                     }
+                    if !*test_the_liar && (person_index == self.liar_index) {
+                        continue;
+                    }
+                    println!("Considering statements of person_index {}: {} (test_the_liar = {})", person_index, person.name, test_the_liar);
                     for statement in &person.statements {
                         match statement {
                             Statement::AbsPosition { position } => {
+                                println!("Person {} claims absolute position: {}", person.name, position);
                                 let assignment = &mut assignments[person_index];
                                 // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
                                 if !assignment.possible_positions.contains(position) {
@@ -237,6 +243,7 @@ impl Trial  {
                             Statement::ReversePosition { from_end } => {
                                 let assignment = &mut assignments[person_index];
                                 let position: usize = state.persons.len() - *from_end;
+                                println!("Person {} claims reverse position: {}", person.name, position);
                                 if !assignment.possible_positions.contains(&position) {
                                     // If this claimed position is not possible for the Trial we have a contradiction
                                     if *test_the_liar {
@@ -251,6 +258,7 @@ impl Trial  {
                                 } 
                             },
                             Statement::RelPosition { relative, person_index } => {
+                                println!("Person {} claims relative position: {} relative to person_index {}", person.name, relative, person_index);
                                 let other_person_index = *person_index;
                                 let this_person_index = person.index;
                                 let (contradiction,  change_flag) = self.infer_relative(&mut assignments, 
@@ -270,13 +278,16 @@ impl Trial  {
                                 }
                             },
                         }
+                        for assignment in &assignments {
+                            println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
+                        }
                     }
                 }
                 if !changed {
                     break; // No changes made, stop the loop.
                 }
             } // End of loop to consider statements,
-            println!("Trial (test_the_liear = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
+            println!("END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
             for assignment in &assignments {
                 println!("Assignment for person_index {}: possible_positions: {:?}", assignment.person_index, assignment.possible_positions);
             }
@@ -465,9 +476,9 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
     let re3: Regex = Regex::new(r"^(\w+):There (?:is|are) (\d+) people? behind me.$").unwrap();
     let re4: Regex = Regex::new(r"^(\w+):The man (in front of|behind) me is (\w+).$").unwrap();
 
-
-    for (_index,line) in conversation.iter().enumerate() {
-        // println!("({}) {}", index, line);
+    println!("\n\nParsing conversation:");
+    for (index, line) in conversation.iter().enumerate() {
+        println!("({}) {}", index, line);
         if let Some(caps) = re1.captures(line) {
             let name = caps.get(1).unwrap().as_str();
             let position_str: &str = caps.get(2).unwrap().as_str();
