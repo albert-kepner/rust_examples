@@ -117,10 +117,12 @@ impl<'a> State<'a> {
                     println!("FOUND CONSISTENT CONFIGURATION ******************************************************************************************");
                     possible_liar_indexes3.push(trial.liar_index);
                 }
-                if !other_lies {
+                if !test_the_liar && !other_lies {
+                    println!("Found lack of contradiction for others...")
                     possible_liar_indexes1.push(trial.liar_index);
                 }
-                if liar_lies {
+                if test_the_liar && liar_lies {
+                    println!("Found contradiction by assumed liar.");
                     possible_liar_indexes2.push(trial.liar_index);
                 }
             }
@@ -128,12 +130,15 @@ impl<'a> State<'a> {
         // If statements are only consistent for one liar, we have the villian!
         if possible_liar_indexes3.len() == 1 {
             let index = possible_liar_indexes3[0];
+            println!("unique reason 3");
             return Some(self.person_names[index]);
         } else if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
+            println!("unique reason 1");
             return Some(self.person_names[index]);
         } else if possible_liar_indexes2.len() == 1 {
             let index = possible_liar_indexes2[0];
+            println!("unique reason 2");
             return Some(self.person_names[index]);
         }
         None
