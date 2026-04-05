@@ -588,7 +588,7 @@ mod sample_tests {
         }
     }   
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 3] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 3] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -620,7 +620,7 @@ mod sample_tests {
     ];
 
 
-const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
         (
             &[
                 "John:I'm in 1st position.",
