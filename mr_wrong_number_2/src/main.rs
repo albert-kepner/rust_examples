@@ -620,7 +620,7 @@ mod sample_tests {
     ];
 
 
-const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+    const _2_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -707,6 +707,28 @@ const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
                 "Gollum:The man behind me is Frodo.",
             ],
             Some("Gollum"),
+        ),
+    ];
+
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+        (
+            &[
+                "John:The man behind me is Peter.",
+                "Peter:There is 1 people in front of me.",
+                "Tom:There are 2 people behind me.",
+                "Peter:The man behind me is Tom.",
+            ],
+            None,
+        ),
+        (
+            &[
+                "Tom:The man behind me is Bob.",
+                "Bob:The man in front of me is Tom.",
+                "Bob:The man behind me is Gary.",
+                "Gary:The man in front of me is Bob.",
+                "Fred:I'm in 1st position.",
+            ],
+            Some("Fred"),
         ),
     ];
 }
