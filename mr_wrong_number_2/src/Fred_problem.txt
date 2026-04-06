@@ -1,0 +1,6 @@
+Parsing conversation:
+(0) Tom:The man behind me is Bob.
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.

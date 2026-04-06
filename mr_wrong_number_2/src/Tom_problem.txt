@@ -1,0 +1,5 @@
+Parsing conversation:
+(0) John:The man behind me is Peter.
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+(3) Peter:The man behind me is Tom.
