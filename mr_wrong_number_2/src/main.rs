@@ -354,9 +354,9 @@ impl Trial  {
                                 }
                             },
                         }
-                        for assignment in &assignments {
-                            println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
-                        }
+                        // for assignment in &assignments {
+                        //     println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
+                        // }
                     }
                 }
                 // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
@@ -376,9 +376,9 @@ impl Trial  {
                 }
             } // End of loop to consider statements,
             println!("END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
-            for assignment in &assignments {
-                println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
-            }
+            // for assignment in &assignments {
+            //     println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
+            // }
             consistent = !test_the_liar && !other_lies && is_consistent(&assignments, self.num_people);
        
         (other_lies, liar_lies, consistent)
@@ -482,14 +482,30 @@ impl Trial  {
                 min_this, 
                 min_other) = &self.get_ranges(&this_assignment, &other_assignment);
             let max_allowed: Option<usize> = if relative == 1 {
-                max_this.unwrap().checked_add(1)
+                 if let Some(_) = max_this { 
+                    max_this.unwrap().checked_add(1)
+                 } else {
+                    None
+                 }
             } else {
-                max_this.unwrap().checked_sub(1)
+                if let Some(_) = max_this { 
+                    max_this.unwrap().checked_sub(1)
+                } else {
+                    None
+                }
             };
             let min_allowed: Option<usize> = if relative == 1 {
-                min_this.unwrap().checked_add(1)
+                if let Some(_) = min_this { 
+                    min_this.unwrap().checked_add(1)
+                } else {
+                    None
+                }
             } else {
-                min_this.unwrap().checked_sub(1)
+                if let Some(_) = min_this { 
+                    min_this.unwrap().checked_sub(1)
+                } else {
+                    None
+                }
             };
             match (max_allowed, max_other) {
                 (Some(allowed), Some(other)) => {
@@ -734,7 +750,7 @@ mod sample_tests {
     ];
 
 
-    const _2_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -824,7 +840,7 @@ mod sample_tests {
         ),
     ];
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 2] = [
+    const _2_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 2] = [
         (
             &[
                 "John:The man behind me is Peter.",
