@@ -5,7 +5,7 @@ fn main() {
 }
 
 use regex::Regex;
-use std::collections::HashSet;
+use std::{collections::HashSet};
 
 pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
     let blessed_names: Vec<&'a str> = bless_these_names(conversation);
@@ -140,6 +140,66 @@ impl<'a> State<'a> {
             let index = possible_liar_indexes2[0];
             println!("unique reason 2");
             return Some(self.person_names[index]);
+        } else {
+            if let Some(person_index) = self.exclude_supporting_pairs() {
+                println!("unique reason 4");
+                return Some(self.person_names[person_index]);
+            }
+        }
+        None
+    }
+
+    fn exclude_supporting_pairs(&self) -> Option<usize> {
+        let mut after_pairs: Vec<(usize,usize)> = Vec::new();
+        let mut before_pairs: Vec<(usize,usize)> = Vec::new();
+        let mut person_indexes: HashSet<usize> = (0..self.persons.len()).collect();
+        for person in &self.persons {
+            for statement in &person.statements {
+                match statement {
+                    Statement::RelPosition { relative, person_index } => {
+                        if *relative == -1 {
+                            before_pairs.push((person.index, *person_index));
+                        } else if *relative == 1 {
+                            // put after_pairs in reverse order so they can be matched directly with before pairs.
+                            after_pairs.push((*person_index, person.index))
+                        }
+                    },
+                    _ => {
+                        // noop, ignore
+                    }
+                }
+            }
+        }
+        println!("before_pairs:");
+        for pair in &before_pairs {
+            println!("{:?}", pair);
+        }
+        println!("after_pairs:");
+        for pair in &after_pairs {
+            println!("{:?}", pair);
+        }
+        println!("person_indexes before:");
+        for index in &person_indexes {
+            println!("{:?}", index);
+        }
+        for pair in before_pairs {
+            // When before_pair matches after_pair we have
+            // two persons who mutually support each other's positions.
+            // Since only the liar lies, each two such persons cannot be the liar.
+            if after_pairs.contains(&pair) {
+                person_indexes.remove(&pair.0);
+                person_indexes.remove(&pair.1);
+            }
+        }
+        println!("person_indexes after:");
+        for index in &person_indexes {
+            println!("{:?}", index);
+        }
+        // If exactly one person is not covered by supporting pairs,
+        // that person must be the liar.
+        if person_indexes.len() == 1 {
+            let liar_index = *person_indexes.iter().next().unwrap();
+            return Some(liar_index);
         }
         None
     }
@@ -299,6 +359,18 @@ impl Trial  {
                         }
                     }
                 }
+                // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
+                let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
+                let (new_change, new_contradiction) = propagate_assignments(&exact_assignments, &mut assignments);
+                changed = changed || new_change;
+                if new_contradiction {
+                    if *test_the_liar {
+                        liar_lies = true;
+                    } else {
+                        other_lies = true;
+                    }
+                }
+
                 if !changed {
                     break; // No changes made, stop the loop.
                 }
@@ -463,7 +535,44 @@ impl Trial  {
         let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
         return (max_this.copied(), max_other.copied(), min_this.copied(), min_other.copied());
     }
-}   
+}  
+
+// let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
+fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize,usize)> {
+    let mut exact_assignments: Vec<(usize, usize)> = Vec::new();
+    for (index , assignment) in assignments.iter().enumerate() {
+        if let Some(position) = assignment.position {
+            exact_assignments.push((index, position));
+        }
+    }
+    exact_assignments
+}
+
+// let (new_change: bool, new_contradiction: bool) = propagate_assignments(&exact_assignments, &mut assignments);
+fn propagate_assignments(exact_assignments: &Vec<(usize,usize)>, assignments: &mut Vec<Assignment>) -> (bool, bool) {
+    let mut change: bool = false;
+    let mut contradiction: bool = false;
+    for (index, position) in exact_assignments {
+        for index2 in 0..assignments.len() {
+
+            if *index != index2 {
+                let len_before: usize = assignments[index2].possible_positions.len();
+                assignments[index2].possible_positions.retain(|&x| x != *position);
+                let len_after: usize = assignments[index2].possible_positions.len();
+                if len_after != len_before {
+                    change = true;
+                }
+                if len_after == 1 {
+                    assignments[index2].position = Some(assignments[index2].possible_positions[0]);
+                }
+                if len_after == 0 {
+                    contradiction = true;
+                }
+            }
+        }
+    }
+    return (change, contradiction);
+}
 
 struct Assignment {
     position: Option<usize>,
