@@ -354,9 +354,9 @@ impl Trial  {
                                 }
                             },
                         }
-                        // for assignment in &assignments {
-                        //     println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
-                        // }
+                        for assignment in &assignments {
+                            println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
+                        }
                     }
                 }
                 // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
@@ -481,6 +481,7 @@ impl Trial  {
                 max_other, 
                 min_this, 
                 min_other) = &self.get_ranges(&this_assignment, &other_assignment);
+            // max_allowed (other)
             let max_allowed: Option<usize> = if relative == 1 {
                  if let Some(_) = max_this { 
                     max_this.unwrap().checked_add(1)
@@ -494,6 +495,7 @@ impl Trial  {
                     None
                 }
             };
+            // min_allowed (other)
             let min_allowed: Option<usize> = if relative == 1 {
                 if let Some(_) = min_this { 
                     min_this.unwrap().checked_add(1)
@@ -549,7 +551,9 @@ impl Trial  {
         let max_other: Option<&usize> = other_assignment.possible_positions.iter().max();
         let min_this: Option<&usize> = this_assignment.possible_positions.iter().min();
         let min_other: Option<&usize> = other_assignment.possible_positions.iter().min();
-        return (max_this.copied(), max_other.copied(), min_this.copied(), min_other.copied());
+        let ranges = (max_this.copied(), max_other.copied(), min_this.copied(), min_other.copied());
+        println!("---> ranges = {:?}", ranges);
+        ranges
     }
 }  
 

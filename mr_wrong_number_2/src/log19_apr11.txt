@@ -1,0 +1,180 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.68s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+
+
+Parsing conversation:
+(0) Hauejr:The man behind me is Apeiyb.
+(1) Apeiyb:The man in front of me is Fbuye.
+(2) Fbuye:The man behind me is Hauejr.
+(3) Apeiyb:The man behind me is Hauejr.
+Creating new trial with liar_index: 0 liar: Hauejr and num_people: 3
+Creating new trial with liar_index: 1 liar: Apeiyb and num_people: 3
+Creating new trial with liar_index: 2 liar: Fbuye and num_people: 3
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 0)
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Apeiyb (test_the_liar = false)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Fbuye (test_the_liar = false)
+Person Fbuye claims relative position: 1 relative to person_index 0
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 0)
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 0)
+Considering statements of person_index 1: Apeiyb (test_the_liar = false)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 0)
+Considering statements of person_index 2: Fbuye (test_the_liar = false)
+Person Fbuye claims relative position: 1 relative to person_index 0
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Length of assignments: 3
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 3 consistent false undecided 3 set {}
+After is_contradictory(0): !other_lies true consistent: false
+Found lack of contradiction for others...
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 1)
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Fbuye (test_the_liar = false)
+Person Fbuye claims relative position: 1 relative to person_index 0
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 1)
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Fbuye (test_the_liar = false)
+Person Fbuye claims relative position: 1 relative to person_index 0
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 1)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 1)
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 1)
+Considering statements of person_index 2: Fbuye (test_the_liar = false)
+Person Fbuye claims relative position: 1 relative to person_index 0
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Length of assignments: 3
+position None
+position None
+position None
+is_consistent: set.len(): 0 num_people 3 consistent false undecided 3 set {}
+After is_contradictory(1): !other_lies true consistent: false
+Found lack of contradiction for others...
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Apeiyb (test_the_liar = false)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 2)
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Contradiction relative empty 002
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Apeiyb (test_the_liar = false)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Contradiction relative max 001
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Contradiction relative max 001
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 2)
+Considering person_index 0: Hauejr (test_the_liar = false liar_index = 2)
+Considering statements of person_index 0: Hauejr (test_the_liar = false)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Contradiction relative max 001
+Considering person_index 1: Apeiyb (test_the_liar = false liar_index = 2)
+Considering statements of person_index 1: Apeiyb (test_the_liar = false)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Contradiction relative max 001
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Contradiction relative max 001
+Considering person_index 2: Fbuye (test_the_liar = false liar_index = 2)
+END LOOP ****** Trial (test_the_liar = false) with liar_index: 2 other_lies: true liar_lies: false
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+After is_contradictory(2): !other_lies false consistent: false
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Hauejr (test_the_liar = true)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 0)
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 0)
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 0)
+Considering statements of person_index 0: Hauejr (test_the_liar = true)
+Person Hauejr claims relative position: 1 relative to person_index 1
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 0)
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 0)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 0 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+After is_contradictory(0): !other_lies true consistent: false
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 1)
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Apeiyb (test_the_liar = true)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 1)
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 1)
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 1)
+Considering statements of person_index 1: Apeiyb (test_the_liar = true)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+Person Apeiyb claims relative position: 1 relative to person_index 0
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 1)
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 1 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+After is_contradictory(1): !other_lies true consistent: false
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 2)
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 2)
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Fbuye (test_the_liar = true)
+Person Fbuye claims relative position: 1 relative to person_index 0
+Considering person_index 0: Hauejr (test_the_liar = true liar_index = 2)
+Considering person_index 1: Apeiyb (test_the_liar = true liar_index = 2)
+Considering person_index 2: Fbuye (test_the_liar = true liar_index = 2)
+Considering statements of person_index 2: Fbuye (test_the_liar = true)
+Person Fbuye claims relative position: 1 relative to person_index 0
+END LOOP ****** Trial (test_the_liar = true) with liar_index: 2 other_lies: false liar_lies: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+After is_contradictory(2): !other_lies true consistent: false
+before_pairs:
+(1, 2)
+after_pairs:
+(1, 0)
+(0, 1)
+(0, 2)
+person_indexes before:
+1
+0
+2
+person_indexes after:
+1
+0
+2
+No contradictions found, unable to identify Mr. Wrong.
+1 ******************* Warning: actual value None does not match expected value Some("Apeiyb")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>
