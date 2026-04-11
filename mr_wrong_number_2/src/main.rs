@@ -376,9 +376,9 @@ impl Trial  {
                 }
             } // End of loop to consider statements,
             println!("END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}", test_the_liar, self.liar_index, other_lies, liar_lies);
-            // for assignment in &assignments {
-            //     println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
-            // }
+            for assignment in &assignments {
+                println!("Assignment for person_index {}: possible_positions: {:?} position = {:?}", assignment.person_index, assignment.possible_positions, assignment.position);
+            }
             consistent = !test_the_liar && !other_lies && is_consistent(&assignments, self.num_people);
        
         (other_lies, liar_lies, consistent)
@@ -703,7 +703,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES {
+        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -718,7 +718,7 @@ mod sample_tests {
         }
     }   
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 3] = [
+    const _1_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 3] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -750,7 +750,7 @@ mod sample_tests {
     ];
 
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -859,6 +859,31 @@ mod sample_tests {
                 "Fred:I'm in 1st position.",
             ],
             Some("Fred"),
+        ),
+    ];
+    /***
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Apeiyb")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Hauejr:The man behind me is Apeiyb.",
+    "Apeiyb:The man in front of me is Fbuye.",
+    "Fbuye:The man behind me is Hauejr.",
+    "Apeiyb:The man behind me is Hauejr.",
+] 
+     */
+    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [
+        (
+            &[
+                "Hauejr:The man behind me is Apeiyb.",
+                "Apeiyb:The man in front of me is Fbuye.",
+                "Fbuye:The man behind me is Hauejr.",
+                "Apeiyb:The man behind me is Hauejr.",
+            ],
+            Some("Apeiyb"), 
         ),
     ];
 }
