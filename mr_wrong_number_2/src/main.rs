@@ -759,6 +759,7 @@ impl Assignment {
 fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
     let mut set: HashSet<usize> = HashSet::new();
     let mut undecided = 0;
+    let verbose: bool = false;
     for assignment in assignments {
         match assignment.position {
             Some(position) => {
@@ -772,14 +773,16 @@ fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
     // If all but one position is assigned, the last one can be inferred...
     let consistent =
         set.len() == num_people || (((set.len() + 1) == num_people) && (undecided == 1));
-    println!(
-        "is_consistent: set.len(): {} num_people {} consistent {} undecided {} set {:?}",
-        set.len(),
-        num_people,
-        consistent,
-        undecided,
-        set
-    );
+    if verbose {
+        println!(
+            "is_consistent: set.len(): {} num_people {} consistent {} undecided {} set {:?}",
+            set.len(),
+            num_people,
+            consistent,
+            undecided,
+            set
+        );
+    }
     return consistent;
 }
 
