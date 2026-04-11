@@ -429,11 +429,11 @@ impl Trial {
                 break; // No changes made, stop the loop.
             }
         } // End of loop to consider statements,
+        if verbose {
         println!(
             "END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}",
             test_the_liar, self.liar_index, other_lies, liar_lies
         );
-        if verbose {
             for assignment in &assignments {
                 println!(
                     "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
@@ -682,7 +682,7 @@ impl Trial {
             min_this.copied(),
             min_other.copied(),
         );
-        println!("---> ranges = {:?}", ranges);
+        // println!("---> ranges = {:?}", ranges);
         ranges
     }
 }
@@ -748,21 +748,13 @@ impl Assignment {
 
 fn is_consistent(assignments: &Vec<Assignment>, num_people: usize) -> bool {
     let mut set: HashSet<usize> = HashSet::new();
-    // for assignment in assignments {
-    //     if let Some(position) = assignment.position {
-    //         set.insert(position);
-    //     }
-    // }
-    println!("Length of assignments: {}", assignments.len());
     let mut undecided = 0;
     for assignment in assignments {
         match assignment.position {
             Some(position) => {
-                println!("position = {}", position);
                 set.insert(position);
             }
             None => {
-                println!("position None");
                 undecided += 1;
             }
         }
