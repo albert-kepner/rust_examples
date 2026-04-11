@@ -299,27 +299,32 @@ impl Trial {
         let mut other_lies = false;
         let mut liar_lies = false;
         let consistent: bool;
+        let verbose: bool = false;
 
         loop {
             let mut changed = false;
             for person in &state.persons {
                 let person_index = person.index;
                 // Defer considering the hypothesized liar's staements, until after others.
-                println!(
-                    "Considering person_index {}: {} (test_the_liar = {} liar_index = {})",
-                    person_index, person.name, test_the_liar, self.liar_index
-                );
+                if verbose {
+                    println!(
+                        "Considering person_index {}: {} (test_the_liar = {} liar_index = {})",
+                        person_index, person.name, test_the_liar, self.liar_index
+                    );
+                }
                 if *test_the_liar && (person_index != self.liar_index) {
                     continue;
                 }
                 if !*test_the_liar && (person_index == self.liar_index) {
                     continue;
                 }
-                println!(
-                    "Considering statements of person_index {}: {} (test_the_liar = {})",
-                    person_index, person.name, test_the_liar
-                );
-                for statement in &person.statements {
+                if verbose {
+                    println!(
+                        "Considering statements of person_index {}: {} (test_the_liar = {})",
+                        person_index, person.name, test_the_liar
+                    );
+                }
+                 for statement in &person.statements {
                     match statement {
                         Statement::AbsPosition { position } => {
                             println!(
@@ -389,13 +394,15 @@ impl Trial {
                             }
                         }
                     }
-                    for assignment in &assignments {
-                        println!(
-                            "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
-                            assignment.person_index,
-                            assignment.possible_positions,
-                            assignment.position
-                        );
+                    if verbose {
+                        for assignment in &assignments {
+                            println!(
+                                "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
+                                assignment.person_index,
+                                assignment.possible_positions,
+                                assignment.position
+                            );
+                        }    
                     }
                 }
             }
@@ -420,12 +427,15 @@ impl Trial {
             "END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}",
             test_the_liar, self.liar_index, other_lies, liar_lies
         );
-        for assignment in &assignments {
-            println!(
-                "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
-                assignment.person_index, assignment.possible_positions, assignment.position
-            );
+        if verbose {
+            for assignment in &assignments {
+                println!(
+                    "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
+                    assignment.person_index, assignment.possible_positions, assignment.position
+                );
+            }
         }
+
         consistent = !test_the_liar && !other_lies && is_consistent(&assignments, self.num_people);
 
         (other_lies, liar_lies, consistent)
@@ -841,7 +851,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
+        for (conversation, _expected) in SAMPLE_TEST_CASES {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -893,7 +903,7 @@ mod sample_tests {
         ),
     ];
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 10] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 11] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -981,29 +991,32 @@ mod sample_tests {
             ],
             Some("Gollum"),
         ),
+        (
+            &[
+                "Hauejr:The man behind me is Apeiyb.",
+                "Apeiyb:The man in front of me is Fbuye.",
+                "Fbuye:The man behind me is Hauejr.",
+                "Apeiyb:The man behind me is Hauejr.",
+            ],
+            Some("Apeiyb"),
+        )
     ];
 
-    const _2_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 2] = [
-        (
-            &[
-                "John:The man behind me is Peter.",
-                "Peter:There is 1 people in front of me.",
-                "Tom:There are 2 people behind me.",
-                "Peter:The man behind me is Tom.",
-            ],
-            None,
-        ),
-        (
-            &[
-                "Tom:The man behind me is Bob.",
-                "Bob:The man in front of me is Tom.",
-                "Bob:The man behind me is Gary.",
-                "Gary:The man in front of me is Bob.",
-                "Fred:I'm in 1st position.",
-            ],
-            Some("Fred"),
-        ),
-    ];
+    /***
+    No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+     */
+
     /***
     No contradictions found, unable to identify Mr. Wrong.
     assertion failed: `(left == right)`
@@ -1020,11 +1033,11 @@ mod sample_tests {
          */
     const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [(
         &[
-            "Hauejr:The man behind me is Apeiyb.",
-            "Apeiyb:The man in front of me is Fbuye.",
-            "Fbuye:The man behind me is Hauejr.",
-            "Apeiyb:The man behind me is Hauejr.",
+           "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
         ],
-        Some("Apeiyb"),
+        Some("Pamqaabuj"),
     )];
 }
