@@ -327,10 +327,12 @@ impl Trial {
                 for statement in &person.statements {
                     match statement {
                         Statement::AbsPosition { position } => {
-                            println!(
-                                "Person {} claims absolute position: {}",
-                                person.name, position
-                            );
+                            if verbose {
+                                println!(
+                                    "Person {} claims absolute position: {}",
+                                    person.name, position
+                                );    
+                            }
                             let assignment = &mut assignments[person_index];
                             // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
                             if !assignment.possible_positions.contains(position) {
@@ -349,10 +351,12 @@ impl Trial {
                         Statement::ReversePosition { from_end } => {
                             let assignment = &mut assignments[person_index];
                             let position: usize = state.persons.len() - *from_end;
-                            println!(
-                                "Person {} claims reverse position: {}",
-                                person.name, position
-                            );
+                            if verbose {
+                                println!(
+                                    "Person {} claims reverse position: {}",
+                                    person.name, position
+                                );
+                            }
                             if !assignment.possible_positions.contains(&position) {
                                 // If this claimed position is not possible for the Trial we have a contradiction
                                 if *test_the_liar {
@@ -370,10 +374,12 @@ impl Trial {
                             relative,
                             person_index,
                         } => {
-                            println!(
-                                "Person {} claims relative position: {} relative to person_index {}",
-                                person.name, relative, person_index
-                            );
+                            if verbose {
+                                println!(
+                                    "Person {} claims relative position: {} relative to person_index {}",
+                                    person.name, relative, person_index
+                                );
+                            }
                             let other_person_index = *person_index;
                             let this_person_index = person.index;
                             let (contradiction, change_flag) = self.infer_relative(
