@@ -105,6 +105,7 @@ impl<'a> State<'a> {
         let mut possible_liar_indexes2: Vec<usize> = Vec::new();
         let mut possible_liar_indexes3: Vec<usize> = Vec::new();
         let mut test_the_liar: bool = false;
+        let verbose: bool = false;
         for i in 0..2 {
             if i == 1 {
                 test_the_liar = true;
@@ -112,22 +113,31 @@ impl<'a> State<'a> {
             for trial in &self.trials {
                 let (other_lies, liar_lies, consistent) =
                     trial.is_contradictory(&self, &test_the_liar);
-                println!(
-                    "After is_contradictory({}): !other_lies {} consistent: {}",
-                    trial.liar_index, !other_lies, consistent
-                );
+                    if verbose {
+                        println!(
+                            "After is_contradictory({}): !other_lies {} consistent: {}",
+                            trial.liar_index, !other_lies, consistent
+                        );
+                    }
+                
                 if consistent && !test_the_liar {
-                    println!(
-                        "FOUND CONSISTENT CONFIGURATION ******************************************************************************************"
-                    );
+                    if verbose {
+                        println!(
+                            "FOUND CONSISTENT CONFIGURATION ******************************************************************************************"
+                        );
+                    }
                     possible_liar_indexes3.push(trial.liar_index);
                 }
                 if !test_the_liar && !other_lies {
-                    println!("Found lack of contradiction for others...");
+                    if verbose {
+                        println!("Found lack of contradiction for others...");
+                    }
                     possible_liar_indexes1.push(trial.liar_index);
                 }
                 if test_the_liar && liar_lies {
-                    println!("Found contradiction by assumed liar.");
+                    if verbose {
+                        println!("Found contradiction by assumed liar.");
+                    }
                     possible_liar_indexes2.push(trial.liar_index);
                 }
             }
