@@ -168,6 +168,7 @@ impl<'a> State<'a> {
         let mut after_pairs: Vec<(usize, usize)> = Vec::new();
         let mut before_pairs: Vec<(usize, usize)> = Vec::new();
         let mut person_indexes: HashSet<usize> = (0..self.persons.len()).collect();
+        let verbose: bool = false;
         for person in &self.persons {
             for statement in &person.statements {
                 match statement {
@@ -188,17 +189,19 @@ impl<'a> State<'a> {
                 }
             }
         }
-        println!("before_pairs:");
-        for pair in &before_pairs {
-            println!("{:?}", pair);
-        }
-        println!("after_pairs:");
-        for pair in &after_pairs {
-            println!("{:?}", pair);
-        }
-        println!("person_indexes before:");
-        for index in &person_indexes {
-            println!("{:?}", index);
+        if verbose {
+            println!("before_pairs:");
+            for pair in &before_pairs {
+                println!("{:?}", pair);
+            }
+            println!("after_pairs:");
+            for pair in &after_pairs {
+                println!("{:?}", pair);
+            }
+            println!("person_indexes before:");
+            for index in &person_indexes {
+                println!("{:?}", index);
+            }
         }
         for pair in before_pairs {
             // When before_pair matches after_pair we have
@@ -209,12 +212,15 @@ impl<'a> State<'a> {
                 person_indexes.remove(&pair.1);
             }
         }
-        println!("person_indexes after:");
-        for index in &person_indexes {
-            println!("{:?}", index);
+        if verbose {
+            println!("person_indexes after excluding supporting pairs:");
+            for index in &person_indexes {
+                println!("{:?}", index);
+            }
         }
         // If exactly one person is not covered by supporting pairs,
         // that person must be the liar.
+        println!("exclude_supporting_pairs: persons: {} possible_liars: {}", self.persons.len(), person_indexes.len());
         if person_indexes.len() == 1 {
             let liar_index = *person_indexes.iter().next().unwrap();
             return Some(liar_index);
@@ -284,10 +290,13 @@ struct Trial {
 
 impl Trial {
     fn new(liar_index: usize, num_people: usize, person_name: &str) -> Self {
-        println!(
-            "Creating new trial with liar_index: {} liar: {} and num_people: {}",
-            liar_index, person_name, num_people
-        );
+        let verbose: bool = false;
+        if verbose {
+            println!(
+                "Creating new trial with liar_index: {} liar: {} and num_people: {}",
+                liar_index, person_name, num_people
+            );
+        }
         Trial {
             liar_index,
             num_people,
@@ -793,9 +802,9 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
     let re3: Regex = Regex::new(r"^(\w+):There (?:is|are) (\d+) people? behind me.$").unwrap();
     let re4: Regex = Regex::new(r"^(\w+):The man (in front of|behind) me is (\w+).$").unwrap();
 
-    println!("\n\nParsing conversation:");
-    for (index, line) in conversation.iter().enumerate() {
-        println!("({}) {}", index, line);
+    // println!("\n\nParsing conversation:");
+    for (_index, line) in conversation.iter().enumerate() {
+        // println!("({}) {}", index, line);
         if let Some(caps) = re1.captures(line) {
             let name = caps.get(1).unwrap().as_str();
             let position_str: &str = caps.get(2).unwrap().as_str();

@@ -1,0 +1,2894 @@
+Time: 5747ms Passed: 0Failed: 6Exit Code: 101
+Test Results:
+tests::_1_fixed_tests
+Log
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:I'm in 2nd position.
+(2) Tom:I'm in 1st position.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): Tom
+
+
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:I'm in 2nd position.
+(2) Tom:I'm in 1st position.
+(3) Peter:The man in front of me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): John
+
+
+Parsing conversation:
+(0) John:I'm in 1st position.
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): Tom
+
+
+Parsing conversation:
+(0) John:The man behind me is Peter.
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+(3) Peter:The man behind me is Tom.
+Creating new trial with liar_index: 0 liar: John and num_people: 3
+Creating new trial with liar_index: 1 liar: Peter and num_people: 3
+Creating new trial with liar_index: 2 liar: Tom and num_people: 3
+before_pairs:
+after_pairs:
+(1, 0)
+(2, 1)
+person_indexes before:
+0
+2
+1
+person_indexes after:
+0
+2
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Dowfls:There is 0 people behind me.
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+(7) Tzjlvruhk:There are 2 people in front of me.
+Creating new trial with liar_index: 0 liar: Dowfls and num_people: 4
+Creating new trial with liar_index: 1 liar: Ljiyxbmr and num_people: 4
+Creating new trial with liar_index: 2 liar: Cvvugb and num_people: 4
+Creating new trial with liar_index: 3 liar: Tzjlvruhk and num_people: 4
+before_pairs:
+after_pairs:
+(0, 3)
+person_indexes before:
+2
+1
+3
+0
+person_indexes after:
+2
+1
+3
+0
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Fixsq:The man in front of me is Tnsrs.
+(1) Pktj:The man in front of me is Tnsrs.
+(2) Irnanfww:I'm in 6th position.
+(3) Irnanfww:There are 5 people in front of me.
+(4) Zfgderkbm:There are 0 people in front of me.
+(5) Vhayfjd:There are 4 people in front of me.
+(6) Tnsrs:There is 1 people in front of me.
+(7) Vhayfjd:I'm in 5th position.
+(8) Zfgderkbm:There are 5 people behind me.
+(9) Pktj:There are 2 people in front of me.
+(10) Tnsrs:The man in front of me is Zfgderkbm.
+(11) Fixsq:The man behind me is Tnsrs.
+Mr. Wrong identified by solve(): Fixsq
+
+
+Parsing conversation:
+(0) Jbnxqpisg:The man in front of me is Mavmynesz.
+(1) Jbnxqpisg:The man behind me is Noup.
+(2) Mavmynesz:The man in front of me is Jbnxqpisg.
+(3) Mavmynesz:The man behind me is Noup.
+(4) Noup:I'm in 3rd position.
+(5) Noup:The man in front of me is Jbnxqpisg.
+Creating new trial with liar_index: 0 liar: Jbnxqpisg and num_people: 3
+Creating new trial with liar_index: 1 liar: Mavmynesz and num_people: 3
+Creating new trial with liar_index: 2 liar: Noup and num_people: 3
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Mavmynesz
+
+
+Parsing conversation:
+(0) Clty:I'm in 1st position.
+(1) Clty:There are 0 people in front of me.
+(2) Nymiyudwu:The man in front of me is Ypzoncwc.
+(3) Nymiyudwu:The man behind me is Wtkdw.
+(4) Wtkdw:The man in front of me is Ypzoncwc.
+(5) Wtkdw:There are 0 people behind me.
+(6) Ypzoncwc:I'm in 3rd position.
+(7) Ypzoncwc:The man behind me is Wtkdw.
+Creating new trial with liar_index: 0 liar: Clty and num_people: 4
+Creating new trial with liar_index: 1 liar: Nymiyudwu and num_people: 4
+Creating new trial with liar_index: 2 liar: Ypzoncwc and num_people: 4
+Creating new trial with liar_index: 3 liar: Wtkdw and num_people: 4
+unique reason 3
+Mr. Wrong identified by solve2(): Nymiyudwu
+
+
+Parsing conversation:
+(0) Bcdvt:The man in front of me is Fhnb.
+(1) Bcdvt:The man behind me is Ofulabc.
+(2) Ewryjljj:There are 4 people behind me.
+(3) Ewryjljj:I'm in 3rd position.
+(4) Fhnb:The man behind me is Bcdvt.
+(5) Fhnb:There are 3 people behind me.
+(6) Iycbhshv:There are 6 people in front of me.
+(7) Iycbhshv:I'm in 7th position.
+(8) Ofulabc:The man behind me is Iycbhshv.
+(9) Ofulabc:The man in front of me is Bcdvt.
+(10) Rhwrubvz:There are 0 people in front of me.
+(11) Rhwrubvz:There is 1 people behind me.
+(12) Yaxhtf:There are 0 people in front of me.
+(13) Yaxhtf:The man behind me is Rhwrubvz.
+Creating new trial with liar_index: 0 liar: Bcdvt and num_people: 7
+Creating new trial with liar_index: 1 liar: Fhnb and num_people: 7
+Creating new trial with liar_index: 2 liar: Ofulabc and num_people: 7
+Creating new trial with liar_index: 3 liar: Ewryjljj and num_people: 7
+Creating new trial with liar_index: 4 liar: Iycbhshv and num_people: 7
+Creating new trial with liar_index: 5 liar: Rhwrubvz and num_people: 7
+Creating new trial with liar_index: 6 liar: Yaxhtf and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Rhwrubvz
+
+
+Parsing conversation:
+(0) Tkdiuzr:There are 3 people behind me.
+(1) Yxmem:There are 4 people in front of me.
+(2) Itpharzq:The man behind me is Lwoeza.
+(3) Zfacyrnv:The man behind me is Tkdiuzr.
+(4) Jycugp:I'm in 3rd position.
+(5) Yxmem:I'm in 5th position.
+(6) Itpharzq:I'm in 1st position.
+(7) Jycugp:The man in front of me is Lwoeza.
+(8) Rlhdc:The man behind me is Yxmem.
+(9) Tkdiuzr:The man behind me is Zfacyrnv.
+(10) Lwoeza:There are 5 people behind me.
+(11) Zfacyrnv:I'm in 6th position.
+(12) Rlhdc:The man in front of me is Jycugp.
+(13) Lwoeza:There is 1 people in front of me.
+Creating new trial with liar_index: 0 liar: Tkdiuzr and num_people: 7
+Creating new trial with liar_index: 1 liar: Yxmem and num_people: 7
+Creating new trial with liar_index: 2 liar: Itpharzq and num_people: 7
+Creating new trial with liar_index: 3 liar: Lwoeza and num_people: 7
+Creating new trial with liar_index: 4 liar: Zfacyrnv and num_people: 7
+Creating new trial with liar_index: 5 liar: Jycugp and num_people: 7
+Creating new trial with liar_index: 6 liar: Rlhdc and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Tkdiuzr
+
+
+Parsing conversation:
+(0) Vprkxw:The man behind me is Eyqixjpd.
+(1) Nhhpkv:The man behind me is Vprkxw.
+(2) Vprkxw:There is 1 people behind me.
+(3) Nhhpkv:There are 2 people behind me.
+(4) Eyqixjpd:The man in front of me is Nhhpkv.
+(5) Eyqixjpd:The man behind me is Vprkxw.
+Creating new trial with liar_index: 0 liar: Vprkxw and num_people: 3
+Creating new trial with liar_index: 1 liar: Eyqixjpd and num_people: 3
+Creating new trial with liar_index: 2 liar: Nhhpkv and num_people: 3
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Eyqixjpd
+
+
+Parsing conversation:
+(0) Oappmqcyj:The man behind me is Ofmb.
+(1) Bkano:I'm in 2nd position.
+(2) Ofmb:There are 5 people in front of me.
+(3) Oappmqcyj:The man in front of me is Ffelkbks.
+(4) Ffelkbks:There are 2 people behind me.
+(5) Jfachafbe:There are 4 people behind me.
+(6) Bkano:There is 1 people behind me.
+(7) Vyxq:I'm in 3rd position.
+(8) Ofmb:There are 0 people behind me.
+(9) Jfachafbe:The man in front of me is Bkano.
+(10) Ffelkbks:I'm in 4th position.
+(11) Vyxq:There are 3 people behind me.
+Creating new trial with liar_index: 0 liar: Oappmqcyj and num_people: 6
+Creating new trial with liar_index: 1 liar: Ofmb and num_people: 6
+Creating new trial with liar_index: 2 liar: Bkano and num_people: 6
+Creating new trial with liar_index: 3 liar: Ffelkbks and num_people: 6
+Creating new trial with liar_index: 4 liar: Jfachafbe and num_people: 6
+Creating new trial with liar_index: 5 liar: Vyxq and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Bkano
+
+
+Parsing conversation:
+(0) Ysrn:The man in front of me is Ihji.
+(1) Vgeg:There is 1 people in front of me.
+(2) Ysrn:There are 0 people behind me.
+(3) Ihji:The man behind me is Ysrn.
+(4) Vgeg:I'm in 2nd position.
+(5) Ihji:The man in front of me is Vgeg.
+Creating new trial with liar_index: 0 liar: Ysrn and num_people: 3
+Creating new trial with liar_index: 1 liar: Ihji and num_people: 3
+Creating new trial with liar_index: 2 liar: Vgeg and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): Vgeg
+
+
+Parsing conversation:
+(0) Dedwngbn:The man behind me is Nrxxvd.
+(1) Trazlwkdo:There is 1 people in front of me.
+(2) Trazlwkdo:I'm in 2nd position.
+(3) Ywxc:The man in front of me is Trazlwkdo.
+(4) Ywxc:I'm in 3rd position.
+(5) Nrxxvd:The man in front of me is Dedwngbn.
+(6) Dedwngbn:The man in front of me is Ywxc.
+(7) Tnfyhbn:There is 1 people behind me.
+(8) Tnfyhbn:There are 3 people in front of me.
+(9) Nrxxvd:I'm in 5th position.
+Creating new trial with liar_index: 0 liar: Dedwngbn and num_people: 5
+Creating new trial with liar_index: 1 liar: Nrxxvd and num_people: 5
+Creating new trial with liar_index: 2 liar: Trazlwkdo and num_people: 5
+Creating new trial with liar_index: 3 liar: Ywxc and num_people: 5
+Creating new trial with liar_index: 4 liar: Tnfyhbn and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Tnfyhbn
+
+
+Parsing conversation:
+(0) Tom:The man behind me is Bob.
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Tom and num_people: 4
+Creating new trial with liar_index: 1 liar: Bob and num_people: 4
+Creating new trial with liar_index: 2 liar: Gary and num_people: 4
+Creating new trial with liar_index: 3 liar: Fred and num_people: 4
+before_pairs:
+(1, 0)
+(2, 1)
+after_pairs:
+(1, 0)
+(2, 1)
+person_indexes before:
+0
+3
+1
+2
+person_indexes after:
+3
+unique reason 4
+Mr. Wrong identified by solve2(): Fred
+
+
+Parsing conversation:
+(0) Jgatt:The man in front of me is Wafxmw.
+(1) Wafxmw:The man behind me is Jgatt.
+(2) Pamqaabuj:There are 2 people in front of me.
+(3) Dsfy:I'm in 4th position.
+Creating new trial with liar_index: 0 liar: Jgatt and num_people: 4
+Creating new trial with liar_index: 1 liar: Wafxmw and num_people: 4
+Creating new trial with liar_index: 2 liar: Pamqaabuj and num_people: 4
+Creating new trial with liar_index: 3 liar: Dsfy and num_people: 4
+before_pairs:
+(0, 1)
+after_pairs:
+(0, 1)
+person_indexes before:
+1
+0
+2
+3
+person_indexes after:
+2
+3
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+tests::_2_random_tests::_1_very_short_conversations
+Log
+Parsing conversation:
+(0) Uevbee:There are 3 people in front of me.
+(1) Ggeit:There are 0 people in front of me.
+(2) Mnacunoxu:There is 1 people in front of me.
+(3) Guiea:I'm in 2nd position.
+Creating new trial with liar_index: 0 liar: Uevbee and num_people: 4
+Creating new trial with liar_index: 1 liar: Ggeit and num_people: 4
+Creating new trial with liar_index: 2 liar: Mnacunoxu and num_people: 4
+Creating new trial with liar_index: 3 liar: Guiea and num_people: 4
+before_pairs:
+after_pairs:
+person_indexes before:
+2
+1
+0
+3
+person_indexes after:
+2
+1
+0
+3
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Pneibii:The man in front of me is Aaca.
+(1) Wiaeiah:There are 3 people behind me.
+(2) Aaca:The man behind me is Pneibii.
+(3) Mrieronei:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Pneibii and num_people: 4
+Creating new trial with liar_index: 1 liar: Aaca and num_people: 4
+Creating new trial with liar_index: 2 liar: Wiaeiah and num_people: 4
+Creating new trial with liar_index: 3 liar: Mrieronei and num_people: 4
+before_pairs:
+(0, 1)
+after_pairs:
+(0, 1)
+person_indexes before:
+0
+1
+3
+2
+person_indexes after:
+3
+2
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Kvxde:I'm in 4th position.
+(1) Maioig:There is 1 people behind me.
+(2) Eroeqi:There are 0 people in front of me.
+(3) Ftxaeez:There is 1 people behind me.
+Creating new trial with liar_index: 0 liar: Kvxde and num_people: 4
+Creating new trial with liar_index: 1 liar: Maioig and num_people: 4
+Creating new trial with liar_index: 2 liar: Eroeqi and num_people: 4
+Creating new trial with liar_index: 3 liar: Ftxaeez and num_people: 4
+before_pairs:
+after_pairs:
+person_indexes before:
+0
+2
+3
+1
+person_indexes after:
+0
+2
+3
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Qeyspi:There is 1 people behind me.
+(1) Pksjopeen:The man behind me is Qeyspi.
+(2) Iweyeave:The man in front of me is Aofs.
+(3) Aofs:The man behind me is Iweyeave.
+Creating new trial with liar_index: 0 liar: Qeyspi and num_people: 4
+Creating new trial with liar_index: 1 liar: Pksjopeen and num_people: 4
+Creating new trial with liar_index: 2 liar: Iweyeave and num_people: 4
+Creating new trial with liar_index: 3 liar: Aofs and num_people: 4
+unique reason 3
+Mr. Wrong identified by solve2(): Pksjopeen
+assertion failed: `(left == right)`
+  left: `Some("Pksjopeen")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Qeyspi:There is 1 people behind me.",
+    "Pksjopeen:The man behind me is Qeyspi.",
+    "Iweyeave:The man in front of me is Aofs.",
+    "Aofs:The man behind me is Iweyeave.",
+]
+tests::_2_random_tests::_2_short_conversations
+Log
+Parsing conversation:
+(0) Oixqih:The man behind me is Yviofv.
+(1) Mjioam:The man behind me is Uoaroeir.
+(2) Mirmxpag:I'm in 10th position.
+(3) Vrri:There are 0 people in front of me.
+(4) Zkeiifv:There are 3 people behind me.
+(5) Yviofv:There is 1 people behind me.
+(6) Ymqtggs:I'm in 9th position.
+(7) Uoaroeir:I'm in 4th position.
+(8) Oixqih:The man in front of me is Zkeiifv.
+(9) Seasljyjt:There are 5 people in front of me.
+(10) Yviofv:The man behind me is Mirmxpag.
+(11) Ymqtggs:There is 1 people behind me.
+(12) Ealtfluiy:There are 4 people in front of me.
+(13) Seasljyjt:There are 4 people behind me.
+(14) Zkeiifv:The man in front of me is Seasljyjt.
+Creating new trial with liar_index: 0 liar: Oixqih and num_people: 10
+Creating new trial with liar_index: 1 liar: Yviofv and num_people: 10
+Creating new trial with liar_index: 2 liar: Mjioam and num_people: 10
+Creating new trial with liar_index: 3 liar: Uoaroeir and num_people: 10
+Creating new trial with liar_index: 4 liar: Mirmxpag and num_people: 10
+Creating new trial with liar_index: 5 liar: Vrri and num_people: 10
+Creating new trial with liar_index: 6 liar: Zkeiifv and num_people: 10
+Creating new trial with liar_index: 7 liar: Ymqtggs and num_people: 10
+Creating new trial with liar_index: 8 liar: Seasljyjt and num_people: 10
+Creating new trial with liar_index: 9 liar: Ealtfluiy and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Ymqtggs
+
+
+Parsing conversation:
+(0) Xuxl:I'm in 5th position.
+(1) Xuxl:The man behind me is Eafa.
+(2) Jnty:There is 1 people in front of me.
+(3) Lditsdo:There are 5 people behind me.
+(4) Eobykqefo:I'm in 4th position.
+(5) Rdhjes:The man in front of me is Jnty.
+(6) Rdhjes:There are 2 people in front of me.
+(7) Eafa:There are 4 people behind me.
+Creating new trial with liar_index: 0 liar: Xuxl and num_people: 6
+Creating new trial with liar_index: 1 liar: Eafa and num_people: 6
+Creating new trial with liar_index: 2 liar: Jnty and num_people: 6
+Creating new trial with liar_index: 3 liar: Lditsdo and num_people: 6
+Creating new trial with liar_index: 4 liar: Eobykqefo and num_people: 6
+Creating new trial with liar_index: 5 liar: Rdhjes and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Eafa
+
+
+Parsing conversation:
+(0) Ehiepirm:The man in front of me is Nexw.
+(1) Gwuoddeku:There are 2 people behind me.
+(2) Gwuoddeku:There are 2 people in front of me.
+(3) Qmiavivwa:The man in front of me is Quidmila.
+(4) Bdiahfonw:The man behind me is Gwuoddeku.
+(5) Qmiavivwa:There are 0 people behind me.
+(6) Quidmila:I'm in 5th position.
+(7) Bdiahfonw:There are 0 people in front of me.
+(8) Nexw:The man in front of me is Gwuoddeku.
+Creating new trial with liar_index: 0 liar: Ehiepirm and num_people: 6
+Creating new trial with liar_index: 1 liar: Nexw and num_people: 6
+Creating new trial with liar_index: 2 liar: Gwuoddeku and num_people: 6
+Creating new trial with liar_index: 3 liar: Qmiavivwa and num_people: 6
+Creating new trial with liar_index: 4 liar: Quidmila and num_people: 6
+Creating new trial with liar_index: 5 liar: Bdiahfonw and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Gwuoddeku
+
+
+Parsing conversation:
+(0) Igbh:The man behind me is Dejedf.
+(1) Waiounbol:There are 5 people behind me.
+(2) Iybdueok:There are 3 people in front of me.
+(3) Zipoejkqy:I'm in 6th position.
+(4) Dejedf:I'm in 2nd position.
+(5) Dejedf:There are 4 people behind me.
+(6) Zipoejkqy:There are 0 people behind me.
+(7) Jfaa:There are 4 people in front of me.
+(8) Igbh:There are 0 people in front of me.
+(9) Waiounbol:There are 0 people in front of me.
+Creating new trial with liar_index: 0 liar: Igbh and num_people: 6
+Creating new trial with liar_index: 1 liar: Dejedf and num_people: 6
+Creating new trial with liar_index: 2 liar: Waiounbol and num_people: 6
+Creating new trial with liar_index: 3 liar: Iybdueok and num_people: 6
+Creating new trial with liar_index: 4 liar: Zipoejkqy and num_people: 6
+Creating new trial with liar_index: 5 liar: Jfaa and num_people: 6
+before_pairs:
+after_pairs:
+(1, 0)
+person_indexes before:
+2
+1
+3
+4
+0
+5
+person_indexes after:
+2
+1
+3
+4
+0
+5
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Iyet:The man in front of me is Ojdze.
+(1) Ojdze:There are 6 people behind me.
+(2) Easze:I'm in 2nd position.
+(3) Oidqhuai:There is 1 people behind me.
+(4) Ouyxw:The man behind me is Oidqhuai.
+(5) Easze:The man in front of me is Ouyxw.
+(6) Igcr:There are 4 people in front of me.
+(7) Aigyg:The man in front of me is Oidqhuai.
+(8) Jwyni:The man behind me is Oidqhuai.
+(9) Qdeygy:There are 5 people in front of me.
+Creating new trial with liar_index: 0 liar: Iyet and num_people: 9
+Creating new trial with liar_index: 1 liar: Ojdze and num_people: 9
+Creating new trial with liar_index: 2 liar: Easze and num_people: 9
+Creating new trial with liar_index: 3 liar: Oidqhuai and num_people: 9
+Creating new trial with liar_index: 4 liar: Ouyxw and num_people: 9
+Creating new trial with liar_index: 5 liar: Igcr and num_people: 9
+Creating new trial with liar_index: 6 liar: Aigyg and num_people: 9
+Creating new trial with liar_index: 7 liar: Jwyni and num_people: 9
+Creating new trial with liar_index: 8 liar: Qdeygy and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Ouyxw
+
+
+Parsing conversation:
+(0) Ayuhedvtx:I'm in 9th position.
+(1) Iaujjd:There are 6 people in front of me.
+(2) Nwvwjynbm:The man behind me is Iyudyeeou.
+(3) Viede:There are 2 people in front of me.
+(4) Iyudyeeou:There are 4 people behind me.
+(5) Nwvwjynbm:There are 3 people in front of me.
+(6) Iaujjd:The man behind me is Eoseaawe.
+(7) Dhmdok:There are 0 people in front of me.
+(8) Miee:There are 3 people behind me.
+(9) Ayuhedvtx:There are 8 people in front of me.
+(10) Ibwhw:I'm in 2nd position.
+(11) Eoseaawe:There are 5 people in front of me.
+(12) Dhmdok:The man behind me is Ibwhw.
+(13) Miee:The man behind me is Iaujjd.
+Creating new trial with liar_index: 0 liar: Ayuhedvtx and num_people: 9
+Creating new trial with liar_index: 1 liar: Iaujjd and num_people: 9
+Creating new trial with liar_index: 2 liar: Nwvwjynbm and num_people: 9
+Creating new trial with liar_index: 3 liar: Iyudyeeou and num_people: 9
+Creating new trial with liar_index: 4 liar: Viede and num_people: 9
+Creating new trial with liar_index: 5 liar: Eoseaawe and num_people: 9
+Creating new trial with liar_index: 6 liar: Dhmdok and num_people: 9
+Creating new trial with liar_index: 7 liar: Miee and num_people: 9
+Creating new trial with liar_index: 8 liar: Ibwhw and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Eoseaawe
+
+
+Parsing conversation:
+(0) Leioe:There are 3 people in front of me.
+(1) Ivtqgpyy:The man behind me is Dawaeeze.
+(2) Leioe:The man behind me is Aizipjiw.
+(3) Qeei:The man behind me is Ivtqgpyy.
+(4) Dawaeeze:The man in front of me is Ivtqgpyy.
+(5) Qoighe:The man in front of me is Ivtqgpyy.
+(6) Aizipjiw:The man behind me is Qoighe.
+(7) Aizipjiw:There are 4 people in front of me.
+(8) Ivtqgpyy:I'm in 2nd position.
+(9) Qeei:There are 5 people behind me.
+Creating new trial with liar_index: 0 liar: Leioe and num_people: 6
+Creating new trial with liar_index: 1 liar: Ivtqgpyy and num_people: 6
+Creating new trial with liar_index: 2 liar: Dawaeeze and num_people: 6
+Creating new trial with liar_index: 3 liar: Aizipjiw and num_people: 6
+Creating new trial with liar_index: 4 liar: Qeei and num_people: 6
+Creating new trial with liar_index: 5 liar: Qoighe and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Qoighe
+
+
+Parsing conversation:
+(0) Rnpwi:There are 3 people in front of me.
+(1) Bwfhv:There are 3 people behind me.
+(2) Rnpwi:I'm in 4th position.
+(3) Mededry:There are 4 people behind me.
+(4) Akqbyhd:I'm in 5th position.
+(5) Mededry:There are 0 people in front of me.
+(6) Nyso:The man in front of me is Rnpwi.
+(7) Bwfhv:The man behind me is Nyso.
+Creating new trial with liar_index: 0 liar: Rnpwi and num_people: 5
+Creating new trial with liar_index: 1 liar: Bwfhv and num_people: 5
+Creating new trial with liar_index: 2 liar: Mededry and num_people: 5
+Creating new trial with liar_index: 3 liar: Akqbyhd and num_people: 5
+Creating new trial with liar_index: 4 liar: Nyso and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Nyso
+
+
+Parsing conversation:
+(0) Agudo:I'm in 8th position.
+(1) Obaonuxe:The man in front of me is Iuiilw.
+(2) Iwgxyywc:The man in front of me is Obaonuxe.
+(3) Iuiilw:There are 7 people behind me.
+(4) Sydhnzhzq:There are 6 people in front of me.
+(5) Iwgxyywc:There are 4 people in front of me.
+(6) Ejue:There are 0 people in front of me.
+(7) Bynq:There are 5 people in front of me.
+(8) Obaonuxe:The man behind me is Iwgxyywc.
+(9) Ooojfuza:I'm in 2nd position.
+(10) Poke:The man in front of me is Ejue.
+(11) Aiiioa:There are 0 people in front of me.
+(12) Sydhnzhzq:There are 3 people behind me.
+(13) Ejue:There are 7 people behind me.
+(14) Poke:There are 9 people in front of me.
+(15) Agudo:There are 7 people in front of me.
+Creating new trial with liar_index: 0 liar: Agudo and num_people: 10
+Creating new trial with liar_index: 1 liar: Obaonuxe and num_people: 10
+Creating new trial with liar_index: 2 liar: Iuiilw and num_people: 10
+Creating new trial with liar_index: 3 liar: Iwgxyywc and num_people: 10
+Creating new trial with liar_index: 4 liar: Sydhnzhzq and num_people: 10
+Creating new trial with liar_index: 5 liar: Ejue and num_people: 10
+Creating new trial with liar_index: 6 liar: Bynq and num_people: 10
+Creating new trial with liar_index: 7 liar: Ooojfuza and num_people: 10
+Creating new trial with liar_index: 8 liar: Poke and num_people: 10
+Creating new trial with liar_index: 9 liar: Aiiioa and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Ejue
+
+
+Parsing conversation:
+(0) Ngieausq:There are 2 people behind me.
+(1) Tegsqxc:There is 1 people behind me.
+(2) Qudyixi:I'm in 1st position.
+(3) Ssogodqei:There are 0 people in front of me.
+(4) Ngieausq:There are 2 people in front of me.
+(5) Oiozrc:There are 3 people behind me.
+(6) Qudyixi:There are 0 people in front of me.
+(7) Ssogodqei:I'm in 3rd position.
+Creating new trial with liar_index: 0 liar: Ngieausq and num_people: 5
+Creating new trial with liar_index: 1 liar: Tegsqxc and num_people: 5
+Creating new trial with liar_index: 2 liar: Qudyixi and num_people: 5
+Creating new trial with liar_index: 3 liar: Ssogodqei and num_people: 5
+Creating new trial with liar_index: 4 liar: Oiozrc and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Ssogodqei
+
+
+Parsing conversation:
+(0) Vsznp:I'm in 4th position.
+(1) Iorlslaa:There are 2 people in front of me.
+(2) Eokgci:There are 6 people behind me.
+(3) Ezygei:There are 4 people behind me.
+(4) Isnbiqxi:I'm in 5th position.
+(5) Isnbiqxi:There are 3 people behind me.
+(6) Hgtrbl:The man in front of me is Isnbiqxi.
+(7) Zexneunb:There are 7 people behind me.
+(8) Vsznp:There are 3 people in front of me.
+(9) Zexneunb:There are 0 people in front of me.
+(10) Iyiooox:The man behind me is Vsznp.
+(11) Iyiooox:The man in front of me is Hgtrbl.
+Creating new trial with liar_index: 0 liar: Vsznp and num_people: 8
+Creating new trial with liar_index: 1 liar: Iorlslaa and num_people: 8
+Creating new trial with liar_index: 2 liar: Eokgci and num_people: 8
+Creating new trial with liar_index: 3 liar: Ezygei and num_people: 8
+Creating new trial with liar_index: 4 liar: Isnbiqxi and num_people: 8
+Creating new trial with liar_index: 5 liar: Hgtrbl and num_people: 8
+Creating new trial with liar_index: 6 liar: Zexneunb and num_people: 8
+Creating new trial with liar_index: 7 liar: Iyiooox and num_people: 8
+unique reason 3
+Mr. Wrong identified by solve2(): Vsznp
+
+
+Parsing conversation:
+(0) Ojddjdm:The man behind me is Ncnyi.
+(1) Ciqzwn:The man in front of me is Ncnyi.
+(2) Ncnyi:I'm in 5th position.
+(3) Cauzmo:There are 6 people behind me.
+(4) Edof:The man in front of me is Cauzmo.
+(5) Aefdnnoui:I'm in 7th position.
+(6) Ojddjdm:I'm in 4th position.
+(7) Lezo:There are 0 people in front of me.
+Creating new trial with liar_index: 0 liar: Ojddjdm and num_people: 7
+Creating new trial with liar_index: 1 liar: Ncnyi and num_people: 7
+Creating new trial with liar_index: 2 liar: Ciqzwn and num_people: 7
+Creating new trial with liar_index: 3 liar: Cauzmo and num_people: 7
+Creating new trial with liar_index: 4 liar: Edof and num_people: 7
+Creating new trial with liar_index: 5 liar: Aefdnnoui and num_people: 7
+Creating new trial with liar_index: 6 liar: Lezo and num_people: 7
+before_pairs:
+(2, 1)
+(4, 3)
+after_pairs:
+(1, 0)
+person_indexes before:
+6
+4
+5
+2
+1
+0
+3
+person_indexes after:
+6
+4
+5
+2
+1
+0
+3
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Kajha:There are 0 people behind me.
+(1) Kllex:There are 2 people in front of me.
+(2) Myabi:The man behind me is Kllex.
+(3) Pavovc:The man behind me is Kajha.
+(4) Kllex:The man behind me is Kajha.
+(5) Kajha:There are 3 people in front of me.
+Creating new trial with liar_index: 0 liar: Kajha and num_people: 4
+Creating new trial with liar_index: 1 liar: Kllex and num_people: 4
+Creating new trial with liar_index: 2 liar: Myabi and num_people: 4
+Creating new trial with liar_index: 3 liar: Pavovc and num_people: 4
+before_pairs:
+after_pairs:
+(0, 1)
+(1, 2)
+(0, 3)
+person_indexes before:
+2
+3
+0
+1
+person_indexes after:
+2
+3
+0
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Eefbo:The man behind me is Praxyfm.
+(1) Praxyfm:There is 1 people behind me.
+(2) Eefbo:The man in front of me is Zmxlsv.
+(3) Praxyfm:I'm in 1st position.
+(4) Zmxlsv:There are 2 people behind me.
+Creating new trial with liar_index: 0 liar: Eefbo and num_people: 3
+Creating new trial with liar_index: 1 liar: Praxyfm and num_people: 3
+Creating new trial with liar_index: 2 liar: Zmxlsv and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): Praxyfm
+
+
+Parsing conversation:
+(0) Soxomdun:The man in front of me is Vioewiz.
+(1) Vioewiz:I'm in 1st position.
+(2) Aorohert:The man in front of me is Soxomdun.
+(3) Vioewiz:There are 3 people behind me.
+(4) Aorohert:There are 2 people in front of me.
+(5) Soxomdun:There is 1 people in front of me.
+(6) Uaurr:The man behind me is Aorohert.
+Creating new trial with liar_index: 0 liar: Soxomdun and num_people: 4
+Creating new trial with liar_index: 1 liar: Vioewiz and num_people: 4
+Creating new trial with liar_index: 2 liar: Aorohert and num_people: 4
+Creating new trial with liar_index: 3 liar: Uaurr and num_people: 4
+before_pairs:
+(0, 1)
+(2, 0)
+after_pairs:
+(2, 3)
+person_indexes before:
+1
+3
+2
+0
+person_indexes after:
+1
+3
+2
+0
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Yaaue:There are 4 people behind me.
+(1) Emadzwoa:There is 1 people behind me.
+(2) Oqfrlile:The man behind me is Emadzwoa.
+(3) Maer:The man in front of me is Yaaue.
+(4) Kzyciqay:The man behind me is Yaaue.
+(5) Oqfrlile:There are 4 people in front of me.
+(6) Iuigsoikm:There are 3 people behind me.
+(7) Nxdukt:There are 0 people behind me.
+(8) Maer:There are 3 people in front of me.
+(9) Emadzwoa:I'm in 6th position.
+(10) Nxdukt:The man in front of me is Emadzwoa.
+Creating new trial with liar_index: 0 liar: Yaaue and num_people: 7
+Creating new trial with liar_index: 1 liar: Emadzwoa and num_people: 7
+Creating new trial with liar_index: 2 liar: Oqfrlile and num_people: 7
+Creating new trial with liar_index: 3 liar: Maer and num_people: 7
+Creating new trial with liar_index: 4 liar: Kzyciqay and num_people: 7
+Creating new trial with liar_index: 5 liar: Iuigsoikm and num_people: 7
+Creating new trial with liar_index: 6 liar: Nxdukt and num_people: 7
+before_pairs:
+(3, 0)
+(6, 1)
+after_pairs:
+(1, 2)
+(0, 4)
+person_indexes before:
+3
+5
+4
+6
+1
+0
+2
+person_indexes after:
+3
+5
+4
+6
+1
+0
+2
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Eeojrh:There are 7 people behind me.
+(1) Ezvaooao:There are 0 people behind me.
+(2) Eeojrh:The man behind me is Camyziia.
+(3) Camyziia:I'm in 2nd position.
+(4) Saigbiio:The man in front of me is Camyziia.
+(5) Wwiioaim:The man behind me is Aaiivo.
+(6) Nexu:The man in front of me is Ebapqaskf.
+(7) Ezvaooao:The man in front of me is Nexu.
+(8) Ebapqaskf:The man in front of me is Aaiivo.
+(9) Aaiivo:There are 0 people in front of me.
+(10) Aaiivo:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Eeojrh and num_people: 8
+Creating new trial with liar_index: 1 liar: Ezvaooao and num_people: 8
+Creating new trial with liar_index: 2 liar: Camyziia and num_people: 8
+Creating new trial with liar_index: 3 liar: Saigbiio and num_people: 8
+Creating new trial with liar_index: 4 liar: Wwiioaim and num_people: 8
+Creating new trial with liar_index: 5 liar: Aaiivo and num_people: 8
+Creating new trial with liar_index: 6 liar: Nexu and num_people: 8
+Creating new trial with liar_index: 7 liar: Ebapqaskf and num_people: 8
+unique reason 3
+Mr. Wrong identified by solve2(): Aaiivo
+
+
+Parsing conversation:
+(0) Wpjbdu:I'm in 4th position.
+(1) Raaws:The man in front of me is Wacowpy.
+(2) Raaws:There are 4 people behind me.
+(3) Wacowpy:There are 0 people in front of me.
+(4) Wpjbdu:There are 3 people in front of me.
+(5) Wacowpy:There are 5 people behind me.
+(6) Onkeo:The man in front of me is Raaws.
+(7) Dekouoax:The man behind me is Aigyqxi.
+(8) Dekouoax:The man in front of me is Wpjbdu.
+(9) Onkeo:The man behind me is Wpjbdu.
+(10) Aigyqxi:There are 5 people behind me.
+Creating new trial with liar_index: 0 liar: Wpjbdu and num_people: 6
+Creating new trial with liar_index: 1 liar: Raaws and num_people: 6
+Creating new trial with liar_index: 2 liar: Wacowpy and num_people: 6
+Creating new trial with liar_index: 3 liar: Onkeo and num_people: 6
+Creating new trial with liar_index: 4 liar: Dekouoax and num_people: 6
+Creating new trial with liar_index: 5 liar: Aigyqxi and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Aigyqxi
+
+
+Parsing conversation:
+(0) Jieswjqoh:There are 0 people in front of me.
+(1) Jieswjqoh:There are 2 people behind me.
+(2) Wnrqcx:I'm in 3rd position.
+(3) Stinoeyr:There are 2 people behind me.
+Creating new trial with liar_index: 0 liar: Jieswjqoh and num_people: 3
+Creating new trial with liar_index: 1 liar: Wnrqcx and num_people: 3
+Creating new trial with liar_index: 2 liar: Stinoeyr and num_people: 3
+before_pairs:
+after_pairs:
+person_indexes before:
+2
+0
+1
+person_indexes after:
+2
+0
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Yixeuysp:There are 0 people in front of me.
+(1) Heatdy:The man in front of me is Heatdy.
+(2) Ryeytifip:There are 0 people behind me.
+(3) Ryeytifip:I'm in 3rd position.
+Mr. Wrong identified by solve(): Heatdy
+
+
+Parsing conversation:
+(0) Aynzixci:There are 0 people behind me.
+(1) Uxeyvxaa:The man behind me is Uqsvjm.
+(2) Bqxii:I'm in 2nd position.
+(3) Aynzixci:The man in front of me is Jdqo.
+(4) Opei:I'm in 1st position.
+(5) Uqsvjm:I'm in 4th position.
+(6) Jdqo:There are 3 people in front of me.
+(7) Uxeyvxaa:There are 3 people behind me.
+Creating new trial with liar_index: 0 liar: Aynzixci and num_people: 6
+Creating new trial with liar_index: 1 liar: Uxeyvxaa and num_people: 6
+Creating new trial with liar_index: 2 liar: Uqsvjm and num_people: 6
+Creating new trial with liar_index: 3 liar: Bqxii and num_people: 6
+Creating new trial with liar_index: 4 liar: Jdqo and num_people: 6
+Creating new trial with liar_index: 5 liar: Opei and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Jdqo
+
+
+Parsing conversation:
+(0) Kjpiz:I'm in 6th position.
+(1) Apoezp:The man behind me is Izuckicae.
+(2) Kphuxf:There are 4 people behind me.
+(3) Apoezp:There are 6 people in front of me.
+(4) Ihechp:The man in front of me is Izuckicae.
+(5) Ciojxjeke:I'm in 3rd position.
+(6) Keynia:I'm in 2nd position.
+(7) Ihechp:There are 8 people in front of me.
+(8) Keynia:The man behind me is Ciojxjeke.
+(9) Kphuxf:I'm in 5th position.
+(10) Lwoom:There are 5 people behind me.
+(11) Izuckicae:There are 7 people in front of me.
+(12) Kjpiz:There are 3 people behind me.
+(13) Ldiykz:I'm in 4th position.
+(14) Lwoom:The man behind me is Kphuxf.
+(15) Ciojxjeke:The man behind me is Ldiykz.
+(16) Ldiykz:There are 3 people in front of me.
+Creating new trial with liar_index: 0 liar: Kjpiz and num_people: 9
+Creating new trial with liar_index: 1 liar: Apoezp and num_people: 9
+Creating new trial with liar_index: 2 liar: Izuckicae and num_people: 9
+Creating new trial with liar_index: 3 liar: Kphuxf and num_people: 9
+Creating new trial with liar_index: 4 liar: Ihechp and num_people: 9
+Creating new trial with liar_index: 5 liar: Ciojxjeke and num_people: 9
+Creating new trial with liar_index: 6 liar: Keynia and num_people: 9
+Creating new trial with liar_index: 7 liar: Lwoom and num_people: 9
+Creating new trial with liar_index: 8 liar: Ldiykz and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Lwoom
+
+
+Parsing conversation:
+(0) Yszti:There are 2 people behind me.
+(1) Dlorm:The man behind me is Ouarfa.
+(2) Ywbgdgday:There are 7 people in front of me.
+(3) Aumciow:The man behind me is Dlorm.
+(4) Jfaf:There are 4 people in front of me.
+(5) Ouarfa:There are 2 people in front of me.
+(6) Ywbgdgday:The man in front of me is Yszti.
+(7) Qamil:The man in front of me is Ywbgdgday.
+(8) Aumciow:There are 0 people in front of me.
+(9) Dlorm:I'm in 2nd position.
+(10) Yszti:The man in front of me is Ooayhaoio.
+(11) Bhcke:The man behind me is Qamil.
+(12) Ooayhaoio:The man behind me is Yszti.
+(13) Ooayhaoio:There are 5 people in front of me.
+Creating new trial with liar_index: 0 liar: Yszti and num_people: 9
+Creating new trial with liar_index: 1 liar: Dlorm and num_people: 9
+Creating new trial with liar_index: 2 liar: Ouarfa and num_people: 9
+Creating new trial with liar_index: 3 liar: Ywbgdgday and num_people: 9
+Creating new trial with liar_index: 4 liar: Aumciow and num_people: 9
+Creating new trial with liar_index: 5 liar: Jfaf and num_people: 9
+Creating new trial with liar_index: 6 liar: Qamil and num_people: 9
+Creating new trial with liar_index: 7 liar: Ooayhaoio and num_people: 9
+Creating new trial with liar_index: 8 liar: Bhcke and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Bhcke
+
+
+Parsing conversation:
+(0) Eloud:The man in front of me is Ixsjbe.
+(1) Eowuwi:There are 6 people in front of me.
+(2) Oeysiuni:The man behind me is Ixsjbe.
+(3) Iwoiiq:There are 3 people behind me.
+(4) Ixsjbe:I'm in 2nd position.
+(5) Eowuwi:The man in front of me is Auvk.
+(6) Ixsjbe:There is 1 people in front of me.
+(7) Eloud:There are 4 people behind me.
+(8) Auvk:The man behind me is Eowuwi.
+(9) Ekswymv:There are 5 people in front of me.
+Creating new trial with liar_index: 0 liar: Eloud and num_people: 7
+Creating new trial with liar_index: 1 liar: Ixsjbe and num_people: 7
+Creating new trial with liar_index: 2 liar: Eowuwi and num_people: 7
+Creating new trial with liar_index: 3 liar: Oeysiuni and num_people: 7
+Creating new trial with liar_index: 4 liar: Iwoiiq and num_people: 7
+Creating new trial with liar_index: 5 liar: Auvk and num_people: 7
+Creating new trial with liar_index: 6 liar: Ekswymv and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Ekswymv
+
+
+Parsing conversation:
+(0) Bveo:The man behind me is Dociteaqo.
+(1) Dociteaqo:There are 2 people in front of me.
+(2) Eizozhlu:There are 3 people in front of me.
+(3) Exaeueccy:I'm in 3rd position.
+Creating new trial with liar_index: 0 liar: Bveo and num_people: 4
+Creating new trial with liar_index: 1 liar: Dociteaqo and num_people: 4
+Creating new trial with liar_index: 2 liar: Eizozhlu and num_people: 4
+Creating new trial with liar_index: 3 liar: Exaeueccy and num_people: 4
+before_pairs:
+after_pairs:
+(1, 0)
+person_indexes before:
+2
+3
+0
+1
+person_indexes after:
+2
+3
+0
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Lrygq:There are 0 people behind me.
+(1) Lrygq:The man in front of me is Ynaayh.
+(2) Uhsgda:I'm in 2nd position.
+(3) Zoznt:There are 0 people behind me.
+(4) Ontyakh:The man in front of me is Uhsgda.
+(5) Ynaayh:There are 4 people in front of me.
+(6) Ontyakh:I'm in 3rd position.
+(7) Szogylf:There are 0 people in front of me.
+(8) Zoznt:There are 0 people in front of me.
+(9) Szogylf:I'm in 1st position.
+(10) Uhsgda:There is 1 people in front of me.
+Creating new trial with liar_index: 0 liar: Lrygq and num_people: 6
+Creating new trial with liar_index: 1 liar: Ynaayh and num_people: 6
+Creating new trial with liar_index: 2 liar: Uhsgda and num_people: 6
+Creating new trial with liar_index: 3 liar: Zoznt and num_people: 6
+Creating new trial with liar_index: 4 liar: Ontyakh and num_people: 6
+Creating new trial with liar_index: 5 liar: Szogylf and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Zoznt
+
+
+Parsing conversation:
+(0) Iyude:I'm in 1st position.
+(1) Iyude:The man behind me is Edujzarn.
+(2) Nioofoiv:There are 3 people in front of me.
+(3) Oehyk:I'm in 3rd position.
+(4) Edujzarn:There are 2 people in front of me.
+(5) Nioofoiv:The man in front of me is Oehyk.
+(6) Edujzarn:I'm in 3rd position.
+Creating new trial with liar_index: 0 liar: Iyude and num_people: 4
+Creating new trial with liar_index: 1 liar: Edujzarn and num_people: 4
+Creating new trial with liar_index: 2 liar: Nioofoiv and num_people: 4
+Creating new trial with liar_index: 3 liar: Oehyk and num_people: 4
+unique reason 3
+Mr. Wrong identified by solve2(): Edujzarn
+
+
+Parsing conversation:
+(0) Ipgxxazw:There is 1 people in front of me.
+(1) Oyqopxuiy:The man in front of me is Eeqeueycy.
+(2) Ulasflu:There are 2 people behind me.
+(3) Eeqeueycy:The man behind me is Vuip.
+(4) Ipgxxazw:I'm in 2nd position.
+(5) Pivxvfoiq:There are 0 people in front of me.
+(6) Syhyorsof:There are 2 people in front of me.
+(7) Gwpdehdc:I'm in 8th position.
+(8) Syhyorsof:The man in front of me is Ipgxxazw.
+(9) Oyqopxuiy:I'm in 5th position.
+(10) Vuip:The man behind me is Ulasflu.
+(11) Ecjso:There are 0 people behind me.
+Creating new trial with liar_index: 0 liar: Ipgxxazw and num_people: 9
+Creating new trial with liar_index: 1 liar: Oyqopxuiy and num_people: 9
+Creating new trial with liar_index: 2 liar: Eeqeueycy and num_people: 9
+Creating new trial with liar_index: 3 liar: Ulasflu and num_people: 9
+Creating new trial with liar_index: 4 liar: Vuip and num_people: 9
+Creating new trial with liar_index: 5 liar: Pivxvfoiq and num_people: 9
+Creating new trial with liar_index: 6 liar: Syhyorsof and num_people: 9
+Creating new trial with liar_index: 7 liar: Gwpdehdc and num_people: 9
+Creating new trial with liar_index: 8 liar: Ecjso and num_people: 9
+before_pairs:
+(1, 2)
+(6, 0)
+after_pairs:
+(4, 2)
+(3, 4)
+person_indexes before:
+5
+4
+0
+3
+1
+7
+2
+6
+8
+person_indexes after:
+5
+4
+0
+3
+1
+7
+2
+6
+8
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Igbo:There are 0 people in front of me.
+(1) Rstuei:The man in front of me is Igbo.
+(2) Acfol:There are 0 people behind me.
+(3) Acfol:The man in front of me is Yzarh.
+(4) Yzarh:There are 4 people in front of me.
+(5) Igbo:There are 5 people behind me.
+(6) Rstuei:There is 1 people in front of me.
+(7) Aeyeaj:The man in front of me is Ellpsmzc.
+(8) Aeyeaj:I'm in 4th position.
+(9) Ellpsmzc:The man behind me is Acfol.
+Creating new trial with liar_index: 0 liar: Igbo and num_people: 6
+Creating new trial with liar_index: 1 liar: Rstuei and num_people: 6
+Creating new trial with liar_index: 2 liar: Acfol and num_people: 6
+Creating new trial with liar_index: 3 liar: Yzarh and num_people: 6
+Creating new trial with liar_index: 4 liar: Aeyeaj and num_people: 6
+Creating new trial with liar_index: 5 liar: Ellpsmzc and num_people: 6
+unique reason 3
+Mr. Wrong identified by solve2(): Ellpsmzc
+
+
+Parsing conversation:
+(0) Wuwhmjuk:There are 2 people in front of me.
+(1) Oapixcpgu:There is 1 people behind me.
+(2) Hacavyacm:There is 1 people in front of me.
+Creating new trial with liar_index: 0 liar: Wuwhmjuk and num_people: 3
+Creating new trial with liar_index: 1 liar: Oapixcpgu and num_people: 3
+Creating new trial with liar_index: 2 liar: Hacavyacm and num_people: 3
+before_pairs:
+after_pairs:
+person_indexes before:
+2
+0
+1
+person_indexes after:
+2
+0
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Exilois:The man in front of me is Glmneegph.
+(1) Mheicnim:There are 0 people in front of me.
+(2) Exilois:There are 5 people behind me.
+(3) Oazual:There are 6 people in front of me.
+(4) Erneoocm:The man in front of me is Njjuseoao.
+(5) Erneoocm:There are 4 people in front of me.
+(6) Mheicnim:I'm in 1st position.
+(7) Oazual:I'm in 7th position.
+(8) Nyyaiv:The man behind me is Njjuseoao.
+(9) Njjuseoao:I'm in 4th position.
+(10) Glmneegph:There are 6 people behind me.
+Creating new trial with liar_index: 0 liar: Exilois and num_people: 7
+Creating new trial with liar_index: 1 liar: Glmneegph and num_people: 7
+Creating new trial with liar_index: 2 liar: Mheicnim and num_people: 7
+Creating new trial with liar_index: 3 liar: Oazual and num_people: 7
+Creating new trial with liar_index: 4 liar: Erneoocm and num_people: 7
+Creating new trial with liar_index: 5 liar: Njjuseoao and num_people: 7
+Creating new trial with liar_index: 6 liar: Nyyaiv and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Mheicnim
+
+
+Parsing conversation:
+(0) Bmkihuqe:The man in front of me is Vtaa.
+(1) Icjieii:The man in front of me is Niciuf.
+(2) Soyaz:There are 0 people in front of me.
+(3) Vtaa:I'm in 3rd position.
+(4) Niciuf:The man in front of me is Vtaa.
+(5) Vtaa:There are 2 people behind me.
+(6) Niciuf:I'm in 4th position.
+Creating new trial with liar_index: 0 liar: Bmkihuqe and num_people: 5
+Creating new trial with liar_index: 1 liar: Vtaa and num_people: 5
+Creating new trial with liar_index: 2 liar: Icjieii and num_people: 5
+Creating new trial with liar_index: 3 liar: Niciuf and num_people: 5
+Creating new trial with liar_index: 4 liar: Soyaz and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Bmkihuqe
+
+
+Parsing conversation:
+(0) Uiaqggli:There is 1 people in front of me.
+(1) Nidy:The man in front of me is Mkey.
+(2) Nidy:I'm in 8th position.
+(3) Qxek:There are 8 people in front of me.
+(4) Ebod:I'm in 5th position.
+(5) Ebod:The man in front of me is Eqteceih.
+(6) Ujeot:There are 6 people behind me.
+(7) Mkey:I'm in 7th position.
+(8) Qxek:I'm in 9th position.
+(9) Yxiadho:There are 0 people in front of me.
+(10) Anuh:The man in front of me is Ebod.
+(11) Yxiadho:There are 8 people behind me.
+(12) Eqteceih:There is 1 people behind me.
+(13) Anuh:I'm in 6th position.
+Creating new trial with liar_index: 0 liar: Uiaqggli and num_people: 9
+Creating new trial with liar_index: 1 liar: Nidy and num_people: 9
+Creating new trial with liar_index: 2 liar: Mkey and num_people: 9
+Creating new trial with liar_index: 3 liar: Qxek and num_people: 9
+Creating new trial with liar_index: 4 liar: Ebod and num_people: 9
+Creating new trial with liar_index: 5 liar: Eqteceih and num_people: 9
+Creating new trial with liar_index: 6 liar: Ujeot and num_people: 9
+Creating new trial with liar_index: 7 liar: Yxiadho and num_people: 9
+Creating new trial with liar_index: 8 liar: Anuh and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Eqteceih
+
+
+Parsing conversation:
+(0) Iana:There are 6 people in front of me.
+(1) Igkcm:There are 5 people in front of me.
+(2) Snamkgum:I'm in 4th position.
+(3) Iana:I'm in 7th position.
+(4) Igkcm:The man in front of me is Eahvaz.
+(5) Darrsofu:There are 7 people in front of me.
+(6) Ayuqiati:The man in front of me is Gpufethbc.
+(7) Aasoa:There are 9 people in front of me.
+(8) Snamkgum:The man behind me is Eahvaz.
+(9) Edyv:I'm in 2nd position.
+(10) Ayuqiati:There are 8 people in front of me.
+(11) Gpufethbc:I'm in 8th position.
+(12) Eahvaz:There are 5 people behind me.
+(13) Pappawai:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Iana and num_people: 10
+Creating new trial with liar_index: 1 liar: Igkcm and num_people: 10
+Creating new trial with liar_index: 2 liar: Snamkgum and num_people: 10
+Creating new trial with liar_index: 3 liar: Eahvaz and num_people: 10
+Creating new trial with liar_index: 4 liar: Darrsofu and num_people: 10
+Creating new trial with liar_index: 5 liar: Ayuqiati and num_people: 10
+Creating new trial with liar_index: 6 liar: Gpufethbc and num_people: 10
+Creating new trial with liar_index: 7 liar: Aasoa and num_people: 10
+Creating new trial with liar_index: 8 liar: Edyv and num_people: 10
+Creating new trial with liar_index: 9 liar: Pappawai and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Darrsofu
+
+
+Parsing conversation:
+(0) Fdgrejf:I'm in 8th position.
+(1) Cysehkspt:There are 2 people in front of me.
+(2) Yawuleefi:The man behind me is Iguadyauy.
+(3) Eswobmicr:I'm in 10th position.
+(4) Fdgrejf:There are 7 people in front of me.
+(5) Zljrkk:There are 7 people in front of me.
+(6) Iguadyauy:The man in front of me is Yawuleefi.
+(7) Czcwoynex:I'm in 4th position.
+(8) Czcwoynex:There are 3 people in front of me.
+(9) Uixrs:I'm in 7th position.
+(10) Uixrs:There are 3 people behind me.
+(11) Cysehkspt:The man behind me is Czcwoynex.
+(12) Zljrkk:The man in front of me is Uixrs.
+(13) Oqog:The man in front of me is Zljrkk.
+(14) Oocnuyuii:The man in front of me is Czcwoynex.
+Creating new trial with liar_index: 0 liar: Fdgrejf and num_people: 10
+Creating new trial with liar_index: 1 liar: Cysehkspt and num_people: 10
+Creating new trial with liar_index: 2 liar: Yawuleefi and num_people: 10
+Creating new trial with liar_index: 3 liar: Iguadyauy and num_people: 10
+Creating new trial with liar_index: 4 liar: Eswobmicr and num_people: 10
+Creating new trial with liar_index: 5 liar: Zljrkk and num_people: 10
+Creating new trial with liar_index: 6 liar: Czcwoynex and num_people: 10
+Creating new trial with liar_index: 7 liar: Uixrs and num_people: 10
+Creating new trial with liar_index: 8 liar: Oqog and num_people: 10
+Creating new trial with liar_index: 9 liar: Oocnuyuii and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Fdgrejf
+
+
+Parsing conversation:
+(0) Fyiudat:The man behind me is Tphae.
+(1) Iyuwe:The man in front of me is Kvjeterai.
+(2) Yazeeee:The man in front of me is Ayhtaq.
+(3) Tphae:There are 3 people behind me.
+(4) Ayhtaq:There are 3 people in front of me.
+(5) Kvjeterai:I'm in 6th position.
+(6) Fyiudat:There are 5 people behind me.
+(7) Wguagea:The man behind me is Fyiudat.
+(8) Ayhtaq:The man behind me is Yazeeee.
+Creating new trial with liar_index: 0 liar: Fyiudat and num_people: 7
+Creating new trial with liar_index: 1 liar: Tphae and num_people: 7
+Creating new trial with liar_index: 2 liar: Iyuwe and num_people: 7
+Creating new trial with liar_index: 3 liar: Kvjeterai and num_people: 7
+Creating new trial with liar_index: 4 liar: Yazeeee and num_people: 7
+Creating new trial with liar_index: 5 liar: Ayhtaq and num_people: 7
+Creating new trial with liar_index: 6 liar: Wguagea and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Tphae
+
+
+Parsing conversation:
+(0) Aeyxygldb:The man behind me is Beftygu.
+(1) Aquz:I'm in 7th position.
+(2) Zoqezb:I'm in 1st position.
+(3) Fqbyii:The man behind me is Aeyxygldb.
+(4) Defz:The man in front of me is Zoqezb.
+(5) Zoqezb:The man behind me is Defz.
+(6) Fqbyii:There are 4 people behind me.
+(7) Beftygu:The man behind me is Defz.
+(8) Defz:There is 1 people in front of me.
+(9) Iuujiizea:The man in front of me is Beftygu.
+Creating new trial with liar_index: 0 liar: Aeyxygldb and num_people: 7
+Creating new trial with liar_index: 1 liar: Beftygu and num_people: 7
+Creating new trial with liar_index: 2 liar: Aquz and num_people: 7
+Creating new trial with liar_index: 3 liar: Zoqezb and num_people: 7
+Creating new trial with liar_index: 4 liar: Fqbyii and num_people: 7
+Creating new trial with liar_index: 5 liar: Defz and num_people: 7
+Creating new trial with liar_index: 6 liar: Iuujiizea and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Beftygu
+
+
+Parsing conversation:
+(0) Efuoweafu:The man in front of me is Qmocou.
+(1) Dlraijkpj:I'm in 1st position.
+(2) Crjz:There are 4 people in front of me.
+(3) Qmocou:The man behind me is Crjz.
+(4) Yurutqas:I'm in 8th position.
+(5) Arkaheu:There are 2 people in front of me.
+(6) Gtpadatia:There are 4 people behind me.
+(7) Imbavrg:There is 1 people in front of me.
+Creating new trial with liar_index: 0 liar: Efuoweafu and num_people: 8
+Creating new trial with liar_index: 1 liar: Qmocou and num_people: 8
+Creating new trial with liar_index: 2 liar: Dlraijkpj and num_people: 8
+Creating new trial with liar_index: 3 liar: Crjz and num_people: 8
+Creating new trial with liar_index: 4 liar: Yurutqas and num_people: 8
+Creating new trial with liar_index: 5 liar: Arkaheu and num_people: 8
+Creating new trial with liar_index: 6 liar: Gtpadatia and num_people: 8
+Creating new trial with liar_index: 7 liar: Imbavrg and num_people: 8
+unique reason 3
+Mr. Wrong identified by solve2(): Qmocou
+
+
+Parsing conversation:
+(0) Ynnueauso:There are 3 people in front of me.
+(1) Ynnueauso:There are 0 people behind me.
+(2) Uxpdorjdr:I'm in 2nd position.
+(3) Ofoyoa:There is 1 people behind me.
+(4) Oyeiawg:The man behind me is Ynnueauso.
+Creating new trial with liar_index: 0 liar: Ynnueauso and num_people: 4
+Creating new trial with liar_index: 1 liar: Uxpdorjdr and num_people: 4
+Creating new trial with liar_index: 2 liar: Ofoyoa and num_people: 4
+Creating new trial with liar_index: 3 liar: Oyeiawg and num_people: 4
+before_pairs:
+after_pairs:
+(0, 3)
+person_indexes before:
+0
+3
+2
+1
+person_indexes after:
+0
+3
+2
+1
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Xhizqi:The man behind me is Wdjnaea.
+(1) Xhizqi:There are 2 people behind me.
+(2) Wdjnaea:The man in front of me is Wdjnaea.
+(3) Isxaroev:There are 2 people in front of me.
+Mr. Wrong identified by solve(): Wdjnaea
+
+
+Parsing conversation:
+(0) Bauafqo:The man behind me is Pzeileyye.
+(1) Taqqeuao:The man in front of me is Iisgo.
+(2) Taqqeuao:I'm in 2nd position.
+(3) Bauafqo:There are 0 people in front of me.
+(4) Iisgo:The man behind me is Taqqeuao.
+(5) Iisgo:There are 0 people in front of me.
+(6) Pzeileyye:The man in front of me is Taqqeuao.
+Creating new trial with liar_index: 0 liar: Bauafqo and num_people: 4
+Creating new trial with liar_index: 1 liar: Pzeileyye and num_people: 4
+Creating new trial with liar_index: 2 liar: Taqqeuao and num_people: 4
+Creating new trial with liar_index: 3 liar: Iisgo and num_people: 4
+unique reason 3
+Mr. Wrong identified by solve2(): Bauafqo
+
+
+Parsing conversation:
+(0) Aweeil:The man behind me is Senhls.
+(1) Aciiys:The man in front of me is Eiegfeb.
+(2) Urooeex:I'm in 5th position.
+(3) Senhls:There are 3 people behind me.
+(4) Ilpaiscqi:There are 0 people behind me.
+(5) Eiegfeb:I'm in 3rd position.
+(6) Pstai:There is 1 people behind me.
+(7) Aweeil:I'm in 6th position.
+(8) Uorjusas:There are 6 people behind me.
+(9) Urooeex:The man behind me is Aweeil.
+(10) Eiegfeb:The man behind me is Uorjusas.
+(11) Ilpaiscqi:I'm in 10th position.
+(12) Jofd:The man behind me is Pstai.
+(13) Kmcjekw:There are 2 people in front of me.
+Creating new trial with liar_index: 0 liar: Aweeil and num_people: 10
+Creating new trial with liar_index: 1 liar: Senhls and num_people: 10
+Creating new trial with liar_index: 2 liar: Aciiys and num_people: 10
+Creating new trial with liar_index: 3 liar: Eiegfeb and num_people: 10
+Creating new trial with liar_index: 4 liar: Urooeex and num_people: 10
+Creating new trial with liar_index: 5 liar: Ilpaiscqi and num_people: 10
+Creating new trial with liar_index: 6 liar: Pstai and num_people: 10
+Creating new trial with liar_index: 7 liar: Uorjusas and num_people: 10
+Creating new trial with liar_index: 8 liar: Jofd and num_people: 10
+Creating new trial with liar_index: 9 liar: Kmcjekw and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Eiegfeb
+
+
+Parsing conversation:
+(0) Eaeyscq:I'm in 10th position.
+(1) Mquue:The man behind me is Eoeizhalx.
+(2) Jcdeulay:The man behind me is Uezjwq.
+(3) Eoeizhalx:The man in front of me is Mquue.
+(4) Omqk:I'm in 5th position.
+(5) Uezjwq:I'm in 3rd position.
+(6) Eaeyscq:The man in front of me is Iqhilo.
+(7) Omqk:There are 5 people behind me.
+(8) Iqhilo:I'm in 3rd position.
+(9) Uezjwq:There are 2 people in front of me.
+(10) Qqaukwab:The man in front of me is Eoeizhalx.
+(11) Iqhilo:There are 0 people in front of me.
+(12) Yfhojelo:There are 6 people behind me.
+(13) Puqs:There are 0 people in front of me.
+Creating new trial with liar_index: 0 liar: Eaeyscq and num_people: 10
+Creating new trial with liar_index: 1 liar: Mquue and num_people: 10
+Creating new trial with liar_index: 2 liar: Eoeizhalx and num_people: 10
+Creating new trial with liar_index: 3 liar: Jcdeulay and num_people: 10
+Creating new trial with liar_index: 4 liar: Uezjwq and num_people: 10
+Creating new trial with liar_index: 5 liar: Omqk and num_people: 10
+Creating new trial with liar_index: 6 liar: Iqhilo and num_people: 10
+Creating new trial with liar_index: 7 liar: Qqaukwab and num_people: 10
+Creating new trial with liar_index: 8 liar: Yfhojelo and num_people: 10
+Creating new trial with liar_index: 9 liar: Puqs and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Iqhilo
+
+
+Parsing conversation:
+(0) Juoulh:There is 1 people in front of me.
+(1) Abkiz:There is 1 people in front of me.
+(2) Juoulh:I'm in 1st position.
+(3) Oejb:I'm in 1st position.
+Creating new trial with liar_index: 0 liar: Juoulh and num_people: 3
+Creating new trial with liar_index: 1 liar: Abkiz and num_people: 3
+Creating new trial with liar_index: 2 liar: Oejb and num_people: 3
+unique reason 3
+Mr. Wrong identified by solve2(): Juoulh
+
+
+Parsing conversation:
+(0) Jccc:I'm in 3rd position.
+(1) Jccc:The man behind me is Gcece.
+(2) Vixw:The man behind me is Jccc.
+(3) Wpcir:I'm in 2nd position.
+(4) Wpcir:The man in front of me is Eohyuceu.
+(5) Eohyuceu:The man behind me is Vixw.
+(6) Gcece:The man behind me is Wpcir.
+(7) Eohyuceu:There are 4 people behind me.
+(8) Vixw:The man in front of me is Eohyuceu.
+Creating new trial with liar_index: 0 liar: Jccc and num_people: 5
+Creating new trial with liar_index: 1 liar: Gcece and num_people: 5
+Creating new trial with liar_index: 2 liar: Vixw and num_people: 5
+Creating new trial with liar_index: 3 liar: Wpcir and num_people: 5
+Creating new trial with liar_index: 4 liar: Eohyuceu and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Wpcir
+
+
+Parsing conversation:
+(0) Gnkjajqie:The man in front of me is Rceu.
+(1) Rceu:I'm in 5th position.
+(2) Kdsidu:There is 1 people behind me.
+(3) Onva:The man behind me is Fitemdom.
+(4) Fitemdom:There are 3 people in front of me.
+(5) Kdsidu:There are 7 people in front of me.
+(6) Afeoum:I'm in 1st position.
+(7) Ddlnnea:There are 7 people behind me.
+(8) Wflarjppe:The man in front of me is Kdsidu.
+(9) Afeoum:There are 8 people behind me.
+(10) Fitemdom:The man behind me is Rceu.
+(11) Yeks:The man in front of me is Kdsidu.
+(12) Gnkjajqie:I'm in 6th position.
+(13) Onva:I'm in 3rd position.
+(14) Wflarjppe:There are 4 people behind me.
+(15) Rceu:The man in front of me is Fitemdom.
+Creating new trial with liar_index: 0 liar: Gnkjajqie and num_people: 9
+Creating new trial with liar_index: 1 liar: Rceu and num_people: 9
+Creating new trial with liar_index: 2 liar: Kdsidu and num_people: 9
+Creating new trial with liar_index: 3 liar: Onva and num_people: 9
+Creating new trial with liar_index: 4 liar: Fitemdom and num_people: 9
+Creating new trial with liar_index: 5 liar: Afeoum and num_people: 9
+Creating new trial with liar_index: 6 liar: Ddlnnea and num_people: 9
+Creating new trial with liar_index: 7 liar: Wflarjppe and num_people: 9
+Creating new trial with liar_index: 8 liar: Yeks and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Wflarjppe
+
+
+Parsing conversation:
+(0) Zfqy:The man in front of me is Reritn.
+(1) Reritn:I'm in 8th position.
+(2) Yaxyorl:The man in front of me is Eoyreu.
+(3) Fricatif:The man behind me is Nwoege.
+(4) Fricatif:There are 6 people in front of me.
+(5) Yaxyorl:I'm in 6th position.
+(6) Zfqy:There are 0 people behind me.
+(7) Nwoege:The man in front of me is Yaxyorl.
+(8) Oouyzczg:The man in front of me is Fricatif.
+(9) Fueldjp:There are 8 people behind me.
+(10) Fueldjp:I'm in 1st position.
+(11) Eftydfd:There are 7 people behind me.
+(12) Eoyreu:The man in front of me is Oouyzczg.
+(13) Reritn:There are 7 people in front of me.
+(14) Nwoege:I'm in 7th position.
+Creating new trial with liar_index: 0 liar: Zfqy and num_people: 9
+Creating new trial with liar_index: 1 liar: Reritn and num_people: 9
+Creating new trial with liar_index: 2 liar: Yaxyorl and num_people: 9
+Creating new trial with liar_index: 3 liar: Eoyreu and num_people: 9
+Creating new trial with liar_index: 4 liar: Fricatif and num_people: 9
+Creating new trial with liar_index: 5 liar: Nwoege and num_people: 9
+Creating new trial with liar_index: 6 liar: Oouyzczg and num_people: 9
+Creating new trial with liar_index: 7 liar: Fueldjp and num_people: 9
+Creating new trial with liar_index: 8 liar: Eftydfd and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Fricatif
+
+
+Parsing conversation:
+(0) Szfaanou:I'm in 4th position.
+(1) Nenywihi:There are 4 people behind me.
+(2) Ablwcpn:I'm in 3rd position.
+(3) Feiripuyu:There are 0 people in front of me.
+(4) Ablwcpn:There are 6 people behind me.
+(5) Bqxg:I'm in 2nd position.
+(6) Emekeeoi:I'm in 1st position.
+(7) Feiripuyu:I'm in 1st position.
+(8) Csixp:There is 1 people behind me.
+(9) Gblfu:There are 3 people behind me.
+(10) Gblfu:There are 5 people in front of me.
+(11) Ejojegyii:The man behind me is Csixp.
+(12) Ejojegyii:There are 6 people in front of me.
+Creating new trial with liar_index: 0 liar: Szfaanou and num_people: 9
+Creating new trial with liar_index: 1 liar: Nenywihi and num_people: 9
+Creating new trial with liar_index: 2 liar: Ablwcpn and num_people: 9
+Creating new trial with liar_index: 3 liar: Feiripuyu and num_people: 9
+Creating new trial with liar_index: 4 liar: Bqxg and num_people: 9
+Creating new trial with liar_index: 5 liar: Emekeeoi and num_people: 9
+Creating new trial with liar_index: 6 liar: Csixp and num_people: 9
+Creating new trial with liar_index: 7 liar: Gblfu and num_people: 9
+Creating new trial with liar_index: 8 liar: Ejojegyii and num_people: 9
+before_pairs:
+after_pairs:
+(6, 8)
+person_indexes before:
+6
+0
+3
+1
+2
+4
+8
+7
+5
+person_indexes after:
+6
+0
+3
+1
+2
+4
+8
+7
+5
+No contradictions found, unable to identify Mr. Wrong.
+
+
+Parsing conversation:
+(0) Jeswae:The man behind me is Ilasooaow.
+(1) Bytzaacrq:There are 6 people in front of me.
+(2) Ilasooaow:The man behind me is Cxorurbvl.
+(3) Ahtbf:There are 4 people behind me.
+(4) Ognjk:I'm in 4th position.
+(5) Yeii:There is 1 people behind me.
+(6) Cxorurbvl:There are 4 people in front of me.
+(7) Ognjk:There are 3 people in front of me.
+(8) Ahtbf:The man behind me is Ognjk.
+(9) Jeswae:There are 0 people in front of me.
+Creating new trial with liar_index: 0 liar: Jeswae and num_people: 7
+Creating new trial with liar_index: 1 liar: Ilasooaow and num_people: 7
+Creating new trial with liar_index: 2 liar: Bytzaacrq and num_people: 7
+Creating new trial with liar_index: 3 liar: Cxorurbvl and num_people: 7
+Creating new trial with liar_index: 4 liar: Ahtbf and num_people: 7
+Creating new trial with liar_index: 5 liar: Ognjk and num_people: 7
+Creating new trial with liar_index: 6 liar: Yeii and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Ilasooaow
+
+
+Parsing conversation:
+(0) Wcjgy:There are 5 people in front of me.
+(1) Koinewlwg:The man behind me is Wcjgy.
+(2) Iued:The man behind me is Faldxg.
+(3) Faldxg:The man behind me is Okguuer.
+(4) Yipgyd:I'm in 1st position.
+(5) Vgvii:The man behind me is Wcjgy.
+(6) Ieeyegaa:There are 6 people in front of me.
+(7) Vgvii:There are 2 people in front of me.
+(8) Iued:I'm in 2nd position.
+(9) Faldxg:I'm in 3rd position.
+(10) Yipgyd:There are 8 people behind me.
+(11) Uinus:There are 0 people behind me.
+(12) Okguuer:The man behind me is Koinewlwg.
+Creating new trial with liar_index: 0 liar: Wcjgy and num_people: 9
+Creating new trial with liar_index: 1 liar: Koinewlwg and num_people: 9
+Creating new trial with liar_index: 2 liar: Iued and num_people: 9
+Creating new trial with liar_index: 3 liar: Faldxg and num_people: 9
+Creating new trial with liar_index: 4 liar: Okguuer and num_people: 9
+Creating new trial with liar_index: 5 liar: Yipgyd and num_people: 9
+Creating new trial with liar_index: 6 liar: Vgvii and num_people: 9
+Creating new trial with liar_index: 7 liar: Ieeyegaa and num_people: 9
+Creating new trial with liar_index: 8 liar: Uinus and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Vgvii
+
+
+Parsing conversation:
+(0) Mtcoue:There is 1 people behind me.
+(1) Gogxi:I'm in 4th position.
+(2) Iany:There are 0 people behind me.
+(3) Jvfsec:The man behind me is Gogxi.
+(4) Mtcoue:I'm in 4th position.
+(5) Iany:I'm in 5th position.
+(6) Jvfsec:I'm in 3rd position.
+(7) Gogxi:The man in front of me is Jvfsec.
+(8) Wvuuymbt:There is 1 people in front of me.
+(9) Wvuuymbt:The man behind me is Jvfsec.
+Creating new trial with liar_index: 0 liar: Mtcoue and num_people: 5
+Creating new trial with liar_index: 1 liar: Gogxi and num_people: 5
+Creating new trial with liar_index: 2 liar: Iany and num_people: 5
+Creating new trial with liar_index: 3 liar: Jvfsec and num_people: 5
+Creating new trial with liar_index: 4 liar: Wvuuymbt and num_people: 5
+unique reason 3
+Mr. Wrong identified by solve2(): Mtcoue
+
+
+Parsing conversation:
+(0) Aoya:There are 8 people in front of me.
+(1) Kfuyi:There are 0 people behind me.
+(2) Toyku:The man in front of me is Hhla.
+(3) Yepogoma:There are 3 people in front of me.
+(4) Tuvf:There are 9 people behind me.
+(5) Wpjc:I'm in 2nd position.
+(6) Kieqbyun:I'm in 7th position.
+(7) Yepogoma:The man behind me is Oikeemp.
+(8) Oikeemp:The man behind me is Kieqbyun.
+(9) Tuvf:There are 0 people in front of me.
+(10) Hhla:The man in front of me is Kieqbyun.
+(11) Hhla:I'm in 7th position.
+(12) Lppezdm:The man behind me is Yepogoma.
+(13) Oikeemp:There are 5 people behind me.
+(14) Kieqbyun:The man behind me is Kieqbyun.
+(15) Kfuyi:I'm in 10th position.
+Mr. Wrong identified by solve(): Kieqbyun
+
+
+Parsing conversation:
+(0) Spjumvva:There are 3 people in front of me.
+(1) Ianece:The man in front of me is Yerg.
+(2) Jyaurp:There are 2 people behind me.
+(3) Pinm:The man in front of me is Ianece.
+(4) Pinm:There are 4 people behind me.
+(5) Iilihup:I'm in 7th position.
+(6) Yerg:The man behind me is Ianece.
+(7) Yerg:There are 0 people in front of me.
+(8) Jyaurp:The man behind me is Spjumvva.
+(9) Slief:I'm in 4th position.
+Creating new trial with liar_index: 0 liar: Spjumvva and num_people: 7
+Creating new trial with liar_index: 1 liar: Ianece and num_people: 7
+Creating new trial with liar_index: 2 liar: Yerg and num_people: 7
+Creating new trial with liar_index: 3 liar: Jyaurp and num_people: 7
+Creating new trial with liar_index: 4 liar: Pinm and num_people: 7
+Creating new trial with liar_index: 5 liar: Iilihup and num_people: 7
+Creating new trial with liar_index: 6 liar: Slief and num_people: 7
+unique reason 3
+Mr. Wrong identified by solve2(): Spjumvva
+
+
+Parsing conversation:
+(0) Ohteavl:The man in front of me is Sfwoeoi.
+(1) Oiyi:There are 4 people in front of me.
+(2) Sfwoeoi:The man in front of me is Apoiebn.
+(3) Oxwqdmb:The man in front of me is Owygpa.
+(4) Owygpa:The man in front of me is Nedfpuo.
+(5) Kfiugauwe:I'm in 9th position.
+(6) Nedfpuo:The man behind me is Oxwqdmb.
+(7) Apoiebn:The man behind me is Sfwoeoi.
+(8) Nedfpuo:There are 7 people behind me.
+(9) Owygpa:There is 1 people in front of me.
+(10) Ohteavl:The man behind me is Kfiugauwe.
+(11) Kcceou:There are 3 people in front of me.
+Creating new trial with liar_index: 0 liar: Ohteavl and num_people: 9
+Creating new trial with liar_index: 1 liar: Sfwoeoi and num_people: 9
+Creating new trial with liar_index: 2 liar: Oiyi and num_people: 9
+Creating new trial with liar_index: 3 liar: Apoiebn and num_people: 9
+Creating new trial with liar_index: 4 liar: Oxwqdmb and num_people: 9
+Creating new trial with liar_index: 5 liar: Owygpa and num_people: 9
+Creating new trial with liar_index: 6 liar: Nedfpuo and num_people: 9
+Creating new trial with liar_index: 7 liar: Kfiugauwe and num_people: 9
+Creating new trial with liar_index: 8 liar: Kcceou and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Nedfpuo
+
+
+Parsing conversation:
+(0) Exoioe:The man in front of me is Exoioe.
+(1) Jceyyexj:The man in front of me is Poqoaa.
+(2) Gzemoo:There are 5 people behind me.
+(3) Hfoioum:The man in front of me is Urhqbeye.
+(4) Oouqjeag:The man behind me is Evbqemoa.
+(5) Evbqemoa:There are 8 people in front of me.
+(6) Poqoaa:The man behind me is Jceyyexj.
+(7) Fwkfyvtko:There are 4 people in front of me.
+(8) Fwkfyvtko:The man in front of me is Gzemoo.
+(9) Gzemoo:There are 3 people in front of me.
+(10) Urhqbeye:There are 7 people behind me.
+Mr. Wrong identified by solve(): Exoioe
+
+
+Parsing conversation:
+(0) Ggmiupur:The man in front of me is Rhiujnkab.
+(1) Egrqeu:There are 7 people in front of me.
+(2) Varir:There is 1 people in front of me.
+(3) Varir:The man behind me is Uiowq.
+(4) Ggmiupur:The man behind me is Vjivbfao.
+(5) Hmemeuiyy:There are 4 people in front of me.
+(6) Egrqeu:I'm in 8th position.
+(7) Hysfm:The man in front of me is Uiowq.
+(8) Eefuafa:There are 3 people behind me.
+(9) Hysfm:The man behind me is Hmemeuiyy.
+(10) Uiowq:The man behind me is Hysfm.
+(11) Vjivbfao:There are 0 people behind me.
+(12) Uiowq:There are 2 people in front of me.
+(13) Eefuafa:The man behind me is Rhiujnkab.
+(14) Lkekodol:The man in front of me is Hmemeuiyy.
+(15) Lkekodol:There are 4 people behind me.
+(16) Rhiujnkab:I'm in 8th position.
+Creating new trial with liar_index: 0 liar: Ggmiupur and num_people: 10
+Creating new trial with liar_index: 1 liar: Rhiujnkab and num_people: 10
+Creating new trial with liar_index: 2 liar: Egrqeu and num_people: 10
+Creating new trial with liar_index: 3 liar: Varir and num_people: 10
+Creating new trial with liar_index: 4 liar: Uiowq and num_people: 10
+Creating new trial with liar_index: 5 liar: Vjivbfao and num_people: 10
+Creating new trial with liar_index: 6 liar: Hmemeuiyy and num_people: 10
+Creating new trial with liar_index: 7 liar: Hysfm and num_people: 10
+Creating new trial with liar_index: 8 liar: Eefuafa and num_people: 10
+Creating new trial with liar_index: 9 liar: Lkekodol and num_people: 10
+unique reason 3
+Mr. Wrong identified by solve2(): Egrqeu
+
+
+Parsing conversation:
+(0) Tuodhttk:There are 7 people behind me.
+(1) Fewfrao:The man in front of me is Jgmaeciyf.
+(2) Hxjyeeeeo:The man in front of me is Geekjq.
+(3) Wwygvmpo:The man behind me is Ynkretkd.
+(4) Geekjq:There are 0 people in front of me.
+(5) Geekjq:I'm in 1st position.
+(6) Wwygvmpo:There are 5 people in front of me.
+(7) Fewfrao:There are 4 people behind me.
+(8) Igfqn:There are 7 people in front of me.
+(9) Ynkretkd:The man behind me is Igfqn.
+(10) Nqqxy:There are 0 people behind me.
+(11) Nqqxy:The man in front of me is Igfqn.
+(12) Jgmaeciyf:The man in front of me is Tuodhttk.
+(13) Hxjyeeeeo:The man behind me is Tuodhttk.
+(14) Ynkretkd:The man in front of me is Wwygvmpo.
+Creating new trial with liar_index: 0 liar: Tuodhttk and num_people: 9
+Creating new trial with liar_index: 1 liar: Fewfrao and num_people: 9
+Creating new trial with liar_index: 2 liar: Jgmaeciyf and num_people: 9
+Creating new trial with liar_index: 3 liar: Hxjyeeeeo and num_people: 9
+Creating new trial with liar_index: 4 liar: Geekjq and num_people: 9
+Creating new trial with liar_index: 5 liar: Wwygvmpo and num_people: 9
+Creating new trial with liar_index: 6 liar: Ynkretkd and num_people: 9
+Creating new trial with liar_index: 7 liar: Igfqn and num_people: 9
+Creating new trial with liar_index: 8 liar: Nqqxy and num_people: 9
+unique reason 3
+Mr. Wrong identified by solve2(): Tuodhttk
+
+
+Parsing conversation:
+(0) Ehtaqa:The man behind me is Tefge.
+(1) Ehtaqa:There are 2 people behind me.
+(2) Tefge:There are 3 people in front of me.
+(3) Teeohin:The man behind me is Oziu.
+(4) Oziu:The man behind me is Ypbpi.
+(5) Oziu:The man in front of me is Teeohin.
+(6) Ypbpi:The man in front of me is Oziu.
+Creating new trial with liar_index: 0 liar: Ehtaqa and num_people: 5
+Creating new trial with liar_index: 1 liar: Tefge and num_people: 5
+Creating new trial with liar_index: 2 liar: Teeohin and num_people: 5
+Creating new trial with liar_index: 3 liar: Oziu and num_people: 5
+Creating new trial with liar_index: 4 liar: Ypbpi and num_people: 5
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+called `Option::unwrap()` on a `None` value at src/lib.rs:565:31
+tests::_2_random_tests::_3_short_conversations_2
+Log
+Parsing conversation:
+(0) Hirebeioa:The man in front of me is Nkan.
+(1) Ehayudu:The man behind me is Pkyxyol.
+(2) Pkyxyol:The man in front of me is Ehayudu.
+(3) Hirebeioa:The man behind me is Iavhafith.
+(4) Laawak:The man in front of me is Pkyxyol.
+(5) Yyify:The man in front of me is Hirebeioa.
+(6) Yyify:The man behind me is Ehayudu.
+(7) Nkan:The man behind me is Qssocathp.
+(8) Iavhafith:The man behind me is Hirebeioa.
+(9) Qssocathp:The man behind me is Iavhafith.
+(10) Qssocathp:The man in front of me is Nkan.
+Creating new trial with liar_index: 0 liar: Hirebeioa and num_people: 8
+Creating new trial with liar_index: 1 liar: Nkan and num_people: 8
+Creating new trial with liar_index: 2 liar: Ehayudu and num_people: 8
+Creating new trial with liar_index: 3 liar: Pkyxyol and num_people: 8
+Creating new trial with liar_index: 4 liar: Iavhafith and num_people: 8
+Creating new trial with liar_index: 5 liar: Laawak and num_people: 8
+Creating new trial with liar_index: 6 liar: Yyify and num_people: 8
+Creating new trial with liar_index: 7 liar: Qssocathp and num_people: 8
+Contradiction relative empty 002
+called `Option::unwrap()` on a `None` value at src/lib.rs:571:31
+tests::_2_random_tests::_4_long_conversations
+Log
+Parsing conversation:
+(0) Rvefe:There are 6 people behind me.
+(1) Zitgl:I'm in 2nd position.
+(2) Rvjdakw:There are 12 people in front of me.
+(3) Aqiiifi:There are 0 people in front of me.
+(4) Sherdaq:The man in front of me is Zitgl.
+(5) Stevsf:The man in front of me is Yptzoczu.
+(6) Eiacbuuoa:I'm in 4th position.
+(7) Kexf:I'm in 6th position.
+(8) Stevsf:There are 2 people behind me.
+(9) Kexf:The man in front of me is Eigofsm.
+(10) Zitgl:There is 1 people in front of me.
+(11) Eigofsm:The man behind me is Kexf.
+(12) Sherdaq:There are 2 people in front of me.
+(13) Rvjdakw:There are 5 people behind me.
+(14) Stevsf:I'm in 16th position.
+(15) Zitgl:The man behind me is Sherdaq.
+(16) Zmzfefaw:The man in front of me is Dogjujo.
+(17) Dogjujo:The man behind me is Speaixoxo.
+(18) Eigofsm:The man in front of me is Eiacbuuoa.
+(19) Eiacbuuoa:There are 14 people behind me.
+(20) Aqiiifi:I'm in 1st position.
+(21) Lbxsai:The man in front of me is Kexf.
+(22) Aqiiifi:The man behind me is Zitgl.
+(23) Xijhieo:There are 7 people behind me.
+(24) Erzee:I'm in 10th position.
+(25) Sherdaq:There are 15 people behind me.
+(26) Eiacbuuoa:The man in front of me is Sherdaq.
+(27) Erzee:There are 9 people in front of me.
+(28) Qiuaeuu:The man behind me is Zmzfefaw.
+(29) Yptzoczu:The man behind me is Stevsf.
+(30) Lbxsai:I'm in 7th position.
+(31) Eigofsm:There are 4 people in front of me.
+(32) Erzee:There are 8 people behind me.
+(33) Kexf:There are 12 people behind me.
+(34) Rvjdakw:The man in front of me is Rvefe.
+(35) Gntexs:The man in front of me is Rvjdakw.
+(36) Rvefe:I'm in 12th position.
+(37) Rvefe:The man in front of me is Xijhieo.
+(38) Speaixoxo:The man in front of me is Dogjujo.
+Creating new trial with liar_index: 0 liar: Rvefe and num_people: 18
+Creating new trial with liar_index: 1 liar: Zitgl and num_people: 18
+Creating new trial with liar_index: 2 liar: Rvjdakw and num_people: 18
+Creating new trial with liar_index: 3 liar: Aqiiifi and num_people: 18
+Creating new trial with liar_index: 4 liar: Sherdaq and num_people: 18
+Creating new trial with liar_index: 5 liar: Stevsf and num_people: 18
+Creating new trial with liar_index: 6 liar: Yptzoczu and num_people: 18
+Creating new trial with liar_index: 7 liar: Eiacbuuoa and num_people: 18
+Creating new trial with liar_index: 8 liar: Kexf and num_people: 18
+Creating new trial with liar_index: 9 liar: Eigofsm and num_people: 18
+Creating new trial with liar_index: 10 liar: Zmzfefaw and num_people: 18
+Creating new trial with liar_index: 11 liar: Dogjujo and num_people: 18
+Creating new trial with liar_index: 12 liar: Speaixoxo and num_people: 18
+Creating new trial with liar_index: 13 liar: Lbxsai and num_people: 18
+Creating new trial with liar_index: 14 liar: Xijhieo and num_people: 18
+Creating new trial with liar_index: 15 liar: Erzee and num_people: 18
+Creating new trial with liar_index: 16 liar: Qiuaeuu and num_people: 18
+Creating new trial with liar_index: 17 liar: Gntexs and num_people: 18
+before_pairs:
+(0, 14)
+(2, 0)
+(4, 1)
+(5, 6)
+(7, 4)
+(8, 9)
+(9, 7)
+(10, 11)
+(12, 11)
+(13, 8)
+(17, 2)
+after_pairs:
+(4, 1)
+(1, 3)
+(5, 6)
+(8, 9)
+(12, 11)
+(10, 16)
+person_indexes before:
+11
+14
+10
+7
+17
+8
+5
+15
+1
+12
+9
+13
+0
+2
+16
+6
+3
+4
+person_indexes after:
+14
+10
+7
+17
+15
+13
+0
+2
+16
+3
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Zmzfefaw")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Rvefe:There are 6 people behind me.",
+    "Zitgl:I'm in 2nd position.",
+    "Rvjdakw:There are 12 people in front of me.",
+    "Aqiiifi:There are 0 people in front of me.",
+    "Sherdaq:The man in front of me is Zitgl.",
+    "Stevsf:The man in front of me is Yptzoczu.",
+    "Eiacbuuoa:I'm in 4th position.",
+    "Kexf:I'm in 6th position.",
+    "Stevsf:There are 2 people behind me.",
+    "Kexf:The man in front of me is Eigofsm.",
+    "Zitgl:There is 1 people in front of me.",
+    "Eigofsm:The man behind me is Kexf.",
+    "Sherdaq:There are 2 people in front of me.",
+    "Rvjdakw:There are 5 people behind me.",
+    "Stevsf:I'm in 16th position.",
+    "Zitgl:The man behind me is Sherdaq.",
+    "Zmzfefaw:The man in front of me is Dogjujo.",
+    "Dogjujo:The man behind me is Speaixoxo.",
+    "Eigofsm:The man in front of me is Eiacbuuoa.",
+    "Eiacbuuoa:There are 14 people behind me.",
+    "Aqiiifi:I'm in 1st position.",
+    "Lbxsai:The man in front of me is Kexf.",
+    "Aqiiifi:The man behind me is Zitgl.",
+    "Xijhieo:There are 7 people behind me.",
+    "Erzee:I'm in 10th position.",
+    "Sherdaq:There are 15 people behind me.",
+    "Eiacbuuoa:The man in front of me is Sherdaq.",
+    "Erzee:There are 9 people in front of me.",
+    "Qiuaeuu:The man behind me is Zmzfefaw.",
+    "Yptzoczu:The man behind me is Stevsf.",
+    "Lbxsai:I'm in 7th position.",
+    "Eigofsm:There are 4 people in front of me.",
+    "Erzee:There are 8 people behind me.",
+    "Kexf:There are 12 people behind me.",
+    "Rvjdakw:The man in front of me is Rvefe.",
+    "Gntexs:The man in front of me is Rvjdakw.",
+    "Rvefe:I'm in 12th position.",
+    "Rvefe:The man in front of me is Xijhieo.",
+    "Speaixoxo:The man in front of me is Dogjujo.",
+]
+tests::_2_random_tests::_5_very_long_conversations
+Log
+Parsing conversation:
+(0) Ysiogpiy:The man behind me is Qjuveof.
+(1) Mjbp:There are 15 people behind me.
+(2) Pznmp:There are 7 people behind me.
+(3) Aioawy:The man in front of me is Eeilqmzb.
+(4) Hrgsoiaud:There are 8 people in front of me.
+(5) Bswpgaau:There are 3 people behind me.
+(6) Eopyuopx:I'm in 10th position.
+(7) Eeilqmzb:I'm in 21th position.
+(8) Idpak:The man in front of me is Mjbp.
+(9) Idkaeaag:The man behind me is Adffw.
+(10) Jhjfoe:There is 1 people behind me.
+(11) Aioawy:The man behind me is Aelebho.
+(12) Bisse:The man behind me is Ioieo.
+(13) Idpak:The man behind me is Yerjy.
+(14) Raii:There are 12 people behind me.
+(15) Aelebho:The man in front of me is Aioawy.
+(16) Eeilqmzb:The man in front of me is Raii.
+(17) Edypz:The man in front of me is Izygifcii.
+(18) Zjtfosax:There are 19 people behind me.
+(19) Hrgsoiaud:There are 23 people behind me.
+(20) Jhel:The man in front of me is Vjha.
+(21) Eyapiiooq:The man in front of me is Jhjfoe.
+(22) Eeilqmzb:There are 20 people in front of me.
+(23) Aioawy:I'm in 22th position.
+(24) Qjuveof:The man behind me is Bisse.
+(25) Yerjy:The man behind me is Raii.
+(26) Emoelkoh:I'm in 27th position.
+(27) Adffw:There are 15 people in front of me.
+(28) Jhel:There are 6 people in front of me.
+(29) Eopyuopx:There are 22 people behind me.
+(30) Ioieo:There are 4 people in front of me.
+(31) Eyapiiooq:There are 0 people behind me.
+(32) Bisse:There are 3 people in front of me.
+(33) Qjuveof:There are 2 people in front of me.
+(34) Izygifcii:The man behind me is Zjtfosax.
+(35) Emoelkoh:The man in front of me is Voqx.
+(36) Sabce:There are 13 people in front of me.
+(37) Uheov:I'm in 30th position.
+(38) Onotedqe:The man behind me is Bswpgaau.
+(39) Edypz:There are 10 people behind me.
+(40) Womjoa:There are 31 people behind me.
+(41) Eopyuopx:There are 9 people in front of me.
+(42) Bisse:The man in front of me is Qjuveof.
+(43) Ioieo:I'm in 5th position.
+(44) Idkaeaag:There are 14 people in front of me.
+(45) Pznmp:The man in front of me is Nyyeyi.
+(46) Voqx:The man behind me is Emoelkoh.
+(47) Vjha:There are 5 people in front of me.
+(48) Adffw:I'm in 16th position.
+(49) Izygifcii:The man in front of me is Edypz.
+(50) Izygifcii:There are 20 people behind me.
+(51) Vjha:The man in front of me is Ioieo.
+(52) Hrgsoiaud:The man behind me is Eopyuopx.
+(53) Nyyeyi:There are 23 people in front of me.
+(54) Idpak:I'm in 18th position.
+(55) Nyyeyi:There are 8 people behind me.
+(56) Jhjfoe:The man behind me is Eyapiiooq.
+(57) Adffw:The man in front of me is Idkaeaag.
+(58) Jhel:I'm in 7th position.
+(59) Uheov:There are 29 people in front of me.
+(60) Idkaeaag:The man in front of me is Sabce.
+(61) Pkwvkwbsh:I'm in 8th position.
+(62) Ioieo:The man behind me is Vjha.
+(63) Nyyeyi:The man in front of me is Aelebho.
+(64) Qjuveof:The man in front of me is Ysiogpiy.
+(65) Ysiogpiy:The man in front of me is Womjoa.
+(66) Eyapiiooq:There are 31 people in front of me.
+Creating new trial with liar_index: 0 liar: Ysiogpiy and num_people: 32
+Creating new trial with liar_index: 1 liar: Qjuveof and num_people: 32
+Creating new trial with liar_index: 2 liar: Mjbp and num_people: 32
+Creating new trial with liar_index: 3 liar: Pznmp and num_people: 32
+Creating new trial with liar_index: 4 liar: Aioawy and num_people: 32
+Creating new trial with liar_index: 5 liar: Eeilqmzb and num_people: 32
+Creating new trial with liar_index: 6 liar: Hrgsoiaud and num_people: 32
+Creating new trial with liar_index: 7 liar: Bswpgaau and num_people: 32
+Creating new trial with liar_index: 8 liar: Eopyuopx and num_people: 32
+Creating new trial with liar_index: 9 liar: Idpak and num_people: 32
+Creating new trial with liar_index: 10 liar: Idkaeaag and num_people: 32
+Creating new trial with liar_index: 11 liar: Adffw and num_people: 32
+Creating new trial with liar_index: 12 liar: Jhjfoe and num_people: 32
+Creating new trial with liar_index: 13 liar: Aelebho and num_people: 32
+Creating new trial with liar_index: 14 liar: Bisse and num_people: 32
+Creating new trial with liar_index: 15 liar: Ioieo and num_people: 32
+Creating new trial with liar_index: 16 liar: Yerjy and num_people: 32
+Creating new trial with liar_index: 17 liar: Raii and num_people: 32
+Creating new trial with liar_index: 18 liar: Edypz and num_people: 32
+Creating new trial with liar_index: 19 liar: Izygifcii and num_people: 32
+Creating new trial with liar_index: 20 liar: Zjtfosax and num_people: 32
+Creating new trial with liar_index: 21 liar: Jhel and num_people: 32
+Creating new trial with liar_index: 22 liar: Vjha and num_people: 32
+Creating new trial with liar_index: 23 liar: Eyapiiooq and num_people: 32
+Creating new trial with liar_index: 24 liar: Emoelkoh and num_people: 32
+Creating new trial with liar_index: 25 liar: Voqx and num_people: 32
+Creating new trial with liar_index: 26 liar: Sabce and num_people: 32
+Creating new trial with liar_index: 27 liar: Uheov and num_people: 32
+Creating new trial with liar_index: 28 liar: Onotedqe and num_people: 32
+Creating new trial with liar_index: 29 liar: Womjoa and num_people: 32
+Creating new trial with liar_index: 30 liar: Nyyeyi and num_people: 32
+Creating new trial with liar_index: 31 liar: Pkwvkwbsh and num_people: 32
+unique reason 3
+Mr. Wrong identified by solve2(): Edypz
+
+
+Parsing conversation:
+(0) Ltxi:The man behind me is Yaobpcvb.
+(1) Omcdabg:The man behind me is Ioeowwibv.
+(2) Iiejufa:I'm in 4th position.
+(3) Omcdabg:I'm in 30th position.
+(4) Wxogvqo:There are 4 people behind me.
+(5) Mhailap:The man behind me is Otoeuuaae.
+(6) Iiejufa:The man behind me is Wzuagu.
+(7) Itayfi:There are 8 people behind me.
+(8) Eexeecc:The man behind me is Euaayg.
+(9) Coro:There are 6 people in front of me.
+(10) Neefz:There are 25 people in front of me.
+(11) Suieilu:The man behind me is Afpuqoli.
+(12) Euaayg:The man behind me is Suieilu.
+(13) Ioeowwibv:There are 30 people in front of me.
+(14) Yabefx:There are 0 people in front of me.
+(15) Eeng:I'm in 16th position.
+(16) Yaobpcvb:I'm in 28th position.
+(17) Neqeeeq:The man behind me is Iiejufa.
+(18) Vwarn:I'm in 33th position.
+(19) Wemejax:There are 10 people behind me.
+(20) Itayfi:There are 24 people in front of me.
+(21) Okiej:The man behind me is Mhailap.
+(22) Iiejufa:The man in front of me is Neqeeeq.
+(23) Wxogvqo:I'm in 29th position.
+(24) Ioeowwibv:There are 2 people behind me.
+(25) Yfhc:I'm in 31th position.
+(26) Riqh:I'm in 6th position.
+(27) Mosybkvqv:The man behind me is Neqeeeq.
+(28) Yuou:The man behind me is Jjpauiioo.
+(29) Otoeuuaae:I'm in 12th position.
+(30) Yuou:There are 13 people in front of me.
+(31) Sphnae:The man behind me is Wemejax.
+(32) Vwarn:The man in front of me is Rbuwigvaf.
+(33) Wzuagu:The man behind me is Riqh.
+(34) Sphnae:There are 21 people in front of me.
+(35) Yaobpcvb:The man in front of me is Ltxi.
+(36) Suieilu:There are 14 people behind me.
+(37) Tkyaanuiv:There are 9 people behind me.
+(38) Euaayg:The man in front of me is Eexeecc.
+(39) Afpuqoli:The man in front of me is Suieilu.
+(40) Odqpezvlo:The man behind me is Sphnae.
+(41) Euaayg:There are 17 people in front of me.
+(42) Eexeecc:I'm in 17th position.
+(43) Jjpauiioo:There are 18 people behind me.
+(44) Wxogvqo:There are 28 people in front of me.
+(45) Wemejax:I'm in 23th position.
+(46) Sphnae:The man in front of me is Odqpezvlo.
+(47) Itayfi:The man in front of me is Tkyaanuiv.
+(48) Neefz:I'm in 26th position.
+(49) Eexeecc:The man in front of me is Eeng.
+(50) Mhailap:There are 10 people in front of me.
+(51) Rbuwigvaf:The man behind me is Vwarn.
+(52) Fyhb:There are 8 people in front of me.
+(53) Eexojgrzv:I'm in 8th position.
+(54) Okiej:I'm in 10th position.
+(55) Yabefx:There are 32 people behind me.
+(56) Okiej:There are 23 people behind me.
+(57) Neefz:There are 7 people behind me.
+(58) Odqpezvlo:There are 20 people in front of me.
+(59) Eeng:There are 15 people in front of me.
+Creating new trial with liar_index: 0 liar: Ltxi and num_people: 33
+Creating new trial with liar_index: 1 liar: Yaobpcvb and num_people: 33
+Creating new trial with liar_index: 2 liar: Omcdabg and num_people: 33
+Creating new trial with liar_index: 3 liar: Ioeowwibv and num_people: 33
+Creating new trial with liar_index: 4 liar: Iiejufa and num_people: 33
+Creating new trial with liar_index: 5 liar: Wxogvqo and num_people: 33
+Creating new trial with liar_index: 6 liar: Mhailap and num_people: 33
+Creating new trial with liar_index: 7 liar: Otoeuuaae and num_people: 33
+Creating new trial with liar_index: 8 liar: Wzuagu and num_people: 33
+Creating new trial with liar_index: 9 liar: Itayfi and num_people: 33
+Creating new trial with liar_index: 10 liar: Eexeecc and num_people: 33
+Creating new trial with liar_index: 11 liar: Euaayg and num_people: 33
+Creating new trial with liar_index: 12 liar: Coro and num_people: 33
+Creating new trial with liar_index: 13 liar: Neefz and num_people: 33
+Creating new trial with liar_index: 14 liar: Suieilu and num_people: 33
+Creating new trial with liar_index: 15 liar: Afpuqoli and num_people: 33
+Creating new trial with liar_index: 16 liar: Yabefx and num_people: 33
+Creating new trial with liar_index: 17 liar: Eeng and num_people: 33
+Creating new trial with liar_index: 18 liar: Neqeeeq and num_people: 33
+Creating new trial with liar_index: 19 liar: Vwarn and num_people: 33
+Creating new trial with liar_index: 20 liar: Wemejax and num_people: 33
+Creating new trial with liar_index: 21 liar: Okiej and num_people: 33
+Creating new trial with liar_index: 22 liar: Yfhc and num_people: 33
+Creating new trial with liar_index: 23 liar: Riqh and num_people: 33
+Creating new trial with liar_index: 24 liar: Mosybkvqv and num_people: 33
+Creating new trial with liar_index: 25 liar: Yuou and num_people: 33
+Creating new trial with liar_index: 26 liar: Jjpauiioo and num_people: 33
+Creating new trial with liar_index: 27 liar: Sphnae and num_people: 33
+Creating new trial with liar_index: 28 liar: Rbuwigvaf and num_people: 33
+Creating new trial with liar_index: 29 liar: Tkyaanuiv and num_people: 33
+Creating new trial with liar_index: 30 liar: Odqpezvlo and num_people: 33
+Creating new trial with liar_index: 31 liar: Fyhb and num_people: 33
+Creating new trial with liar_index: 32 liar: Eexojgrzv and num_people: 33
+unique reason 3
+Mr. Wrong identified by solve2(): Yfhc
+
+
+Parsing conversation:
+(0) Euqhe:There are 31 people in front of me.
+(1) Eelo:The man in front of me is Toiv.
+(2) Beaespke:There are 25 people in front of me.
+(3) Vpeyubqt:I'm in 1st position.
+(4) Lxoepioed:The man in front of me is Qdcoiro.
+(5) Qdcoiro:There are 25 people behind me.
+(6) Zxvo:The man in front of me is Seeixa.
+(7) Beaespke:There are 11 people behind me.
+(8) Tsidsvwg:I'm in 20th position.
+(9) Govqsosj:I'm in 28th position.
+(10) Myfn:There are 26 people behind me.
+(11) Vihku:The man behind me is Like.
+(12) Daaezumv:There are 22 people behind me.
+(13) Oiicr:There are 22 people in front of me.
+(14) Niwwo:I'm in 10th position.
+(15) Dicsrowbg:The man behind me is Etemsiicy.
+(16) Buameocd:The man behind me is Dbuladucg.
+(17) Vtea:There are 34 people behind me.
+(18) Buameocd:There are 35 people in front of me.
+(19) Vtea:There are 2 people in front of me.
+(20) Saaisn:There are 12 people behind me.
+(21) Xaoxols:There are 8 people in front of me.
+(22) Govqsosj:There are 9 people behind me.
+(23) Gepaeaea:I'm in 21th position.
+(24) Hdaks:There are 35 people behind me.
+(25) Saaisn:I'm in 25th position.
+(26) Toiv:The man in front of me is Euqhe.
+(27) Hdaks:The man behind me is Vtea.
+(28) Tsidsvwg:The man in front of me is Etemsiicy.
+(29) Jfzosit:I'm in 24th position.
+(30) Jugmkpyey:There are 16 people in front of me.
+(31) Euqhe:The man in front of me is Zpoeis.
+(32) Etemsiicy:The man in front of me is Dicsrowbg.
+(33) Payi:There are 23 people behind me.
+(34) Dicsrowbg:There are 19 people behind me.
+(35) Zpoeis:The man behind me is Euqhe.
+(36) Uhfe:The man in front of me is Gepaeaea.
+(37) Okvomeuqs:I'm in 29th position.
+(38) Like:The man in front of me is Vihku.
+(39) Buameocd:I'm in 36th position.
+(40) Lxoepioed:There are 12 people in front of me.
+(41) Myfn:I'm in 11th position.
+(42) Seeixa:I'm in 29th position.
+(43) Dicsrowbg:I'm in 18th position.
+(44) Eleii:There are 32 people behind me.
+(45) Toiv:There are 32 people in front of me.
+(46) Ioeiwy:There are 3 people in front of me.
+(47) Zeabrpagi:The man behind me is Jugmkpyey.
+(48) Like:There are 7 people in front of me.
+(49) Like:The man behind me is Xaoxols.
+(50) Eleii:There are 4 people in front of me.
+(51) Okvomeuqs:The man in front of me is Govqsosj.
+(52) Dbuladucg:There are 0 people behind me.
+(53) Vihku:I'm in 7th position.
+(54) Auipna:The man behind me is Govqsosj.
+(55) Daaezumv:There are 14 people in front of me.
+(56) Seeixa:There are 28 people in front of me.
+(57) Eelo:I'm in 34th position.
+(58) Lxoepioed:There are 24 people behind me.
+(59) Jfzosit:There are 13 people behind me.
+(60) Hdaks:There is 1 people in front of me.
+(61) Oiicr:The man in front of me is Uhfe.
+(62) Zeabrpagi:There are 21 people behind me.
+(63) Vtea:The man in front of me is Hdaks.
+(64) Wegta:I'm in 6th position.
+(65) Eleii:The man behind me is Wegta.
+(66) Daaezumv:I'm in 15th position.
+(67) Qdcoiro:I'm in 12th position.
+(68) Myfn:There are 10 people in front of me.
+(69) Uhfe:I'm in 22th position.
+(70) Zeabrpagi:I'm in 16th position.
+Creating new trial with liar_index: 0 liar: Euqhe and num_people: 37
+Creating new trial with liar_index: 1 liar: Eelo and num_people: 37
+Creating new trial with liar_index: 2 liar: Toiv and num_people: 37
+Creating new trial with liar_index: 3 liar: Beaespke and num_people: 37
+Creating new trial with liar_index: 4 liar: Vpeyubqt and num_people: 37
+Creating new trial with liar_index: 5 liar: Lxoepioed and num_people: 37
+Creating new trial with liar_index: 6 liar: Qdcoiro and num_people: 37
+Creating new trial with liar_index: 7 liar: Zxvo and num_people: 37
+Creating new trial with liar_index: 8 liar: Seeixa and num_people: 37
+Creating new trial with liar_index: 9 liar: Tsidsvwg and num_people: 37
+Creating new trial with liar_index: 10 liar: Govqsosj and num_people: 37
+Creating new trial with liar_index: 11 liar: Myfn and num_people: 37
+Creating new trial with liar_index: 12 liar: Vihku and num_people: 37
+Creating new trial with liar_index: 13 liar: Like and num_people: 37
+Creating new trial with liar_index: 14 liar: Daaezumv and num_people: 37
+Creating new trial with liar_index: 15 liar: Oiicr and num_people: 37
+Creating new trial with liar_index: 16 liar: Niwwo and num_people: 37
+Creating new trial with liar_index: 17 liar: Dicsrowbg and num_people: 37
+Creating new trial with liar_index: 18 liar: Etemsiicy and num_people: 37
+Creating new trial with liar_index: 19 liar: Buameocd and num_people: 37
+Creating new trial with liar_index: 20 liar: Dbuladucg and num_people: 37
+Creating new trial with liar_index: 21 liar: Vtea and num_people: 37
+Creating new trial with liar_index: 22 liar: Saaisn and num_people: 37
+Creating new trial with liar_index: 23 liar: Xaoxols and num_people: 37
+Creating new trial with liar_index: 24 liar: Gepaeaea and num_people: 37
+Creating new trial with liar_index: 25 liar: Hdaks and num_people: 37
+Creating new trial with liar_index: 26 liar: Jfzosit and num_people: 37
+Creating new trial with liar_index: 27 liar: Jugmkpyey and num_people: 37
+Creating new trial with liar_index: 28 liar: Zpoeis and num_people: 37
+Creating new trial with liar_index: 29 liar: Payi and num_people: 37
+Creating new trial with liar_index: 30 liar: Uhfe and num_people: 37
+Creating new trial with liar_index: 31 liar: Okvomeuqs and num_people: 37
+Creating new trial with liar_index: 32 liar: Eleii and num_people: 37
+Creating new trial with liar_index: 33 liar: Ioeiwy and num_people: 37
+Creating new trial with liar_index: 34 liar: Zeabrpagi and num_people: 37
+Creating new trial with liar_index: 35 liar: Auipna and num_people: 37
+Creating new trial with liar_index: 36 liar: Wegta and num_people: 37
+unique reason 3
+Mr. Wrong identified by solve2(): Okvomeuqs
+
+
+Parsing conversation:
+(0) Faieuoq:There are 10 people behind me.
+(1) Ehoekeyu:The man behind me is Esnz.
+(2) Otgao:There are 16 people behind me.
+(3) Jptg:The man in front of me is Maux.
+(4) Eiyavar:The man in front of me is Ooieumfz.
+(5) Qviotb:The man in front of me is Ajiup.
+(6) Kylot:There are 22 people in front of me.
+(7) Aceaqeiiu:There are 32 people in front of me.
+(8) Mfee:There are 13 people in front of me.
+(9) Sybzaklow:There are 35 people in front of me.
+(10) Krmety:There are 14 people in front of me.
+(11) Ooieumfz:There are 35 people behind me.
+(12) Eeoicaaoo:I'm in 25th position.
+(13) Snmyoe:I'm in 31th position.
+(14) Jptg:There are 27 people behind me.
+(15) Koieeuzde:I'm in 40th position.
+(16) Eheyedf:I'm in 2nd position.
+(17) Aceaqeiiu:The man in front of me is Eieiipwa.
+(18) Oomfneejl:There are 38 people in front of me.
+(19) Eheyedf:The man behind me is Ougmja.
+(20) Ooieumfz:There are 4 people in front of me.
+(21) Kylot:There are 17 people behind me.
+(22) Ajiup:There are 8 people in front of me.
+(23) Oomfneejl:There is 1 people behind me.
+(24) Qviotb:The man behind me is Yoyuwu.
+(25) Ceeiqjqv:I'm in 28th position.
+(26) Yoyuwu:There are 10 people in front of me.
+(27) Mfee:I'm in 14th position.
+(28) Ypkoeerc:There are 28 people in front of me.
+(29) Vuoejsx:The man behind me is Sybzaklow.
+(30) Vuoejsx:There are 5 people behind me.
+(31) Igubva:I'm in 6th position.
+(32) Oomfneejl:I'm in 39th position.
+(33) Maux:I'm in 12th position.
+(34) Eelemiu:There are 19 people behind me.
+(35) Ypkoeerc:There are 11 people behind me.
+(36) Ujihr:There are 26 people in front of me.
+(37) Eieiipwa:The man in front of me is Snmyoe.
+(38) Ndzomiil:I'm in 7th position.
+(39) Yoyuwu:The man behind me is Maux.
+(40) Krmety:The man behind me is Inzbehi.
+(41) Geew:I'm in 22th position.
+(42) Yoyuwu:The man in front of me is Qviotb.
+(43) Iecv:The man in front of me is Sybzaklow.
+(44) Sybzaklow:The man behind me is Iecv.
+(45) Vuoejsx:The man in front of me is Eiyavar.
+(46) Kylot:I'm in 23th position.
+(47) Faieuoq:There are 29 people in front of me.
+(48) Iecv:There are 36 people in front of me.
+(49) Esnz:The man in front of me is Ehoekeyu.
+(50) Fnoxaay:The man behind me is Ajiup.
+(51) Snmyoe:There are 30 people in front of me.
+(52) Bmqlrah:There are 0 people in front of me.
+(53) Bmqlrah:The man behind me is Eheyedf.
+(54) Ougmja:There are 37 people behind me.
+(55) Eelemiu:There are 20 people in front of me.
+(56) Zefiooh:There are 17 people in front of me.
+(57) Qviotb:There are 30 people behind me.
+(58) Inzbehi:I'm in 16th position.
+(59) Feemwrvvy:The man behind me is Ooieumfz.
+(60) Fnoxaay:The man in front of me is Ndzomiil.
+(61) Koieeuzde:There are 0 people behind me.
+(62) Ougmja:There are 2 people in front of me.
+(63) Bmqlrah:I'm in 1st position.
+(64) Zefiooh:I'm in 18th position.
+(65) Ajiup:The man in front of me is Fnoxaay.
+(66) Koieeuzde:The man in front of me is Oomfneejl.
+(67) Odesya:There are 37 people in front of me.
+(68) Ndzomiil:There are 33 people behind me.
+(69) Eelemiu:I'm in 21th position.
+(70) Ougmja:The man behind me is Feemwrvvy.
+(71) Snmyoe:The man behind me is Eieiipwa.
+(72) Mfee:The man in front of me is Jptg.
+(73) Ajiup:I'm in 9th position.
+(74) Iecv:The man behind me is Odesya.
+(75) Inzbehi:There are 24 people behind me.
+(76) Ooieumfz:The man in front of me is Feemwrvvy.
+(77) Cqaonih:The man behind me is Ujihr.
+(78) Aceaqeiiu:The man behind me is Eiyavar.
+(79) Jncwdoa:I'm in 17th position.
+Creating new trial with liar_index: 0 liar: Faieuoq and num_people: 40
+Creating new trial with liar_index: 1 liar: Ehoekeyu and num_people: 40
+Creating new trial with liar_index: 2 liar: Esnz and num_people: 40
+Creating new trial with liar_index: 3 liar: Otgao and num_people: 40
+Creating new trial with liar_index: 4 liar: Jptg and num_people: 40
+Creating new trial with liar_index: 5 liar: Maux and num_people: 40
+Creating new trial with liar_index: 6 liar: Eiyavar and num_people: 40
+Creating new trial with liar_index: 7 liar: Ooieumfz and num_people: 40
+Creating new trial with liar_index: 8 liar: Qviotb and num_people: 40
+Creating new trial with liar_index: 9 liar: Ajiup and num_people: 40
+Creating new trial with liar_index: 10 liar: Kylot and num_people: 40
+Creating new trial with liar_index: 11 liar: Aceaqeiiu and num_people: 40
+Creating new trial with liar_index: 12 liar: Mfee and num_people: 40
+Creating new trial with liar_index: 13 liar: Sybzaklow and num_people: 40
+Creating new trial with liar_index: 14 liar: Krmety and num_people: 40
+Creating new trial with liar_index: 15 liar: Eeoicaaoo and num_people: 40
+Creating new trial with liar_index: 16 liar: Snmyoe and num_people: 40
+Creating new trial with liar_index: 17 liar: Koieeuzde and num_people: 40
+Creating new trial with liar_index: 18 liar: Eheyedf and num_people: 40
+Creating new trial with liar_index: 19 liar: Eieiipwa and num_people: 40
+Creating new trial with liar_index: 20 liar: Oomfneejl and num_people: 40
+Creating new trial with liar_index: 21 liar: Ougmja and num_people: 40
+Creating new trial with liar_index: 22 liar: Yoyuwu and num_people: 40
+Creating new trial with liar_index: 23 liar: Ceeiqjqv and num_people: 40
+Creating new trial with liar_index: 24 liar: Ypkoeerc and num_people: 40
+Creating new trial with liar_index: 25 liar: Vuoejsx and num_people: 40
+Creating new trial with liar_index: 26 liar: Igubva and num_people: 40
+Creating new trial with liar_index: 27 liar: Eelemiu and num_people: 40
+Creating new trial with liar_index: 28 liar: Ujihr and num_people: 40
+Creating new trial with liar_index: 29 liar: Ndzomiil and num_people: 40
+Creating new trial with liar_index: 30 liar: Inzbehi and num_people: 40
+Creating new trial with liar_index: 31 liar: Geew and num_people: 40
+Creating new trial with liar_index: 32 liar: Iecv and num_people: 40
+Creating new trial with liar_index: 33 liar: Fnoxaay and num_people: 40
+Creating new trial with liar_index: 34 liar: Bmqlrah and num_people: 40
+Creating new trial with liar_index: 35 liar: Zefiooh and num_people: 40
+Creating new trial with liar_index: 36 liar: Feemwrvvy and num_people: 40
+Creating new trial with liar_index: 37 liar: Odesya and num_people: 40
+Creating new trial with liar_index: 38 liar: Cqaonih and num_people: 40
+Creating new trial with liar_index: 39 liar: Jncwdoa and num_people: 40
+unique reason 3
+Mr. Wrong identified by solve2(): Eiyavar
+
+
+Parsing conversation:
+(0) Hlocuakj:There are 23 people in front of me.
+(1) Flialrzv:I'm in 35th position.
+(2) Avoeenl:The man in front of me is Iiedre.
+(3) Rnilt:There are 12 people in front of me.
+(4) Xieyj:The man behind me is Hlocuakj.
+(5) Xciew:The man behind me is Eokqlnrey.
+(6) Yiwaeh:The man in front of me is Vwcqjly.
+(7) Poqegza:The man in front of me is Vgoeaeyeo.
+(8) Vgoeaeyeo:There are 2 people behind me.
+(9) Poqegza:There are 36 people in front of me.
+(10) Zkat:The man in front of me is Rnilt.
+(11) Ejzi:The man in front of me is Tgyyo.
+(12) Wlunu:There are 6 people in front of me.
+(13) Vwcqjly:I'm in 28th position.
+(14) Flialrzv:The man in front of me is Xiarushb.
+(15) Foquuff:There are 23 people behind me.
+(16) Vgoeaeyeo:The man behind me is Poqegza.
+(17) Tgtwzey:There are 9 people in front of me.
+(18) Eaege:There are 31 people in front of me.
+(19) Ydyqfyueu:The man behind me is Vchs.
+(20) Rdefliae:The man behind me is Uovoiii.
+(21) Iuaepef:I'm in 8th position.
+(22) Iitfcofco:There are 17 people in front of me.
+(23) Yccebef:I'm in 5th position.
+(24) Ezrl:The man in front of me is Ejzi.
+(25) Uovoiii:I'm in 12th position.
+(26) Tgtwzey:The man in front of me is Fzqswiitm.
+(27) Iitfcofco:The man in front of me is Ndtdaao.
+(28) Ghmakixi:The man in front of me is Eaege.
+(29) Hxdub:There are 37 people in front of me.
+(30) Rnilt:There are 25 people behind me.
+(31) Wlunu:There are 31 people behind me.
+(32) Xieyj:There are 15 people behind me.
+(33) Eokqlnrey:There are 5 people in front of me.
+(34) Avoeenl:There are 21 people in front of me.
+(35) Uiwpsz:The man behind me is Xciew.
+(36) Uovoiii:There are 26 people behind me.
+(37) Pbovilcl:The man in front of me is Foquuff.
+(38) Yiwaeh:The man behind me is Yccebef.
+(39) Eokqlnrey:The man in front of me is Xciew.
+(40) Tgyyo:There are 24 people in front of me.
+(41) Ndtdaao:The man behind me is Iitfcofco.
+(42) Ndtdaao:I'm in 17th position.
+(43) Tgyyo:I'm in 25th position.
+(44) Xiarushb:The man in front of me is Ghmakixi.
+(45) Xiarushb:I'm in 34th position.
+(46) Tgyyo:There are 13 people behind me.
+(47) Yccebef:The man in front of me is Iuaepef.
+(48) Yccebef:There are 13 people in front of me.
+(49) Xderalh:There are 35 people behind me.
+(50) Fzqswiitm:I'm in 9th position.
+(51) Rdefliae:The man in front of me is Tgtwzey.
+(52) Wlunu:The man in front of me is Eokqlnrey.
+(53) Hxdub:There are 0 people behind me.
+(54) Xciew:There are 4 people in front of me.
+(55) Rnilt:The man in front of me is Uovoiii.
+(56) Hxdub:I'm in 38th position.
+(57) Rdefliae:I'm in 11th position.
+(58) Hlocuakj:The man behind me is Tgyyo.
+(59) Zkat:The man behind me is Foquuff.
+(60) Pbovilcl:I'm in 16th position.
+(61) Zkat:I'm in 14th position.
+(62) Ndtdaao:There are 21 people behind me.
+(63) Vwcqjly:There are 10 people behind me.
+(64) Iumjm:There is 1 people in front of me.
+(65) Vgoeaeyeo:There are 35 people in front of me.
+(66) Eaege:The man behind me is Ghmakixi.
+(67) Jjhagde:The man in front of me is Yccebef.
+(68) Eokqlnrey:The man behind me is Wlunu.
+(69) Xciew:The man in front of me is Uiwpsz.
+(70) Ejzi:There are 12 people behind me.
+(71) Oqemavu:The man behind me is Iumjm.
+(72) Vchs:I'm in 20th position.
+(73) Uiwpsz:I'm in 4th position.
+(74) Foquuff:There are 14 people in front of me.
+(75) Uovoiii:There are 11 people in front of me.
+(76) Tgtwzey:I'm in 10th position.
+(77) Xderalh:There are 2 people in front of me.
+(78) Xieyj:There are 22 people in front of me.
+(79) Hlocuakj:I'm in 24th position.
+(80) Iiedre:The man in front of me is Vchs.
+(81) Pbovilcl:There are 15 people in front of me.
+Creating new trial with liar_index: 0 liar: Hlocuakj and num_people: 38
+Creating new trial with liar_index: 1 liar: Flialrzv and num_people: 38
+Creating new trial with liar_index: 2 liar: Avoeenl and num_people: 38
+Creating new trial with liar_index: 3 liar: Iiedre and num_people: 38
+Creating new trial with liar_index: 4 liar: Rnilt and num_people: 38
+Creating new trial with liar_index: 5 liar: Xieyj and num_people: 38
+Creating new trial with liar_index: 6 liar: Xciew and num_people: 38
+Creating new trial with liar_index: 7 liar: Eokqlnrey and num_people: 38
+Creating new trial with liar_index: 8 liar: Yiwaeh and num_people: 38
+Creating new trial with liar_index: 9 liar: Vwcqjly and num_people: 38
+Creating new trial with liar_index: 10 liar: Poqegza and num_people: 38
+Creating new trial with liar_index: 11 liar: Vgoeaeyeo and num_people: 38
+Creating new trial with liar_index: 12 liar: Zkat and num_people: 38
+Creating new trial with liar_index: 13 liar: Ejzi and num_people: 38
+Creating new trial with liar_index: 14 liar: Tgyyo and num_people: 38
+Creating new trial with liar_index: 15 liar: Wlunu and num_people: 38
+Creating new trial with liar_index: 16 liar: Xiarushb and num_people: 38
+Creating new trial with liar_index: 17 liar: Foquuff and num_people: 38
+Creating new trial with liar_index: 18 liar: Tgtwzey and num_people: 38
+Creating new trial with liar_index: 19 liar: Eaege and num_people: 38
+Creating new trial with liar_index: 20 liar: Ydyqfyueu and num_people: 38
+Creating new trial with liar_index: 21 liar: Vchs and num_people: 38
+Creating new trial with liar_index: 22 liar: Rdefliae and num_people: 38
+Creating new trial with liar_index: 23 liar: Uovoiii and num_people: 38
+Creating new trial with liar_index: 24 liar: Iuaepef and num_people: 38
+Creating new trial with liar_index: 25 liar: Iitfcofco and num_people: 38
+Creating new trial with liar_index: 26 liar: Yccebef and num_people: 38
+Creating new trial with liar_index: 27 liar: Ezrl and num_people: 38
+Creating new trial with liar_index: 28 liar: Fzqswiitm and num_people: 38
+Creating new trial with liar_index: 29 liar: Ndtdaao and num_people: 38
+Creating new trial with liar_index: 30 liar: Ghmakixi and num_people: 38
+Creating new trial with liar_index: 31 liar: Hxdub and num_people: 38
+Creating new trial with liar_index: 32 liar: Uiwpsz and num_people: 38
+Creating new trial with liar_index: 33 liar: Pbovilcl and num_people: 38
+Creating new trial with liar_index: 34 liar: Xderalh and num_people: 38
+Creating new trial with liar_index: 35 liar: Iumjm and num_people: 38
+Creating new trial with liar_index: 36 liar: Jjhagde and num_people: 38
+Creating new trial with liar_index: 37 liar: Oqemavu and num_people: 38
+unique reason 3
+Mr. Wrong identified by solve2(): Yccebef
+
+
+Parsing conversation:
+(0) Eiezcmo:I'm in 29th position.
+(1) Dvpupm:There are 35 people in front of me.
+(2) Ugfyko:I'm in 19th position.
+(3) Biuudeln:The man behind me is Byxiynet.
+(4) Aeoauul:There are 20 people behind me.
+(5) Haey:The man in front of me is Uedk.
+(6) Xeepyabq:There are 30 people behind me.
+(7) Eoiyzdsvk:There are 32 people in front of me.
+(8) Gloeknasx:The man in front of me is Eiezcmo.
+(9) Pnkinee:There are 4 people in front of me.
+(10) Simjicw:The man in front of me is Dvpupm.
+(11) Mree:The man in front of me is Eidmufr.
+(12) Auyyyjvn:The man in front of me is Eojiq.
+(13) Upqeofte:There are 14 people in front of me.
+(14) Jemcl:I'm in 18th position.
+(15) Qwqeiebe:The man behind me is Erkzxazt.
+(16) Eidmufr:There are 20 people in front of me.
+(17) Oxeplye:There are 33 people in front of me.
+(18) Nolbme:I'm in 9th position.
+(19) Upqeofte:The man in front of me is Byxiynet.
+(20) Erkzxazt:There are 6 people in front of me.
+(21) Gloeknasx:There are 10 people behind me.
+(22) Xxcuhg:The man in front of me is Wuael.
+(23) Dvpupm:I'm in 36th position.
+(24) Eyfi:The man in front of me is Mypn.
+(25) Upqeofte:There are 25 people behind me.
+(26) Wuael:The man in front of me is Tiuqfz.
+(27) Tgimaj:The man behind me is Biuudeln.
+(28) Abkltmra:There are 37 people behind me.
+(29) Abkltmra:I'm in 3rd position.
+(30) Iieeejhek:The man behind me is Azuvtmi.
+(31) Xxcuhg:There are 12 people behind me.
+(32) Ehgc:There are 3 people in front of me.
+(33) Azuvtmi:The man in front of me is Iieeejhek.
+(34) Byxiynet:The man behind me is Upqeofte.
+(35) Inquelt:There are 15 people behind me.
+(36) Xccd:The man behind me is Tagvy.
+(37) Tagvy:The man behind me is Inquelt.
+(38) Haey:I'm in 32th position.
+(39) Auyyyjvn:There is 1 people behind me.
+(40) Xxcuhg:There are 27 people in front of me.
+(41) Uedk:I'm in 31th position.
+(42) Uaze:There are 39 people in front of me.
+(43) Tiuqfz:The man in front of me is Inquelt.
+(44) Ugfyko:The man in front of me is Jemcl.
+(45) Eiezcmo:The man behind me is Gloeknasx.
+(46) Iieeejhek:I'm in 1st position.
+(47) Tepmolt:I'm in 11th position.
+(48) Aeoauul:The man in front of me is Ugfyko.
+(49) Eiezcmo:The man in front of me is Xxcuhg.
+(50) Ehgc:The man in front of me is Abkltmra.
+(51) Erkzxazt:The man in front of me is Qwqeiebe.
+(52) Haey:There are 31 people in front of me.
+(53) Nolbme:There are 31 people behind me.
+(54) Ozyuoui:There are 5 people in front of me.
+(55) Tgimaj:I'm in 12th position.
+(56) Ugfyko:The man behind me is Aeoauul.
+(57) Eyfi:There are 23 people behind me.
+(58) Iieeejhek:There are 39 people behind me.
+(59) Pquzoaur:There are 34 people in front of me.
+(60) Mypn:The man behind me is Eyfi.
+(61) Dvpupm:The man behind me is Simjicw.
+(62) Tagvy:The man in front of me is Xccd.
+(63) Azuvtmi:The man behind me is Abkltmra.
+(64) Tgimaj:The man in front of me is Tepmolt.
+(65) Uaze:The man in front of me is Auyyyjvn.
+(66) Eyfi:I'm in 17th position.
+(67) Uaze:There are 0 people behind me.
+(68) Jemcl:There are 17 people in front of me.
+(69) Eojiq:I'm in 38th position.
+(70) Mypn:I'm in 16th position.
+Creating new trial with liar_index: 0 liar: Eiezcmo and num_people: 40
+Creating new trial with liar_index: 1 liar: Dvpupm and num_people: 40
+Creating new trial with liar_index: 2 liar: Ugfyko and num_people: 40
+Creating new trial with liar_index: 3 liar: Biuudeln and num_people: 40
+Creating new trial with liar_index: 4 liar: Byxiynet and num_people: 40
+Creating new trial with liar_index: 5 liar: Aeoauul and num_people: 40
+Creating new trial with liar_index: 6 liar: Haey and num_people: 40
+Creating new trial with liar_index: 7 liar: Uedk and num_people: 40
+Creating new trial with liar_index: 8 liar: Xeepyabq and num_people: 40
+Creating new trial with liar_index: 9 liar: Eoiyzdsvk and num_people: 40
+Creating new trial with liar_index: 10 liar: Gloeknasx and num_people: 40
+Creating new trial with liar_index: 11 liar: Pnkinee and num_people: 40
+Creating new trial with liar_index: 12 liar: Simjicw and num_people: 40
+Creating new trial with liar_index: 13 liar: Mree and num_people: 40
+Creating new trial with liar_index: 14 liar: Eidmufr and num_people: 40
+Creating new trial with liar_index: 15 liar: Auyyyjvn and num_people: 40
+Creating new trial with liar_index: 16 liar: Eojiq and num_people: 40
+Creating new trial with liar_index: 17 liar: Upqeofte and num_people: 40
+Creating new trial with liar_index: 18 liar: Jemcl and num_people: 40
+Creating new trial with liar_index: 19 liar: Qwqeiebe and num_people: 40
+Creating new trial with liar_index: 20 liar: Erkzxazt and num_people: 40
+Creating new trial with liar_index: 21 liar: Oxeplye and num_people: 40
+Creating new trial with liar_index: 22 liar: Nolbme and num_people: 40
+Creating new trial with liar_index: 23 liar: Xxcuhg and num_people: 40
+Creating new trial with liar_index: 24 liar: Wuael and num_people: 40
+Creating new trial with liar_index: 25 liar: Eyfi and num_people: 40
+Creating new trial with liar_index: 26 liar: Mypn and num_people: 40
+Creating new trial with liar_index: 27 liar: Tiuqfz and num_people: 40
+Creating new trial with liar_index: 28 liar: Tgimaj and num_people: 40
+Creating new trial with liar_index: 29 liar: Abkltmra and num_people: 40
+Creating new trial with liar_index: 30 liar: Iieeejhek and num_people: 40
+Creating new trial with liar_index: 31 liar: Azuvtmi and num_people: 40
+Creating new trial with liar_index: 32 liar: Ehgc and num_people: 40
+Creating new trial with liar_index: 33 liar: Inquelt and num_people: 40
+Creating new trial with liar_index: 34 liar: Xccd and num_people: 40
+Creating new trial with liar_index: 35 liar: Tagvy and num_people: 40
+Creating new trial with liar_index: 36 liar: Uaze and num_people: 40
+Creating new trial with liar_index: 37 liar: Tepmolt and num_people: 40
+Creating new trial with liar_index: 38 liar: Ozyuoui and num_people: 40
+Creating new trial with liar_index: 39 liar: Pquzoaur and num_people: 40
+before_pairs:
+(0, 23)
+(2, 18)
+(5, 2)
+(6, 7)
+(10, 0)
+(12, 1)
+(13, 14)
+(15, 16)
+(17, 4)
+(20, 19)
+(23, 24)
+(24, 27)
+(25, 26)
+(27, 33)
+(28, 37)
+(31, 30)
+(32, 29)
+(35, 34)
+(36, 15)
+after_pairs:
+(10, 0)
+(12, 1)
+(5, 2)
+(4, 3)
+(17, 4)
+(20, 19)
+(25, 26)
+(3, 28)
+(31, 30)
+(29, 31)
+(35, 34)
+(33, 35)
+person_indexes before:
+14
+26
+24
+27
+36
+28
+5
+21
+22
+3
+8
+11
+33
+9
+35
+4
+31
+20
+39
+2
+25
+7
+10
+12
+23
+0
+16
+30
+15
+6
+17
+1
+19
+32
+29
+34
+37
+38
+13
+18
+person_indexes after:
+14
+24
+27
+36
+28
+21
+22
+3
+8
+11
+33
+9
+39
+7
+23
+16
+15
+6
+32
+29
+37
+38
+13
+18
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Ozyuoui")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Eiezcmo:I'm in 29th position.",
+    "Dvpupm:There are 35 people in front of me.",
+    "Ugfyko:I'm in 19th position.",
+    "Biuudeln:The man behind me is Byxiynet.",
+    "Aeoauul:There are 20 people behind me.",
+    "Haey:The man in front of me is Uedk.",
+    "Xeepyabq:There are 30 people behind me.",
+    "Eoiyzdsvk:There are 32 people in front of me.",
+    "Gloeknasx:The man in front of me is Eiezcmo.",
+    "Pnkinee:There are 4 people in front of me.",
+    "Simjicw:The man in front of me is Dvpupm.",
+    "Mree:The man in front of me is Eidmufr.",
+    "Auyyyjvn:The man in front of me is Eojiq.",
+    "Upqeofte:There are 14 people in front of me.",
+    "Jemcl:I'm in 18th position.",
+    "Qwqeiebe:The man behind me is Erkzxazt.",
+    "Eidmufr:There are 20 people in front of me.",
+    "Oxeplye:There are 33 people in front of me.",
+    "Nolbme:I'm in 9th position.",
+    "Upqeofte:The man in front of me is Byxiynet.",
+    "Erkzxazt:There are 6 people in front of me.",
+    "Gloeknasx:There are 10 people behind me.",
+    "Xxcuhg:The man in front of me is Wuael.",
+    "Dvpupm:I'm in 36th position.",
+    "Eyfi:The man in front of me is Mypn.",
+    "Upqeofte:There are 25 people behind me.",
+    "Wuael:The man in front of me is Tiuqfz.",
+    "Tgimaj:The man behind me is Biuudeln.",
+    "Abkltmra:There are 37 people behind me.",
+    "Abkltmra:I'm in 3rd position.",
+    "Iieeejhek:The man behind me is Azuvtmi.",
+    "Xxcuhg:There are 12 people behind me.",
+    "Ehgc:There are 3 people in front of me.",
+    "Azuvtmi:The man in front of me is Iieeejhek.",
+    "Byxiynet:The man behind me is Upqeofte.",
+    "Inquelt:There are 15 people behind me.",
+    "Xccd:The man behind me is Tagvy.",
+    "Tagvy:The man behind me is Inquelt.",
+    "Haey:I'm in 32th position.",
+    "Auyyyjvn:There is 1 people behind me.",
+    "Xxcuhg:There are 27 people in front of me.",
+    "Uedk:I'm in 31th position.",
+    "Uaze:There are 39 people in front of me.",
+    "Tiuqfz:The man in front of me is Inquelt.",
+    "Ugfyko:The man in front of me is Jemcl.",
+    "Eiezcmo:The man behind me is Gloeknasx.",
+    "Iieeejhek:I'm in 1st position.",
+    "Tepmolt:I'm in 11th position.",
+    "Aeoauul:The man in front of me is Ugfyko.",
+    "Eiezcmo:The man in front of me is Xxcuhg.",
+    "Ehgc:The man in front of me is Abkltmra.",
+    "Erkzxazt:The man in front of me is Qwqeiebe.",
+    "Haey:There are 31 people in front of me.",
+    "Nolbme:There are 31 people behind me.",
+    "Ozyuoui:There are 5 people in front of me.",
+    "Tgimaj:I'm in 12th position.",
+    "Ugfyko:The man behind me is Aeoauul.",
+    "Eyfi:There are 23 people behind me.",
+    "Iieeejhek:There are 39 people behind me.",
+    "Pquzoaur:There are 34 people in front of me.",
+    "Mypn:The man behind me is Eyfi.",
+    "Dvpupm:The man behind me is Simjicw.",
+    "Tagvy:The man in front of me is Xccd.",
+    "Azuvtmi:The man behind me is Abkltmra.",
+    "Tgimaj:The man in front of me is Tepmolt.",
+    "Uaze:The man in front of me is Auyyyjvn.",
+    "Eyfi:I'm in 17th position.",
+    "Uaze:There are 0 people behind me.",
+    "Jemcl:There are 17 people in front of me.",
+    "Eojiq:I'm in 38th position.",
+    "Mypn:I'm in 16th position.",
+]
