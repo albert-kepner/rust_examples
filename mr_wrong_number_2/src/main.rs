@@ -113,13 +113,13 @@ impl<'a> State<'a> {
             for trial in &self.trials {
                 let (other_lies, liar_lies, consistent) =
                     trial.is_contradictory(&self, &test_the_liar);
-                    if verbose {
-                        println!(
-                            "After is_contradictory({}): !other_lies {} consistent: {}",
-                            trial.liar_index, !other_lies, consistent
-                        );
-                    }
-                
+                if verbose {
+                    println!(
+                        "After is_contradictory({}): !other_lies {} consistent: {}",
+                        trial.liar_index, !other_lies, consistent
+                    );
+                }
+
                 if consistent && !test_the_liar {
                     if verbose {
                         println!(
@@ -341,7 +341,7 @@ impl Trial {
                                 println!(
                                     "Person {} claims absolute position: {}",
                                     person.name, position
-                                );    
+                                );
                             }
                             let assignment = &mut assignments[person_index];
                             // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
@@ -440,10 +440,10 @@ impl Trial {
             }
         } // End of loop to consider statements,
         if verbose {
-        println!(
-            "END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}",
-            test_the_liar, self.liar_index, other_lies, liar_lies
-        );
+            println!(
+                "END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}",
+                test_the_liar, self.liar_index, other_lies, liar_lies
+            );
             for assignment in &assignments {
                 println!(
                     "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
