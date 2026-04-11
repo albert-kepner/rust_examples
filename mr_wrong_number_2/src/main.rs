@@ -324,7 +324,7 @@ impl Trial {
                         person_index, person.name, test_the_liar
                     );
                 }
-                 for statement in &person.statements {
+                for statement in &person.statements {
                     match statement {
                         Statement::AbsPosition { position } => {
                             println!(
@@ -402,7 +402,7 @@ impl Trial {
                                 assignment.possible_positions,
                                 assignment.position
                             );
-                        }    
+                        }
                     }
                 }
             }
@@ -609,9 +609,7 @@ impl Trial {
                 (Some(allowed), Some(other)) => {
                     if *other > allowed {
                         changed = true;
-                        this_assignment
-                            .possible_positions
-                            .retain(|&x| x <= allowed);
+                        this_assignment.possible_positions.retain(|&x| x <= allowed);
                     }
                 }
                 _ => {
@@ -639,9 +637,7 @@ impl Trial {
                 (Some(allowed), Some(other)) => {
                     if *other < allowed {
                         changed = true;
-                        this_assignment
-                            .possible_positions
-                            .retain(|&x| x >= allowed);
+                        this_assignment.possible_positions.retain(|&x| x >= allowed);
                     }
                 }
                 _ => {
@@ -851,7 +847,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES {
+        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -871,37 +867,6 @@ mod sample_tests {
             );
         }
     }
-
-    const _1_SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 3] = [
-        (
-            &[
-                "John:I'm in 1st position.",
-                "Peter:I'm in 2nd position.",
-                "Tom:I'm in 1st position.",
-                "Peter:The man in front of me is Tom.",
-            ],
-            Some("John"),
-        ),
-        (
-            &[
-                "John:I'm in 1st position.",
-                "Peter:There is 1 people in front of me.",
-                "Tom:There are 2 people behind me.",
-                "Peter:The man behind me is Tom.",
-            ],
-            Some("Tom"),
-        ),
-        (
-            &[
-                "Tom:The man behind me is Bob.",
-                "Bob:The man in front of me is Tom.",
-                "Bob:The man behind me is Gary.",
-                "Gary:The man in front of me is Bob.",
-                "Fred:I'm in 1st position.",
-            ],
-            Some("Fred"),
-        ),
-    ];
 
     const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 11] = [
         (
@@ -999,23 +964,23 @@ mod sample_tests {
                 "Apeiyb:The man behind me is Hauejr.",
             ],
             Some("Apeiyb"),
-        )
+        ),
     ];
 
     /***
-    No contradictions found, unable to identify Mr. Wrong.
-assertion failed: `(left == right)`
-  left: `None`,
- right: `Some("Pamqaabuj")`: 
-Your result (left) did not match the expected output (right)
-Conversation:
-[
-    "Jgatt:The man in front of me is Wafxmw.",
-    "Wafxmw:The man behind me is Jgatt.",
-    "Pamqaabuj:There are 2 people in front of me.",
-    "Dsfy:I'm in 4th position.",
-]
-     */
+        No contradictions found, unable to identify Mr. Wrong.
+    assertion failed: `(left == right)`
+      left: `None`,
+     right: `Some("Pamqaabuj")`:
+    Your result (left) did not match the expected output (right)
+    Conversation:
+    [
+        "Jgatt:The man in front of me is Wafxmw.",
+        "Wafxmw:The man behind me is Jgatt.",
+        "Pamqaabuj:There are 2 people in front of me.",
+        "Dsfy:I'm in 4th position.",
+    ]
+         */
 
     /***
     No contradictions found, unable to identify Mr. Wrong.
@@ -1033,10 +998,10 @@ Conversation:
          */
     const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [(
         &[
-           "Jgatt:The man in front of me is Wafxmw.",
-    "Wafxmw:The man behind me is Jgatt.",
-    "Pamqaabuj:There are 2 people in front of me.",
-    "Dsfy:I'm in 4th position.",
+            "Jgatt:The man in front of me is Wafxmw.",
+            "Wafxmw:The man behind me is Jgatt.",
+            "Pamqaabuj:There are 2 people in front of me.",
+            "Dsfy:I'm in 4th position.",
         ],
         Some("Pamqaabuj"),
     )];
