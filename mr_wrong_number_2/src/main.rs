@@ -336,7 +336,6 @@ impl Trial {
                 changed = true;
             }
         } else {
-
         }
         return (changed, has_contradiction);
     }
@@ -378,8 +377,12 @@ impl Trial {
                                 assignment.possible_positions = vec![*position];
                                 changed = true;
                             }
-                            (changed, has_contradiction) =
-                                self.claim_position(&mut assignments, person_index, is_liar, *position);
+                            (changed, has_contradiction) = self.claim_position(
+                                &mut assignments,
+                                person_index,
+                                is_liar,
+                                *position,
+                            );
                         }
                         Statement::ReversePosition { from_end } => {
                             let assignment = &mut assignments[person_index];
