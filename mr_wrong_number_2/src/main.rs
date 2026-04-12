@@ -335,7 +335,8 @@ impl Trial {
                 assignment.possible_positions = vec![position];
                 changed = true;
             }
-        } else { // have liar, claimed position must be false
+        } else {
+            // have liar, claimed position must be false
             if let Some(current_position) = assignment.position {
                 if current_position == position {
                     // liar claiming the actual position is a contradiciton
@@ -427,7 +428,6 @@ impl Trial {
                                 if contradiction {
                                     has_contradiction = true;
                                 }
-
                             } else {
                                 let (contradiction, change_flag) = self.infer_relative(
                                     &mut assignments,
@@ -441,7 +441,7 @@ impl Trial {
                                 if contradiction {
                                     has_contradiction = true;
                                 }
-                            }  
+                            }
                         }
                     }
                     if verbose {
@@ -485,10 +485,10 @@ impl Trial {
         return has_contradiction;
     }
 
-        // if this person is the liar, then if either person's position is known,
-        // We can infer that the other position is not as the liar states.
-        // And if both positions are known, it is a contradiction if the liar confirms
-        // the known relative position.
+    // if this person is the liar, then if either person's position is known,
+    // We can infer that the other position is not as the liar states.
+    // And if both positions are known, it is a contradiction if the liar confirms
+    // the known relative position.
     fn liars_relative_inference(
         &self,
         assignments: &mut Vec<Assignment>,
