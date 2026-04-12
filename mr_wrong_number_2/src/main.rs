@@ -22,8 +22,6 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
             return None;
         }
     }
-
-    None
 }
 
 fn get_name<'a>(blessed_names: &Vec<&'a str>, name: &'a str) -> &'a str {
@@ -108,7 +106,7 @@ impl<'a> State<'a> {
         // exclude_supporting_pairs
         let maybe_liars: Vec<usize> = self.exclude_supporting_pairs();
         for liar_index in maybe_liars {
-            let mut trial: &Trial = &self.trials[liar_index];
+            let trial: &Trial = &self.trials[liar_index];
             let contradiciton = trial.is_contradictory(self);
             if !contradiciton {
                 possible_liar_indexes1.push(liar_index);
@@ -384,7 +382,7 @@ impl Trial {
             for person in &state.persons {
                 let person_index = person.index;
                 let is_liar: bool = person_index == self.liar_index;
-                if verbose {
+                if verbose2 {
                     println!(
                         "Considering person_index {}: {} ( liar_index = {} is_liar = {})",
                         person_index, person.name, self.liar_index, is_liar
@@ -463,7 +461,7 @@ impl Trial {
                             }
                         }
                     }
-                    if verbose {
+                    if verbose || verbose2 {
                         for assignment in &assignments {
                             println!(
                                 "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
@@ -476,6 +474,7 @@ impl Trial {
                 }
             }
             // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
+            println!("ready to call assemble_assignments");
             let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
             let (new_change, new_contradiction) =
                 propagate_assignments(&exact_assignments, &mut assignments);
@@ -815,10 +814,31 @@ impl Trial {
 // let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
 fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
     let mut exact_assignments: Vec<(usize, usize)> = Vec::new();
+    let num_persons: usize = assignments.len();
+    let mut unassigned_index: Option<usize> = None;
     for (index, assignment) in assignments.iter().enumerate() {
         if let Some(position) = assignment.position {
             exact_assignments.push((index, position));
+        } else {
+            unassigned_index = Some(index);
         }
+    }
+    // if N - 1 persons are assigned exact positions,
+    // The last position should be inferred, at this point.
+    let mut unassigned_positions: HashSet<usize> = (1..=num_persons).collect();
+    if exact_assignments.len() as i32 == num_persons as i32 - 1 {
+        for (_, position) in &exact_assignments {
+            unassigned_positions.remove(&position);
+        }
+        if unassigned_positions.len() == 1 {
+           let last_position: usize = *unassigned_positions.iter().next().unwrap();
+           if let Some(index) = unassigned_index {
+                let last_pair = (index, last_position);
+                println!("********* Assigning last position = {} to person_index - {}", last_position, index);
+                exact_assignments.push(last_pair);
+           } 
+        }
+
     }
     exact_assignments
 }
