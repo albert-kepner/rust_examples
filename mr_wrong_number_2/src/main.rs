@@ -13,18 +13,16 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
     if let Some(name) = state.solve() {
         println!("Mr. Wrong identified by solve(): {}", name);
         return Some(get_name(&blessed_names, name));
+    } else {
+        if let Some(name) = state.solve3() {
+            println!("Mr. Wrong identified by solve2(): {}", name);
+            return Some(get_name(&blessed_names, name));
+        } else {
+            println!("No contradictions found, unable to identify Mr. Wrong.");
+            return None;
+        }
     }
-    // else {
-    // if let Some(name) = state.solve2() {
-    //     println!("Mr. Wrong identified by solve2(): {}", name);
-    //     return Some(get_name(&blessed_names, name));
-    // } else {
-    //     println!("No contradictions found, unable to identify Mr. Wrong.");
-    //     return None;
-    // }
-    // }
-    // exclude_supporting_pairs
-    let maybe_liars = state.exclude_supporting_pairs();
+
     None
 }
 
@@ -103,6 +101,25 @@ impl<'a> State<'a> {
 
         None
     }
+
+    fn solve3(&self) -> Option<&'a str> {
+        let verbose: bool = true;
+        let mut possible_liar_indexes1: Vec<usize> = Vec::new();
+        // exclude_supporting_pairs
+        let maybe_liars: Vec<usize> = self.exclude_supporting_pairs();
+        for liar_index in maybe_liars {
+            let mut trial: &Trial = &self.trials[liar_index];
+            let contradiciton = trial.is_contradictory(self);
+            if !contradiciton {
+                possible_liar_indexes1.push(liar_index);
+            }
+        }
+        if verbose {
+            println!("Final liar indexes: {:?}", possible_liar_indexes1,)
+        }
+        None
+    }
+
     // fn solve2(&self) -> Option<&'a str> {
     //     // Implement an alternative logic to solve the puzzle based on the collected statements.
     //     let mut possible_liar_indexes1: Vec<usize> = Vec::new();
@@ -225,9 +242,10 @@ impl<'a> State<'a> {
         // If exactly one person is not covered by supporting pairs,
         // that person must be the liar.
         println!(
-            "exclude_supporting_pairs: persons: {} possible_liars: {}",
+            "exclude_supporting_pairs: persons: {} possible_liars: {} {:?}",
             self.persons.len(),
-            person_indexes.len()
+            person_indexes.len(),
+            person_indexes,
         );
         return person_indexes.into_iter().collect();
     }
