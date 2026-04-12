@@ -294,7 +294,7 @@ struct Trial {
 
 impl Trial {
     fn new(liar_index: usize, num_people: usize, person_name: &str) -> Self {
-        let verbose: bool = false;
+        let verbose: bool = true;
         if verbose {
             println!(
                 "Creating new trial with liar_index: {} liar: {} and num_people: {}",
@@ -359,6 +359,7 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
         let verbose: bool = false;
+        let verbose2: bool = true;
 
         loop {
             let mut changed = false;
@@ -466,10 +467,10 @@ impl Trial {
             }
 
             if !changed || has_contradiction {
-                break; // No changes made, stop the loop.
+                break; // No changes made,  or we have a contradiction, stop the loop.
             }
         } // End of loop to consider statements,
-        if verbose {
+        if verbose || verbose2 {
             println!(
                 "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
@@ -496,7 +497,19 @@ impl Trial {
         other_person_index: usize,
         relative: i32,
     ) -> (bool, bool) {
-        (false, false)
+        let mut contradiction = false;
+        let mut changed = false;
+        if let (Some(this_position),Some(other_position)) = 
+        (assignments[this_person_index].position, assignments[other_person_index].position)
+            { // if both positions are already assigned, then if the liar agrees with the relative position,
+                // it is a contradiction.
+                if this_position as i32 + relative == other_position as i32 {
+                    contradiction = true;
+                    return (contradiction, changed);
+                }
+
+        }
+        (contradiction, changed)
     }
 
     fn infer_relative(
