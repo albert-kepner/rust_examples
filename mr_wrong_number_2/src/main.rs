@@ -425,7 +425,7 @@ impl Trial {
         if verbose {
             println!(
                 "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
-                 self.liar_index, has_contradiction
+                self.liar_index, has_contradiction
             );
             for assignment in &assignments {
                 println!(
@@ -960,23 +960,23 @@ mod sample_tests {
     ];
 
     const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 2] = [
-    (
-        &[
-            "Jgatt:The man in front of me is Wafxmw.",
-            "Wafxmw:The man behind me is Jgatt.",
-            "Pamqaabuj:There are 2 people in front of me.",
-            "Dsfy:I'm in 4th position.",
-        ],
-        Some("Pamqaabuj"),
-    ),
-    (
-        &[
-            "Eteyjm:The man behind me is Ucuaei.",
-            "Ucuaei:The man in front of me is Eteyjm.",
-            "Vaqzcyicr:There is 1 people in front of me.",
-            "Aujyuhoee:There are 3 people behind me.",
-        ],
-        Some("Vaqzcyicr"),
-    ),
+        (
+            &[
+                "Jgatt:The man in front of me is Wafxmw.",
+                "Wafxmw:The man behind me is Jgatt.",
+                "Pamqaabuj:There are 2 people in front of me.",
+                "Dsfy:I'm in 4th position.",
+            ],
+            Some("Pamqaabuj"),
+        ),
+        (
+            &[
+                "Eteyjm:The man behind me is Ucuaei.",
+                "Ucuaei:The man in front of me is Eteyjm.",
+                "Vaqzcyicr:There is 1 people in front of me.",
+                "Aujyuhoee:There are 3 people behind me.",
+            ],
+            Some("Vaqzcyicr"),
+        ),
     ];
 }
