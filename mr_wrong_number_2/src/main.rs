@@ -335,7 +335,19 @@ impl Trial {
                 assignment.possible_positions = vec![position];
                 changed = true;
             }
-        } else {
+        } else { // have liar, claimed position must be false
+            if let Some(current_position) = assignment.position {
+                if current_position == position {
+                    // liar claiming the actual position is a contradiciton
+                    has_contradiction = true;
+                }
+            } else {
+                // If this person is the liar, then their statement is false, so we can remove the claimed position from their possible positions.
+                if assignment.possible_positions.contains(&position) {
+                    assignment.possible_positions.retain(|&x| x != position);
+                    changed = true;
+                }
+            }
         }
         return (changed, has_contradiction);
     }
@@ -367,16 +379,6 @@ impl Trial {
                                     person.name, position
                                 );
                             }
-                            let assignment = &mut assignments[person_index];
-                            // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
-                            if !assignment.possible_positions.contains(position) {
-                                // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
-                            } else if assignment.position.is_none() {
-                                assignment.position = Some(*position);
-                                assignment.possible_positions = vec![*position];
-                                changed = true;
-                            }
                             (changed, has_contradiction) = self.claim_position(
                                 &mut assignments,
                                 person_index,
@@ -385,7 +387,7 @@ impl Trial {
                             );
                         }
                         Statement::ReversePosition { from_end } => {
-                            let assignment = &mut assignments[person_index];
+                            // let assignment = &mut assignments[person_index];
                             let position: usize = state.persons.len() - *from_end;
                             if verbose {
                                 println!(
@@ -393,14 +395,12 @@ impl Trial {
                                     person.name, position
                                 );
                             }
-                            if !assignment.possible_positions.contains(&position) {
-                                // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
-                            } else if assignment.position.is_none() {
-                                assignment.position = Some(position);
-                                assignment.possible_positions = vec![position];
-                                changed = true;
-                            }
+                            (changed, has_contradiction) = self.claim_position(
+                                &mut assignments,
+                                person_index,
+                                is_liar,
+                                position,
+                            );
                         }
                         Statement::RelPosition {
                             relative,
