@@ -1,0 +1,445 @@
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Pksjopeen")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Qeyspi:There is 1 people behind me.",
+    "Pksjopeen:The man behind me is Qeyspi.",
+    "Iweyeave:The man in front of me is Aofs.",
+    "Aofs:The man behind me is Iweyeave.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Zmzfefaw")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Rvefe:There are 6 people behind me.",
+    "Zitgl:I'm in 2nd position.",
+    "Rvjdakw:There are 12 people in front of me.",
+    "Aqiiifi:There are 0 people in front of me.",
+    "Sherdaq:The man in front of me is Zitgl.",
+    "Stevsf:The man in front of me is Yptzoczu.",
+    "Eiacbuuoa:I'm in 4th position.",
+    "Kexf:I'm in 6th position.",
+    "Stevsf:There are 2 people behind me.",
+    "Kexf:The man in front of me is Eigofsm.",
+    "Zitgl:There is 1 people in front of me.",
+    "Eigofsm:The man behind me is Kexf.",
+    "Sherdaq:There are 2 people in front of me.",
+    "Rvjdakw:There are 5 people behind me.",
+    "Stevsf:I'm in 16th position.",
+    "Zitgl:The man behind me is Sherdaq.",
+    "Zmzfefaw:The man in front of me is Dogjujo.",
+    "Dogjujo:The man behind me is Speaixoxo.",
+    "Eigofsm:The man in front of me is Eiacbuuoa.",
+    "Eiacbuuoa:There are 14 people behind me.",
+    "Aqiiifi:I'm in 1st position.",
+    "Lbxsai:The man in front of me is Kexf.",
+    "Aqiiifi:The man behind me is Zitgl.",
+    "Xijhieo:There are 7 people behind me.",
+    "Erzee:I'm in 10th position.",
+    "Sherdaq:There are 15 people behind me.",
+    "Eiacbuuoa:The man in front of me is Sherdaq.",
+    "Erzee:There are 9 people in front of me.",
+    "Qiuaeuu:The man behind me is Zmzfefaw.",
+    "Yptzoczu:The man behind me is Stevsf.",
+    "Lbxsai:I'm in 7th position.",
+    "Eigofsm:There are 4 people in front of me.",
+    "Erzee:There are 8 people behind me.",
+    "Kexf:There are 12 people behind me.",
+    "Rvjdakw:The man in front of me is Rvefe.",
+    "Gntexs:The man in front of me is Rvjdakw.",
+    "Rvefe:I'm in 12th position.",
+    "Rvefe:The man in front of me is Xijhieo.",
+    "Speaixoxo:The man in front of me is Dogjujo.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Ozyuoui")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Eiezcmo:I'm in 29th position.",
+    "Dvpupm:There are 35 people in front of me.",
+    "Ugfyko:I'm in 19th position.",
+    "Biuudeln:The man behind me is Byxiynet.",
+    "Aeoauul:There are 20 people behind me.",
+    "Haey:The man in front of me is Uedk.",
+    "Xeepyabq:There are 30 people behind me.",
+    "Eoiyzdsvk:There are 32 people in front of me.",
+    "Gloeknasx:The man in front of me is Eiezcmo.",
+    "Pnkinee:There are 4 people in front of me.",
+    "Simjicw:The man in front of me is Dvpupm.",
+    "Mree:The man in front of me is Eidmufr.",
+    "Auyyyjvn:The man in front of me is Eojiq.",
+    "Upqeofte:There are 14 people in front of me.",
+    "Jemcl:I'm in 18th position.",
+    "Qwqeiebe:The man behind me is Erkzxazt.",
+    "Eidmufr:There are 20 people in front of me.",
+    "Oxeplye:There are 33 people in front of me.",
+    "Nolbme:I'm in 9th position.",
+    "Upqeofte:The man in front of me is Byxiynet.",
+    "Erkzxazt:There are 6 people in front of me.",
+    "Gloeknasx:There are 10 people behind me.",
+    "Xxcuhg:The man in front of me is Wuael.",
+    "Dvpupm:I'm in 36th position.",
+    "Eyfi:The man in front of me is Mypn.",
+    "Upqeofte:There are 25 people behind me.",
+    "Wuael:The man in front of me is Tiuqfz.",
+    "Tgimaj:The man behind me is Biuudeln.",
+    "Abkltmra:There are 37 people behind me.",
+    "Abkltmra:I'm in 3rd position.",
+    "Iieeejhek:The man behind me is Azuvtmi.",
+    "Xxcuhg:There are 12 people behind me.",
+    "Ehgc:There are 3 people in front of me.",
+    "Azuvtmi:The man in front of me is Iieeejhek.",
+    "Byxiynet:The man behind me is Upqeofte.",
+    "Inquelt:There are 15 people behind me.",
+    "Xccd:The man behind me is Tagvy.",
+    "Tagvy:The man behind me is Inquelt.",
+    "Haey:I'm in 32th position.",
+    "Auyyyjvn:There is 1 people behind me.",
+    "Xxcuhg:There are 27 people in front of me.",
+    "Uedk:I'm in 31th position.",
+    "Uaze:There are 39 people in front of me.",
+    "Tiuqfz:The man in front of me is Inquelt.",
+    "Ugfyko:The man in front of me is Jemcl.",
+    "Eiezcmo:The man behind me is Gloeknasx.",
+    "Iieeejhek:I'm in 1st position.",
+    "Tepmolt:I'm in 11th position.",
+    "Aeoauul:The man in front of me is Ugfyko.",
+    "Eiezcmo:The man in front of me is Xxcuhg.",
+    "Ehgc:The man in front of me is Abkltmra.",
+    "Erkzxazt:The man in front of me is Qwqeiebe.",
+    "Haey:There are 31 people in front of me.",
+    "Nolbme:There are 31 people behind me.",
+    "Ozyuoui:There are 5 people in front of me.",
+    "Tgimaj:I'm in 12th position.",
+    "Ugfyko:The man behind me is Aeoauul.",
+    "Eyfi:There are 23 people behind me.",
+    "Iieeejhek:There are 39 people behind me.",
+    "Pquzoaur:There are 34 people in front of me.",
+    "Mypn:The man behind me is Eyfi.",
+    "Dvpupm:The man behind me is Simjicw.",
+    "Tagvy:The man in front of me is Xccd.",
+    "Azuvtmi:The man behind me is Abkltmra.",
+    "Tgimaj:The man in front of me is Tepmolt.",
+    "Uaze:The man in front of me is Auyyyjvn.",
+    "Eyfi:I'm in 17th position.",
+    "Uaze:There are 0 people behind me.",
+    "Jemcl:There are 17 people in front of me.",
+    "Eojiq:I'm in 38th position.",
+    "Mypn:I'm in 16th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Vaqzcyicr")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Eteyjm:The man behind me is Ucuaei.",
+    "Ucuaei:The man in front of me is Eteyjm.",
+    "Vaqzcyicr:There is 1 people in front of me.",
+    "Aujyuhoee:There are 3 people behind me.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Eofwtii")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Ojaiqroau:There are 3 people behind me.",
+    "Eene:There is 1 people behind me.",
+    "Pwcp:The man in front of me is Ojaiqroau.",
+    "Uuuaeqvja:The man in front of me is Neoeqp.",
+    "Dfne:I'm in 9th position.",
+    "Eofwtii:The man behind me is Ojaiqroau.",
+    "Xuvecotd:The man in front of me is Uuuaeqvja.",
+    "Eofwtii:There are 4 people behind me.",
+    "Pwcp:I'm in 7th position.",
+    "Neoeqp:The man behind me is Uuuaeqvja.",
+    "Xeeyt:There are 0 people in front of me.",
+    "Xuvecotd:The man behind me is Ojaiqroau.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Kpzosaaa")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Aloo:The man behind me is Vcgw.",
+    "Drxuetds:The man in front of me is Aekoaa.",
+    "Vloe:The man behind me is Xswds.",
+    "Aekoaa:The man behind me is Drxuetds.",
+    "Kpzosaaa:The man in front of me is Aloo.",
+    "Zemye:The man in front of me is Kpzosaaa.",
+    "Xswds:The man in front of me is Vloe.",
+    "Xswds:The man behind me is Aekoaa.",
+    "Aloo:The man in front of me is Drxuetds.",
+    "Iioof:The man in front of me is Zemye.",
+    "Vcgw:The man in front of me is Aloo.",
+    "Aekoaa:The man in front of me is Xswds.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Wfir")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Wfir:The man in front of me is Inytggypm.",
+    "Pevyixfah:I'm in 3rd position.",
+    "Inytggypm:The man in front of me is Pevyixfah.",
+    "Ykyxpte:The man behind me is Pevyixfah.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Eheaonv")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Aohub:There are 4 people behind me.",
+    "Ydzio:There are 4 people in front of me.",
+    "Aohub:I'm in 1st position.",
+    "Ydzio:There are 0 people behind me.",
+    "Jjoed:The man behind me is Ocitj.",
+    "Ocitj:The man in front of me is Jjoed.",
+    "Eheaonv:There is 1 people behind me.",
+    "Jjoed:The man in front of me is Eheaonv.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Mnne")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Mnne:There are 6 people behind me.",
+    "Ktha:The man behind me is Ageez.",
+    "Dajgepyjy:The man behind me is Ktha.",
+    "Mnne:The man behind me is Dajgepyjy.",
+    "Icue:There are 7 people behind me.",
+    "Rbyyyxror:I'm in 8th position.",
+    "Ageez:The man in front of me is Ktha.",
+    "Cvaooa:There are 0 people behind me.",
+    "Cvaooa:I'm in 9th position.",
+    "Axgiggox:There are 6 people in front of me.",
+    "Rbyyyxror:The man in front of me is Axgiggox.",
+    "Ieaaraiky:I'm in 1st position.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Gaesw")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Kaxaossja:The man in front of me is Arpl.",
+    "Fcayrabs:The man in front of me is Ktra.",
+    "Yewsi:There are 5 people behind me.",
+    "Gaesw:The man in front of me is Iusfv.",
+    "Qtwt:I'm in 1st position.",
+    "Kaxaossja:I'm in 13th position.",
+    "Arpl:The man in front of me is Fcayrabs.",
+    "Iczpez:The man behind me is Attp.",
+    "Fcayrabs:I'm in 11th position.",
+    "Attp:The man in front of me is Iczpez.",
+    "Kaxaossja:There are 0 people behind me.",
+    "Acid:The man in front of me is Yotkpu.",
+    "Arpl:I'm in 12th position.",
+    "Yewsi:The man behind me is Asbotuy.",
+    "Qtwt:There are 0 people in front of me.",
+    "Yewsi:There are 7 people in front of me.",
+    "Arpl:The man behind me is Kaxaossja.",
+    "Iusfv:There are 2 people in front of me.",
+    "Ktra:I'm in 10th position.",
+    "Acid:There are 4 people in front of me.",
+    "Acid:There are 8 people behind me.",
+    "Asbotuy:There are 4 people behind me.",
+    "Iusfv:The man behind me is Yotkpu.",
+    "Ktra:The man behind me is Fcayrabs.",
+    "Iusfv:The man in front of me is Gaesw.",
+    "Yotkpu:There are 9 people behind me.",
+    "Asbotuy:I'm in 9th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Oaseeexa")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Ygzeaa:There are 2 people behind me.",
+    "Oaseeexa:There are 3 people in front of me.",
+    "Qpuqz:The man behind me is Eanvoa.",
+    "Eanvoa:The man in front of me is Qpuqz.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Saaelioio")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Fseievjy:The man in front of me is Llenciy.",
+    "Zayeiv:The man in front of me is Oisq.",
+    "Abqmhfgui:I'm in 16th position.",
+    "Rmlc:There are 13 people in front of me.",
+    "Zayeiv:There are 15 people behind me.",
+    "Askp:The man behind me is Lyewpeei.",
+    "Lifmvowo:There are 16 people in front of me.",
+    "Saaelioio:The man in front of me is Ivosia.",
+    "Abqmhfgui:There are 2 people behind me.",
+    "Zkev:The man in front of me is Lifmvowo.",
+    "Lyewpeei:I'm in 7th position.",
+    "Rmlc:The man in front of me is Xqaeep.",
+    "Xqaeep:There are 5 people behind me.",
+    "Ivosia:There are 0 people in front of me.",
+    "Llenciy:There are 10 people in front of me.",
+    "Vmitpl:There are 4 people in front of me.",
+    "Fseievjy:The man behind me is Xqaeep.",
+    "Ymaaeabef:There are 9 people in front of me.",
+    "Pdpe:The man in front of me is Lyewpeei.",
+    "Lifmvowo:There is 1 people behind me.",
+    "Zayeiv:There are 2 people in front of me.",
+    "Lyewpeei:The man in front of me is Askp.",
+    "Rmlc:The man behind me is Sakbe.",
+    "Pdpe:There are 7 people in front of me.",
+    "Abqmhfgui:The man behind me is Lifmvowo.",
+    "Zkev:There are 17 people in front of me.",
+    "Sakbe:There are 3 people behind me.",
+    "Vmitpl:I'm in 5th position.",
+    "Yiuxw:I'm in 9th position.",
+    "Zkev:I'm in 18th position.",
+    "Saaelioio:I'm in 2nd position.",
+    "Yiuxw:There are 8 people in front of me.",
+    "Ivosia:There are 17 people behind me.",
+    "Oisq:The man behind me is Zayeiv.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Aeoiqfe")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Zbzej:The man in front of me is Ciegiaoif.",
+    "Aeoiqfe:There are 0 people in front of me.",
+    "Vooevj:I'm in 3rd position.",
+    "Ciegiaoif:The man behind me is Zbzej.",
+]
+
+assertion failed: `(left == right)`
+  left: `Some("Iokyeae")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Eziaao:The man behind me is Ooeaajndf.",
+    "Xgvlhud:The man behind me is Aazioj.",
+    "Iokyeae:The man in front of me is Aelrybz.",
+    "Eeoevyk:There are 2 people in front of me.",
+    "Iokyeae:There are 7 people behind me.",
+    "Ooeaajndf:The man in front of me is Eziaao.",
+    "Ooeaajndf:The man behind me is Eeusxbew.",
+    "Eeoevyk:The man behind me is Eziaao.",
+    "Aelrybz:I'm in 2nd position.",
+    "Aazioj:There are 9 people in front of me.",
+    "Imks:There are 7 people in front of me.",
+    "Blilhaau:There are 9 people behind me.",
+    "Xgvlhud:The man in front of me is Imks.",
+    "Eeusxbew:The man in front of me is Ooeaajndf.",
+    "Blilhaau:There are 0 people in front of me.",
+]
+
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]

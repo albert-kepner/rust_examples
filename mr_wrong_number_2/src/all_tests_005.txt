@@ -1,0 +1,366 @@
+Time: 5804ms Passed: 1Failed: 5Exit Code: 101
+Test Results:
+tests::_1_fixed_tests
+Log
+unique reason 3
+Mr. Wrong identified by solve2(): Tom
+unique reason 3
+Mr. Wrong identified by solve2(): John
+unique reason 3
+Mr. Wrong identified by solve2(): Tom
+exclude_supporting_pairs: persons: 3 possible_liars: 3
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Fixsq
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Mavmynesz
+unique reason 3
+Mr. Wrong identified by solve2(): Nymiyudwu
+unique reason 3
+Mr. Wrong identified by solve2(): Rhwrubvz
+unique reason 3
+Mr. Wrong identified by solve2(): Tkdiuzr
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Eyqixjpd
+unique reason 3
+Mr. Wrong identified by solve2(): Bkano
+unique reason 3
+Mr. Wrong identified by solve2(): Vgeg
+unique reason 3
+Mr. Wrong identified by solve2(): Tnfyhbn
+exclude_supporting_pairs: persons: 4 possible_liars: 1
+unique reason 4
+Mr. Wrong identified by solve2(): Fred
+exclude_supporting_pairs: persons: 4 possible_liars: 2
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Pamqaabuj")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Jgatt:The man in front of me is Wafxmw.",
+    "Wafxmw:The man behind me is Jgatt.",
+    "Pamqaabuj:There are 2 people in front of me.",
+    "Dsfy:I'm in 4th position.",
+]
+tests::_2_random_tests::_1_very_short_conversations
+Log
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Onumik
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Ceezayia
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Jeibvr
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+Contradiction relative empty 002
+Contradiction relative max 001
+called `Option::unwrap()` on a `None` value at src/lib.rs:575:31
+tests::_2_random_tests::_2_short_conversations
+Log
+unique reason 3
+Mr. Wrong identified by solve2(): Dipmdxec
+unique reason 3
+Mr. Wrong identified by solve2(): Ehzekyc
+Mr. Wrong identified by solve(): Yskeni
+exclude_supporting_pairs: persons: 10 possible_liars: 10
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Ltscmti
+exclude_supporting_pairs: persons: 5 possible_liars: 5
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 9 possible_liars: 7
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Oeogda
+exclude_supporting_pairs: persons: 6 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Osonsaki
+exclude_supporting_pairs: persons: 7 possible_liars: 7
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Yfswvp
+unique reason 3
+Mr. Wrong identified by solve2(): Ghacee
+Mr. Wrong identified by solve(): Qxwkih
+unique reason 3
+Mr. Wrong identified by solve2(): Jeoo
+unique reason 3
+Mr. Wrong identified by solve2(): Oklhl
+unique reason 3
+Mr. Wrong identified by solve2(): Woiae
+exclude_supporting_pairs: persons: 3 possible_liars: 3
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Aggy
+exclude_supporting_pairs: persons: 4 possible_liars: 2
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Eevldikw
+exclude_supporting_pairs: persons: 10 possible_liars: 10
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 5 possible_liars: 3
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Bymmeufv
+Mr. Wrong identified by solve(): Grofogh
+unique reason 3
+Mr. Wrong identified by solve2(): Kaxyoyha
+exclude_supporting_pairs: persons: 8 possible_liars: 8
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Iuvag
+unique reason 3
+Mr. Wrong identified by solve2(): Wignitoa
+unique reason 3
+Mr. Wrong identified by solve2(): Jxioor
+unique reason 3
+Mr. Wrong identified by solve2(): Eeetbzke
+unique reason 3
+Mr. Wrong identified by solve2(): Ttaixyoo
+unique reason 3
+Mr. Wrong identified by solve2(): Ooyleavh
+unique reason 3
+Mr. Wrong identified by solve2(): Afesfoeov
+unique reason 1
+Mr. Wrong identified by solve2(): Jaebl
+unique reason 3
+Mr. Wrong identified by solve2(): Aiaetoi
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Jicbsa
+unique reason 3
+Mr. Wrong identified by solve2(): Udoevacpj
+unique reason 3
+Mr. Wrong identified by solve2(): Lkqq
+unique reason 3
+Mr. Wrong identified by solve2(): Eaoo
+exclude_supporting_pairs: persons: 8 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 3 possible_liars: 3
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Yehcfe
+Contradiction relative empty 002
+Contradiction relative max 001
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Objuegiw
+unique reason 3
+Mr. Wrong identified by solve2(): Etrqe
+unique reason 3
+Mr. Wrong identified by solve2(): Indoyaa
+unique reason 3
+Mr. Wrong identified by solve2(): Ecefceqws
+unique reason 3
+Mr. Wrong identified by solve2(): Xptgiyyne
+exclude_supporting_pairs: persons: 9 possible_liars: 9
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 8 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Jptuxaoku
+unique reason 3
+Mr. Wrong identified by solve2(): Jjjcmg
+unique reason 3
+Mr. Wrong identified by solve2(): Qnuiyzber
+exclude_supporting_pairs: persons: 5 possible_liars: 5
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Ceracwyd
+unique reason 3
+Mr. Wrong identified by solve2(): Riffkzekz
+unique reason 3
+Mr. Wrong identified by solve2(): Jreaepviw
+unique reason 3
+Mr. Wrong identified by solve2(): Mpeieowu
+unique reason 3
+Mr. Wrong identified by solve2(): Elwbajaeu
+unique reason 3
+Mr. Wrong identified by solve2(): Xyfxeaoa
+unique reason 3
+Mr. Wrong identified by solve2(): Toaemnarc
+Mr. Wrong identified by solve(): Eoelt
+unique reason 3
+Mr. Wrong identified by solve2(): Bybgy
+unique reason 3
+Mr. Wrong identified by solve2(): Oidoayml
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+Contradiction relative empty 002
+Contradiction relative max 001
+unique reason 3
+Mr. Wrong identified by solve2(): Sfrieel
+unique reason 3
+Mr. Wrong identified by solve2(): Ffoxd
+exclude_supporting_pairs: persons: 6 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Xuacooqav
+unique reason 3
+Mr. Wrong identified by solve2(): Eberf
+exclude_supporting_pairs: persons: 10 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Jcisyucm
+unique reason 3
+Mr. Wrong identified by solve2(): Kmdropmu
+Mr. Wrong identified by solve(): Bghoevc
+exclude_supporting_pairs: persons: 6 possible_liars: 6
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Kese
+exclude_supporting_pairs: persons: 4 possible_liars: 4
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Hazvxihyu
+unique reason 3
+Mr. Wrong identified by solve2(): Zzsdrdi
+unique reason 3
+Mr. Wrong identified by solve2(): Helic
+exclude_supporting_pairs: persons: 9 possible_liars: 7
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Mnne")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Mnne:There are 6 people behind me.",
+    "Ktha:The man behind me is Ageez.",
+    "Dajgepyjy:The man behind me is Ktha.",
+    "Mnne:The man behind me is Dajgepyjy.",
+    "Icue:There are 7 people behind me.",
+    "Rbyyyxror:I'm in 8th position.",
+    "Ageez:The man in front of me is Ktha.",
+    "Cvaooa:There are 0 people behind me.",
+    "Cvaooa:I'm in 9th position.",
+    "Axgiggox:There are 6 people in front of me.",
+    "Rbyyyxror:The man in front of me is Axgiggox.",
+    "Ieaaraiky:I'm in 1st position.",
+]
+tests::_2_random_tests::_3_short_conversations_2
+Log
+Mr. Wrong identified by solve(): Awawcvu
+Contradiction relative empty 002
+called `Option::unwrap()` on a `None` value at src/lib.rs:575:31
+tests::_2_random_tests::_4_long_conversations
+Log
+Mr. Wrong identified by solve(): Yetm
+unique reason 3
+Mr. Wrong identified by solve2(): Yeiife
+unique reason 3
+Mr. Wrong identified by solve2(): Nqje
+exclude_supporting_pairs: persons: 18 possible_liars: 16
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Uesbicjn
+unique reason 3
+Mr. Wrong identified by solve2(): Sdic
+unique reason 3
+Mr. Wrong identified by solve2(): Avbeefc
+unique reason 3
+Mr. Wrong identified by solve2(): Sbceeg
+unique reason 3
+Mr. Wrong identified by solve2(): Thsoiz
+unique reason 3
+Mr. Wrong identified by solve2(): Euwags
+unique reason 3
+Mr. Wrong identified by solve2(): Aiiobney
+unique reason 3
+Mr. Wrong identified by solve2(): Tauhtire
+unique reason 3
+Mr. Wrong identified by solve2(): Sebyb
+exclude_supporting_pairs: persons: 11 possible_liars: 11
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Atoexaa
+unique reason 3
+Mr. Wrong identified by solve2(): Eeudtb
+exclude_supporting_pairs: persons: 16 possible_liars: 12
+No contradictions found, unable to identify Mr. Wrong.
+unique reason 3
+Mr. Wrong identified by solve2(): Nxjsadci
+unique reason 3
+Mr. Wrong identified by solve2(): Aziaavao
+unique reason 3
+Mr. Wrong identified by solve2(): Cvirisb
+unique reason 3
+Mr. Wrong identified by solve2(): Aexe
+unique reason 3
+Mr. Wrong identified by solve2(): Oefp
+unique reason 3
+Mr. Wrong identified by solve2(): Uxiqya
+unique reason 3
+Mr. Wrong identified by solve2(): Zuycjuoc
+unique reason 3
+Mr. Wrong identified by solve2(): Qeqoke
+Mr. Wrong identified by solve(): Obufd
+unique reason 3
+Mr. Wrong identified by solve2(): Oywsimpi
+unique reason 3
+Mr. Wrong identified by solve2(): Gaesw
+assertion failed: `(left == right)`
+  left: `Some("Gaesw")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Kaxaossja:The man in front of me is Arpl.",
+    "Fcayrabs:The man in front of me is Ktra.",
+    "Yewsi:There are 5 people behind me.",
+    "Gaesw:The man in front of me is Iusfv.",
+    "Qtwt:I'm in 1st position.",
+    "Kaxaossja:I'm in 13th position.",
+    "Arpl:The man in front of me is Fcayrabs.",
+    "Iczpez:The man behind me is Attp.",
+    "Fcayrabs:I'm in 11th position.",
+    "Attp:The man in front of me is Iczpez.",
+    "Kaxaossja:There are 0 people behind me.",
+    "Acid:The man in front of me is Yotkpu.",
+    "Arpl:I'm in 12th position.",
+    "Yewsi:The man behind me is Asbotuy.",
+    "Qtwt:There are 0 people in front of me.",
+    "Yewsi:There are 7 people in front of me.",
+    "Arpl:The man behind me is Kaxaossja.",
+    "Iusfv:There are 2 people in front of me.",
+    "Ktra:I'm in 10th position.",
+    "Acid:There are 4 people in front of me.",
+    "Acid:There are 8 people behind me.",
+    "Asbotuy:There are 4 people behind me.",
+    "Iusfv:The man behind me is Yotkpu.",
+    "Ktra:The man behind me is Fcayrabs.",
+    "Iusfv:The man in front of me is Gaesw.",
+    "Yotkpu:There are 9 people behind me.",
+    "Asbotuy:I'm in 9th position.",
+]
+tests::_2_random_tests::_5_very_long_conversations
