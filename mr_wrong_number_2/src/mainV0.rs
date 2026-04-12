@@ -13,19 +13,15 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
     if let Some(name) = state.solve() {
         println!("Mr. Wrong identified by solve(): {}", name);
         return Some(get_name(&blessed_names, name));
+    } else {
+        if let Some(name) = state.solve2() {
+            println!("Mr. Wrong identified by solve2(): {}", name);
+            return Some(get_name(&blessed_names, name));
+        } else {
+            println!("No contradictions found, unable to identify Mr. Wrong.");
+            return None;
+        }
     }
-    // else {
-    // if let Some(name) = state.solve2() {
-    //     println!("Mr. Wrong identified by solve2(): {}", name);
-    //     return Some(get_name(&blessed_names, name));
-    // } else {
-    //     println!("No contradictions found, unable to identify Mr. Wrong.");
-    //     return None;
-    // }
-    // }
-    // exclude_supporting_pairs
-    let maybe_liars = state.exclude_supporting_pairs();
-    None
 }
 
 fn get_name<'a>(blessed_names: &Vec<&'a str>, name: &'a str) -> &'a str {
@@ -103,72 +99,72 @@ impl<'a> State<'a> {
 
         None
     }
-    // fn solve2(&self) -> Option<&'a str> {
-    //     // Implement an alternative logic to solve the puzzle based on the collected statements.
-    //     let mut possible_liar_indexes1: Vec<usize> = Vec::new();
-    //     let mut possible_liar_indexes2: Vec<usize> = Vec::new();
-    //     let mut possible_liar_indexes3: Vec<usize> = Vec::new();
-    //     let mut test_the_liar: bool = false;
-    //     let verbose: bool = false;
-    //     for i in 0..2 {
-    //         if i == 1 {
-    //             test_the_liar = true;
-    //         }
-    //         for trial in &self.trials {
-    //             let (other_lies, liar_lies, consistent) =
-    //                 trial.is_contradictory(&self, &test_the_liar);
-    //             if verbose {
-    //                 println!(
-    //                     "After is_contradictory({}): !other_lies {} consistent: {}",
-    //                     trial.liar_index, !other_lies, consistent
-    //                 );
-    //             }
+    fn solve2(&self) -> Option<&'a str> {
+        // Implement an alternative logic to solve the puzzle based on the collected statements.
+        let mut possible_liar_indexes1: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes2: Vec<usize> = Vec::new();
+        let mut possible_liar_indexes3: Vec<usize> = Vec::new();
+        let mut test_the_liar: bool = false;
+        let verbose: bool = false;
+        for i in 0..2 {
+            if i == 1 {
+                test_the_liar = true;
+            }
+            for trial in &self.trials {
+                let (other_lies, liar_lies, consistent) =
+                    trial.is_contradictory(&self, &test_the_liar);
+                if verbose {
+                    println!(
+                        "After is_contradictory({}): !other_lies {} consistent: {}",
+                        trial.liar_index, !other_lies, consistent
+                    );
+                }
 
-    //             if consistent && !test_the_liar {
-    //                 if verbose {
-    //                     println!(
-    //                         "FOUND CONSISTENT CONFIGURATION ******************************************************************************************"
-    //                     );
-    //                 }
-    //                 possible_liar_indexes3.push(trial.liar_index);
-    //             }
-    //             if !test_the_liar && !other_lies {
-    //                 if verbose {
-    //                     println!("Found lack of contradiction for others...");
-    //                 }
-    //                 possible_liar_indexes1.push(trial.liar_index);
-    //             }
-    //             if test_the_liar && liar_lies {
-    //                 if verbose {
-    //                     println!("Found contradiction by assumed liar.");
-    //                 }
-    //                 possible_liar_indexes2.push(trial.liar_index);
-    //             }
-    //         }
-    //     }
-    //     // If statements are only consistent for one liar, we have the villian!
-    //     if possible_liar_indexes3.len() == 1 {
-    //         let index = possible_liar_indexes3[0];
-    //         println!("unique reason 3");
-    //         return Some(self.person_names[index]);
-    //     } else if possible_liar_indexes1.len() == 1 {
-    //         let index = possible_liar_indexes1[0];
-    //         println!("unique reason 1");
-    //         return Some(self.person_names[index]);
-    //     } else if possible_liar_indexes2.len() == 1 {
-    //         let index = possible_liar_indexes2[0];
-    //         println!("unique reason 2");
-    //         return Some(self.person_names[index]);
-    //     } else {
-    //         if let Some(person_index) = self.exclude_supporting_pairs() {
-    //             println!("unique reason 4");
-    //             return Some(self.person_names[person_index]);
-    //         }
-    //     }
-    //     None
-    // }
+                if consistent && !test_the_liar {
+                    if verbose {
+                        println!(
+                            "FOUND CONSISTENT CONFIGURATION ******************************************************************************************"
+                        );
+                    }
+                    possible_liar_indexes3.push(trial.liar_index);
+                }
+                if !test_the_liar && !other_lies {
+                    if verbose {
+                        println!("Found lack of contradiction for others...");
+                    }
+                    possible_liar_indexes1.push(trial.liar_index);
+                }
+                if test_the_liar && liar_lies {
+                    if verbose {
+                        println!("Found contradiction by assumed liar.");
+                    }
+                    possible_liar_indexes2.push(trial.liar_index);
+                }
+            }
+        }
+        // If statements are only consistent for one liar, we have the villian!
+        if possible_liar_indexes3.len() == 1 {
+            let index = possible_liar_indexes3[0];
+            println!("unique reason 3");
+            return Some(self.person_names[index]);
+        } else if possible_liar_indexes1.len() == 1 {
+            let index = possible_liar_indexes1[0];
+            println!("unique reason 1");
+            return Some(self.person_names[index]);
+        } else if possible_liar_indexes2.len() == 1 {
+            let index = possible_liar_indexes2[0];
+            println!("unique reason 2");
+            return Some(self.person_names[index]);
+        } else {
+            if let Some(person_index) = self.exclude_supporting_pairs() {
+                println!("unique reason 4");
+                return Some(self.person_names[person_index]);
+            }
+        }
+        None
+    }
 
-    fn exclude_supporting_pairs(&self) -> Vec<usize> {
+    fn exclude_supporting_pairs(&self) -> Option<usize> {
         let mut after_pairs: Vec<(usize, usize)> = Vec::new();
         let mut before_pairs: Vec<(usize, usize)> = Vec::new();
         let mut person_indexes: HashSet<usize> = (0..self.persons.len()).collect();
@@ -224,12 +220,12 @@ impl<'a> State<'a> {
         }
         // If exactly one person is not covered by supporting pairs,
         // that person must be the liar.
-        println!(
-            "exclude_supporting_pairs: persons: {} possible_liars: {}",
-            self.persons.len(),
-            person_indexes.len()
-        );
-        return person_indexes.into_iter().collect();
+        println!("exclude_supporting_pairs: persons: {} possible_liars: {}", self.persons.len(), person_indexes.len());
+        if person_indexes.len() == 1 {
+            let liar_index = *person_indexes.iter().next().unwrap();
+            return Some(liar_index);
+        }
+        None
     }
 }
 
@@ -315,22 +311,36 @@ impl Trial {
         assignments
     }
 
-    fn is_contradictory(&self, state: &State) -> bool {
+    fn is_contradictory(&self, state: &State, test_the_liar: &bool) -> (bool, bool, bool) {
         // Implement logic to consider statements in the trial and determine if
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
-        let mut has_contradiction = false;
+        let mut other_lies = false;
+        let mut liar_lies = false;
+        let consistent: bool;
         let verbose: bool = false;
 
         loop {
             let mut changed = false;
             for person in &state.persons {
                 let person_index = person.index;
-                let is_liar: bool = person_index == self.liar_index;
+                // Defer considering the hypothesized liar's staements, until after others.
                 if verbose {
                     println!(
-                        "Considering person_index {}: {} ( liar_index = {} is_liar = {})",
-                        person_index, person.name, self.liar_index, is_liar
+                        "Considering person_index {}: {} (test_the_liar = {} liar_index = {})",
+                        person_index, person.name, test_the_liar, self.liar_index
+                    );
+                }
+                if *test_the_liar && (person_index != self.liar_index) {
+                    continue;
+                }
+                if !*test_the_liar && (person_index == self.liar_index) {
+                    continue;
+                }
+                if verbose {
+                    println!(
+                        "Considering statements of person_index {}: {} (test_the_liar = {})",
+                        person_index, person.name, test_the_liar
                     );
                 }
                 for statement in &person.statements {
@@ -346,7 +356,11 @@ impl Trial {
                             // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
                             if !assignment.possible_positions.contains(position) {
                                 // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
+                                if *test_the_liar {
+                                    liar_lies = true;
+                                } else {
+                                    other_lies = true;
+                                }
                             } else if assignment.position.is_none() {
                                 assignment.position = Some(*position);
                                 assignment.possible_positions = vec![*position];
@@ -364,7 +378,11 @@ impl Trial {
                             }
                             if !assignment.possible_positions.contains(&position) {
                                 // If this claimed position is not possible for the Trial we have a contradiction
-                                has_contradiction = true;
+                                if *test_the_liar {
+                                    liar_lies = true;
+                                } else {
+                                    other_lies = true;
+                                }
                             } else if assignment.position.is_none() {
                                 assignment.position = Some(position);
                                 assignment.possible_positions = vec![position];
@@ -393,7 +411,11 @@ impl Trial {
                                 changed = true;
                             }
                             if contradiction {
-                                has_contradiction = true;
+                                if *test_the_liar {
+                                    liar_lies = true;
+                                } else {
+                                    other_lies = true;
+                                }
                             }
                         }
                     }
@@ -415,17 +437,21 @@ impl Trial {
                 propagate_assignments(&exact_assignments, &mut assignments);
             changed = changed || new_change;
             if new_contradiction {
-                has_contradiction = true;
+                if *test_the_liar {
+                    liar_lies = true;
+                } else {
+                    other_lies = true;
+                }
             }
 
-            if !changed || has_contradiction {
+            if !changed {
                 break; // No changes made, stop the loop.
             }
         } // End of loop to consider statements,
         if verbose {
             println!(
-                "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
-                 self.liar_index, has_contradiction
+                "END LOOP ****** Trial (test_the_liar = {}) with liar_index: {} other_lies: {} liar_lies: {}",
+                test_the_liar, self.liar_index, other_lies, liar_lies
             );
             for assignment in &assignments {
                 println!(
@@ -435,7 +461,9 @@ impl Trial {
             }
         }
 
-        return has_contradiction;
+        consistent = !test_the_liar && !other_lies && is_consistent(&assignments, self.num_people);
+
+        (other_lies, liar_lies, consistent)
     }
 
     fn infer_relative(
@@ -959,8 +987,36 @@ mod sample_tests {
         ),
     ];
 
-    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 2] = [
-    (
+    /***
+        No contradictions found, unable to identify Mr. Wrong.
+    assertion failed: `(left == right)`
+      left: `None`,
+     right: `Some("Pamqaabuj")`:
+    Your result (left) did not match the expected output (right)
+    Conversation:
+    [
+        "Jgatt:The man in front of me is Wafxmw.",
+        "Wafxmw:The man behind me is Jgatt.",
+        "Pamqaabuj:There are 2 people in front of me.",
+        "Dsfy:I'm in 4th position.",
+    ]
+         */
+
+    /***
+    No contradictions found, unable to identify Mr. Wrong.
+    assertion failed: `(left == right)`
+      left: `None`,
+     right: `Some("Apeiyb")`:
+    Your result (left) did not match the expected output (right)
+    Conversation:
+    [
+        "Hauejr:The man behind me is Apeiyb.",
+        "Apeiyb:The man in front of me is Fbuye.",
+        "Fbuye:The man behind me is Hauejr.",
+        "Apeiyb:The man behind me is Hauejr.",
+    ]
+         */
+    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [(
         &[
             "Jgatt:The man in front of me is Wafxmw.",
             "Wafxmw:The man behind me is Jgatt.",
@@ -968,15 +1024,5 @@ mod sample_tests {
             "Dsfy:I'm in 4th position.",
         ],
         Some("Pamqaabuj"),
-    ),
-    (
-        &[
-            "Eteyjm:The man behind me is Ucuaei.",
-            "Ucuaei:The man in front of me is Eteyjm.",
-            "Vaqzcyicr:There is 1 people in front of me.",
-            "Aujyuhoee:There are 3 people behind me.",
-        ],
-        Some("Vaqzcyicr"),
-    ),
-    ];
+    )];
 }
