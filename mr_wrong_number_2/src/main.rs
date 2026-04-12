@@ -414,18 +414,34 @@ impl Trial {
                             }
                             let other_person_index = *person_index;
                             let this_person_index = person.index;
-                            let (contradiction, change_flag) = self.infer_relative(
-                                &mut assignments,
-                                this_person_index,
-                                other_person_index,
-                                *relative,
-                            );
-                            if change_flag {
-                                changed = true;
-                            }
-                            if contradiction {
-                                has_contradiction = true;
-                            }
+                            if is_liar {
+                                let (contradiction, change_flag) = self.liars_relative_inference(
+                                    &mut assignments,
+                                    this_person_index,
+                                    other_person_index,
+                                    *relative,
+                                );
+                                if change_flag {
+                                    changed = true;
+                                }
+                                if contradiction {
+                                    has_contradiction = true;
+                                }
+
+                            } else {
+                                let (contradiction, change_flag) = self.infer_relative(
+                                    &mut assignments,
+                                    this_person_index,
+                                    other_person_index,
+                                    *relative,
+                                );
+                                if change_flag {
+                                    changed = true;
+                                }
+                                if contradiction {
+                                    has_contradiction = true;
+                                }
+                            }  
                         }
                     }
                     if verbose {
@@ -467,6 +483,20 @@ impl Trial {
         }
 
         return has_contradiction;
+    }
+
+        // if this person is the liar, then if either person's position is known,
+        // We can infer that the other position is not as the liar states.
+        // And if both positions are known, it is a contradiction if the liar confirms
+        // the known relative position.
+    fn liars_relative_inference(
+        &self,
+        assignments: &mut Vec<Assignment>,
+        this_person_index: usize,
+        other_person_index: usize,
+        relative: i32,
+    ) -> (bool, bool) {
+        (false, false)
     }
 
     fn infer_relative(
