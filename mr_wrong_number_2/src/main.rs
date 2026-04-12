@@ -510,6 +510,47 @@ impl Trial {
                 return (contradiction, changed);
             }
         }
+        // if either position is already assigned, we can remove the liar's relative position from those possible.
+        // If only this position is known...
+        if let Some(this_position) = assignments[this_person_index].position {
+            let other_position = match relative {
+                -1 => this_position.checked_sub(1),
+                1 => this_position.checked_add(1),
+                _ => None,
+            };
+            if let Some(other_position) = other_position {
+                if assignments[other_person_index]
+                    .possible_positions
+                    .contains(&other_position)
+                {
+                    assignments[other_person_index]
+                        .possible_positions
+                        .retain(|&x| x != other_position);
+                    changed = true;
+                }
+            }
+        }
+        // if only the other position is known...
+        if let Some(other_position) = assignments[other_person_index].position {
+            let this_position = match relative {
+                -1 => other_position.checked_add(1),
+                1 => other_position.checked_sub(1),
+                _ => None,
+            };
+            if let Some(this_position) = this_position {
+                if assignments[this_person_index]
+                    .possible_positions
+                    .contains(&this_position)
+                {
+                    assignments[this_person_index]
+                        .possible_positions
+                        .retain(|&x| x != this_position);
+                    changed = true;
+                }
+            }
+        } else {
+            // if neither position is known, we cannot infer anything from the liar's statement.
+        }
         (contradiction, changed)
     }
 
