@@ -315,6 +315,32 @@ impl Trial {
         assignments
     }
 
+    fn claim_position(
+        &self,
+        assignments: &mut Vec<Assignment>,
+        person_index: usize,
+        is_liar: bool,
+        position: usize,
+    ) -> (bool, bool) {
+        let mut changed: bool = false;
+        let mut has_contradiction: bool = false;
+        let assignment = &mut assignments[person_index];
+        // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
+        if !is_liar {
+            if !assignment.possible_positions.contains(&position) {
+                // If this claimed position is not possible for the Trial we have a contradiction
+                has_contradiction = true;
+            } else if assignment.position.is_none() {
+                assignment.position = Some(position);
+                assignment.possible_positions = vec![position];
+                changed = true;
+            }
+        } else {
+
+        }
+        return (changed, has_contradiction);
+    }
+
     fn is_contradictory(&self, state: &State) -> bool {
         // Implement logic to consider statements in the trial and determine if
         // the assumption of a specific liar leads to a contradiction based on the statements.
@@ -352,6 +378,8 @@ impl Trial {
                                 assignment.possible_positions = vec![*position];
                                 changed = true;
                             }
+                            (changed, has_contradiction) =
+                                self.claim_position(&mut assignments, person_index, is_liar, *position);
                         }
                         Statement::ReversePosition { from_end } => {
                             let assignment = &mut assignments[person_index];
