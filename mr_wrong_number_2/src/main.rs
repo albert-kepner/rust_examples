@@ -499,15 +499,16 @@ impl Trial {
     ) -> (bool, bool) {
         let mut contradiction = false;
         let mut changed = false;
-        if let (Some(this_position),Some(other_position)) = 
-        (assignments[this_person_index].position, assignments[other_person_index].position)
-            { // if both positions are already assigned, then if the liar agrees with the relative position,
-                // it is a contradiction.
-                if this_position as i32 + relative == other_position as i32 {
-                    contradiction = true;
-                    return (contradiction, changed);
-                }
-
+        if let (Some(this_position), Some(other_position)) = (
+            assignments[this_person_index].position,
+            assignments[other_person_index].position,
+        ) {
+            // if both positions are already assigned, then if the liar agrees with the relative position,
+            // it is a contradiction.
+            if this_position as i32 + relative == other_position as i32 {
+                contradiction = true;
+                return (contradiction, changed);
+            }
         }
         (contradiction, changed)
     }
