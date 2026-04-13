@@ -68,6 +68,7 @@ impl<'a> State<'a> {
         }
     }
     fn person_index(&mut self, name: &'a str) -> usize {
+        let verbose: bool = true;
         if let Some(index) = self.person_names.iter().position(|&n| n == name) {
             return index;
         } else {
@@ -78,6 +79,9 @@ impl<'a> State<'a> {
                 index,
                 statements: Vec::new(),
             });
+            if verbose {
+                println!("Person: {} at index: {} ", name, index)
+            }
             return index;
         }
     }
@@ -233,15 +237,15 @@ impl Person<'_> {
                             _ => {}
                         }
                     }
-                },
+                }
                 Statement::AbsPosition { position } => {
                     absolute_positions.insert(*position);
-                },
+                }
                 Statement::ReversePosition { from_end } => {
                     // let assignment = &mut assignments[person_index];
                     let position: usize = num_persons - *from_end;
                     absolute_positions.insert(position);
-                },
+                }
             }
             relatives.push(statement);
         }
@@ -322,7 +326,7 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
         let verbose: bool = false;
-        let verbose2: bool = false;
+        let verbose2: bool = true;
 
         loop {
             let mut changed = false;
@@ -775,10 +779,13 @@ fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
     // The last position should be inferred, at this point.
     let mut unassigned_positions: HashSet<usize> = (1..=num_persons).collect();
     if verbose {
-        println!("exact_assignments.len() = {} num_persons = {}", exact_assignments.len(), num_persons);
-        println!("unassigned_index = {:?}",unassigned_index);
+        println!(
+            "exact_assignments.len() = {} num_persons = {}",
+            exact_assignments.len(),
+            num_persons
+        );
+        println!("unassigned_index = {:?}", unassigned_index);
     }
-
 
     if exact_assignments.len() as i32 == num_persons as i32 - 1 {
         if verbose {
@@ -788,14 +795,17 @@ fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
             unassigned_positions.remove(&position);
         }
         if unassigned_positions.len() == 1 {
-           let last_position: usize = *unassigned_positions.iter().next().unwrap();
-           if let Some(index) = unassigned_index {
+            let last_position: usize = *unassigned_positions.iter().next().unwrap();
+            if let Some(index) = unassigned_index {
                 let last_pair = (index, last_position);
                 if verbose {
-                    println!("********* Assigning last position = {} to person_index - {}", last_position, index);
+                    println!(
+                        "********* Assigning last position = {} to person_index - {}",
+                        last_position, index
+                    );
                 }
                 exact_assignments.push(last_pair);
-           } 
+            }
         }
     }
     if verbose {
@@ -894,7 +904,7 @@ fn parse_conversation<'a>(conversation: &[&'a str]) -> State<'a> {
 
     // println!("\n\nParsing conversation:");
     for (_index, line) in conversation.iter().enumerate() {
-        // println!("({}) {}", index, line);
+        println!("({}) {}", _index, line);
         if let Some(caps) = re1.captures(line) {
             let name = caps.get(1).unwrap().as_str();
             let position_str: &str = caps.get(2).unwrap().as_str();
@@ -1095,15 +1105,13 @@ mod sample_tests {
         ),
     ];
 
-    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [
-        (
-            &[
-                "Euuopnq:The man in front of me is Alghi.",
-                "Alghi:There are 0 people behind me.",
-                "Duoan:There are 2 people in front of me.",
-                "Vdnqoar:The man in front of me is Duoan.",
-            ],
-            Some("Alghi"),
-        ),
-    ];
+    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [(
+        &[
+            "Euuopnq:The man in front of me is Alghi.",
+            "Alghi:There are 0 people behind me.",
+            "Duoan:There are 2 people in front of me.",
+            "Vdnqoar:The man in front of me is Duoan.",
+        ],
+        Some("Alghi"),
+    )];
 }
