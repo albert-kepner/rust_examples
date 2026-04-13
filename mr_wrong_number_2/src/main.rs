@@ -15,7 +15,7 @@ pub fn find_out_mr_wrong<'a>(conversation: &[&'a str]) -> Option<&'a str> {
         return Some(get_name(&blessed_names, name));
     } else {
         if let Some(name) = state.solve3() {
-            println!("Mr. Wrong identified by solve2(): {}", name);
+            println!("Mr. Wrong identified by solve3(): {}", name);
             return Some(get_name(&blessed_names, name));
         } else {
             println!("No contradictions found, unable to identify Mr. Wrong.");
@@ -115,73 +115,13 @@ impl<'a> State<'a> {
         if verbose {
             println!("Final liar indexes: {:?}", possible_liar_indexes1,)
         }
+        if possible_liar_indexes1.len() == 1 {
+            let index = possible_liar_indexes1[0];
+            println!("unique reason 1");
+            return Some(self.person_names[index]);
+        }
         None
     }
-
-    // fn solve2(&self) -> Option<&'a str> {
-    //     // Implement an alternative logic to solve the puzzle based on the collected statements.
-    //     let mut possible_liar_indexes1: Vec<usize> = Vec::new();
-    //     let mut possible_liar_indexes2: Vec<usize> = Vec::new();
-    //     let mut possible_liar_indexes3: Vec<usize> = Vec::new();
-    //     let mut test_the_liar: bool = false;
-    //     let verbose: bool = false;
-    //     for i in 0..2 {
-    //         if i == 1 {
-    //             test_the_liar = true;
-    //         }
-    //         for trial in &self.trials {
-    //             let (other_lies, liar_lies, consistent) =
-    //                 trial.is_contradictory(&self, &test_the_liar);
-    //             if verbose {
-    //                 println!(
-    //                     "After is_contradictory({}): !other_lies {} consistent: {}",
-    //                     trial.liar_index, !other_lies, consistent
-    //                 );
-    //             }
-
-    //             if consistent && !test_the_liar {
-    //                 if verbose {
-    //                     println!(
-    //                         "FOUND CONSISTENT CONFIGURATION ******************************************************************************************"
-    //                     );
-    //                 }
-    //                 possible_liar_indexes3.push(trial.liar_index);
-    //             }
-    //             if !test_the_liar && !other_lies {
-    //                 if verbose {
-    //                     println!("Found lack of contradiction for others...");
-    //                 }
-    //                 possible_liar_indexes1.push(trial.liar_index);
-    //             }
-    //             if test_the_liar && liar_lies {
-    //                 if verbose {
-    //                     println!("Found contradiction by assumed liar.");
-    //                 }
-    //                 possible_liar_indexes2.push(trial.liar_index);
-    //             }
-    //         }
-    //     }
-    //     // If statements are only consistent for one liar, we have the villian!
-    //     if possible_liar_indexes3.len() == 1 {
-    //         let index = possible_liar_indexes3[0];
-    //         println!("unique reason 3");
-    //         return Some(self.person_names[index]);
-    //     } else if possible_liar_indexes1.len() == 1 {
-    //         let index = possible_liar_indexes1[0];
-    //         println!("unique reason 1");
-    //         return Some(self.person_names[index]);
-    //     } else if possible_liar_indexes2.len() == 1 {
-    //         let index = possible_liar_indexes2[0];
-    //         println!("unique reason 2");
-    //         return Some(self.person_names[index]);
-    //     } else {
-    //         if let Some(person_index) = self.exclude_supporting_pairs() {
-    //             println!("unique reason 4");
-    //             return Some(self.person_names[person_index]);
-    //         }
-    //     }
-    //     None
-    // }
 
     fn exclude_supporting_pairs(&self) -> Vec<usize> {
         let mut after_pairs: Vec<(usize, usize)> = Vec::new();
@@ -310,7 +250,7 @@ struct Trial {
 
 impl Trial {
     fn new(liar_index: usize, num_people: usize, person_name: &str) -> Self {
-        let verbose: bool = true;
+        let verbose: bool = false;
         if verbose {
             println!(
                 "Creating new trial with liar_index: {} liar: {} and num_people: {}",
@@ -375,7 +315,7 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
         let verbose: bool = false;
-        let verbose2: bool = true;
+        let verbose2: bool = false;
 
         loop {
             let mut changed = false;
@@ -474,7 +414,7 @@ impl Trial {
                 }
             }
             // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
-            println!("ready to call assemble_assignments");
+            // println!("ready to call assemble_assignments");
             let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
             let (new_change, new_contradiction) =
                 propagate_assignments(&exact_assignments, &mut assignments);
@@ -816,6 +756,7 @@ fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
     let mut exact_assignments: Vec<(usize, usize)> = Vec::new();
     let num_persons: usize = assignments.len();
     let mut unassigned_index: Option<usize> = None;
+    let verbose: bool = false;
     for (index, assignment) in assignments.iter().enumerate() {
         if let Some(position) = assignment.position {
             exact_assignments.push((index, position));
@@ -826,7 +767,16 @@ fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
     // if N - 1 persons are assigned exact positions,
     // The last position should be inferred, at this point.
     let mut unassigned_positions: HashSet<usize> = (1..=num_persons).collect();
+    if verbose {
+        println!("exact_assignments.len() = {} num_persons = {}", exact_assignments.len(), num_persons);
+        println!("unassigned_index = {:?}",unassigned_index);
+    }
+
+
     if exact_assignments.len() as i32 == num_persons as i32 - 1 {
+        if verbose {
+            println!("passed check for num_persons - 1");
+        }
         for (_, position) in &exact_assignments {
             unassigned_positions.remove(&position);
         }
@@ -834,11 +784,15 @@ fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
            let last_position: usize = *unassigned_positions.iter().next().unwrap();
            if let Some(index) = unassigned_index {
                 let last_pair = (index, last_position);
-                println!("********* Assigning last position = {} to person_index - {}", last_position, index);
+                if verbose {
+                    println!("********* Assigning last position = {} to person_index - {}", last_position, index);
+                }
                 exact_assignments.push(last_pair);
            } 
         }
-
+    }
+    if verbose {
+        println!(" Final: exact_assignments = {:?}", exact_assignments);
     }
     exact_assignments
 }
@@ -862,6 +816,9 @@ fn propagate_assignments(
                     change = true;
                 }
                 if len_after == 1 {
+                    if assignments[index2].position.is_none() {
+                        change = true;
+                    }
                     assignments[index2].position = Some(assignments[index2].possible_positions[0]);
                 }
                 if len_after == 0 {
