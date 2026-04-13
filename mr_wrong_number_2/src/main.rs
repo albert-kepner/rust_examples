@@ -91,7 +91,7 @@ impl<'a> State<'a> {
         // Implement the logic to solve the puzzle based on the collected statements.
 
         for person in &self.persons {
-            if person.contradicts_self() {
+            if person.contradicts_self(self.persons.len()) {
                 return Some(person.name);
             }
         }
@@ -202,9 +202,10 @@ struct Person<'a> {
 }
 
 impl Person<'_> {
-    fn contradicts_self(&self) -> bool {
+    fn contradicts_self(&self, num_persons: usize) -> bool {
         // Implement logic to check if the person's statements contradict each other.
         let mut relatives: Vec<&Statement> = Vec::new();
+        let mut absolute_positions: HashSet<usize> = HashSet::new();
         for statement in &self.statements {
             match statement {
                 Statement::RelPosition {
@@ -232,14 +233,20 @@ impl Person<'_> {
                             _ => {}
                         }
                     }
-                }
-                _ => {
-                    // otherwise ignore for now.
-                }
+                },
+                Statement::AbsPosition { position } => {
+                    absolute_positions.insert(*position);
+                },
+                Statement::ReversePosition { from_end } => {
+                    // let assignment = &mut assignments[person_index];
+                    let position: usize = num_persons - *from_end;
+                    absolute_positions.insert(position);
+                },
             }
             relatives.push(statement);
         }
-        false
+        // If the person gave themselves more than one absolute position, they lied.
+        return absolute_positions.len() > 1;
     }
 }
 
@@ -950,7 +957,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
+        for (conversation, _expected) in SAMPLE_TEST_CASES {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -971,7 +978,7 @@ mod sample_tests {
         }
     }
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 11] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 13] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1068,9 +1075,6 @@ mod sample_tests {
             ],
             Some("Apeiyb"),
         ),
-    ];
-
-    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 2] = [
         (
             &[
                 "Jgatt:The man in front of me is Wafxmw.",
@@ -1088,6 +1092,18 @@ mod sample_tests {
                 "Aujyuhoee:There are 3 people behind me.",
             ],
             Some("Vaqzcyicr"),
+        ),
+    ];
+
+    const _SAMPLE_TEST_CASES_X: [(&[&str], Option<&str>); 1] = [
+        (
+            &[
+                "Greg:I'm in 1st position.",
+                "Daniel:There are 2 people in front of me.",
+                "Ramone:I'm in 3rd position.",
+                "Daniel:There are 2 people behind me.",
+            ],
+            Some("Daniel"),
         ),
     ];
 }
