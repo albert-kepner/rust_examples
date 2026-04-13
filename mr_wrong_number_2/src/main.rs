@@ -957,7 +957,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES {
+        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -978,7 +978,7 @@ mod sample_tests {
         }
     }
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 13] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 13] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1095,15 +1095,15 @@ mod sample_tests {
         ),
     ];
 
-    const _SAMPLE_TEST_CASES_X: [(&[&str], Option<&str>); 1] = [
+    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [
         (
             &[
-                "Greg:I'm in 1st position.",
-                "Daniel:There are 2 people in front of me.",
-                "Ramone:I'm in 3rd position.",
-                "Daniel:There are 2 people behind me.",
+                "Euuopnq:The man in front of me is Alghi.",
+                "Alghi:There are 0 people behind me.",
+                "Duoan:There are 2 people in front of me.",
+                "Vdnqoar:The man in front of me is Duoan.",
             ],
-            Some("Daniel"),
+            Some("Alghi"),
         ),
     ];
 }

@@ -1,0 +1,280 @@
+Time: 5592ms Passed: 0Failed: 6Exit Code: 101
+Test Results:
+tests::_1_fixed_tests
+Log
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 1, 0}
+Final liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 0, 1}
+Final liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): John
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 1, 0}
+Final liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 0, 2}
+Final liar indexes: [1, 2]
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 0, 3}
+Final liar indexes: [2, 3]
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Fixsq
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {1}
+Final liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Mavmynesz
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {1, 0}
+Final liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Nymiyudwu
+Mr. Wrong identified by solve(): Rhwrubvz
+exclude_supporting_pairs: persons: 7 possible_liars: 7 {4, 6, 3, 5, 1, 2, 0}
+Final liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): Tkdiuzr
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+Final liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Eyqixjpd
+Mr. Wrong identified by solve(): Bkano
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {2}
+Final liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Vgeg
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {2, 3, 4}
+Final liar indexes: [2, 3, 4]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Tnfyhbn")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Dedwngbn:The man behind me is Nrxxvd.",
+    "Trazlwkdo:There is 1 people in front of me.",
+    "Trazlwkdo:I'm in 2nd position.",
+    "Ywxc:The man in front of me is Trazlwkdo.",
+    "Ywxc:I'm in 3rd position.",
+    "Nrxxvd:The man in front of me is Dedwngbn.",
+    "Dedwngbn:The man in front of me is Ywxc.",
+    "Tnfyhbn:There is 1 people behind me.",
+    "Tnfyhbn:There are 3 people in front of me.",
+    "Nrxxvd:I'm in 5th position.",
+]
+tests::_2_random_tests::_1_very_short_conversations
+Log
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 3, 2}
+Final liar indexes: [1, 2]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Alghi")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Euuopnq:The man in front of me is Alghi.",
+    "Alghi:There are 0 people behind me.",
+    "Duoan:There are 2 people in front of me.",
+    "Vdnqoar:The man in front of me is Duoan.",
+]
+tests::_2_random_tests::_2_short_conversations
+Log
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 3, 0, 2}
+Final liar indexes: [1, 3, 0]
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 8 possible_liars: 8 {3, 5, 0, 2, 7, 1, 4, 6}
+Final liar indexes: [0, 7]
+No contradictions found, unable to identify Mr. Wrong.
+Mr. Wrong identified by solve(): Oecw
+exclude_supporting_pairs: persons: 7 possible_liars: 7 {5, 1, 6, 2, 3, 0, 4}
+Final liar indexes: [6, 3]
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 8 possible_liars: 8 {1, 0, 3, 2, 5, 7, 6, 4}
+Final liar indexes: [7, 4]
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 8 possible_liars: 8 {2, 7, 5, 4, 3, 6, 1, 0}
+Final liar indexes: [5, 3, 1]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Zdseewuwe")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Eioorp:The man behind me is Zdseewuwe.",
+    "Qrqnrcei:I'm in 3rd position.",
+    "Xqtfmfab:There are 3 people behind me.",
+    "Pmxfdy:There is 1 people in front of me.",
+    "Ziiw:The man behind me is Xqtfmfab.",
+    "Eioorp:The man in front of me is Xqtfmfab.",
+    "Pmxfdy:The man behind me is Qrqnrcei.",
+    "Zdseewuwe:There are 3 people in front of me.",
+    "Coai:There are 0 people in front of me.",
+    "Zdseewuwe:There are 4 people behind me.",
+    "Oasfaatsl:I'm in 8th position.",
+]
+tests::_2_random_tests::_3_short_conversations_2
+Log
+Mr. Wrong identified by solve(): Uorb
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {0}
+Final liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): Jfeo
+Mr. Wrong identified by solve(): Kveqi
+exclude_supporting_pairs: persons: 5 possible_liars: 2 {4, 2}
+Contradiction relative empty 002
+Final liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tojxwowun
+Mr. Wrong identified by solve(): Wxoixboe
+exclude_supporting_pairs: persons: 8 possible_liars: 4 {0, 1, 6, 7}
+Final liar indexes: [0, 1, 6, 7]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Yepeqowip")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Qycvhut:The man behind me is Ymfayab.",
+    "Oceeih:The man behind me is Oesomybvh.",
+    "Znrd:The man in front of me is Vateozse.",
+    "Yepeqowip:The man in front of me is Syjiu.",
+    "Oesomybvh:The man in front of me is Oceeih.",
+    "Znrd:The man behind me is Syjiu.",
+    "Vateozse:The man behind me is Znrd.",
+    "Ymfayab:The man behind me is Yepeqowip.",
+    "Syjiu:The man behind me is Qycvhut.",
+    "Oceeih:The man in front of me is Yepeqowip.",
+]
+tests::_2_random_tests::_4_long_conversations
+Log
+exclude_supporting_pairs: persons: 16 possible_liars: 12 {0, 15, 9, 8, 13, 7, 1, 4, 14, 11, 12, 10}
+Final liar indexes: [7]
+unique reason 1
+Mr. Wrong identified by solve3(): Milhsjoc
+exclude_supporting_pairs: persons: 15 possible_liars: 15 {11, 12, 3, 13, 5, 9, 8, 14, 1, 0, 6, 7, 2, 4, 10}
+Final liar indexes: [3]
+unique reason 1
+Mr. Wrong identified by solve3(): Aymjky
+exclude_supporting_pairs: persons: 13 possible_liars: 7 {12, 10, 0, 1, 7, 8, 3}
+Final liar indexes: [3]
+unique reason 1
+Mr. Wrong identified by solve3(): Leskiiao
+exclude_supporting_pairs: persons: 16 possible_liars: 10 {11, 1, 5, 2, 15, 4, 14, 10, 0, 3}
+Final liar indexes: [14, 3]
+No contradictions found, unable to identify Mr. Wrong.
+exclude_supporting_pairs: persons: 11 possible_liars: 9 {8, 10, 6, 7, 9, 0, 2, 1, 3}
+Final liar indexes: [8, 0, 2]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Ewxgivamz")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Ewxgivamz:The man in front of me is Iyhor.",
+    "Ewxgivamz:There are 9 people behind me.",
+    "Iyhor:The man in front of me is Ewxgivamz.",
+    "Lytreoxec:There are 10 people behind me.",
+    "Vievvxh:There are 6 people behind me.",
+    "Zdif:The man in front of me is Qece.",
+    "Jszostufa:The man in front of me is Mhjzzne.",
+    "Iyhor:I'm in 4th position.",
+    "Lytreoxec:I'm in 1st position.",
+    "Dnui:The man behind me is Ewxgivamz.",
+    "Qece:The man in front of me is Fgxneea.",
+    "Dnui:The man in front of me is Lytreoxec.",
+    "Lytreoxec:There are 0 people in front of me.",
+    "Vievvxh:The man in front of me is Iyhor.",
+    "Iyhor:There are 3 people in front of me.",
+    "Vievvxh:I'm in 5th position.",
+    "Fgxneea:I'm in 9th position.",
+    "Qece:The man behind me is Zdif.",
+    "Mhjzzne:There are 5 people behind me.",
+    "Zdif:There are 0 people behind me.",
+    "Dnui:I'm in 2nd position.",
+    "Zepvajaze:The man in front of me is Jszostufa.",
+    "Mhjzzne:There are 5 people in front of me.",
+]
+tests::_2_random_tests::_5_very_long_conversations
+Log
+exclude_supporting_pairs: persons: 36 possible_liars: 20 {29, 18, 26, 8, 24, 28, 9, 16, 25, 30, 33, 31, 34, 35, 10, 19, 20, 5, 11, 12}
+Final liar indexes: [10]
+unique reason 1
+Mr. Wrong identified by solve3(): Yiqesupc
+Mr. Wrong identified by solve(): Albu
+exclude_supporting_pairs: persons: 32 possible_liars: 28 {11, 13, 10, 29, 25, 23, 18, 5, 12, 30, 17, 22, 3, 15, 28, 2, 19, 16, 9, 4, 8, 21, 26, 24, 0, 27, 31, 7}
+Final liar indexes: [13, 23, 18, 22, 16, 4]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Znpjww")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Ajukvicum:The man behind me is Aurfuaae.",
+    "Dbwcsvwou:I'm in 1st position.",
+    "Byjy:The man behind me is Ykosdz.",
+    "Zeqn:I'm in 30th position.",
+    "Oain:I'm in 9th position.",
+    "Uyooyvq:I'm in 27th position.",
+    "Eaua:There are 11 people behind me.",
+    "Zxoava:There are 7 people behind me.",
+    "Ljrgtyao:The man behind me is Ezmreneoq.",
+    "Tyredemrx:The man behind me is Yndo.",
+    "Auqe:The man behind me is Zxoava.",
+    "Eamsxoes:The man behind me is Byjy.",
+    "Arfjesuu:There is 1 people behind me.",
+    "Yndo:There are 12 people behind me.",
+    "Ajukvicum:There are 10 people behind me.",
+    "Zayebyiaa:There are 25 people behind me.",
+    "Asghlfrw:The man in front of me is Iyiuynle.",
+    "Yeyogv:I'm in 8th position.",
+    "Iynshed:There are 28 people in front of me.",
+    "Zayebyiaa:There are 6 people in front of me.",
+    "Nkasapp:I'm in 18th position.",
+    "Iyiuynle:I'm in 10th position.",
+    "Znpjww:There are 30 people behind me.",
+    "Tuoe:There are 6 people behind me.",
+    "Ykosdz:There are 28 people behind me.",
+    "Auqe:The man in front of me is Aurfuaae.",
+    "Exisrx:There are 26 people behind me.",
+    "Oain:The man in front of me is Yeyogv.",
+    "Oain:There are 23 people behind me.",
+    "Khyr:There are 4 people in front of me.",
+    "Ivsewuvsu:There are 20 people behind me.",
+    "Mnbiuuk:There are 31 people in front of me.",
+    "Yeyogv:The man behind me is Oain.",
+    "Eaua:There are 20 people in front of me.",
+    "Ezmreneoq:There are 15 people in front of me.",
+    "Aurfuaae:The man behind me is Auqe.",
+    "Zdxuctzpb:The man behind me is Ljrgtyao.",
+    "Ivsewuvsu:I'm in 12th position.",
+    "Hvcxih:There are 19 people behind me.",
+    "Dbwcsvwou:There are 0 people in front of me.",
+    "Ykosdz:There are 3 people in front of me.",
+    "Nkasapp:The man in front of me is Znpjww.",
+    "Yndo:There are 19 people in front of me.",
+    "Zxoava:There are 24 people in front of me.",
+    "Khyr:The man in front of me is Ykosdz.",
+    "Ajukvicum:I'm in 22th position.",
+    "Mnbiuuk:There are 0 people behind me.",
+    "Aurfuaae:There are 9 people behind me.",
+    "Iynshed:There are 3 people behind me.",
+    "Zeqn:The man behind me is Arfjesuu.",
+    "Exisrx:I'm in 6th position.",
+    "Jzuouomvi:I'm in 28th position.",
+    "Eaua:The man in front of me is Yndo.",
+    "Ivsewuvsu:The man in front of me is Asghlfrw.",
+    "Khyr:The man behind me is Exisrx.",
+    "Hvcxih:There are 12 people in front of me.",
+    "Mnbiuuk:I'm in 32th position.",
+    "Iynshed:I'm in 29th position.",
+    "Auqe:I'm in 24th position.",
+    "Tyredemrx:There are 18 people in front of me.",
+    "Zdxuctzpb:The man in front of me is Hvcxih.",
+    "Tyredemrx:The man in front of me is Nkasapp.",
+]
