@@ -107,31 +107,21 @@ impl<'a> State<'a> {
     fn solve3(&self) -> Option<&'a str> {
         let verbose: bool = true;
         let mut possible_liar_indexes1: Vec<usize> = Vec::new();
-        let mut possible_liar_indexes2: Vec<usize> = Vec::new();
         // exclude_supporting_pairs
         let maybe_liars: Vec<usize> = self.exclude_supporting_pairs();
         for liar_index in maybe_liars {
             let trial: &Trial = &self.trials[liar_index];
-            let (contradiction, liar_lies) = trial.is_contradictory(self);
-            if !contradiction {
+            let contradiciton = trial.is_contradictory(self);
+            if !contradiciton {
                 possible_liar_indexes1.push(liar_index);
-            }
-            if liar_lies {
-                possible_liar_indexes2.push(liar_index);
             }
         }
         if verbose {
-            println!("No Contradiction for liar indexes: {:?}", possible_liar_indexes1);
-            println!("Confirmed lies for liar indexes: {:?}", possible_liar_indexes2);
+            println!("Final liar indexes: {:?}", possible_liar_indexes1,)
         }
         if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
             println!("unique reason 1");
-            return Some(self.person_names[index]);
-        }
-        if possible_liar_indexes2.len() == 1 {
-            let index = possible_liar_indexes2[0];
-            println!("unique reason 2");
             return Some(self.person_names[index]);
         }
         None
@@ -303,27 +293,38 @@ impl Trial {
         let mut has_contradiction: bool = false;
         let assignment = &mut assignments[person_index];
         // If this person is not the liar, then their statement is true, so we can set their position to the claimed index.
-        if !assignment.possible_positions.contains(&position) {
-            // If this claimed position is not possible for the Trial we have a contradiction
-            has_contradiction = true;
-        } else if assignment.position.is_none() {
-            // Only make a new inference if the person is not the assumed liar
-            if !is_liar {
+        if !is_liar {
+            if !assignment.possible_positions.contains(&position) {
+                // If this claimed position is not possible for the Trial we have a contradiction
+                has_contradiction = true;
+            } else if assignment.position.is_none() {
                 assignment.position = Some(position);
                 assignment.possible_positions = vec![position];
                 changed = true;
+            }
+        } else {
+            // have liar, claimed position must be false
+            if let Some(current_position) = assignment.position {
+                if current_position == position {
+                    // liar claiming the actual position is a contradiciton
+                    has_contradiction = true;
+                }
+            } else {
+                // If this person is the liar, then their statement is false, so we can remove the claimed position from their possible positions.
+                if assignment.possible_positions.contains(&position) {
+                    assignment.possible_positions.retain(|&x| x != position);
+                    changed = true;
+                }
             }
         }
         return (changed, has_contradiction);
     }
 
-    fn is_contradictory(&self, state: &State) -> (bool, bool) {
+    fn is_contradictory(&self, state: &State) -> bool {
         // Implement logic to consider statements in the trial and determine if
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
-        
-        
         let verbose: bool = false;
         let verbose2: bool = true;
 
@@ -332,9 +333,6 @@ impl Trial {
             for person in &state.persons {
                 let person_index = person.index;
                 let is_liar: bool = person_index == self.liar_index;
-                if is_liar { // Make all inferences from non-liars statements, befoe considering supposed liar.
-                    continue;
-                }
                 if verbose2 {
                     println!(
                         "Considering person_index {}: {} ( liar_index = {} is_liar = {})",
@@ -385,17 +383,32 @@ impl Trial {
                             }
                             let other_person_index = *person_index;
                             let this_person_index = person.index;
-                            let (contradiction, change_flag) = self.infer_relative(
-                                &mut assignments,
-                                this_person_index,
-                                other_person_index,
-                                *relative,
-                            );
-                            if change_flag {
-                                changed = true;
-                            }
-                            if contradiction {
-                                has_contradiction = true;
+                            if is_liar {
+                                let (contradiction, change_flag) = self.liars_relative_inference(
+                                    &mut assignments,
+                                    this_person_index,
+                                    other_person_index,
+                                    *relative,
+                                );
+                                if change_flag {
+                                    changed = true;
+                                }
+                                if contradiction {
+                                    has_contradiction = true;
+                                }
+                            } else {
+                                let (contradiction, change_flag) = self.infer_relative(
+                                    &mut assignments,
+                                    this_person_index,
+                                    other_person_index,
+                                    *relative,
+                                );
+                                if change_flag {
+                                    changed = true;
+                                }
+                                if contradiction {
+                                    has_contradiction = true;
+                                }
                             }
                         }
                     }
@@ -437,80 +450,9 @@ impl Trial {
                 );
             }
         }
-        // If there is a contradiction, we have assumed the wrong liear...
-        if has_contradiction {
-            return (has_contradiction, false);
-        }
 
-        // if there is no contradiction, by other persons, see if we can confirm a contradiction by
-        // the assumed liar...
-        // Now consider only the statements of the assumed liar..
-        let assumed_liar: &Person = &state.persons[self.liar_index];
-        let mut liar_lies: bool = false;
-        let is_liar1: bool = true;
-        let mut changed = false;
-        for statement in &assumed_liar.statements {
-            match statement {
-                Statement::AbsPosition { position } => {
-                    if verbose {
-                        println!(
-                            "Person {} claims absolute position: {}",
-                            assumed_liar.name, position
-                        );
-                    }
-                    (changed, has_contradiction) = self.claim_position(
-                        &mut assignments,
-                        self.liar_index,
-                        is_liar1,
-                        *position,
-                    );
-                }
-                Statement::ReversePosition { from_end } => {
-                    // let assignment = &mut assignments[person_index];
-                    let position: usize = state.persons.len() - *from_end;
-                    if verbose {
-                        println!(
-                            "Person {} claims reverse position: {}",
-                            assumed_liar.name, position
-                        );
-                    }
-                    (changed, has_contradiction) = self.claim_position(
-                        &mut assignments,
-                        self.liar_index,
-                        is_liar1,
-                        position,
-                    );
-                }
-                Statement::RelPosition {
-                    relative,
-                    person_index,
-                } => {
-                    if verbose {
-                        println!(
-                            "Person {} claims relative position: {} relative to person_index {}",
-                            assumed_liar.name, relative, person_index
-                        );
-                    }
-                    let other_person_index = *person_index;
-                    let this_person_index = self.liar_index;
-                    let (contradiction, change_flag) = self.liars_relative_inference(
-                        &mut assignments,
-                        this_person_index,
-                        other_person_index,
-                        *relative,
-                    );
-                    if change_flag {
-                        changed = true;
-                    }
-                    if contradiction {
-                        liar_lies = true;
-                    }
-                }
-            }
-        } // for loop through liars statements
-        // fix the returns
-        return (false, liar_lies);
-    } // is_contraditory
+        return has_contradiction;
+    }
 
     // if this person is the liar, then if either person's position is known,
     // We can infer that the other position is not as the liar states.
