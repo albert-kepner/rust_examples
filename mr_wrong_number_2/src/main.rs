@@ -100,7 +100,6 @@ impl<'a> State<'a> {
             }
         }
         self.make_trials();
-
         None
     }
 
@@ -209,6 +208,7 @@ impl<'a> State<'a> {
     }
 }
 
+#[derive(Debug)]
 enum Statement {
     AbsPosition { position: usize },
     RelPosition { relative: i32, person_index: usize },
@@ -355,6 +355,9 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, *position);
+                            if new_contradiction {
+                                println!("001 Contradiction at: {:?}", statement);
+                            }
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
@@ -369,6 +372,10 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, position);
+                            if new_contradiction {
+                                println!("002 Contradiction at: {:?}", statement);
+                            }
+
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
@@ -390,6 +397,9 @@ impl Trial {
                                 other_person_index,
                                 *relative,
                             );
+                            if new_contradiction {
+                                println!("003 Contradiction at: {:?}", statement);
+                            }
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
@@ -413,6 +423,9 @@ impl Trial {
                 propagate_assignments(&exact_assignments, &mut assignments);
             changed = changed || new_change;
             has_contradiction = has_contradiction || new_contradiction;
+            if new_contradiction {
+                println!("004 new Contradiction");
+            }
 
             if !changed || has_contradiction {
                 break; // No changes made,  or we have a contradiction, stop the loop.
@@ -484,7 +497,7 @@ impl Trial {
                     }
                     let other_person_index = *person_index;
                     let this_person_index = person.index;
-                    let (new_change, new_contradiction) = self.infer_relative(
+                    let ( new_contradiction, new_change) = self.infer_relative(
                         &mut assignments,
                         this_person_index,
                         other_person_index,
@@ -499,8 +512,7 @@ impl Trial {
         // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
         // println!("ready to call assemble_assignments");
         let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
-        let (_, new_contradiction) =
-            propagate_assignments(&exact_assignments, &mut assignments);
+        let (_, new_contradiction) = propagate_assignments(&exact_assignments, &mut assignments);
         has_contradiction = has_contradiction || new_contradiction;
         if verbose || verbose3 {
             println!(
@@ -518,6 +530,7 @@ impl Trial {
         return (false, has_contradiction);
     } // is_contraditory
 
+    /// Return value (change: bool, contradiction: bool)
     fn infer_relative(
         &self,
         assignments: &mut Vec<Assignment>,
@@ -532,7 +545,7 @@ impl Trial {
 
         if this_person_index == other_person_index {
             contradiction = true;
-            return (contradiction, changed);
+            return (changed, contradiction);
         }
 
         let (this_assignment, other_assignment) = if this_person_index < other_person_index {
@@ -554,8 +567,9 @@ impl Trial {
                     .possible_positions
                     .contains(&other_position)
                 {
+                    println!("IR Contradiction 901");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
                 if other_assignment.position.is_none() {
                     other_assignment.position = Some(other_position);
@@ -566,7 +580,7 @@ impl Trial {
                 // position out of range (if zero)
                 println!("Contradiction: relative postition: zero 0003");
                 contradiction = true;
-                return (contradiction, changed);
+                return (changed, contradiction);
             }
         }
         // if the other person's position is known, we can constrain this person's position based on the relative statement.
@@ -578,8 +592,9 @@ impl Trial {
             };
             if let Some(this_position) = this_position {
                 if !this_assignment.possible_positions.contains(&this_position) {
+                    println!("IR Contradiction 902");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
                 if this_assignment.position.is_none() {
                     this_assignment.position = Some(this_position);
@@ -590,7 +605,7 @@ impl Trial {
                 // position out of range (if zero)
                 println!("Contradiction: relative postition: zero 0004");
                 contradiction = true;
-                return (contradiction, changed);
+                return (changed, contradiction);
             }
         }
 
@@ -679,7 +694,7 @@ impl Trial {
                 _ => {
                     println!("Contradiction relative max 001");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
             }
             match (max_allowed_this, max_this) {
@@ -692,7 +707,7 @@ impl Trial {
                 _ => {
                     println!("Contradiction relative max 901");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
             }
             match (min_allowed, min_other) {
@@ -707,7 +722,7 @@ impl Trial {
                 _ => {
                     println!("Contradiction relative min 001");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
             }
             match (min_allowed_this, min_this) {
@@ -720,22 +735,22 @@ impl Trial {
                 _ => {
                     println!("Contradiction relative min 901");
                     contradiction = true;
-                    return (contradiction, changed);
+                    return (changed, contradiction);
                 }
             }
             if other_assignment.possible_positions.is_empty() {
                 println!("Contradiction relative empty 002");
                 contradiction = true;
-                return (contradiction, changed);
+                return (changed, contradiction);
             }
             if this_assignment.possible_positions.is_empty() {
                 println!("Contradiction relative empty 902");
                 contradiction = true;
-                return (contradiction, changed);
+                return (changed, contradiction);
             }
         }
-
-        return (contradiction, changed);
+        println!("At end of infer_relative: contradiction = {}, changed = {} ", contradiction, changed);
+        return (changed, contradiction);
     }
 
     fn get_ranges(
