@@ -326,8 +326,8 @@ impl Trial {
         let mut has_contradiction = false;
 
         let verbose: bool = false;
-        let verbose2: bool = true;
-        let verbose3: bool = true;
+        let verbose2: bool = false;
+        let verbose3: bool = false;
 
         loop {
             let mut changed = false;
@@ -355,7 +355,7 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, *position);
-                            if new_contradiction {
+                            if new_contradiction && verbose {
                                 println!("001 Contradiction at: {:?}", statement);
                             }
                             changed = changed || new_change;
@@ -372,7 +372,7 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, position);
-                            if new_contradiction {
+                            if new_contradiction && verbose {
                                 println!("002 Contradiction at: {:?}", statement);
                             }
 
@@ -397,7 +397,7 @@ impl Trial {
                                 other_person_index,
                                 *relative,
                             );
-                            if new_contradiction {
+                            if new_contradiction && verbose {
                                 println!("003 Contradiction at: {:?}", statement);
                             }
                             changed = changed || new_change;
@@ -423,7 +423,7 @@ impl Trial {
                 propagate_assignments(&exact_assignments, &mut assignments);
             changed = changed || new_change;
             has_contradiction = has_contradiction || new_contradiction;
-            if new_contradiction {
+            if new_contradiction && verbose{
                 println!("004 new Contradiction");
             }
 
@@ -443,7 +443,7 @@ impl Trial {
                 );
             }
         }
-        // If there is a contradiction, we have assumed the wrong liear...
+        // If there is a contradiction, we have assumed the wrong liar...
         if has_contradiction {
             return (has_contradiction, false);
         }
@@ -542,6 +542,7 @@ impl Trial {
         // Return true if any changes were made to the assignments, false otherwise.
         let mut changed = false;
         let mut contradiction: bool = false;
+        let verbose: bool = false;
 
         if this_person_index == other_person_index {
             contradiction = true;
@@ -749,7 +750,9 @@ impl Trial {
                 return (changed, contradiction);
             }
         }
-        println!("At end of infer_relative: contradiction = {}, changed = {} ", contradiction, changed);
+        if verbose {
+            println!("At end of infer_relative: contradiction = {}, changed = {} ", contradiction, changed);
+        }
         return (changed, contradiction);
     }
 
