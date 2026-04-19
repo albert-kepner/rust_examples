@@ -307,12 +307,12 @@ impl Trial {
             // If this claimed position is not possible for the Trial we have a contradiction
             has_contradiction = true;
         } else if assignment.position.is_none() {
-            // Only make a new inference if the person is not the assumed liar
-            if !is_liar {
+
+
                 assignment.position = Some(position);
                 assignment.possible_positions = vec![position];
                 changed = true;
-            }
+
         }
         return (changed, has_contradiction);
     }
@@ -417,9 +417,8 @@ impl Trial {
             let (new_change, new_contradiction) =
                 propagate_assignments(&exact_assignments, &mut assignments);
             changed = changed || new_change;
-            if new_contradiction {
-                has_contradiction = true;
-            }
+            has_contradiction = has_contradiction || new_contradiction;
+
 
             if !changed || has_contradiction {
                 break; // No changes made,  or we have a contradiction, stop the loop.
@@ -445,25 +444,31 @@ impl Trial {
         // if there is no contradiction, by other persons, see if we can confirm a contradiction by
         // the assumed liar...
         // Now consider only the statements of the assumed liar..
-        let assumed_liar: &Person = &state.persons[self.liar_index];
-        let mut liar_lies: bool = false;
-        let is_liar1: bool = true;
+        let person: &Person = &state.persons[self.liar_index]; // the assumed liar
+        let person_index = self.liar_index;
+
+        let is_liar: bool = true;
+
         let mut changed = false;
-        for statement in &assumed_liar.statements {
+        let mut has_contradiction: bool = false;
+
+        for statement in &person.statements {
             match statement {
                 Statement::AbsPosition { position } => {
                     if verbose {
                         println!(
                             "Person {} claims absolute position: {}",
-                            assumed_liar.name, position
+                            person.name, position
                         );
                     }
-                    (changed, has_contradiction) = self.claim_position(
+                    let (new_change, new_contradiction) = self.claim_position(
                         &mut assignments,
-                        self.liar_index,
-                        is_liar1,
+                        person_index,
+                        is_liar,
                         *position,
                     );
+                    changed = changed || new_change;
+                    has_contradiction = has_contradiction || new_contradiction;
                 }
                 Statement::ReversePosition { from_end } => {
                     // let assignment = &mut assignments[person_index];
@@ -471,15 +476,17 @@ impl Trial {
                     if verbose {
                         println!(
                             "Person {} claims reverse position: {}",
-                            assumed_liar.name, position
+                            person.name, position
                         );
                     }
-                    (changed, has_contradiction) = self.claim_position(
+                    let (new_change, new_contradiction) = self.claim_position(
                         &mut assignments,
-                        self.liar_index,
-                        is_liar1,
+                        person_index,
+                        is_liar,
                         position,
                     );
+                    changed = changed || new_change;
+                    has_contradiction = has_contradiction || new_contradiction;
                 }
                 Statement::RelPosition {
                     relative,
@@ -488,97 +495,35 @@ impl Trial {
                     if verbose {
                         println!(
                             "Person {} claims relative position: {} relative to person_index {}",
-                            assumed_liar.name, relative, person_index
+                            person.name, relative, person_index
                         );
                     }
                     let other_person_index = *person_index;
-                    let this_person_index = self.liar_index;
-                    let (contradiction, change_flag) = self.liars_relative_inference(
+                    let this_person_index = person.index;
+                    let (new_change, new_contradiction) = self.infer_relative(
                         &mut assignments,
                         this_person_index,
                         other_person_index,
                         *relative,
                     );
-                    if change_flag {
-                        changed = true;
-                    }
-                    if contradiction {
-                        liar_lies = true;
-                    }
+                    changed = changed || new_change;
+                    has_contradiction = has_contradiction || new_contradiction;
                 }
             }
         } // for loop through liars statements
-        // fix the returns
-        return (false, liar_lies);
-    } // is_contraditory
+            // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
+            // println!("ready to call assemble_assignments");
+            let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
+            let (new_change, new_contradiction) =
+                propagate_assignments(&exact_assignments, &mut assignments);
+            if new_change {
+                changed = true;
+            }
+            has_contradiction = has_contradiction || new_contradiction;
 
-    // if this person is the liar, then if either person's position is known,
-    // We can infer that the other position is not as the liar states.
-    // And if both positions are known, it is a contradiction if the liar confirms
-    // the known relative position.
-    fn liars_relative_inference(
-        &self,
-        assignments: &mut Vec<Assignment>,
-        this_person_index: usize,
-        other_person_index: usize,
-        relative: i32,
-    ) -> (bool, bool) {
-        let mut contradiction = false;
-        let mut changed = false;
-        if let (Some(this_position), Some(other_position)) = (
-            assignments[this_person_index].position,
-            assignments[other_person_index].position,
-        ) {
-            // if both positions are already assigned, then if the liar agrees with the relative position,
-            // it is a contradiction.
-            if this_position as i32 + relative == other_position as i32 {
-                contradiction = true;
-                return (contradiction, changed);
-            }
-        }
-        // if either position is already assigned, we can remove the liar's relative position from those possible.
-        // If only this position is known...
-        if let Some(this_position) = assignments[this_person_index].position {
-            let other_position = match relative {
-                -1 => this_position.checked_sub(1),
-                1 => this_position.checked_add(1),
-                _ => None,
-            };
-            if let Some(other_position) = other_position {
-                if assignments[other_person_index]
-                    .possible_positions
-                    .contains(&other_position)
-                {
-                    assignments[other_person_index]
-                        .possible_positions
-                        .retain(|&x| x != other_position);
-                    changed = true;
-                }
-            }
-        }
-        // if only the other position is known...
-        if let Some(other_position) = assignments[other_person_index].position {
-            let this_position = match relative {
-                -1 => other_position.checked_add(1),
-                1 => other_position.checked_sub(1),
-                _ => None,
-            };
-            if let Some(this_position) = this_position {
-                if assignments[this_person_index]
-                    .possible_positions
-                    .contains(&this_position)
-                {
-                    assignments[this_person_index]
-                        .possible_positions
-                        .retain(|&x| x != this_position);
-                    changed = true;
-                }
-            }
-        } else {
-            // if neither position is known, we cannot infer anything from the liar's statement.
-        }
-        (contradiction, changed)
-    }
+        // fix the returns -- returns (other_lies, liar_lies)
+        return (false, has_contradiction);
+    } // is_contraditory
 
     fn infer_relative(
         &self,
