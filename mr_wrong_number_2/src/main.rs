@@ -121,8 +121,14 @@ impl<'a> State<'a> {
             }
         }
         if verbose {
-            println!("No Contradiction for liar indexes: {:?}", possible_liar_indexes1);
-            println!("Confirmed lies for liar indexes: {:?}", possible_liar_indexes2);
+            println!(
+                "No Contradiction for liar indexes: {:?}",
+                possible_liar_indexes1
+            );
+            println!(
+                "Confirmed lies for liar indexes: {:?}",
+                possible_liar_indexes2
+            );
         }
         if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
@@ -296,7 +302,6 @@ impl Trial {
         &self,
         assignments: &mut Vec<Assignment>,
         person_index: usize,
-        is_liar: bool,
         position: usize,
     ) -> (bool, bool) {
         let mut changed: bool = false;
@@ -307,12 +312,9 @@ impl Trial {
             // If this claimed position is not possible for the Trial we have a contradiction
             has_contradiction = true;
         } else if assignment.position.is_none() {
-
-
-                assignment.position = Some(position);
-                assignment.possible_positions = vec![position];
-                changed = true;
-
+            assignment.position = Some(position);
+            assignment.possible_positions = vec![position];
+            changed = true;
         }
         return (changed, has_contradiction);
     }
@@ -322,17 +324,18 @@ impl Trial {
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
-        
-        
+
         let verbose: bool = false;
         let verbose2: bool = true;
+        let verbose3: bool = true;
 
         loop {
             let mut changed = false;
             for person in &state.persons {
                 let person_index = person.index;
                 let is_liar: bool = person_index == self.liar_index;
-                if is_liar { // Make all inferences from non-liars statements, befoe considering supposed liar.
+                if is_liar {
+                    // Make all inferences from non-liars statements, befoe considering supposed liar.
                     continue;
                 }
                 if verbose2 {
@@ -350,12 +353,8 @@ impl Trial {
                                     person.name, position
                                 );
                             }
-                            let (new_change, new_contradiction) = self.claim_position(
-                                &mut assignments,
-                                person_index,
-                                is_liar,
-                                *position,
-                            );
+                            let (new_change, new_contradiction) =
+                                self.claim_position(&mut assignments, person_index, *position);
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
@@ -368,12 +367,8 @@ impl Trial {
                                     person.name, position
                                 );
                             }
-                            let (new_change, new_contradiction) = self.claim_position(
-                                &mut assignments,
-                                person_index,
-                                is_liar,
-                                position,
-                            );
+                            let (new_change, new_contradiction) =
+                                self.claim_position(&mut assignments, person_index, position);
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
@@ -419,7 +414,6 @@ impl Trial {
             changed = changed || new_change;
             has_contradiction = has_contradiction || new_contradiction;
 
-
             if !changed || has_contradiction {
                 break; // No changes made,  or we have a contradiction, stop the loop.
             }
@@ -447,8 +441,6 @@ impl Trial {
         let person: &Person = &state.persons[self.liar_index]; // the assumed liar
         let person_index = self.liar_index;
 
-        let is_liar: bool = true;
-
         let mut changed = false;
         let mut has_contradiction: bool = false;
 
@@ -461,12 +453,8 @@ impl Trial {
                             person.name, position
                         );
                     }
-                    let (new_change, new_contradiction) = self.claim_position(
-                        &mut assignments,
-                        person_index,
-                        is_liar,
-                        *position,
-                    );
+                    let (new_change, new_contradiction) =
+                        self.claim_position(&mut assignments, person_index, *position);
                     changed = changed || new_change;
                     has_contradiction = has_contradiction || new_contradiction;
                 }
@@ -479,12 +467,8 @@ impl Trial {
                             person.name, position
                         );
                     }
-                    let (new_change, new_contradiction) = self.claim_position(
-                        &mut assignments,
-                        person_index,
-                        is_liar,
-                        position,
-                    );
+                    let (new_change, new_contradiction) =
+                        self.claim_position(&mut assignments, person_index, position);
                     changed = changed || new_change;
                     has_contradiction = has_contradiction || new_contradiction;
                 }
@@ -511,16 +495,25 @@ impl Trial {
                 }
             }
         } // for loop through liars statements
-            // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
-            // println!("ready to call assemble_assignments");
-            let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
-            let (new_change, new_contradiction) =
-                propagate_assignments(&exact_assignments, &mut assignments);
-            if new_change {
-                changed = true;
-            }
-            has_contradiction = has_contradiction || new_contradiction;
 
+        // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
+        // println!("ready to call assemble_assignments");
+        let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
+        let (_, new_contradiction) =
+            propagate_assignments(&exact_assignments, &mut assignments);
+        has_contradiction = has_contradiction || new_contradiction;
+        if verbose || verbose3 {
+            println!(
+                "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
+                self.liar_index, has_contradiction
+            );
+            for assignment in &assignments {
+                println!(
+                    "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
+                    assignment.person_index, assignment.possible_positions, assignment.position
+                );
+            }
+        }
         // fix the returns -- returns (other_lies, liar_lies)
         return (false, has_contradiction);
     } // is_contraditory
