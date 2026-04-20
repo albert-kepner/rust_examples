@@ -1,0 +1,36 @@
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Aujyuhoee claims reverse position: 1
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+
+
+
+
+
+
+
+
+
+
+
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Vaqzcyicr claims absolute position: 2
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: []
+No contradictions found, unable to identify Mr. Wrong.

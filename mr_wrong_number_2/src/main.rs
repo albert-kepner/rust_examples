@@ -325,9 +325,9 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
 
-        let verbose: bool = false;
-        let verbose2: bool = false;
-        let verbose3: bool = false;
+        let verbose: bool = true;
+        let verbose2: bool = true;
+        let verbose3: bool = true;
 
         loop {
             let mut changed = false;
@@ -516,7 +516,7 @@ impl Trial {
         has_contradiction = has_contradiction || new_contradiction;
         if verbose || verbose3 {
             println!(
-                "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
+                "END Liar Statements ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
             );
             for assignment in &assignments {
@@ -861,6 +861,7 @@ fn propagate_assignments(
     return (change, contradiction);
 }
 
+#[derive(Clone, Debug)]
 struct Assignment {
     position: Option<usize>,
     possible_positions: Vec<usize>,
@@ -981,7 +982,7 @@ mod sample_tests {
     #[test]
     fn basic_tests() {
         let mut count = 0;
-        for (conversation, _expected) in SAMPLE_TEST_CASES_NEW {
+        for (conversation, _expected) in SAMPLE_TEST_CASES {
             count += 1;
             let _actual = find_out_mr_wrong(conversation);
             warn_not_equal(count, _actual, _expected);
@@ -1002,7 +1003,7 @@ mod sample_tests {
         }
     }
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 13] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1117,15 +1118,27 @@ mod sample_tests {
             ],
             Some("Vaqzcyicr"),
         ),
+        (
+            &[
+                "Euuopnq:The man in front of me is Alghi.",
+                "Alghi:There are 0 people behind me.",
+                "Duoan:There are 2 people in front of me.",
+                "Vdnqoar:The man in front of me is Duoan.",
+            ],
+            Some("Alghi"),    
+        ),
     ];
 
-    const SAMPLE_TEST_CASES_NEW: [(&[&str], Option<&str>); 1] = [(
-        &[
-            "Euuopnq:The man in front of me is Alghi.",
-            "Alghi:There are 0 people behind me.",
-            "Duoan:There are 2 people in front of me.",
-            "Vdnqoar:The man in front of me is Duoan.",
-        ],
-        Some("Alghi"),
-    )];
+
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+        (
+            &[
+                "Eteyjm:The man behind me is Ucuaei.",
+                "Ucuaei:The man in front of me is Eteyjm.",
+                "Vaqzcyicr:There is 1 people in front of me.",
+                "Aujyuhoee:There are 3 people behind me.",
+            ],
+            Some("Vaqzcyicr"),
+        ),
+    ];
 }
