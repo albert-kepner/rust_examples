@@ -107,16 +107,22 @@ impl<'a> State<'a> {
         let verbose: bool = true;
         let mut possible_liar_indexes1: Vec<usize> = Vec::new();
         let mut possible_liar_indexes2: Vec<usize> = Vec::new();
+        let mut most_open_slots: usize = 0;
+        let mut most_open_index: Option<usize> = None;
         // exclude_supporting_pairs
         let maybe_liars: Vec<usize> = self.exclude_supporting_pairs();
         for liar_index in maybe_liars {
             let trial: &Trial = &self.trials[liar_index];
-            let (contradiction, liar_lies) = trial.is_contradictory(self);
+            let (contradiction, liar_lies, open_slots) = trial.is_contradictory(self);
             if !contradiction {
                 possible_liar_indexes1.push(liar_index);
             }
             if liar_lies {
                 possible_liar_indexes2.push(liar_index);
+            }
+            if open_slots > most_open_slots {
+                most_open_slots = open_slots;
+                most_open_index = Some(liar_index);
             }
         }
         if verbose {
@@ -138,6 +144,10 @@ impl<'a> State<'a> {
             let index = possible_liar_indexes2[0];
             println!("unique reason 2");
             return Some(self.person_names[index]);
+        }
+        if let Some(open_index) = most_open_index {
+            println!("unique reason 3");
+            return Some(self.person_names[open_index]);
         }
         None
     }
@@ -319,7 +329,7 @@ impl Trial {
         return (changed, has_contradiction);
     }
 
-    fn is_contradictory(&self, state: &State) -> (bool, bool) {
+    fn is_contradictory(&self, state: &State) -> (bool, bool, usize) {
         // Implement logic to consider statements in the trial and determine if
         // the assumption of a specific liar leads to a contradiction based on the statements.
         let mut assignments: Vec<Assignment> = self.make_assignments();
@@ -445,7 +455,7 @@ impl Trial {
         }
         // If there is a contradiction, we have assumed the wrong liar...
         if has_contradiction {
-            return (has_contradiction, false);
+            return (has_contradiction, false, 0);
         }
 
         // if there is no contradiction, by other persons, see if we can confirm a contradiction by
@@ -472,7 +482,6 @@ impl Trial {
                     has_contradiction = has_contradiction || new_contradiction;
                 }
                 Statement::ReversePosition { from_end } => {
-                    // let assignment = &mut assignments[person_index];
                     let position: usize = state.persons.len() - *from_end;
                     if verbose {
                         println!(
@@ -526,8 +535,17 @@ impl Trial {
                 );
             }
         }
-        // fix the returns -- returns (other_lies, liar_lies)
-        return (false, has_contradiction);
+        // fix the returns -- returns (other_lies, liar_lies, open_slots)
+        let mut open_slots: usize = 0;
+        if !has_contradiction {
+            // Determine how many slots are unassigned
+            for assignment in &assignments {
+                if assignment.position.is_none() {
+                    open_slots = open_slots + 1;
+                }
+            }
+        }
+        return (false, has_contradiction, open_slots);
     } // is_contraditory
 
     /// Return value (change: bool, contradiction: bool)
@@ -1003,7 +1021,7 @@ mod sample_tests {
         }
     }
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1130,7 +1148,7 @@ mod sample_tests {
     ];
 
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
         (
             &[
                 "Eteyjm:The man behind me is Ucuaei.",
