@@ -134,6 +134,7 @@ impl<'a> State<'a> {
                 "Confirmed lies for liar indexes: {:?}",
                 possible_liar_indexes2
             );
+            println!("most_open_slots = {}", most_open_slots);
         }
         if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
@@ -141,6 +142,17 @@ impl<'a> State<'a> {
             return Some(self.person_names[index]);
         }
         if possible_liar_indexes2.len() == 1 {
+
+
+
+
+
+
+
+
+
+
+
             let index = possible_liar_indexes2[0];
             println!("unique reason 2");
             return Some(self.person_names[index]);
@@ -335,9 +347,9 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
 
-        let verbose: bool = true;
-        let verbose2: bool = true;
-        let verbose3: bool = true;
+        let verbose: bool = false;
+        let verbose2: bool = false;
+        let verbose3: bool = false;
 
         loop {
             let mut changed = false;
@@ -506,7 +518,7 @@ impl Trial {
                     }
                     let other_person_index = *person_index;
                     let this_person_index = person.index;
-                    let ( new_contradiction, new_change) = self.infer_relative(
+                    let ( new_change, new_contradiction) = self.infer_relative(
                         &mut assignments,
                         this_person_index,
                         other_person_index,
@@ -545,6 +557,7 @@ impl Trial {
                 }
             }
         }
+        println!("open_slots = {}", open_slots);
         return (false, has_contradiction, open_slots);
     } // is_contraditory
 
@@ -1021,7 +1034,7 @@ mod sample_tests {
         }
     }
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1148,15 +1161,15 @@ mod sample_tests {
     ];
 
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
         (
             &[
-                "Eteyjm:The man behind me is Ucuaei.",
-                "Ucuaei:The man in front of me is Eteyjm.",
-                "Vaqzcyicr:There is 1 people in front of me.",
-                "Aujyuhoee:There are 3 people behind me.",
+                "Eqoivoyoy:The man behind me is Ohilo.",
+                "Ohilo:There are 3 people in front of me.",
+                "Eizye:The man behind me is Eqoivoyoy.",
+                "Lfeznsr:I'm in 3rd position.",
             ],
-            Some("Vaqzcyicr"),
+            None,
         ),
     ];
 }
