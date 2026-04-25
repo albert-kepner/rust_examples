@@ -134,7 +134,7 @@ impl<'a> State<'a> {
                 "Confirmed lies for liar indexes: {:?}",
                 possible_liar_indexes2
             );
-            println!("most_open_slots = {}", most_open_slots);
+            println!("most_open_slots = {} most_open_index = {:?}", most_open_slots, most_open_index);
         }
         if possible_liar_indexes1.len() == 1 {
             let index = possible_liar_indexes1[0];
@@ -347,9 +347,7 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
 
-        let verbose: bool = false;
-        let verbose2: bool = false;
-        let verbose3: bool = false;
+        let verbose4: bool = true;
 
         loop {
             let mut changed = false;
@@ -360,7 +358,7 @@ impl Trial {
                     // Make all inferences from non-liars statements, befoe considering supposed liar.
                     continue;
                 }
-                if verbose2 {
+                if verbose4 {
                     println!(
                         "Considering person_index {}: {} ( liar_index = {} is_liar = {})",
                         person_index, person.name, self.liar_index, is_liar
@@ -369,7 +367,7 @@ impl Trial {
                 for statement in &person.statements {
                     match statement {
                         Statement::AbsPosition { position } => {
-                            if verbose {
+                            if verbose4 {
                                 println!(
                                     "Person {} claims absolute position: {}",
                                     person.name, position
@@ -377,7 +375,7 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, *position);
-                            if new_contradiction && verbose {
+                            if new_contradiction && verbose4 {
                                 println!("001 Contradiction at: {:?}", statement);
                             }
                             changed = changed || new_change;
@@ -386,7 +384,7 @@ impl Trial {
                         Statement::ReversePosition { from_end } => {
                             // let assignment = &mut assignments[person_index];
                             let position: usize = state.persons.len() - *from_end;
-                            if verbose {
+                            if verbose4 {
                                 println!(
                                     "Person {} claims reverse position: {}",
                                     person.name, position
@@ -394,7 +392,7 @@ impl Trial {
                             }
                             let (new_change, new_contradiction) =
                                 self.claim_position(&mut assignments, person_index, position);
-                            if new_contradiction && verbose {
+                            if new_contradiction && verbose4 {
                                 println!("002 Contradiction at: {:?}", statement);
                             }
 
@@ -405,7 +403,7 @@ impl Trial {
                             relative,
                             person_index,
                         } => {
-                            if verbose {
+                            if verbose4 {
                                 println!(
                                     "Person {} claims relative position: {} relative to person_index {}",
                                     person.name, relative, person_index
@@ -419,14 +417,17 @@ impl Trial {
                                 other_person_index,
                                 *relative,
                             );
-                            if new_contradiction && verbose {
+                            if new_contradiction && verbose4 {
                                 println!("003 Contradiction at: {:?}", statement);
                             }
                             changed = changed || new_change;
                             has_contradiction = has_contradiction || new_contradiction;
                         }
                     }
-                    if verbose || verbose2 {
+                    let (new_change, new_contradiction) = propagate(&mut assignments);
+                    changed = changed || new_change;
+                    has_contradiction = has_contradiction || new_contradiction;
+                    if verbose4 {
                         for assignment in &assignments {
                             println!(
                                 "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
@@ -437,23 +438,13 @@ impl Trial {
                         }
                     }
                 }
-            }
-            // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
-            // println!("ready to call assemble_assignments");
-            let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
-            let (new_change, new_contradiction) =
-                propagate_assignments(&exact_assignments, &mut assignments);
-            changed = changed || new_change;
-            has_contradiction = has_contradiction || new_contradiction;
-            if new_contradiction && verbose{
-                println!("004 new Contradiction");
-            }
+            } // end loop through Persons
 
-            if !changed || has_contradiction {
-                break; // No changes made,  or we have a contradiction, stop the loop.
+            if !changed  || has_contradiction {
+                break; // No changes made,  or have contradiction,  stop the loop.
             }
-        } // End of loop to consider statements,
-        if verbose || verbose2 {
+        } // End of loop to consider reprocess statements until no changes...
+        if verbose4 {
             println!(
                 "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
@@ -482,7 +473,7 @@ impl Trial {
         for statement in &person.statements {
             match statement {
                 Statement::AbsPosition { position } => {
-                    if verbose {
+                    if verbose4 {
                         println!(
                             "Person {} claims absolute position: {}",
                             person.name, position
@@ -495,7 +486,7 @@ impl Trial {
                 }
                 Statement::ReversePosition { from_end } => {
                     let position: usize = state.persons.len() - *from_end;
-                    if verbose {
+                    if verbose4 {
                         println!(
                             "Person {} claims reverse position: {}",
                             person.name, position
@@ -510,7 +501,7 @@ impl Trial {
                     relative,
                     person_index,
                 } => {
-                    if verbose {
+                    if verbose4 {
                         println!(
                             "Person {} claims relative position: {} relative to person_index {}",
                             person.name, relative, person_index
@@ -530,12 +521,10 @@ impl Trial {
             }
         } // for loop through liars statements
 
-        // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
-        // println!("ready to call assemble_assignments");
-        let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
-        let (_, new_contradiction) = propagate_assignments(&exact_assignments, &mut assignments);
+        let (_, new_contradiction) = propagate(&mut assignments);
+  
         has_contradiction = has_contradiction || new_contradiction;
-        if verbose || verbose3 {
+        if verbose4 {
             println!(
                 "END Liar Statements ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
@@ -561,6 +550,38 @@ impl Trial {
         return (false, has_contradiction, open_slots);
     } // is_contraditory
 
+    fn relative_conflict(
+        &self,
+        assignments: &mut Vec<Assignment>,
+        this_person_index: usize,
+        other_person_index: usize,
+        relative: i32,
+    ) -> bool {
+        let mut front: usize = this_person_index;
+        let mut behind: usize = other_person_index;
+        if relative < 0 {
+            front = other_person_index;
+            behind = this_person_index;
+        }
+        // Check behind the front person
+        if let Some(behind_front) = assignments[front].behind_me {
+            if behind_front != behind {
+                return true; // this is a contradiction
+            }
+        } else {
+            assignments[front].behind_me = Some(behind);
+        }
+        // Check in front of the person behind
+        if let Some(in_front_of) = assignments[behind].in_front_of_me {
+            if in_front_of != front {
+                return true; // this is a contradiction
+            }
+        } else {
+            assignments[behind].in_front_of_me = Some(front);
+        }
+        false
+    }
+
     /// Return value (change: bool, contradiction: bool)
     fn infer_relative(
         &self,
@@ -576,6 +597,11 @@ impl Trial {
         let verbose: bool = false;
 
         if this_person_index == other_person_index {
+            contradiction = true;
+            return (changed, contradiction);
+        }
+
+        if self.relative_conflict(assignments, this_person_index, other_person_index, relative) {
             contradiction = true;
             return (changed, contradiction);
         }
@@ -599,7 +625,7 @@ impl Trial {
                     .possible_positions
                     .contains(&other_position)
                 {
-                    println!("IR Contradiction 901");
+                    println!("Infer Relative Contradiction 901");
                     contradiction = true;
                     return (changed, contradiction);
                 }
@@ -807,6 +833,23 @@ impl Trial {
     }
 }
 
+fn propagate(assignments: &mut Vec<Assignment>) -> (bool, bool) {
+    let mut changed = false;
+    for i in 0..assignments.len() {
+        if assignments[i].possible_positions.len() == 1 &&assignments[i].position.is_none() {
+            let position: usize = assignments[i].possible_positions[0];
+            assignments[i].position = Some(position);
+            changed = true;
+        }
+    }
+    
+    // Consider all the exact position assignments we have so far, and for each person assigned, remove that position from the possible positions of all other people.
+    let exact_assignments: Vec<(usize, usize)> = assemble_assignments(assignments);
+    let (new_change, new_contradiction) = propagate_assignments(&exact_assignments, assignments);
+    changed = changed || new_change;
+    (changed, new_contradiction)
+}
+
 // let exact_assignments: Vec<(usize, usize)> = assemble_assignments(&assignments);
 fn assemble_assignments(assignments: &Vec<Assignment>) -> Vec<(usize, usize)> {
     let mut exact_assignments: Vec<(usize, usize)> = Vec::new();
@@ -898,6 +941,8 @@ struct Assignment {
     possible_positions: Vec<usize>,
     person_index: usize,
     num_people: usize,
+    behind_me: Option<usize>,
+    in_front_of_me: Option<usize>,
 }
 
 impl Assignment {
@@ -907,6 +952,8 @@ impl Assignment {
             possible_positions: (1..=num_people).collect(), // collection of 1-based positions...
             person_index,
             num_people,
+            behind_me: None,
+            in_front_of_me: None,
         }
     }
 }
@@ -1034,7 +1081,7 @@ mod sample_tests {
         }
     }
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 14] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 15] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1158,10 +1205,6 @@ mod sample_tests {
             ],
             Some("Alghi"),    
         ),
-    ];
-
-
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
         (
             &[
                 "Eqoivoyoy:The man behind me is Ohilo.",
@@ -1170,6 +1213,22 @@ mod sample_tests {
                 "Lfeznsr:I'm in 3rd position.",
             ],
             None,
+        ),
+    ];
+
+
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+        (
+            &[
+                "Gusytbnf:The man in front of me is Ekymeqoqf.",
+                "Yneyxk:The man behind me is Eeeo.",
+                "Gusytbnf:The man behind me is Yneyxk.",
+                "Qpieskzr:The man behind me is Ekymeqoqf.",
+                "Eeeo:The man in front of me is Ekymeqoqf.",
+                "Ekymeqoqf:The man in front of me is Qpieskzr.",
+            ],
+            Some("Eeeo"),
+
         ),
     ];
 }

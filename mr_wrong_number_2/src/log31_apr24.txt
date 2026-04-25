@@ -1,0 +1,398 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.45s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+(0) Gusytbnf:The man in front of me is Ekymeqoqf.
+Person: Gusytbnf at index: 0
+Person: Ekymeqoqf at index: 1
+(1) Yneyxk:The man behind me is Eeeo.
+Person: Yneyxk at index: 2
+Person: Eeeo at index: 3
+(2) Gusytbnf:The man behind me is Yneyxk.
+(3) Qpieskzr:The man behind me is Ekymeqoqf.
+Person: Qpieskzr at index: 4
+(4) Eeeo:The man in front of me is Ekymeqoqf.
+(5) Ekymeqoqf:The man in front of me is Qpieskzr.
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {2, 3, 0}
+Considering person_index 0: Gusytbnf ( liar_index = 2 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 2 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Eeeo ( liar_index = 2 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 2 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 2 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 2 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 3: Eeeo ( liar_index = 2 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 2 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 2 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 2 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 3: Eeeo ( liar_index = 2 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 2 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4, 5] position = None
+Assignment for person_index 3: possible_positions: [3, 4] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Contradiction relative empty 002
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [] position = None
+Assignment for person_index 3: possible_positions: [] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+open_slots = 0
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [5] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+Person Eeeo claims relative position: -1 relative to person_index 1
+Contradiction relative empty 002
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [] position = None
+Assignment for person_index 4: possible_positions: [1] position = None
+open_slots = 0
+Considering person_index 1: Ekymeqoqf ( liar_index = 0 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Yneyxk ( liar_index = 0 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Eeeo ( liar_index = 0 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 0 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 0 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Yneyxk ( liar_index = 0 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Eeeo ( liar_index = 0 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 0 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 0 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative to person_index 4
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Yneyxk ( liar_index = 0 is_liar = false)
+Person Yneyxk claims relative position: 1 relative to person_index 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Eeeo ( liar_index = 0 is_liar = false)
+Person Eeeo claims relative position: -1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 0 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative to person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Person Gusytbnf claims relative position: -1 relative to person_index 1
+Person Gusytbnf claims relative position: 1 relative to person_index 2
+END Liar Statements ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [4] position = None
+Assignment for person_index 3: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+open_slots = 5
+No Contradiction for liar indexes: [2, 3, 0]
+Confirmed lies for liar indexes: [2, 3]
+most_open_slots = 5
+unique reason 3
+Mr. Wrong identified by solve3(): Gusytbnf
+1 ******************* Warning: actual value Some("Gusytbnf") does not match expected value Some("Eeeo")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.49s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>
