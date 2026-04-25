@@ -566,6 +566,8 @@ impl Trial {
         // Check behind the front person
         if let Some(behind_front) = assignments[front].behind_me {
             if behind_front != behind {
+                println!("this_person_index, other_person_index, relative {} {} {}",this_person_index, other_person_index, relative);
+                println!("behind_front, behind {} {} ",behind_front, behind);
                 return true; // this is a contradiction
             }
         } else {
@@ -574,6 +576,8 @@ impl Trial {
         // Check in front of the person behind
         if let Some(in_front_of) = assignments[behind].in_front_of_me {
             if in_front_of != front {
+                println!("this_person_index, other_person_index, relative {} {} {}",this_person_index, other_person_index, relative);
+                println!("in_front_of, front {} {} ",in_front_of, front);
                 return true; // this is a contradiction
             }
         } else {
@@ -626,6 +630,8 @@ impl Trial {
                     .contains(&other_position)
                 {
                     println!("Infer Relative Contradiction 901");
+                    println!("this_person_index, other_person_index, relative {} {} {}",this_person_index, other_person_index, relative);
+                    println!("other_position , other_assignment.posisible_positions = {:?},,,{:?}", other_position, other_assignment.possible_positions);
                     contradiction = true;
                     return (changed, contradiction);
                 }
@@ -1081,7 +1087,7 @@ mod sample_tests {
         }
     }
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 15] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 16] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1214,10 +1220,6 @@ mod sample_tests {
             ],
             None,
         ),
-    ];
-
-
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
         (
             &[
                 "Gusytbnf:The man in front of me is Ekymeqoqf.",
@@ -1229,6 +1231,19 @@ mod sample_tests {
             ],
             Some("Eeeo"),
 
+        ),
+    ];
+
+
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+        (
+            &[
+                "Cpakay:I'm in 3rd position.",
+                "Erqivmwt:The man behind me is Cpakay.",
+                "Mjyagzhle:The man behind me is Xzknkeiau.",
+                "Xzknkeiau:The man in front of me is Mjyagzhle.",
+            ],
+            None,
         ),
     ];
 }

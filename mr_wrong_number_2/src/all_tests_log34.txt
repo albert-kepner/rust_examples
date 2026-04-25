@@ -1,0 +1,2114 @@
+Time: 7263ms Passed: 3Failed: 3Exit Code: 101
+Test Results:
+tests::_1_fixed_tests
+Log
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1 
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 1, 2}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1 
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2 
+(3) Peter:The man in front of me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): John
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:There is 1 people in front of me.
+Person: Peter at index: 1 
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 2, 1}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+(0) John:The man behind me is Peter.
+Person: John at index: 0 
+Person: Peter at index: 1 
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 0, 1}
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [2, 1]
+Confirmed lies for liar indexes: [2, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Dowfls:There is 0 people behind me.
+Person: Dowfls at index: 0 
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+Person: Ljiyxbmr at index: 1 
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+Person: Cvvugb at index: 2 
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+Person: Tzjlvruhk at index: 3 
+(7) Tzjlvruhk:There are 2 people in front of me.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+IR Contradiction 902
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: [2, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Fixsq:The man in front of me is Tnsrs.
+Person: Fixsq at index: 0 
+Person: Tnsrs at index: 1 
+(1) Pktj:The man in front of me is Tnsrs.
+Person: Pktj at index: 2 
+(2) Irnanfww:I'm in 6th position.
+Person: Irnanfww at index: 3 
+(3) Irnanfww:There are 5 people in front of me.
+(4) Zfgderkbm:There are 0 people in front of me.
+Person: Zfgderkbm at index: 4 
+(5) Vhayfjd:There are 4 people in front of me.
+Person: Vhayfjd at index: 5 
+(6) Tnsrs:There is 1 people in front of me.
+(7) Vhayfjd:I'm in 5th position.
+(8) Zfgderkbm:There are 5 people behind me.
+(9) Pktj:There are 2 people in front of me.
+(10) Tnsrs:The man in front of me is Zfgderkbm.
+(11) Fixsq:The man behind me is Tnsrs.
+Mr. Wrong identified by solve(): Fixsq
+(0) Jbnxqpisg:The man in front of me is Mavmynesz.
+Person: Jbnxqpisg at index: 0 
+Person: Mavmynesz at index: 1 
+(1) Jbnxqpisg:The man behind me is Noup.
+Person: Noup at index: 2 
+(2) Mavmynesz:The man in front of me is Jbnxqpisg.
+(3) Mavmynesz:The man behind me is Noup.
+(4) Noup:I'm in 3rd position.
+(5) Noup:The man in front of me is Jbnxqpisg.
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {1}
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Mavmynesz
+(0) Clty:I'm in 1st position.
+Person: Clty at index: 0 
+(1) Clty:There are 0 people in front of me.
+(2) Nymiyudwu:The man in front of me is Ypzoncwc.
+Person: Nymiyudwu at index: 1 
+Person: Ypzoncwc at index: 2 
+(3) Nymiyudwu:The man behind me is Wtkdw.
+Person: Wtkdw at index: 3 
+(4) Wtkdw:The man in front of me is Ypzoncwc.
+(5) Wtkdw:There are 0 people behind me.
+(6) Ypzoncwc:I'm in 3rd position.
+(7) Ypzoncwc:The man behind me is Wtkdw.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {0, 1}
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Nymiyudwu
+(0) Bcdvt:The man in front of me is Fhnb.
+Person: Bcdvt at index: 0 
+Person: Fhnb at index: 1 
+(1) Bcdvt:The man behind me is Ofulabc.
+Person: Ofulabc at index: 2 
+(2) Ewryjljj:There are 4 people behind me.
+Person: Ewryjljj at index: 3 
+(3) Ewryjljj:I'm in 3rd position.
+(4) Fhnb:The man behind me is Bcdvt.
+(5) Fhnb:There are 3 people behind me.
+(6) Iycbhshv:There are 6 people in front of me.
+Person: Iycbhshv at index: 4 
+(7) Iycbhshv:I'm in 7th position.
+(8) Ofulabc:The man behind me is Iycbhshv.
+(9) Ofulabc:The man in front of me is Bcdvt.
+(10) Rhwrubvz:There are 0 people in front of me.
+Person: Rhwrubvz at index: 5 
+(11) Rhwrubvz:There is 1 people behind me.
+(12) Yaxhtf:There are 0 people in front of me.
+Person: Yaxhtf at index: 6 
+(13) Yaxhtf:The man behind me is Rhwrubvz.
+Mr. Wrong identified by solve(): Rhwrubvz
+(0) Tkdiuzr:There are 3 people behind me.
+Person: Tkdiuzr at index: 0 
+(1) Yxmem:There are 4 people in front of me.
+Person: Yxmem at index: 1 
+(2) Itpharzq:The man behind me is Lwoeza.
+Person: Itpharzq at index: 2 
+Person: Lwoeza at index: 3 
+(3) Zfacyrnv:The man behind me is Tkdiuzr.
+Person: Zfacyrnv at index: 4 
+(4) Jycugp:I'm in 3rd position.
+Person: Jycugp at index: 5 
+(5) Yxmem:I'm in 5th position.
+(6) Itpharzq:I'm in 1st position.
+(7) Jycugp:The man in front of me is Lwoeza.
+(8) Rlhdc:The man behind me is Yxmem.
+Person: Rlhdc at index: 6 
+(9) Tkdiuzr:The man behind me is Zfacyrnv.
+(10) Lwoeza:There are 5 people behind me.
+(11) Zfacyrnv:I'm in 6th position.
+(12) Rlhdc:The man in front of me is Jycugp.
+(13) Lwoeza:There is 1 people in front of me.
+exclude_supporting_pairs: persons: 7 possible_liars: 7 {3, 5, 6, 1, 0, 2, 4}
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+IR Contradiction 902
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tkdiuzr
+(0) Vprkxw:The man behind me is Eyqixjpd.
+Person: Vprkxw at index: 0 
+Person: Eyqixjpd at index: 1 
+(1) Nhhpkv:The man behind me is Vprkxw.
+Person: Nhhpkv at index: 2 
+(2) Vprkxw:There is 1 people behind me.
+(3) Nhhpkv:There are 2 people behind me.
+(4) Eyqixjpd:The man in front of me is Nhhpkv.
+(5) Eyqixjpd:The man behind me is Vprkxw.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 2, 1}
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Eyqixjpd
+(0) Oappmqcyj:The man behind me is Ofmb.
+Person: Oappmqcyj at index: 0 
+Person: Ofmb at index: 1 
+(1) Bkano:I'm in 2nd position.
+Person: Bkano at index: 2 
+(2) Ofmb:There are 5 people in front of me.
+(3) Oappmqcyj:The man in front of me is Ffelkbks.
+Person: Ffelkbks at index: 3 
+(4) Ffelkbks:There are 2 people behind me.
+(5) Jfachafbe:There are 4 people behind me.
+Person: Jfachafbe at index: 4 
+(6) Bkano:There is 1 people behind me.
+(7) Vyxq:I'm in 3rd position.
+Person: Vyxq at index: 5 
+(8) Ofmb:There are 0 people behind me.
+(9) Jfachafbe:The man in front of me is Bkano.
+(10) Ffelkbks:I'm in 4th position.
+(11) Vyxq:There are 3 people behind me.
+Mr. Wrong identified by solve(): Bkano
+(0) Ysrn:The man in front of me is Ihji.
+Person: Ysrn at index: 0 
+Person: Ihji at index: 1 
+(1) Vgeg:There is 1 people in front of me.
+Person: Vgeg at index: 2 
+(2) Ysrn:There are 0 people behind me.
+(3) Ihji:The man behind me is Ysrn.
+(4) Vgeg:I'm in 2nd position.
+(5) Ihji:The man in front of me is Vgeg.
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {2}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Vgeg
+(0) Dedwngbn:The man behind me is Nrxxvd.
+Person: Dedwngbn at index: 0 
+Person: Nrxxvd at index: 1 
+(1) Trazlwkdo:There is 1 people in front of me.
+Person: Trazlwkdo at index: 2 
+(2) Trazlwkdo:I'm in 2nd position.
+(3) Ywxc:The man in front of me is Trazlwkdo.
+Person: Ywxc at index: 3 
+(4) Ywxc:I'm in 3rd position.
+(5) Nrxxvd:The man in front of me is Dedwngbn.
+(6) Dedwngbn:The man in front of me is Ywxc.
+(7) Tnfyhbn:There is 1 people behind me.
+Person: Tnfyhbn at index: 4 
+(8) Tnfyhbn:There are 3 people in front of me.
+(9) Nrxxvd:I'm in 5th position.
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {3, 4, 2}
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [4]
+Confirmed lies for liar indexes: [4]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tnfyhbn
+(0) Tom:The man behind me is Bob.
+Person: Tom at index: 0 
+Person: Bob at index: 1 
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+Person: Gary at index: 2 
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Person: Fred at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 1 {3}
+open_slots = 2
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: []
+most_open_slots = 2 most_open_index = Some(3)
+unique reason 1
+Mr. Wrong identified by solve3(): Fred
+(0) Jgatt:The man in front of me is Wafxmw.
+Person: Jgatt at index: 0 
+Person: Wafxmw at index: 1 
+(1) Wafxmw:The man behind me is Jgatt.
+(2) Pamqaabuj:There are 2 people in front of me.
+Person: Pamqaabuj at index: 2 
+(3) Dsfy:I'm in 4th position.
+Person: Dsfy at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 3}
+open_slots = 1
+open_slots = 0
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: []
+most_open_slots = 1 most_open_index = Some(2)
+unique reason 3
+Mr. Wrong identified by solve3(): Pamqaabuj
+(0) Aron:The man behind me is Jack.
+Person: Aron at index: 0 
+Person: Jack at index: 1 
+(1) Iris:There are 0 people behind me.
+Person: Iris at index: 2 
+(2) Vole:The man in front of me is Danny.
+Person: Vole at index: 3 
+Person: Danny at index: 4 
+(3) Danny:I'm in 8th position.
+(4) Vane:The man in front of me is Ned.
+Person: Vane at index: 5 
+Person: Ned at index: 6 
+(5) Dirk:The man behind me is Aron.
+Person: Dirk at index: 7 
+(6) Aron:The man in front of me is Dirk.
+(7) Danny:The man in front of me is Vane.
+(8) Jack:The man in front of me is Aron.
+(9) Ned:The man behind me is Vane.
+(10) Ethan:The man in front of me is Ulm.
+Person: Ethan at index: 8 
+Person: Ulm at index: 9 
+(11) Ulm:I'm in 1st position.
+(12) Ethan:There are 5 people behind me.
+exclude_supporting_pairs: persons: 10 possible_liars: 5 {2, 4, 8, 9, 3}
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [8, 9]
+Confirmed lies for liar indexes: [8, 9]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Ulm")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Aron:The man behind me is Jack.",
+    "Iris:There are 0 people behind me.",
+    "Vole:The man in front of me is Danny.",
+    "Danny:I'm in 8th position.",
+    "Vane:The man in front of me is Ned.",
+    "Dirk:The man behind me is Aron.",
+    "Aron:The man in front of me is Dirk.",
+    "Danny:The man in front of me is Vane.",
+    "Jack:The man in front of me is Aron.",
+    "Ned:The man behind me is Vane.",
+    "Ethan:The man in front of me is Ulm.",
+    "Ulm:I'm in 1st position.",
+    "Ethan:There are 5 people behind me.",
+]
+tests::_2_random_tests::_1_very_short_conversations
+Log
+(0) Buuvihfe:The man in front of me is Mqaade.
+Person: Buuvihfe at index: 0 
+Person: Mqaade at index: 1 
+(1) Mqaade:There are 2 people behind me.
+(2) Rcecqf:There are 3 people behind me.
+Person: Rcecqf at index: 2 
+(3) Tqqcrt:There are 2 people in front of me.
+Person: Tqqcrt at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 1, 0, 2}
+open_slots = 0
+IR Contradiction 902
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [3, 0]
+Confirmed lies for liar indexes: [3, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Pkomeisae:There is 1 people in front of me.
+Person: Pkomeisae at index: 0 
+(1) Zmate:There is 1 people in front of me.
+Person: Zmate at index: 1 
+(2) Nejicypm:I'm in 4th position.
+Person: Nejicypm at index: 2 
+(3) Mteaioow:There are 2 people in front of me.
+Person: Mteaioow at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 1]
+Confirmed lies for liar indexes: [0, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Gzwrf:There is 1 people in front of me.
+Person: Gzwrf at index: 0 
+(1) Gwyxnwqi:I'm in 4th position.
+Person: Gwyxnwqi at index: 1 
+(2) Aeaqva:There are 2 people in front of me.
+Person: Aeaqva at index: 2 
+(3) Raaoybe:There is 1 people in front of me.
+Person: Raaoybe at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 3, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [3, 0]
+Confirmed lies for liar indexes: [3, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Yjzfas:The man behind me is Bqhkyakem.
+Person: Yjzfas at index: 0 
+Person: Bqhkyakem at index: 1 
+(1) Bqhkyakem:The man behind me is Akelym.
+Person: Akelym at index: 2 
+(2) Akelym:I'm in 4th position.
+(3) Loujat:There are 2 people in front of me.
+Person: Loujat at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 0, 1, 2}
+open_slots = 0
+IR Contradiction 902
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [3, 1]
+Confirmed lies for liar indexes: [3, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Dgxsyenou:There are 0 people behind me.
+Person: Dgxsyenou at index: 0 
+(1) Yebfmuazz:There are 2 people in front of me.
+Person: Yebfmuazz at index: 1 
+(2) Qpmyaiyee:The man in front of me is Zmies.
+Person: Qpmyaiyee at index: 2 
+Person: Zmies at index: 3 
+(3) Zmies:The man behind me is Dgxsyenou.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+IR Contradiction 902
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Zmies
+(0) Wukjdqi:There are 3 people behind me.
+Person: Wukjdqi at index: 0 
+(1) Awqsj:I'm in 2nd position.
+Person: Awqsj at index: 1 
+(2) Izdpoxty:I'm in 3rd position.
+Person: Izdpoxty at index: 2 
+(3) Enikp:There is 1 people behind me.
+Person: Enikp at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 0, 1, 2}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Kxxtq:The man in front of me is Xmnoavroi.
+Person: Kxxtq at index: 0 
+Person: Xmnoavroi at index: 1 
+(1) Qbuy:The man in front of me is Kxxtq.
+Person: Qbuy at index: 2 
+(2) Xmnoavroi:The man in front of me is Xmnoavroi.
+(3) Aaeiro:I'm in 1st position.
+Person: Aaeiro at index: 3 
+Mr. Wrong identified by solve(): Xmnoavroi
+(0) Uituej:The man behind me is Tpjyfil.
+Person: Uituej at index: 0 
+Person: Tpjyfil at index: 1 
+(1) Tpjyfil:The man behind me is Oveuuu.
+Person: Oveuuu at index: 2 
+(2) Jaeoswco:The man in front of me is Oveuuu.
+Person: Jaeoswco at index: 3 
+(3) Oveuuu:The man behind me is Tpjyfil.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 3, 0}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Oveuuu
+(0) Ykrw:There are 2 people in front of me.
+Person: Ykrw at index: 0 
+(1) Wdgmvgs:I'm in 2nd position.
+Person: Wdgmvgs at index: 1 
+(2) Vxaoii:There are 2 people behind me.
+Person: Vxaoii at index: 2 
+(3) Akbe:I'm in 4th position.
+Person: Akbe at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 3, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [1, 2]
+Confirmed lies for liar indexes: [1, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Jaeaqoepc:The man in front of me is Aajnw.
+Person: Jaeaqoepc at index: 0 
+Person: Aajnw at index: 1 
+(1) Aajnw:I'm in 3rd position.
+(2) Aeqlcpol:The man behind me is Aajnw.
+Person: Aeqlcpol at index: 2 
+(3) Uezuyvilf:There are 0 people behind me.
+Person: Uezuyvilf at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 1, 0, 2}
+open_slots = 0
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [3, 1, 0]
+Confirmed lies for liar indexes: [3, 1, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ipxc:The man in front of me is Bqueluoe.
+Person: Ipxc at index: 0 
+Person: Bqueluoe at index: 1 
+(1) Bqueluoe:The man behind me is Yhgya.
+Person: Yhgya at index: 2 
+(2) Yhgya:There are 3 people in front of me.
+(3) Mlpugowoa:There are 0 people in front of me.
+Person: Mlpugowoa at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 3, 1, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [1, 0]
+Confirmed lies for liar indexes: [1, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Qcer:There are 2 people in front of me.
+Person: Qcer at index: 0 
+(1) Aciai:The man behind me is Qcer.
+Person: Aciai at index: 1 
+(2) Yoasyh:There are 2 people behind me.
+Person: Yoasyh at index: 2 
+(3) Hiaoci:There are 0 people behind me.
+Person: Hiaoci at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 0, 2, 1}
+IR Contradiction 902
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [2, 1]
+Confirmed lies for liar indexes: [2, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ukiofe:The man in front of me is Eqpit.
+Person: Ukiofe at index: 0 
+Person: Eqpit at index: 1 
+(1) Jreg:There are 2 people behind me.
+Person: Jreg at index: 2 
+(2) Kiwems:The man in front of me is Jreg.
+Person: Kiwems at index: 3 
+(3) Eqpit:I'm in 1st position.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+IR Contradiction 902
+No Contradiction for liar indexes: [0, 2]
+Confirmed lies for liar indexes: [0, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Aejofrn:There are 3 people behind me.
+Person: Aejofrn at index: 0 
+(1) Rqjrbccy:There are 3 people in front of me.
+Person: Rqjrbccy at index: 1 
+(2) Keyeoe:The man behind me is Expawaji.
+Person: Keyeoe at index: 2 
+Person: Expawaji at index: 3 
+(3) Expawaji:The man in front of me is Aejofrn.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 0, 3, 2}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Iouelvedd:The man in front of me is Lvloyy.
+Person: Iouelvedd at index: 0 
+Person: Lvloyy at index: 1 
+(1) Lvloyy:I'm in 1st position.
+(2) Jrejipwo:There are 2 people in front of me.
+Person: Jrejipwo at index: 2 
+(3) Oookto:The man in front of me is Iouelvedd.
+Person: Oookto at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 0, 1, 2}
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Opba:There are 0 people in front of me.
+Person: Opba at index: 0 
+(1) Wncuii:The man behind me is Yqnmen.
+Person: Wncuii at index: 1 
+Person: Yqnmen at index: 2 
+(2) Novgazie:There is 1 people in front of me.
+Person: Novgazie at index: 3 
+(3) Yqnmen:I'm in 3rd position.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 1, 0, 3}
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [2, 1, 3]
+Confirmed lies for liar indexes: [2, 1, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Eeweuji:The man behind me is Grtaej.
+Person: Eeweuji at index: 0 
+Person: Grtaej at index: 1 
+(1) Juea:I'm in 4th position.
+Person: Juea at index: 2 
+(2) Grtaej:There are 2 people in front of me.
+(3) Ylyyi:The man behind me is Juea.
+Person: Ylyyi at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 3, 0, 1}
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+IR Contradiction 902
+open_slots = 0
+No Contradiction for liar indexes: [3, 1]
+Confirmed lies for liar indexes: [3, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ljrpi:There is 1 people in front of me.
+Person: Ljrpi at index: 0 
+(1) Iygvdvg:There is 1 people in front of me.
+Person: Iygvdvg at index: 1 
+(2) Nilale:The man in front of me is Iygvdvg.
+Person: Nilale at index: 2 
+(3) Expyo:I'm in 4th position.
+Person: Expyo at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 0, 2, 3}
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Ljrpi
+(0) Cikkzwha:I'm in 2nd position.
+Person: Cikkzwha at index: 0 
+(1) Islueoa:I'm in 2nd position.
+Person: Islueoa at index: 1 
+(2) Ajxyg:I'm in 3rd position.
+Person: Ajxyg at index: 2 
+(3) Ezdrm:There are 3 people in front of me.
+Person: Ezdrm at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 0, 2, 1}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 1]
+Confirmed lies for liar indexes: [0, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Fuety:There are 3 people in front of me.
+Person: Fuety at index: 0 
+(1) Haya:There are 0 people in front of me.
+Person: Haya at index: 1 
+(2) Fiegwsav:I'm in 1st position.
+Person: Fiegwsav at index: 2 
+(3) Yysj:The man in front of me is Fiegwsav.
+Person: Yysj at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 2, 3, 1}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [2, 1]
+Confirmed lies for liar indexes: [2, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Nomuy:There are 0 people in front of me.
+Person: Nomuy at index: 0 
+(1) Osisi:There are 3 people in front of me.
+Person: Osisi at index: 1 
+(2) Mezloklc:I'm in 1st position.
+Person: Mezloklc at index: 2 
+(3) Aozbs:There is 1 people in front of me.
+Person: Aozbs at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 2, 3, 1}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 2]
+Confirmed lies for liar indexes: [0, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Fzeeda:I'm in 4th position.
+Person: Fzeeda at index: 0 
+(1) Ttsu:I'm in 3rd position.
+Person: Ttsu at index: 1 
+(2) Miavtysya:There are 2 people behind me.
+Person: Miavtysya at index: 2 
+(3) Ouzkcgory:There is 1 people in front of me.
+Person: Ouzkcgory at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 1, 2, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ifiainsr:I'm in 3rd position.
+Person: Ifiainsr at index: 0 
+(1) Jxiu:The man behind me is Ifiainsr.
+Person: Jxiu at index: 1 
+(2) Uaace:The man in front of me is Oqdsde.
+Person: Uaace at index: 2 
+Person: Oqdsde at index: 3 
+(3) Oqdsde:I'm in 1st position.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [0, 1, 2]
+Confirmed lies for liar indexes: [0, 1, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Alxfp:There are 2 people behind me.
+Person: Alxfp at index: 0 
+(1) Asikweob:I'm in 1st position.
+Person: Asikweob at index: 1 
+(2) Reouhi:The man behind me is Optiiag.
+Person: Reouhi at index: 2 
+Person: Optiiag at index: 3 
+(3) Optiiag:There is 1 people behind me.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+open_slots = 0
+Infer Relative Contradiction 901
+Infer Relative Contradiction 901
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 2, 3]
+Confirmed lies for liar indexes: [0, 2, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Yviep:The man in front of me is Cioijao.
+Person: Yviep at index: 0 
+Person: Cioijao at index: 1 
+(1) Vglyemnk:The man behind me is Sinad.
+Person: Vglyemnk at index: 2 
+Person: Sinad at index: 3 
+(2) Cioijao:The man behind me is Cioijao.
+(3) Sinad:There is 1 people in front of me.
+Mr. Wrong identified by solve(): Cioijao
+(0) Piynszet:There are 0 people behind me.
+Person: Piynszet at index: 0 
+(1) Ucfhse:I'm in 1st position.
+Person: Ucfhse at index: 1 
+(2) Zszuvae:I'm in 1st position.
+Person: Zszuvae at index: 2 
+(3) Puwm:The man in front of me is Zszuvae.
+Person: Puwm at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 0, 3, 1}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [2, 1]
+Confirmed lies for liar indexes: [2, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ihynx:The man behind me is Hsdrhme.
+Person: Ihynx at index: 0 
+Person: Hsdrhme at index: 1 
+(1) Yzeuyed:The man in front of me is Hsdrhme.
+Person: Yzeuyed at index: 2 
+(2) Hsdrhme:There is 1 people behind me.
+(3) Ejyilmo:The man in front of me is Ihynx.
+Person: Ejyilmo at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 0, 3}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 3]
+Confirmed lies for liar indexes: [0, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Hyiyiaf:There is 1 people in front of me.
+Person: Hyiyiaf at index: 0 
+(1) Eqee:There are 3 people in front of me.
+Person: Eqee at index: 1 
+(2) Puuaeea:There is 1 people in front of me.
+Person: Puuaeea at index: 2 
+(3) Moiookug:There are 3 people behind me.
+Person: Moiookug at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 3, 1, 2}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 2]
+Confirmed lies for liar indexes: [0, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Bexmmwoyo:I'm in 1st position.
+Person: Bexmmwoyo at index: 0 
+(1) Uqioqyoaz:There is 1 people in front of me.
+Person: Uqioqyoaz at index: 1 
+(2) Ujiddu:There are 2 people in front of me.
+Person: Ujiddu at index: 2 
+(3) Anma:The man behind me is Ujiddu.
+Person: Anma at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 3, 2}
+IR Contradiction 902
+open_slots = 0
+Infer Relative Contradiction 901
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [1, 3, 2]
+Confirmed lies for liar indexes: [1, 3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Pnuogah:I'm in 3rd position.
+Person: Pnuogah at index: 0 
+(1) Euora:There is 1 people in front of me.
+Person: Euora at index: 1 
+(2) Gkbueae:The man behind me is Euora.
+Person: Gkbueae at index: 2 
+(3) Huofmeekz:I'm in 3rd position.
+Person: Huofmeekz at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 1, 2, 3}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 3]
+Confirmed lies for liar indexes: [0, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Xsoiotvy:The man in front of me is Aalraoeew.
+Person: Xsoiotvy at index: 0 
+Person: Aalraoeew at index: 1 
+(1) Aalraoeew:The man in front of me is Ryid.
+Person: Ryid at index: 2 
+(2) Ryid:There are 3 people behind me.
+(3) Equo:There are 0 people in front of me.
+Person: Equo at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 1, 3, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: [2, 3]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ztorv:There are 0 people in front of me.
+Person: Ztorv at index: 0 
+(1) Ekneaexk:The man in front of me is Kbemo.
+Person: Ekneaexk at index: 1 
+Person: Kbemo at index: 2 
+(2) Kbemo:There are 3 people behind me.
+(3) Eczblofvd:I'm in 3rd position.
+Person: Eczblofvd at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 0, 3, 2}
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Ztorv
+(0) Tqebwtiu:I'm in 3rd position.
+Person: Tqebwtiu at index: 0 
+(1) Feimegai:There are 0 people in front of me.
+Person: Feimegai at index: 1 
+(2) Bmsicv:There are 2 people in front of me.
+Person: Bmsicv at index: 2 
+(3) Xivazn:There are 3 people in front of me.
+Person: Xivazn at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 3, 1, 2}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [0, 2]
+Confirmed lies for liar indexes: [0, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Bgokey:There are 3 people behind me.
+Person: Bgokey at index: 0 
+(1) Iqfsoajav:There are 0 people behind me.
+Person: Iqfsoajav at index: 1 
+(2) Jnsuhkfwx:I'm in 4th position.
+Person: Jnsuhkfwx at index: 2 
+(3) Beoyuex:I'm in 2nd position.
+Person: Beoyuex at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 3, 1, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [2, 1]
+Confirmed lies for liar indexes: [2, 1]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Cpakay:I'm in 3rd position.
+Person: Cpakay at index: 0 
+(1) Erqivmwt:The man behind me is Cpakay.
+Person: Erqivmwt at index: 1 
+(2) Mjyagzhle:The man behind me is Xzknkeiau.
+Person: Mjyagzhle at index: 2 
+Person: Xzknkeiau at index: 3 
+(3) Xzknkeiau:The man in front of me is Mjyagzhle.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {0, 1}
+open_slots = 3
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [0, 1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 3 most_open_index = Some(0)
+unique reason 2
+Mr. Wrong identified by solve3(): Erqivmwt
+assertion failed: `(left == right)`
+  left: `Some("Erqivmwt")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Cpakay:I'm in 3rd position.",
+    "Erqivmwt:The man behind me is Cpakay.",
+    "Mjyagzhle:The man behind me is Xzknkeiau.",
+    "Xzknkeiau:The man in front of me is Mjyagzhle.",
+]
+tests::_2_random_tests::_2_short_conversations
+tests::_2_random_tests::_3_short_conversations_2
+Log
+(0) Noynzit:The man in front of me is Cieqyzgjt.
+Person: Noynzit at index: 0 
+Person: Cieqyzgjt at index: 1 
+(1) Ljkhala:The man behind me is Nuakz.
+Person: Ljkhala at index: 2 
+Person: Nuakz at index: 3 
+(2) Iivty:The man behind me is Ljkhala.
+Person: Iivty at index: 4 
+(3) Noynzit:The man behind me is Iivty.
+(4) Tcaqcf:The man in front of me is Nuakz.
+Person: Tcaqcf at index: 5 
+(5) Cieqyzgjt:The man behind me is Noynzit.
+(6) Nuakz:The man behind me is Nuakz.
+(7) Ljkhala:The man in front of me is Iivty.
+(8) Iivty:The man in front of me is Noynzit.
+(9) Fdhnc:The man in front of me is Tcaqcf.
+Person: Fdhnc at index: 6 
+Mr. Wrong identified by solve(): Nuakz
+(0) Zkzi:The man in front of me is Meebjpby.
+Person: Zkzi at index: 0 
+Person: Meebjpby at index: 1 
+(1) Meebjpby:The man behind me is Meebjpby.
+(2) Meebjpby:The man in front of me is Meebjpby.
+(3) Aobdgmu:The man behind me is Meebjpby.
+Person: Aobdgmu at index: 2 
+Mr. Wrong identified by solve(): Meebjpby
+(0) Ceyo:The man behind me is Faaal.
+Person: Ceyo at index: 0 
+Person: Faaal at index: 1 
+(1) Ejgahe:The man behind me is Gsrixukim.
+Person: Ejgahe at index: 2 
+Person: Gsrixukim at index: 3 
+(2) Ubnvck:The man in front of me is Faaal.
+Person: Ubnvck at index: 4 
+(3) Gsrixukim:The man in front of me is Ejgahe.
+(4) Oetlymje:The man in front of me is Ubnvck.
+Person: Oetlymje at index: 5 
+(5) Aljwko:The man behind me is Slgwlnh.
+Person: Aljwko at index: 6 
+Person: Slgwlnh at index: 7 
+(6) Riyuhn:The man behind me is Slgwlnh.
+Person: Riyuhn at index: 8 
+(7) Slgwlnh:The man in front of me is Aljwko.
+(8) Faaal:The man behind me is Ubnvck.
+(9) Ejgahe:The man in front of me is Riyuhn.
+(10) Aljwko:The man in front of me is Gsrixukim.
+(11) Ixues:The man in front of me is Oetlymje.
+Person: Ixues at index: 9 
+(12) Faaal:The man in front of me is Ceyo.
+(13) Ubnvck:The man behind me is Oetlymje.
+exclude_supporting_pairs: persons: 10 possible_liars: 2 {8, 9}
+open_slots = 0
+No Contradiction for liar indexes: [8]
+Confirmed lies for liar indexes: [8]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Riyuhn
+(0) Pelyken:The man in front of me is Slxx.
+Person: Pelyken at index: 0 
+Person: Slxx at index: 1 
+(1) Slxx:The man behind me is Pelyken.
+(2) Iecdwhm:The man in front of me is Xtosmeyiu.
+Person: Iecdwhm at index: 2 
+Person: Xtosmeyiu at index: 3 
+(3) Xtosmeyiu:The man behind me is Slxx.
+(4) Iecdwhm:The man behind me is Xtosmeyiu.
+(5) Soyp:The man in front of me is Pelyken.
+Person: Soyp at index: 4 
+(6) Xtosmeyiu:The man in front of me is Qgetimd.
+Person: Qgetimd at index: 5 
+(7) Stzhy:The man in front of me is Soyp.
+Person: Stzhy at index: 6 
+(8) Soyp:The man behind me is Stzhy.
+(9) Qgetimd:The man in front of me is Iecdwhm.
+(10) Pelyken:The man behind me is Soyp.
+Mr. Wrong identified by solve(): Iecdwhm
+(0) Usevj:The man in front of me is Oooahdfhn.
+Person: Usevj at index: 0 
+Person: Oooahdfhn at index: 1 
+(1) Usevj:The man behind me is Kgllnm.
+Person: Kgllnm at index: 2 
+(2) Kgllnm:The man behind me is Usevj.
+(3) Oooahdfhn:The man behind me is Kgllnm.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 0, 1}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Usevj
+(0) Cclciee:The man behind me is Feazmd.
+Person: Cclciee at index: 0 
+Person: Feazmd at index: 1 
+(1) Feazmd:The man behind me is Aedyakaeh.
+Person: Aedyakaeh at index: 2 
+(2) Qvzuarmae:The man behind me is Cclciee.
+Person: Qvzuarmae at index: 3 
+(3) Feazmd:The man in front of me is Cclciee.
+(4) Kdiu:The man in front of me is Uoobexfe.
+Person: Kdiu at index: 4 
+Person: Uoobexfe at index: 5 
+(5) Sofh:The man behind me is Qvzuarmae.
+Person: Sofh at index: 6 
+(6) Hzdavalae:The man behind me is Xzdyoge.
+Person: Hzdavalae at index: 7 
+Person: Xzdyoge at index: 8 
+(7) Uoobexfe:The man behind me is Xzdyoge.
+(8) Xzdyoge:The man behind me is Sofh.
+(9) Cclciee:The man in front of me is Qvzuarmae.
+(10) Aedyakaeh:The man in front of me is Feazmd.
+(11) Evqxz:The man behind me is Uoobexfe.
+Person: Evqxz at index: 9 
+(12) Hzdavalae:The man in front of me is Kdiu.
+(13) Uoobexfe:The man in front of me is Kdiu.
+(14) Qvzuarmae:The man in front of me is Sofh.
+exclude_supporting_pairs: persons: 10 possible_liars: 5 {9, 5, 7, 4, 8}
+open_slots = 0
+No Contradiction for liar indexes: [5]
+Confirmed lies for liar indexes: [5]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Uoobexfe
+(0) Pomr:The man in front of me is Pomr.
+Person: Pomr at index: 0 
+(1) Boaethgpv:The man in front of me is Pomr.
+Person: Boaethgpv at index: 1 
+(2) Szibkgiy:The man behind me is Pomr.
+Person: Szibkgiy at index: 2 
+Mr. Wrong identified by solve(): Pomr
+(0) Oaebu:The man behind me is Uqvecqce.
+Person: Oaebu at index: 0 
+Person: Uqvecqce at index: 1 
+(1) Uqvecqce:The man behind me is Oaebu.
+(2) Viscana:The man behind me is Iaiqshth.
+Person: Viscana at index: 2 
+Person: Iaiqshth at index: 3 
+(3) Iaiqshth:The man behind me is Oaebu.
+(4) Oaebu:The man in front of me is Iaiqshth.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 1}
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Uqvecqce
+(0) Drqeybat:The man behind me is Gcijb.
+Person: Drqeybat at index: 0 
+Person: Gcijb at index: 1 
+(1) Gcijb:The man in front of me is Drqeybat.
+(2) Drqeybat:The man in front of me is Pttjtl.
+Person: Pttjtl at index: 2 
+(3) Wjoulqioo:The man in front of me is Pttjtl.
+Person: Wjoulqioo at index: 3 
+(4) Wjoulqioo:The man behind me is Gcijb.
+(5) Ckawy:The man behind me is Pttjtl.
+Person: Ckawy at index: 4 
+(6) Xihmys:The man in front of me is Wjoulqioo.
+Person: Xihmys at index: 5 
+(7) Pttjtl:The man in front of me is Ckawy.
+exclude_supporting_pairs: persons: 6 possible_liars: 2 {3, 5}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Wjoulqioo
+(0) Uyxu:The man in front of me is Hnxefvef.
+Person: Uyxu at index: 0 
+Person: Hnxefvef at index: 1 
+(1) Lswbzva:The man in front of me is Uyxu.
+Person: Lswbzva at index: 2 
+(2) Uyxu:The man behind me is Lswbzva.
+(3) Hnxefvef:The man behind me is Hnxefvef.
+(4) Uocsot:The man behind me is Hnxefvef.
+Person: Uocsot at index: 3 
+Mr. Wrong identified by solve(): Hnxefvef
+(0) Kzoiiqyzp:The man behind me is Dethsb.
+Person: Kzoiiqyzp at index: 0 
+Person: Dethsb at index: 1 
+(1) Kzoiiqyzp:The man in front of me is Ekeapie.
+Person: Ekeapie at index: 2 
+(2) Ekeapie:The man in front of me is Aaatriz.
+Person: Aaatriz at index: 3 
+(3) Dethsb:The man in front of me is Kzoiiqyzp.
+(4) Aaatriz:The man behind me is Aaatriz.
+(5) Ayfefi:The man behind me is Aaatriz.
+Person: Ayfefi at index: 4 
+(6) Yqtyhniqg:The man in front of me is Ycyhaec.
+Person: Yqtyhniqg at index: 5 
+Person: Ycyhaec at index: 6 
+(7) Ycyhaec:The man in front of me is Dethsb.
+Mr. Wrong identified by solve(): Aaatriz
+(0) Mihyavdt:The man in front of me is Ujvpy.
+Person: Mihyavdt at index: 0 
+Person: Ujvpy at index: 1 
+(1) Sswigyx:The man in front of me is Hhyw.
+Person: Sswigyx at index: 2 
+Person: Hhyw at index: 3 
+(2) Qgjeoeqo:The man behind me is Eodaavv.
+Person: Qgjeoeqo at index: 4 
+Person: Eodaavv at index: 5 
+(3) Hhyw:The man behind me is Eodaavv.
+(4) Sswigyx:The man behind me is Ujvpy.
+(5) Ujvpy:The man in front of me is Sswigyx.
+(6) Eodaavv:The man behind me is Hhyw.
+(7) Ujvpy:The man behind me is Mihyavdt.
+exclude_supporting_pairs: persons: 6 possible_liars: 3 {3, 4, 5}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Hhyw
+(0) Erhoalpg:The man in front of me is Sfigi.
+Person: Erhoalpg at index: 0 
+Person: Sfigi at index: 1 
+(1) Yeuk:The man behind me is Sfigi.
+Person: Yeuk at index: 2 
+(2) Erhoalpg:The man behind me is Akaepgf.
+Person: Akaepgf at index: 3 
+(3) Sfigi:The man behind me is Erhoalpg.
+(4) Euvw:The man behind me is Kopz.
+Person: Euvw at index: 4 
+Person: Kopz at index: 5 
+(5) Iamjcyo:The man in front of me is Kopz.
+Person: Iamjcyo at index: 6 
+(6) Euvw:The man in front of me is Akaepgf.
+(7) Kopz:The man in front of me is Yeuk.
+(8) Akaepgf:The man in front of me is Erhoalpg.
+exclude_supporting_pairs: persons: 7 possible_liars: 4 {2, 5, 4, 6}
+open_slots = 0
+No Contradiction for liar indexes: [5]
+Confirmed lies for liar indexes: [5]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Kopz
+(0) Uvroshel:The man in front of me is Zeezt.
+Person: Uvroshel at index: 0 
+Person: Zeezt at index: 1 
+(1) Iveoeeo:The man behind me is Unkpxe.
+Person: Iveoeeo at index: 2 
+Person: Unkpxe at index: 3 
+(2) Wcoq:The man behind me is Hpjauicd.
+Person: Wcoq at index: 4 
+Person: Hpjauicd at index: 5 
+(3) Etyuajb:The man in front of me is Unkpxe.
+Person: Etyuajb at index: 6 
+(4) Etyuajb:The man behind me is Wcoq.
+(5) Unkpxe:The man in front of me is Unkpxe.
+(6) Hpjauicd:The man behind me is Zeezt.
+(7) Zeezt:The man behind me is Uvroshel.
+(8) Unkpxe:The man behind me is Wcoq.
+(9) Zeezt:The man in front of me is Hpjauicd.
+Mr. Wrong identified by solve(): Unkpxe
+(0) Ddqem:The man in front of me is Aecrchj.
+Person: Ddqem at index: 0 
+Person: Aecrchj at index: 1 
+(1) Aecrchj:The man behind me is Ddqem.
+(2) Awxjser:The man in front of me is Eeokusia.
+Person: Awxjser at index: 2 
+Person: Eeokusia at index: 3 
+(3) Eeokusia:The man in front of me is Aecrchj.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 3}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Eeokusia
+(0) Eajveoa:The man in front of me is Eajveoa.
+Person: Eajveoa at index: 0 
+(1) Rpjwri:The man behind me is Afgqic.
+Person: Rpjwri at index: 1 
+Person: Afgqic at index: 2 
+(2) Afgqic:The man in front of me is Rpjwri.
+(3) Rpjwri:The man in front of me is Eajveoa.
+Mr. Wrong identified by solve(): Eajveoa
+(0) Sbdsqor:The man in front of me is Beaezu.
+Person: Sbdsqor at index: 0 
+Person: Beaezu at index: 1 
+(1) Ouliiwre:The man in front of me is Evbroegu.
+Person: Ouliiwre at index: 2 
+Person: Evbroegu at index: 3 
+(2) Umedgvaon:The man behind me is Beaezu.
+Person: Umedgvaon at index: 4 
+(3) Ozfy:The man behind me is Icavipm.
+Person: Ozfy at index: 5 
+Person: Icavipm at index: 6 
+(4) Etkfiqpau:The man behind me is Ozfy.
+Person: Etkfiqpau at index: 7 
+(5) Evbroegu:The man behind me is Ouliiwre.
+(6) Ouliiwre:The man behind me is Scqccny.
+Person: Scqccny at index: 8 
+(7) Scqccny:The man in front of me is Ouliiwre.
+(8) Umedgvaon:The man in front of me is Icavipm.
+(9) Beaezu:The man behind me is Icavipm.
+(10) Sbdsqor:The man behind me is Evbroegu.
+(11) Icavipm:The man in front of me is Ozfy.
+exclude_supporting_pairs: persons: 9 possible_liars: 4 {4, 0, 1, 7}
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Beaezu
+(0) Trye:The man behind me is Boyij.
+Person: Trye at index: 0 
+Person: Boyij at index: 1 
+(1) Lkemoo:The man in front of me is Iavnu.
+Person: Lkemoo at index: 2 
+Person: Iavnu at index: 3 
+(2) Iavnu:The man behind me is Lkemoo.
+(3) Vmkoeuo:The man in front of me is Vmkoeuo.
+Person: Vmkoeuo at index: 4 
+(4) Boyij:The man behind me is Pdteynjxo.
+Person: Pdteynjxo at index: 5 
+(5) Boyij:The man in front of me is Trye.
+(6) Deuapx:The man in front of me is Lkemoo.
+Person: Deuapx at index: 6 
+(7) Pdteynjxo:The man behind me is Ayii.
+Person: Ayii at index: 7 
+(8) Ayii:The man in front of me is Pdteynjxo.
+(9) Deuapx:The man behind me is Trye.
+Mr. Wrong identified by solve(): Vmkoeuo
+(0) Rieglo:The man behind me is Rieglo.
+Person: Rieglo at index: 0 
+(1) Eyxqpfev:The man in front of me is Rieglo.
+Person: Eyxqpfev at index: 1 
+(2) Ragow:The man behind me is Rieglo.
+Person: Ragow at index: 2 
+Mr. Wrong identified by solve(): Rieglo
+(0) Luikz:The man behind me is Lkbvid.
+Person: Luikz at index: 0 
+Person: Lkbvid at index: 1 
+(1) Lkbvid:The man behind me is Luikz.
+(2) Beeaepw:The man behind me is Luikz.
+Person: Beeaepw at index: 2 
+(3) Luikz:The man in front of me is Beeaepw.
+(4) Fxifxlio:The man in front of me is Lkbvid.
+Person: Fxifxlio at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {3, 1}
+open_slots = 0
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Lkbvid
+(0) Pmue:The man behind me is Olsol.
+Person: Pmue at index: 0 
+Person: Olsol at index: 1 
+(1) Olsol:The man behind me is Oaqoocogl.
+Person: Oaqoocogl at index: 2 
+(2) Nnoeou:The man behind me is Olsol.
+Person: Nnoeou at index: 3 
+(3) Junejrnju:The man in front of me is Qtpecqrki.
+Person: Junejrnju at index: 4 
+Person: Qtpecqrki at index: 5 
+(4) Nnoeou:The man in front of me is Dhaugee.
+Person: Dhaugee at index: 6 
+(5) Pmue:The man in front of me is Dhaugee.
+(6) Ftriq:The man in front of me is Oaqoocogl.
+Person: Ftriq at index: 7 
+(7) Dhaugee:The man behind me is Pmue.
+(8) Qtpecqrki:The man behind me is Junejrnju.
+(9) Oaqoocogl:The man behind me is Ftriq.
+(10) Olsol:The man in front of me is Pmue.
+(11) Wozarrepu:The man behind me is Qtpecqrki.
+Person: Wozarrepu at index: 8 
+exclude_supporting_pairs: persons: 9 possible_liars: 2 {3, 8}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Nnoeou
+(0) Waeo:The man in front of me is Kivnqmuju.
+Person: Waeo at index: 0 
+Person: Kivnqmuju at index: 1 
+(1) Wipakid:The man behind me is Kivnqmuju.
+Person: Wipakid at index: 2 
+(2) Jmypeeni:The man behind me is Aaaoneq.
+Person: Jmypeeni at index: 3 
+Person: Aaaoneq at index: 4 
+(3) Wipakid:The man in front of me is Fezbaig.
+Person: Fezbaig at index: 5 
+(4) Jmypeeni:The man in front of me is Waeo.
+(5) Fezbaig:The man behind me is Aoatxie.
+Person: Aoatxie at index: 6 
+(6) Waeo:The man behind me is Jmypeeni.
+(7) Aaaoneq:The man in front of me is Jmypeeni.
+(8) Aoatxie:The man in front of me is Fezbaig.
+(9) Kivnqmuju:The man in front of me is Aoatxie.
+exclude_supporting_pairs: persons: 7 possible_liars: 2 {2, 1}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Wipakid
+(0) Oenkk:The man behind me is Oeevo.
+Person: Oenkk at index: 0 
+Person: Oeevo at index: 1 
+(1) Oiohwkmw:The man behind me is Oeevo.
+Person: Oiohwkmw at index: 2 
+(2) Oeevo:The man behind me is Oiohwkmw.
+(3) Mkgem:The man in front of me is Oiohwkmw.
+Person: Mkgem at index: 3 
+(4) Oxeuit:The man behind me is Voyhcterk.
+Person: Oxeuit at index: 4 
+Person: Voyhcterk at index: 5 
+(5) Uqid:The man in front of me is Voyhcterk.
+Person: Uqid at index: 6 
+(6) Oxeuit:The man in front of me is Ellauk.
+Person: Ellauk at index: 7 
+(7) Ellauk:The man behind me is Oxeuit.
+(8) Voyhcterk:The man in front of me is Oxeuit.
+(9) Oeevo:The man in front of me is Oenkk.
+(10) Voyhcterk:The man behind me is Uqid.
+exclude_supporting_pairs: persons: 8 possible_liars: 2 {2, 3}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Oiohwkmw
+(0) Okzi:The man in front of me is Fbatayevk.
+Person: Okzi at index: 0 
+Person: Fbatayevk at index: 1 
+(1) Wostnigy:The man in front of me is Wostnigy.
+Person: Wostnigy at index: 2 
+(2) Fbatayevk:The man behind me is Okzi.
+(3) Fbatayevk:The man in front of me is Wostnigy.
+(4) Wostnigy:The man behind me is Okzi.
+Mr. Wrong identified by solve(): Wostnigy
+(0) Xlor:The man behind me is Uagbyy.
+Person: Xlor at index: 0 
+Person: Uagbyy at index: 1 
+(1) Xlor:The man in front of me is Zuuoayt.
+Person: Zuuoayt at index: 2 
+(2) Uagbyy:The man behind me is Xlor.
+(3) Zuuoayt:The man behind me is Vwag.
+Person: Vwag at index: 3 
+(4) Uagbyy:The man in front of me is Vwag.
+(5) Fqihikxpk:The man in front of me is Xlor.
+Person: Fqihikxpk at index: 4 
+(6) Vwag:The man behind me is Uagbyy.
+(7) Vwag:The man in front of me is Zuuoayt.
+exclude_supporting_pairs: persons: 5 possible_liars: 2 {0, 4}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Xlor
+(0) Etvij:The man in front of me is Esvyyets.
+Person: Etvij at index: 0 
+Person: Esvyyets at index: 1 
+(1) Pxeme:The man behind me is Vubjyuxgf.
+Person: Pxeme at index: 2 
+Person: Vubjyuxgf at index: 3 
+(2) Vubjyuxgf:The man behind me is Pxeme.
+(3) Yarhbei:The man behind me is Vubjyuxgf.
+Person: Yarhbei at index: 4 
+(4) Ltohhoii:The man in front of me is Pxeme.
+Person: Ltohhoii at index: 5 
+(5) Esvyyets:The man in front of me is Ltohhoii.
+(6) Ltohhoii:The man behind me is Esvyyets.
+(7) Vubjyuxgf:The man in front of me is Yarhbei.
+exclude_supporting_pairs: persons: 6 possible_liars: 2 {0, 2}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Pxeme
+(0) Oper:The man in front of me is Availkhas.
+Person: Oper at index: 0 
+Person: Availkhas at index: 1 
+(1) Guom:The man behind me is Eaolo.
+Person: Guom at index: 2 
+Person: Eaolo at index: 3 
+(2) Availkhas:The man in front of me is Ouyub.
+Person: Ouyub at index: 4 
+(3) Atynezwnu:The man behind me is Ouyub.
+Person: Atynezwnu at index: 5 
+(4) Yuosauaon:The man behind me is Taeoey.
+Person: Yuosauaon at index: 6 
+Person: Taeoey at index: 7 
+(5) Guom:The man in front of me is Jsgil.
+Person: Jsgil at index: 8 
+(6) Atynezwnu:The man in front of me is Eaolo.
+(7) Bvuy:The man behind me is Jsgil.
+Person: Bvuy at index: 9 
+(8) Taeoey:The man in front of me is Yuosauaon.
+(9) Eaolo:The man in front of me is Jsgil.
+(10) Availkhas:The man behind me is Oper.
+(11) Jsgil:The man behind me is Guom.
+(12) Bvuy:The man in front of me is Taeoey.
+(13) Taeoey:The man behind me is Bvuy.
+(14) Ouyub:The man in front of me is Atynezwnu.
+exclude_supporting_pairs: persons: 10 possible_liars: 1 {3}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Eaolo
+(0) Eljyklaoq:The man behind me is Wgoze.
+Person: Eljyklaoq at index: 0 
+Person: Wgoze at index: 1 
+(1) Otfieskw:The man in front of me is Aaiauwoi.
+Person: Otfieskw at index: 2 
+Person: Aaiauwoi at index: 3 
+(2) Eaocxviu:The man in front of me is Piklkon.
+Person: Eaocxviu at index: 4 
+Person: Piklkon at index: 5 
+(3) Sqpeneuke:The man in front of me is Kqeqyljep.
+Person: Sqpeneuke at index: 6 
+Person: Kqeqyljep at index: 7 
+(4) Aaiauwoi:The man in front of me is Sqpeneuke.
+(5) Kqeqyljep:The man behind me is Otfieskw.
+(6) Wgoze:The man in front of me is Eljyklaoq.
+(7) Oteoslsuy:The man behind me is Evcnytec.
+Person: Oteoslsuy at index: 8 
+Person: Evcnytec at index: 9 
+(8) Evcnytec:The man in front of me is Oteoslsuy.
+(9) Piklkon:The man in front of me is Wgoze.
+(10) Piklkon:The man behind me is Eaocxviu.
+(11) Wgoze:The man behind me is Piklkon.
+(12) Oteoslsuy:The man in front of me is Eaocxviu.
+exclude_supporting_pairs: persons: 10 possible_liars: 4 {3, 7, 2, 6}
+open_slots = 0
+No Contradiction for liar indexes: [7]
+Confirmed lies for liar indexes: [7]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Kqeqyljep
+(0) Alpx:The man behind me is Mtavopz.
+Person: Alpx at index: 0 
+Person: Mtavopz at index: 1 
+(1) Alpx:The man in front of me is Yhef.
+Person: Yhef at index: 2 
+(2) Mtavopz:The man behind me is Guilzvl.
+Person: Guilzvl at index: 3 
+(3) Gflaookit:The man behind me is Jaouoivuj.
+Person: Gflaookit at index: 4 
+Person: Jaouoivuj at index: 5 
+(4) Yuahogft:The man in front of me is Yhef.
+Person: Yuahogft at index: 6 
+(5) Guilzvl:The man in front of me is Mtavopz.
+(6) Yhef:The man in front of me is Jaouoivuj.
+(7) Yhef:The man behind me is Alpx.
+(8) Jaouoivuj:The man in front of me is Gflaookit.
+exclude_supporting_pairs: persons: 7 possible_liars: 1 {6}
+open_slots = 0
+No Contradiction for liar indexes: [6]
+Confirmed lies for liar indexes: [6]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Yuahogft
+(0) Naoeiao:The man in front of me is Utieeoai.
+Person: Naoeiao at index: 0 
+Person: Utieeoai at index: 1 
+(1) Ayzwxmseb:The man behind me is Xeej.
+Person: Ayzwxmseb at index: 2 
+Person: Xeej at index: 3 
+(2) Xeej:The man in front of me is Ayzwxmseb.
+(3) Utieeoai:The man behind me is Orsujizze.
+Person: Orsujizze at index: 4 
+(4) Orsujizze:The man in front of me is Utieeoai.
+(5) Mmtytdts:The man in front of me is Fohflpeo.
+Person: Mmtytdts at index: 5 
+Person: Fohflpeo at index: 6 
+(6) Fohflpeo:The man behind me is Mmtytdts.
+exclude_supporting_pairs: persons: 7 possible_liars: 1 {0}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Naoeiao
+(0) Naieyglrm:The man in front of me is Riywy.
+Person: Naieyglrm at index: 0 
+Person: Riywy at index: 1 
+(1) Igxirwaey:The man in front of me is Naieyglrm.
+Person: Igxirwaey at index: 2 
+(2) Riywy:The man in front of me is Yxmi.
+Person: Yxmi at index: 3 
+(3) Woaaiw:The man in front of me is Myeaphoua.
+Person: Woaaiw at index: 4 
+Person: Myeaphoua at index: 5 
+(4) Woaaiw:The man behind me is Yxmi.
+(5) Myeaphoua:The man in front of me is Yxmi.
+(6) Yxmi:The man in front of me is Woaaiw.
+exclude_supporting_pairs: persons: 6 possible_liars: 4 {5, 1, 2, 0}
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [5]
+Confirmed lies for liar indexes: [5]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Myeaphoua
+(0) Eeanomw:The man in front of me is Xqnqsj.
+Person: Eeanomw at index: 0 
+Person: Xqnqsj at index: 1 
+(1) Xqnqsj:The man behind me is Eeanomw.
+(2) Xqnqsj:The man in front of me is Pelsoej.
+Person: Pelsoej at index: 2 
+(3) Pobrer:The man in front of me is Pelsoej.
+Person: Pobrer at index: 3 
+(4) Pelsoej:The man behind me is Xqnqsj.
+(5) Jeajmyd:The man behind me is Pobrer.
+Person: Jeajmyd at index: 4 
+exclude_supporting_pairs: persons: 5 possible_liars: 2 {3, 4}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Pobrer
+(0) Goqogyey:The man behind me is Uiroa.
+Person: Goqogyey at index: 0 
+Person: Uiroa at index: 1 
+(1) Qoeyy:The man in front of me is Uiroa.
+Person: Qoeyy at index: 2 
+(2) Xaeoefuef:The man behind me is Uiroa.
+Person: Xaeoefuef at index: 3 
+(3) Pyecofoku:The man in front of me is Ovudylu.
+Person: Pyecofoku at index: 4 
+Person: Ovudylu at index: 5 
+(4) Iqvialihs:The man in front of me is Pyecofoku.
+Person: Iqvialihs at index: 6 
+(5) Uiroa:The man behind me is Qoeyy.
+(6) Xaeoefuef:The man in front of me is Xaeoefuef.
+(7) Uehwi:The man behind me is Ovudylu.
+Person: Uehwi at index: 7 
+(8) Goqogyey:The man in front of me is Xaeoefuef.
+(9) Neal:The man behind me is Xaeoefuef.
+Person: Neal at index: 8 
+(10) Ovudylu:The man in front of me is Uehwi.
+(11) Iqvialihs:The man behind me is Neal.
+(12) Ovudylu:The man behind me is Pyecofoku.
+Mr. Wrong identified by solve(): Xaeoefuef
+(0) Egmv:The man in front of me is Rakmeia.
+Person: Egmv at index: 0 
+Person: Rakmeia at index: 1 
+(1) Vcyau:The man behind me is Rakmeia.
+Person: Vcyau at index: 2 
+(2) Raegeevcr:The man behind me is Rakmeia.
+Person: Raegeevcr at index: 3 
+(3) Toxoll:The man in front of me is Egmv.
+Person: Toxoll at index: 4 
+(4) Rakmeia:The man in front of me is Raegeevcr.
+(5) Syljcipnt:The man in front of me is Vcyau.
+Person: Syljcipnt at index: 5 
+(6) Rakmeia:The man behind me is Egmv.
+exclude_supporting_pairs: persons: 6 possible_liars: 3 {2, 4, 5}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Vcyau
+(0) Ucabmibyu:The man in front of me is Esbzoit.
+Person: Ucabmibyu at index: 0 
+Person: Esbzoit at index: 1 
+(1) Okyhnpw:The man in front of me is Okyhnpw.
+Person: Okyhnpw at index: 2 
+(2) Arap:The man behind me is Oieokurzi.
+Person: Arap at index: 3 
+Person: Oieokurzi at index: 4 
+(3) Oieokurzi:The man in front of me is Arap.
+(4) Okyhnpw:The man behind me is Oieokurzi.
+(5) Esbzoit:The man behind me is Ucabmibyu.
+Mr. Wrong identified by solve(): Okyhnpw
+(0) Evey:The man behind me is Cnygv.
+Person: Evey at index: 0 
+Person: Cnygv at index: 1 
+(1) Ivsotes:The man in front of me is Eouy.
+Person: Ivsotes at index: 2 
+Person: Eouy at index: 3 
+(2) Rieeuawjo:The man in front of me is Hbteabv.
+Person: Rieeuawjo at index: 4 
+Person: Hbteabv at index: 5 
+(3) Hbteabv:The man in front of me is Rieeuawjo.
+(4) Eouy:The man behind me is Ivsotes.
+(5) Cnygv:The man in front of me is Evey.
+(6) Rieeuawjo:The man behind me is Evey.
+exclude_supporting_pairs: persons: 6 possible_liars: 2 {4, 5}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [4, 5]
+Confirmed lies for liar indexes: [4, 5]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Ygfcy:The man in front of me is Ayzxbrpm.
+Person: Ygfcy at index: 0 
+Person: Ayzxbrpm at index: 1 
+(1) Yvbsoy:The man in front of me is Ygfcy.
+Person: Yvbsoy at index: 2 
+(2) Copoze:The man in front of me is Veiak.
+Person: Copoze at index: 3 
+Person: Veiak at index: 4 
+(3) Rsyodhooo:The man in front of me is Aovuxecod.
+Person: Rsyodhooo at index: 5 
+Person: Aovuxecod at index: 6 
+(4) Weoyavf:The man in front of me is Aovuxecod.
+Person: Weoyavf at index: 7 
+(5) Aovuxecod:The man behind me is Rsyodhooo.
+(6) Veiak:The man behind me is Copoze.
+(7) Iegoe:The man behind me is Aovuxecod.
+Person: Iegoe at index: 8 
+(8) Ygfcy:The man behind me is Yvbsoy.
+(9) Iegoe:The man in front of me is Yvbsoy.
+(10) Ayzxbrpm:The man behind me is Ygfcy.
+(11) Veiak:The man in front of me is Weoyavf.
+(12) Euljaen:The man behind me is Ayzxbrpm.
+Person: Euljaen at index: 9 
+(13) Yvbsoy:The man behind me is Iegoe.
+exclude_supporting_pairs: persons: 10 possible_liars: 2 {9, 7}
+open_slots = 0
+No Contradiction for liar indexes: [7]
+Confirmed lies for liar indexes: [7]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Weoyavf
+(0) Karovwoub:The man behind me is Msae.
+Person: Karovwoub at index: 0 
+Person: Msae at index: 1 
+(1) Yipdvwc:The man in front of me is Wjizea.
+Person: Yipdvwc at index: 2 
+Person: Wjizea at index: 3 
+(2) Eaccuerhr:The man in front of me is Wjizea.
+Person: Eaccuerhr at index: 4 
+(3) Oixcmi:The man behind me is Wjizea.
+Person: Oixcmi at index: 5 
+(4) Msae:The man in front of me is Karovwoub.
+(5) Taeoefira:The man in front of me is Eaccuerhr.
+Person: Taeoefira at index: 6 
+(6) Zytiihor:The man behind me is Nntebto.
+Person: Zytiihor at index: 7 
+Person: Nntebto at index: 8 
+(7) Nntebto:The man behind me is Eaccuerhr.
+(8) Yipdvwc:The man behind me is Karovwoub.
+(9) Wjizea:The man behind me is Yipdvwc.
+(10) Nntebto:The man in front of me is Zytiihor.
+(11) Msae:The man behind me is Zytiihor.
+exclude_supporting_pairs: persons: 9 possible_liars: 3 {5, 4, 6}
+open_slots = 0
+No Contradiction for liar indexes: [4]
+Confirmed lies for liar indexes: [4]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Eaccuerhr
+(0) Kuoteelx:The man behind me is Ytuoatu.
+Person: Kuoteelx at index: 0 
+Person: Ytuoatu at index: 1 
+(1) Xwaafpwtn:The man in front of me is Useke.
+Person: Xwaafpwtn at index: 2 
+Person: Useke at index: 3 
+(2) Txzeypf:The man behind me is Useke.
+Person: Txzeypf at index: 4 
+(3) Ytuoatu:The man in front of me is Uziood.
+Person: Uziood at index: 5 
+(4) Ucpojs:The man behind me is Txzeypf.
+Person: Ucpojs at index: 6 
+(5) Uziood:The man behind me is Ytuoatu.
+(6) Kuoteelx:The man in front of me is Txzeypf.
+(7) Cwdigeogd:The man in front of me is Ytuoatu.
+Person: Cwdigeogd at index: 7 
+(8) Useke:The man behind me is Xwaafpwtn.
+(9) Ucpojs:The man in front of me is Kuoteelx.
+exclude_supporting_pairs: persons: 8 possible_liars: 4 {7, 6, 0, 4}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Kuoteelx
+(0) Dauyidgci:The man behind me is Yaia.
+Person: Dauyidgci at index: 0 
+Person: Yaia at index: 1 
+(1) Iacoao:The man behind me is Sanmeooad.
+Person: Iacoao at index: 2 
+Person: Sanmeooad at index: 3 
+(2) Etudcyw:The man in front of me is Nfqxiiin.
+Person: Etudcyw at index: 4 
+Person: Nfqxiiin at index: 5 
+(3) Imkkb:The man in front of me is Yaia.
+Person: Imkkb at index: 6 
+(4) Sanmeooad:The man behind me is Imkkb.
+(5) Imkkb:The man behind me is Nfqxiiin.
+(6) Yaia:The man in front of me is Dauyidgci.
+(7) Nfqxiiin:The man in front of me is Imkkb.
+exclude_supporting_pairs: persons: 7 possible_liars: 3 {2, 3, 4}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Sanmeooad
+(0) Annrfnqdf:The man in front of me is Vinxxq.
+Person: Annrfnqdf at index: 0 
+Person: Vinxxq at index: 1 
+(1) Jueqnajg:The man in front of me is Heiec.
+Person: Jueqnajg at index: 2 
+Person: Heiec at index: 3 
+(2) Uvow:The man in front of me is Jueqnajg.
+Person: Uvow at index: 4 
+(3) Eisteaaz:The man behind me is Annrfnqdf.
+Person: Eisteaaz at index: 5 
+(4) Heiec:The man in front of me is Annrfnqdf.
+(5) Vinxxq:The man behind me is Eisteaaz.
+exclude_supporting_pairs: persons: 6 possible_liars: 6 {2, 3, 1, 4, 5, 0}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Annrfnqdf
+(0) Uvan:The man in front of me is Swhb.
+Person: Uvan at index: 0 
+Person: Swhb at index: 1 
+(1) Swhb:The man in front of me is Yuxmc.
+Person: Yuxmc at index: 2 
+(2) Yuxmc:The man in front of me is Teoczulg.
+Person: Teoczulg at index: 3 
+(3) Bywailafc:The man in front of me is Obeg.
+Person: Bywailafc at index: 4 
+Person: Obeg at index: 5 
+(4) Teoczulg:The man behind me is Yuxmc.
+(5) Obeg:The man in front of me is Bywailafc.
+(6) Swhb:The man behind me is Uvan.
+(7) Izoolxaz:The man in front of me is Obeg.
+Person: Izoolxaz at index: 6 
+exclude_supporting_pairs: persons: 7 possible_liars: 3 {6, 4, 5}
+Contradiction relative empty 002
+open_slots = 0
+No Contradiction for liar indexes: [4]
+Confirmed lies for liar indexes: [4]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Bywailafc
+(0) Zdwuerfvp:The man behind me is Togciauai.
+Person: Zdwuerfvp at index: 0 
+Person: Togciauai at index: 1 
+(1) Zdwuerfvp:The man in front of me is Chugs.
+Person: Chugs at index: 2 
+(2) Chugs:The man in front of me is Uewajoo.
+Person: Uewajoo at index: 3 
+(3) Uewajoo:The man in front of me is Togciauai.
+(4) Dedu:The man in front of me is Uewajoo.
+Person: Dedu at index: 4 
+(5) Uewajoo:The man behind me is Dedu.
+(6) Togciauai:The man behind me is Uewajoo.
+(7) Jdguwufys:The man behind me is Chugs.
+Person: Jdguwufys at index: 5 
+exclude_supporting_pairs: persons: 6 possible_liars: 3 {5, 2, 0}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Chugs
+(0) Yiyreaeel:The man behind me is Kohcmo.
+Person: Yiyreaeel at index: 0 
+Person: Kohcmo at index: 1 
+(1) Kohcmo:The man behind me is Yilchielq.
+Person: Yilchielq at index: 2 
+(2) Ntmssfjlx:The man in front of me is Spuiwog.
+Person: Ntmssfjlx at index: 3 
+Person: Spuiwog at index: 4 
+(3) Oekm:The man behind me is Ibykyyo.
+Person: Oekm at index: 5 
+Person: Ibykyyo at index: 6 
+(4) Yilchielq:The man behind me is Ntmssfjlx.
+(5) Spuiwog:The man in front of me is Xyprynak.
+Person: Xyprynak at index: 7 
+(6) Yilchielq:The man in front of me is Xyprynak.
+(7) Xyprynak:The man in front of me is Yilchielq.
+(8) Ibykyyo:The man in front of me is Oekm.
+(9) Oekm:The man in front of me is Ijestg.
+Person: Ijestg at index: 8 
+(10) Ijestg:The man behind me is Oekm.
+exclude_supporting_pairs: persons: 9 possible_liars: 6 {3, 2, 7, 0, 1, 4}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Yilchielq
+(0) Iibnpau:The man in front of me is Sivet.
+Person: Iibnpau at index: 0 
+Person: Sivet at index: 1 
+(1) Tbvxvm:The man in front of me is Isjjoeeue.
+Person: Tbvxvm at index: 2 
+Person: Isjjoeeue at index: 3 
+(2) Uyouoiail:The man behind me is Evbsaiqvl.
+Person: Uyouoiail at index: 4 
+Person: Evbsaiqvl at index: 5 
+(3) Sivet:The man behind me is Iibnpau.
+(4) Sivet:The man in front of me is Tuyboain.
+Person: Tuyboain at index: 6 
+(5) Isjjoeeue:The man behind me is Tbvxvm.
+(6) Evbsaiqvl:The man behind me is Tuyboain.
+(7) Tbvxvm:The man behind me is Tuyboain.
+(8) Uyouoiail:The man in front of me is Iibnpau.
+(9) Tuyboain:The man in front of me is Tbvxvm.
+exclude_supporting_pairs: persons: 7 possible_liars: 2 {5, 4}
+open_slots = 0
+No Contradiction for liar indexes: [5]
+Confirmed lies for liar indexes: [5]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Evbsaiqvl
+(0) Ebyeao:The man in front of me is Dakjdasy.
+Person: Ebyeao at index: 0 
+Person: Dakjdasy at index: 1 
+(1) Emeeeouiu:The man behind me is Ebyeao.
+Person: Emeeeouiu at index: 2 
+(2) Dakjdasy:The man behind me is Emeeeouiu.
+(3) Emeeeouiu:The man in front of me is Dakjdasy.
+(4) Lbheere:The man in front of me is Ebyeao.
+Person: Lbheere at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {0, 3}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Ebyeao
+(0) Hxvamou:The man behind me is Vicrp.
+Person: Hxvamou at index: 0 
+Person: Vicrp at index: 1 
+(1) Vicrp:The man in front of me is Eympo.
+Person: Eympo at index: 2 
+(2) Qyofjwek:The man behind me is Eympo.
+Person: Qyofjwek at index: 3 
+(3) Hxvamou:The man in front of me is Qyofjwek.
+(4) Vicrp:The man behind me is Axho.
+Person: Axho at index: 4 
+(5) Qorbme:The man in front of me is Axho.
+Person: Qorbme at index: 5 
+(6) Qorbme:The man behind me is Hxvamou.
+(7) Axho:The man behind me is Qorbme.
+(8) Eympo:The man in front of me is Qyofjwek.
+exclude_supporting_pairs: persons: 6 possible_liars: 2 {1, 0}
+open_slots = 0
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Hxvamou
+(0) Bjcgcilph:The man behind me is Iesn.
+Person: Bjcgcilph at index: 0 
+Person: Iesn at index: 1 
+(1) Ylij:The man behind me is Urvetbi.
+Person: Ylij at index: 2 
+Person: Urvetbi at index: 3 
+(2) Adshepdn:The man behind me is Aeymdjxv.
+Person: Adshepdn at index: 4 
+Person: Aeymdjxv at index: 5 
+(3) Kjeos:The man in front of me is Aeymdjxv.
+Person: Kjeos at index: 6 
+(4) Ehjno:The man in front of me is Kjeos.
+Person: Ehjno at index: 7 
+(5) Aeymdjxv:The man in front of me is Adshepdn.
+(6) Fjewulceu:The man behind me is Iesn.
+Person: Fjewulceu at index: 8 
+(7) Iesn:The man in front of me is Bjcgcilph.
+(8) Iesn:The man behind me is Ylij.
+(9) Adshepdn:The man in front of me is Fjewulceu.
+(10) Ylij:The man in front of me is Iesn.
+(11) Urvetbi:The man behind me is Fjewulceu.
+exclude_supporting_pairs: persons: 9 possible_liars: 4 {3, 7, 8, 6}
+open_slots = 0
+No Contradiction for liar indexes: [8]
+Confirmed lies for liar indexes: [8]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Fjewulceu
+(0) Teouf:The man behind me is Teouf.
+Person: Teouf at index: 0 
+(1) Ieigodom:The man behind me is Teouf.
+Person: Ieigodom at index: 1 
+(2) Weweovu:The man in front of me is Teouf.
+Person: Weweovu at index: 2 
+Mr. Wrong identified by solve(): Teouf
+(0) Ohoafvptp:The man in front of me is Lemymdpsa.
+Person: Ohoafvptp at index: 0 
+Person: Lemymdpsa at index: 1 
+(1) Emoozeyw:The man in front of me is Ohoafvptp.
+Person: Emoozeyw at index: 2 
+(2) Rswizr:The man in front of me is Ytpipi.
+Person: Rswizr at index: 3 
+Person: Ytpipi at index: 4 
+(3) Ddmvco:The man in front of me is Rswizr.
+Person: Ddmvco at index: 5 
+(4) Lemymdpsa:The man behind me is Ohoafvptp.
+(5) Ytpipi:The man in front of me is Ohoafvptp.
+exclude_supporting_pairs: persons: 6 possible_liars: 4 {2, 3, 5, 4}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [2, 4]
+Confirmed lies for liar indexes: [2, 4]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Jieae:The man behind me is Pjnydc.
+Person: Jieae at index: 0 
+Person: Pjnydc at index: 1 
+(1) Smty:The man in front of me is Aoieo.
+Person: Smty at index: 2 
+Person: Aoieo at index: 3 
+(2) Pjnydc:The man behind me is Aoieo.
+(3) Aoieo:The man in front of me is Jieae.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 2, 3, 0}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Aoieo
+(0) Ecnlo:The man behind me is Ecnlo.
+Person: Ecnlo at index: 0 
+(1) Ouhph:The man behind me is Ecnlo.
+Person: Ouhph at index: 1 
+(2) Looykxyv:The man behind me is Ouhph.
+Person: Looykxyv at index: 2 
+(3) Ouhph:The man in front of me is Looykxyv.
+Mr. Wrong identified by solve(): Ecnlo
+(0) Eqeo:The man behind me is Aazoyx.
+Person: Eqeo at index: 0 
+Person: Aazoyx at index: 1 
+(1) Amecsdvke:The man behind me is Qdda.
+Person: Amecsdvke at index: 2 
+Person: Qdda at index: 3 
+(2) Amjmeomee:The man behind me is Eqeo.
+Person: Amjmeomee at index: 4 
+(3) Qdda:The man behind me is Amecsdvke.
+(4) Squrfa:The man behind me is Qdda.
+Person: Squrfa at index: 5 
+(5) Wzaibniuu:The man in front of me is Amecsdvke.
+Person: Wzaibniuu at index: 6 
+(6) Qdda:The man in front of me is Squrfa.
+(7) Aazoyx:The man in front of me is Eqeo.
+(8) Amecsdvke:The man in front of me is Wayplx.
+Person: Wayplx at index: 7 
+(9) Wayplx:The man behind me is Squrfa.
+(10) Uislkh:The man in front of me is Aazoyx.
+Person: Uislkh at index: 8 
+(11) Uislkh:The man behind me is Wayplx.
+(12) Ihhbfyfej:The man in front of me is Wzaibniuu.
+Person: Ihhbfyfej at index: 9 
+exclude_supporting_pairs: persons: 10 possible_liars: 6 {2, 4, 8, 9, 7, 6}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Amecsdvke
+(0) Ueunqgeh:The man behind me is Ebwbj.
+Person: Ueunqgeh at index: 0 
+Person: Ebwbj at index: 1 
+(1) Qoamwrpz:The man behind me is Occmokq.
+Person: Qoamwrpz at index: 2 
+Person: Occmokq at index: 3 
+(2) Ioco:The man behind me is Ueunqgeh.
+Person: Ioco at index: 4 
+(3) Ebwbj:The man in front of me is Ueunqgeh.
+(4) Occmokq:The man behind me is Occmokq.
+Mr. Wrong identified by solve(): Occmokq
+(0) Yoeoimko:The man in front of me is Okaa.
+Person: Yoeoimko at index: 0 
+Person: Okaa at index: 1 
+(1) Nqakugaie:The man behind me is Okaa.
+Person: Nqakugaie at index: 2 
+(2) Okaa:The man in front of me is Ozwn.
+Person: Ozwn at index: 3 
+(3) Nqakugaie:The man in front of me is Sitozbad.
+Person: Sitozbad at index: 4 
+(4) Ozwn:The man in front of me is Sitozbad.
+(5) Okaa:The man behind me is Yoeoimko.
+(6) Sitozbad:The man in front of me is Nqakugaie.
+(7) Sitozbad:The man behind me is Ozwn.
+exclude_supporting_pairs: persons: 5 possible_liars: 1 {2}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Nqakugaie
+(0) Aliuoo:The man behind me is Rjziigjef.
+Person: Aliuoo at index: 0 
+Person: Rjziigjef at index: 1 
+(1) Obbuq:The man behind me is Oyaa.
+Person: Obbuq at index: 2 
+Person: Oyaa at index: 3 
+(2) Obbuq:The man in front of me is Zuvhimee.
+Person: Zuvhimee at index: 4 
+(3) Zuvhimee:The man behind me is Obbuq.
+(4) Vyqthui:The man in front of me is Rjziigjef.
+Person: Vyqthui at index: 5 
+(5) Aliuoo:The man in front of me is Oyaa.
+(6) Oyaa:The man in front of me is Obbuq.
+(7) Rjziigjef:The man behind me is Vyqthui.
+(8) Eueo:The man behind me is Rjziigjef.
+Person: Eueo at index: 6 
+exclude_supporting_pairs: persons: 7 possible_liars: 2 {6, 0}
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [6, 0]
+Confirmed lies for liar indexes: [6, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+(0) Cyfkjug:The man in front of me is Qvpuoke.
+Person: Cyfkjug at index: 0 
+Person: Qvpuoke at index: 1 
+(1) Rfpcb:The man in front of me is Criewuii.
+Person: Rfpcb at index: 2 
+Person: Criewuii at index: 3 
+(2) Widj:The man behind me is Rfpcb.
+Person: Widj at index: 4 
+(3) Kitcaenxi:The man behind me is Uoob.
+Person: Kitcaenxi at index: 5 
+Person: Uoob at index: 6 
+(4) Widj:The man in front of me is Ewdiog.
+Person: Ewdiog at index: 7 
+(5) Ftposas:The man behind me is Widj.
+Person: Ftposas at index: 8 
+(6) Uoob:The man behind me is Ftposas.
+(7) Qvpuoke:The man in front of me is Widj.
+(8) Ftposas:The man in front of me is Uoob.
+(9) Ewdiog:The man in front of me is Rfpcb.
+(10) Rfpcb:The man behind me is Ewdiog.
+(11) Ewdiog:The man behind me is Kitcaenxi.
+(12) Criewuii:The man behind me is Rfpcb.
+(13) Uoob:The man in front of me is Kitcaenxi.
+(14) Kitcaenxi:The man in front of me is Ewdiog.
+exclude_supporting_pairs: persons: 9 possible_liars: 3 {1, 4, 0}
+open_slots = 0
+No Contradiction for liar indexes: [4]
+Confirmed lies for liar indexes: [4]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Widj
+(0) Nvdo:The man in front of me is Aaqi.
+Person: Nvdo at index: 0 
+Person: Aaqi at index: 1 
+(1) Aaqi:The man in front of me is Naogtuj.
+Person: Naogtuj at index: 2 
+(2) Qenhue:The man in front of me is Lzvevfr.
+Person: Qenhue at index: 3 
+Person: Lzvevfr at index: 4 
+(3) Kiunejq:The man in front of me is Nvdo.
+Person: Kiunejq at index: 5 
+(4) Nvdo:The man behind me is Kiunejq.
+(5) Lzvevfr:The man in front of me is Qenhue.
+(6) Aaqi:The man behind me is Nvdo.
+(7) Naogtuj:The man behind me is Aaqi.
+exclude_supporting_pairs: persons: 6 possible_liars: 2 {4, 3}
+open_slots = 6
+open_slots = 6
+No Contradiction for liar indexes: [4, 3]
+Confirmed lies for liar indexes: []
+most_open_slots = 6 most_open_index = Some(4)
+unique reason 3
+Mr. Wrong identified by solve3(): Lzvevfr
+assertion failed: `(left == right)`
+  left: `Some("Lzvevfr")`,
+ right: `None`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Nvdo:The man in front of me is Aaqi.",
+    "Aaqi:The man in front of me is Naogtuj.",
+    "Qenhue:The man in front of me is Lzvevfr.",
+    "Kiunejq:The man in front of me is Nvdo.",
+    "Nvdo:The man behind me is Kiunejq.",
+    "Lzvevfr:The man in front of me is Qenhue.",
+    "Aaqi:The man behind me is Nvdo.",
+    "Naogtuj:The man behind me is Aaqi.",
+]
+tests::_2_random_tests::_4_long_conversations
+tests::_2_random_tests::_5_very_long_conversations

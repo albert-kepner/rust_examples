@@ -1,0 +1,257 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.34s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 1, 0}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+1 ==================== Test passed: actual value Some("Tom") matches expected value Some("Tom")
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2
+(3) Peter:The man in front of me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 2, 1}
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): John
+2 ==================== Test passed: actual value Some("John") matches expected value Some("John")
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:There is 1 people in front of me.
+Person: Peter at index: 1
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 2, 1}
+open_slots = 0
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+3 ==================== Test passed: actual value Some("Tom") matches expected value Some("Tom")
+(0) John:The man behind me is Peter.
+Person: John at index: 0
+Person: Peter at index: 1
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 1, 2}
+Infer Relative Contradiction 901
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [1, 2]
+Confirmed lies for liar indexes: [1, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+4 ==================== Test passed: actual value None matches expected value None
+(0) Dowfls:There is 0 people behind me.
+Person: Dowfls at index: 0
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+Person: Ljiyxbmr at index: 1
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+Person: Cvvugb at index: 2
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+Person: Tzjlvruhk at index: 3
+(7) Tzjlvruhk:There are 2 people in front of me.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 0, 3, 2}
+IR Contradiction 902
+Infer Relative Contradiction 901
+open_slots = 0
+open_slots = 0
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+5 ==================== Test passed: actual value None matches expected value None
+(0) Tom:The man behind me is Bob.
+Person: Tom at index: 0
+Person: Bob at index: 1
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+Person: Gary at index: 2
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Person: Fred at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 1 {3}
+open_slots = 2
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: []
+most_open_slots = 2 most_open_index = Some(3)
+unique reason 1
+Mr. Wrong identified by solve3(): Fred
+6 ==================== Test passed: actual value Some("Fred") matches expected value Some("Fred")
+(0) Wrong:The man behind me is Wrong.
+Person: Wrong at index: 0
+Mr. Wrong identified by solve(): Wrong
+7 ==================== Test passed: actual value Some("Wrong") matches expected value Some("Wrong")
+(0) Charles:The man behind me is Gavin.
+Person: Charles at index: 0
+Person: Gavin at index: 1
+(1) Gavin:I'm in 1st position.
+(2) Ken:The man in front of me is Gavin.
+Person: Ken at index: 2
+(3) Charles:The man in front of me is Gavin.
+Mr. Wrong identified by solve(): Charles
+8 ==================== Test passed: actual value Some("Charles") matches expected value Some("Charles")
+(0) Greg:I'm in 1st position.
+Person: Greg at index: 0
+(1) Daniel:There are 2 people in front of me.
+Person: Daniel at index: 1
+(2) Ramone:I'm in 3rd position.
+Person: Ramone at index: 2
+(3) Daniel:There are 2 people behind me.
+Mr. Wrong identified by solve(): Daniel
+9 ==================== Test passed: actual value Some("Daniel") matches expected value Some("Daniel")
+(0) Frodo:I'm in 3rd position.
+Person: Frodo at index: 0
+(1) Gollum:I'm in 3rd position.
+Person: Gollum at index: 1
+(2) Sam:The man behind me is Frodo.
+Person: Sam at index: 2
+(3) Gollum:The man behind me is Frodo.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+open_slots = 0
+Infer Relative Contradiction 901
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Gollum
+10 ==================== Test passed: actual value Some("Gollum") matches expected value Some("Gollum")
+(0) Hauejr:The man behind me is Apeiyb.
+Person: Hauejr at index: 0
+Person: Apeiyb at index: 1
+(1) Apeiyb:The man in front of me is Fbuye.
+Person: Fbuye at index: 2
+(2) Fbuye:The man behind me is Hauejr.
+(3) Apeiyb:The man behind me is Hauejr.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 0, 2}
+open_slots = 0
+Contradiction relative empty 002
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Apeiyb
+11 ==================== Test passed: actual value Some("Apeiyb") matches expected value Some("Apeiyb")
+(0) Jgatt:The man in front of me is Wafxmw.
+Person: Jgatt at index: 0
+Person: Wafxmw at index: 1
+(1) Wafxmw:The man behind me is Jgatt.
+(2) Pamqaabuj:There are 2 people in front of me.
+Person: Pamqaabuj at index: 2
+(3) Dsfy:I'm in 4th position.
+Person: Dsfy at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 3}
+open_slots = 1
+open_slots = 0
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: []
+most_open_slots = 1 most_open_index = Some(2)
+unique reason 3
+Mr. Wrong identified by solve3(): Pamqaabuj
+12 ==================== Test passed: actual value Some("Pamqaabuj") matches expected value Some("Pamqaabuj")
+(0) Eteyjm:The man behind me is Ucuaei.
+Person: Eteyjm at index: 0
+Person: Ucuaei at index: 1
+(1) Ucuaei:The man in front of me is Eteyjm.
+(2) Vaqzcyicr:There is 1 people in front of me.
+Person: Vaqzcyicr at index: 2
+(3) Aujyuhoee:There are 3 people behind me.
+Person: Aujyuhoee at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {3, 2}
+open_slots = 0
+open_slots = 1
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: []
+most_open_slots = 1 most_open_index = Some(2)
+unique reason 3
+Mr. Wrong identified by solve3(): Vaqzcyicr
+13 ==================== Test passed: actual value Some("Vaqzcyicr") matches expected value Some("Vaqzcyicr")
+(0) Euuopnq:The man in front of me is Alghi.
+Person: Euuopnq at index: 0
+Person: Alghi at index: 1
+(1) Alghi:There are 0 people behind me.
+(2) Duoan:There are 2 people in front of me.
+Person: Duoan at index: 2
+(3) Vdnqoar:The man in front of me is Duoan.
+Person: Vdnqoar at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 3, 1, 0}
+open_slots = 0
+IR Contradiction 902
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Alghi
+14 ==================== Test passed: actual value Some("Alghi") matches expected value Some("Alghi")
+(0) Eqoivoyoy:The man behind me is Ohilo.
+Person: Eqoivoyoy at index: 0
+Person: Ohilo at index: 1
+(1) Ohilo:There are 3 people in front of me.
+(2) Eizye:The man behind me is Eqoivoyoy.
+Person: Eizye at index: 2
+(3) Lfeznsr:I'm in 3rd position.
+Person: Lfeznsr at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {3, 1, 2, 0}
+open_slots = 0
+Infer Relative Contradiction 901
+IR Contradiction 902
+Infer Relative Contradiction 901
+open_slots = 0
+No Contradiction for liar indexes: [3, 0]
+Confirmed lies for liar indexes: [3, 0]
+most_open_slots = 0 most_open_index = None
+No contradictions found, unable to identify Mr. Wrong.
+15 ==================== Test passed: actual value None matches expected value None
+(0) Gusytbnf:The man in front of me is Ekymeqoqf.
+Person: Gusytbnf at index: 0
+Person: Ekymeqoqf at index: 1
+(1) Yneyxk:The man behind me is Eeeo.
+Person: Yneyxk at index: 2
+Person: Eeeo at index: 3
+(2) Gusytbnf:The man behind me is Yneyxk.
+(3) Qpieskzr:The man behind me is Ekymeqoqf.
+Person: Qpieskzr at index: 4
+(4) Eeeo:The man in front of me is Ekymeqoqf.
+(5) Ekymeqoqf:The man in front of me is Qpieskzr.
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {0, 3, 2}
+open_slots = 0
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+most_open_slots = 0 most_open_index = None
+unique reason 1
+Mr. Wrong identified by solve3(): Eeeo
+16 ==================== Test passed: actual value Some("Eeeo") matches expected value Some("Eeeo")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.92s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>
