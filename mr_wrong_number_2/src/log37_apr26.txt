@@ -1,0 +1,1946 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims absolute position: 1
+001 Contradiction at: AbsPosition { position: 1 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Tom claims absolute position: 1
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Peter ( liar_index = 0 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom ( liar_index = 0 is_liar = false)
+Person Tom claims absolute position: 1
+001 Contradiction at: AbsPosition { position: 1 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+1 ==================== Test passed: actual value Some("Tom") matches expected value Some("Tom")
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2
+(3) Peter:The man in front of me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 0, 2}
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims absolute position: 1
+001 Contradiction at: AbsPosition { position: 1 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 0 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Person Peter claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom ( liar_index = 0 is_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Peter ( liar_index = 0 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Peter claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom ( liar_index = 0 is_liar = false)
+Person Tom claims absolute position: 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person John claims absolute position: 1
+END Liar Statements ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: -1 relative for person_index 2
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 2 -1
+this_position, other_position , other_assignment.posisible_positions = 2, 1,,,[3]
+003 Contradiction at: RelPosition { relative: -1, person_index: 2 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): John
+2 ==================== Test passed: actual value Some("John") matches expected value Some("John")
+(0) John:I'm in 1st position.
+Person: John at index: 0
+(1) Peter:There is 1 people in front of me.
+Person: Peter at index: 1
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 1, 0}
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Tom claims reverse position: 1
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims absolute position: 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims reverse position: 1
+002 Contradiction at: ReversePosition { from_end: 2 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 0 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom ( liar_index = 0 is_liar = false)
+Person Tom claims reverse position: 1
+002 Contradiction at: ReversePosition { from_end: 2 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+3 ==================== Test passed: actual value Some("Tom") matches expected value Some("Tom")
+(0) John:The man behind me is Peter.
+Person: John at index: 0
+Person: Peter at index: 1
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 1, 2}
+Considering person_index 1: Peter ( liar_index = 0 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 2: Tom ( liar_index = 0 is_liar = false)
+Person Tom claims reverse position: 1
+002 Contradiction at: ReversePosition { from_end: 2 }
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John ( liar_index = 1 is_liar = false)
+Person John claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Tom ( liar_index = 1 is_liar = false)
+Person Tom claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Peter claims absolute position: 2
+Person Peter claims relative position: 1 relative to person_index 2
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 2 1
+this_position, other_position , other_assignment.posisible_positions = 3, 4,,,[1]
+END Liar Statements ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 0: John ( liar_index = 2 is_liar = false)
+Person John claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Considering person_index 1: Peter ( liar_index = 2 is_liar = false)
+Person Peter claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Peter claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Person Tom claims reverse position: 1
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1] position = Some(1)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [1, 2]
+Confirmed lies for liar indexes: [1, 2]
+No contradictions found, unable to identify Mr. Wrong.
+4 ==================== Test passed: actual value None matches expected value None
+(0) Dowfls:There is 0 people behind me.
+Person: Dowfls at index: 0
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+Person: Ljiyxbmr at index: 1
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+Person: Cvvugb at index: 2
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+Person: Tzjlvruhk at index: 3
+(7) Tzjlvruhk:There are 2 people in front of me.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 3, 0, 2}
+Considering person_index 0: Dowfls ( liar_index = 1 is_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Cvvugb ( liar_index = 1 is_liar = false)
+Person Cvvugb claims absolute position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 3: Tzjlvruhk ( liar_index = 1 is_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative for person_index 0
+IR Contradiction 902
+003 Contradiction at: RelPosition { relative: 1, person_index: 0 }
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Person Tzjlvruhk claims absolute position: 3
+001 Contradiction at: AbsPosition { position: 3 }
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 0: Dowfls ( liar_index = 3 is_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ljiyxbmr ( liar_index = 3 is_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 3] position = None
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 3] position = None
+Considering person_index 2: Cvvugb ( liar_index = 3 is_liar = false)
+Person Cvvugb claims absolute position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Dowfls ( liar_index = 3 is_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ljiyxbmr ( liar_index = 3 is_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Cvvugb ( liar_index = 3 is_liar = false)
+Person Cvvugb claims absolute position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Tzjlvruhk claims relative position: 1 relative to person_index 0
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 3 0 1
+this_position, other_position , other_assignment.posisible_positions = 1, 2,,,[4]
+Person Tzjlvruhk claims absolute position: 3
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ljiyxbmr ( liar_index = 0 is_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 3, 4] position = None
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 3, 4] position = None
+Considering person_index 2: Cvvugb ( liar_index = 0 is_liar = false)
+Person Cvvugb claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 4] position = None
+Person Cvvugb claims reverse position: 3
+Assignment for person_index 0: possible_positions: [1, 4] position = None
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 4] position = None
+Considering person_index 3: Tzjlvruhk ( liar_index = 0 is_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Tzjlvruhk claims absolute position: 3
+001 Contradiction at: AbsPosition { position: 3 }
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Dowfls ( liar_index = 2 is_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Ljiyxbmr ( liar_index = 2 is_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 3] position = None
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 3] position = None
+Considering person_index 3: Tzjlvruhk ( liar_index = 2 is_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Dowfls ( liar_index = 2 is_liar = false)
+Person Dowfls claims reverse position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Dowfls claims absolute position: 4
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ljiyxbmr ( liar_index = 2 is_liar = false)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Ljiyxbmr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Tzjlvruhk ( liar_index = 2 is_liar = false)
+Person Tzjlvruhk claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Tzjlvruhk claims absolute position: 3
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Cvvugb claims absolute position: 3
+Person Cvvugb claims reverse position: 3
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: [3, 2]
+No contradictions found, unable to identify Mr. Wrong.
+5 ==================== Test passed: actual value None matches expected value None
+(0) Tom:The man behind me is Bob.
+Person: Tom at index: 0
+Person: Bob at index: 1
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+Person: Gary at index: 2
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Person: Fred at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 1 {3}
+Considering person_index 0: Tom ( liar_index = 3 is_liar = false)
+Person Tom claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob ( liar_index = 3 is_liar = false)
+Person Bob claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary ( liar_index = 3 is_liar = false)
+Person Gary claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 0: Tom ( liar_index = 3 is_liar = false)
+Person Tom claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob ( liar_index = 3 is_liar = false)
+Person Bob claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary ( liar_index = 3 is_liar = false)
+Person Gary claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 0: Tom ( liar_index = 3 is_liar = false)
+Person Tom claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Bob ( liar_index = 3 is_liar = false)
+Person Bob claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Bob claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Gary ( liar_index = 3 is_liar = false)
+Person Gary claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Person Fred claims absolute position: 1
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: []
+unique reason 1
+Mr. Wrong identified by solve3(): Fred
+6 ==================== Test passed: actual value Some("Fred") matches expected value Some("Fred")
+(0) Wrong:The man behind me is Wrong.
+Person: Wrong at index: 0
+Mr. Wrong identified by solve(): Wrong
+7 ==================== Test passed: actual value Some("Wrong") matches expected value Some("Wrong")
+(0) Charles:The man behind me is Gavin.
+Person: Charles at index: 0
+Person: Gavin at index: 1
+(1) Gavin:I'm in 1st position.
+(2) Ken:The man in front of me is Gavin.
+Person: Ken at index: 2
+(3) Charles:The man in front of me is Gavin.
+Mr. Wrong identified by solve(): Charles
+8 ==================== Test passed: actual value Some("Charles") matches expected value Some("Charles")
+(0) Greg:I'm in 1st position.
+Person: Greg at index: 0
+(1) Daniel:There are 2 people in front of me.
+Person: Daniel at index: 1
+(2) Ramone:I'm in 3rd position.
+Person: Ramone at index: 2
+(3) Daniel:There are 2 people behind me.
+Mr. Wrong identified by solve(): Daniel
+9 ==================== Test passed: actual value Some("Daniel") matches expected value Some("Daniel")
+(0) Frodo:I'm in 3rd position.
+Person: Frodo at index: 0
+(1) Gollum:I'm in 3rd position.
+Person: Gollum at index: 1
+(2) Sam:The man behind me is Frodo.
+Person: Sam at index: 2
+(3) Gollum:The man behind me is Frodo.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 0, 1}
+Considering person_index 0: Frodo ( liar_index = 2 is_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Considering person_index 1: Gollum ( liar_index = 2 is_liar = false)
+Person Gollum claims absolute position: 3
+001 Contradiction at: AbsPosition { position: 3 }
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Person Gollum claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 1: Gollum ( liar_index = 0 is_liar = false)
+Person Gollum claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Person Gollum claims relative position: 1 relative for person_index 0
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 0 1
+this_position, other_position , other_assignment.posisible_positions = 3, 4,,,[1, 2]
+003 Contradiction at: RelPosition { relative: 1, person_index: 0 }
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Considering person_index 2: Sam ( liar_index = 0 is_liar = false)
+Person Sam claims relative position: 1 relative for person_index 0
+this_person_index, other_person_index, relative 2 0 1
+in_front_of, front 1 2
+003 Contradiction at: RelPosition { relative: 1, person_index: 0 }
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Considering person_index 0: Frodo ( liar_index = 1 is_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Considering person_index 2: Sam ( liar_index = 1 is_liar = false)
+Person Sam claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 0: Frodo ( liar_index = 1 is_liar = false)
+Person Frodo claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Considering person_index 2: Sam ( liar_index = 1 is_liar = false)
+Person Sam claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Person Gollum claims absolute position: 3
+Person Gollum claims relative position: 1 relative to person_index 0
+this_person_index, other_person_index, relative 1 0 1
+in_front_of, front 2 1
+END Liar Statements ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Gollum
+10 ==================== Test passed: actual value Some("Gollum") matches expected value Some("Gollum")
+(0) Hauejr:The man behind me is Apeiyb.
+Person: Hauejr at index: 0
+Person: Apeiyb at index: 1
+(1) Apeiyb:The man in front of me is Fbuye.
+Person: Fbuye at index: 2
+(2) Fbuye:The man behind me is Hauejr.
+(3) Apeiyb:The man behind me is Hauejr.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+Considering person_index 0: Hauejr ( liar_index = 1 is_liar = false)
+Person Hauejr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Fbuye ( liar_index = 1 is_liar = false)
+Person Fbuye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: Hauejr ( liar_index = 1 is_liar = false)
+Person Hauejr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Fbuye ( liar_index = 1 is_liar = false)
+Person Fbuye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Person Apeiyb claims relative position: -1 relative to person_index 2
+this_person_index, other_person_index, relative 1 2 -1
+behind_front, behind 0 1
+Person Apeiyb claims relative position: 1 relative to person_index 0
+this_person_index, other_person_index, relative 1 0 1
+in_front_of, front 2 1
+END Liar Statements ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [3] position = Some(3)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 0: Hauejr ( liar_index = 2 is_liar = false)
+Person Hauejr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Apeiyb ( liar_index = 2 is_liar = false)
+Person Apeiyb claims relative position: -1 relative for person_index 2
+this_person_index, other_person_index, relative 1 2 -1
+in_front_of, front 0 2
+003 Contradiction at: RelPosition { relative: -1, person_index: 2 }
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Person Apeiyb claims relative position: 1 relative for person_index 0
+Contradiction relative empty 002
+003 Contradiction at: RelPosition { relative: 1, person_index: 0 }
+Assignment for person_index 0: possible_positions: [] position = None
+Assignment for person_index 1: possible_positions: [] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [] position = None
+Assignment for person_index 1: possible_positions: [] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Considering person_index 1: Apeiyb ( liar_index = 0 is_liar = false)
+Person Apeiyb claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Person Apeiyb claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Considering person_index 2: Fbuye ( liar_index = 0 is_liar = false)
+Person Fbuye claims relative position: 1 relative for person_index 0
+this_person_index, other_person_index, relative 2 0 1
+behind_front, behind 1 0
+003 Contradiction at: RelPosition { relative: 1, person_index: 0 }
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Apeiyb
+11 ==================== Test passed: actual value Some("Apeiyb") matches expected value Some("Apeiyb")
+(0) Jgatt:The man in front of me is Wafxmw.
+Person: Jgatt at index: 0
+Person: Wafxmw at index: 1
+(1) Wafxmw:The man behind me is Jgatt.
+(2) Pamqaabuj:There are 2 people in front of me.
+Person: Pamqaabuj at index: 2
+(3) Dsfy:I'm in 4th position.
+Person: Dsfy at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 3}
+Considering person_index 0: Jgatt ( liar_index = 2 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Wafxmw ( liar_index = 2 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Dsfy ( liar_index = 2 is_liar = false)
+Person Dsfy claims absolute position: 4
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Jgatt ( liar_index = 2 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 1: Wafxmw ( liar_index = 2 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 3: Dsfy ( liar_index = 2 is_liar = false)
+Person Dsfy claims absolute position: 4
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Jgatt ( liar_index = 2 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 1: Wafxmw ( liar_index = 2 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 3: Dsfy ( liar_index = 2 is_liar = false)
+Person Dsfy claims absolute position: 4
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Person Pamqaabuj claims absolute position: 3
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Jgatt ( liar_index = 3 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Wafxmw ( liar_index = 3 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Pamqaabuj ( liar_index = 3 is_liar = false)
+Person Pamqaabuj claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2, 4] position = None
+Considering person_index 0: Jgatt ( liar_index = 3 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 4] position = None
+Considering person_index 1: Wafxmw ( liar_index = 3 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 2: Pamqaabuj ( liar_index = 3 is_liar = false)
+Person Pamqaabuj claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Jgatt ( liar_index = 3 is_liar = false)
+Person Jgatt claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 1: Wafxmw ( liar_index = 3 is_liar = false)
+Person Wafxmw claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 2: Pamqaabuj ( liar_index = 3 is_liar = false)
+Person Pamqaabuj claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Person Dsfy claims absolute position: 4
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: []
+No contradictions found, unable to identify Mr. Wrong.
+12 ******************* Warning: actual value None does not match expected value Some("Pamqaabuj")
+(0) Eteyjm:The man behind me is Ucuaei.
+Person: Eteyjm at index: 0
+Person: Ucuaei at index: 1
+(1) Ucuaei:The man in front of me is Eteyjm.
+(2) Vaqzcyicr:There is 1 people in front of me.
+Person: Vaqzcyicr at index: 2
+(3) Aujyuhoee:There are 3 people behind me.
+Person: Aujyuhoee at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {3, 2}
+Considering person_index 0: Eteyjm ( liar_index = 3 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ucuaei ( liar_index = 3 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Vaqzcyicr ( liar_index = 3 is_liar = false)
+Person Vaqzcyicr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [1, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 3, 4] position = None
+Considering person_index 0: Eteyjm ( liar_index = 3 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1, 4] position = None
+Considering person_index 1: Ucuaei ( liar_index = 3 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Vaqzcyicr ( liar_index = 3 is_liar = false)
+Person Vaqzcyicr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eteyjm ( liar_index = 3 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ucuaei ( liar_index = 3 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Vaqzcyicr ( liar_index = 3 is_liar = false)
+Person Vaqzcyicr claims absolute position: 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Aujyuhoee claims reverse position: 1
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eteyjm ( liar_index = 2 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ucuaei ( liar_index = 2 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Aujyuhoee ( liar_index = 2 is_liar = false)
+Person Aujyuhoee claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eteyjm ( liar_index = 2 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ucuaei ( liar_index = 2 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 3: Aujyuhoee ( liar_index = 2 is_liar = false)
+Person Aujyuhoee claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eteyjm ( liar_index = 2 is_liar = false)
+Person Eteyjm claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ucuaei ( liar_index = 2 is_liar = false)
+Person Ucuaei claims relative position: -1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 3: Aujyuhoee ( liar_index = 2 is_liar = false)
+Person Aujyuhoee claims reverse position: 1
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Vaqzcyicr claims absolute position: 2
+END Liar Statements ****** Trial  with liar_index: 2  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [3, 4] position = None
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+No Contradiction for liar indexes: [3, 2]
+Confirmed lies for liar indexes: []
+No contradictions found, unable to identify Mr. Wrong.
+13 ******************* Warning: actual value None does not match expected value Some("Vaqzcyicr")
+(0) Euuopnq:The man in front of me is Alghi.
+Person: Euuopnq at index: 0
+Person: Alghi at index: 1
+(1) Alghi:There are 0 people behind me.
+(2) Duoan:There are 2 people in front of me.
+Person: Duoan at index: 2
+(3) Vdnqoar:The man in front of me is Duoan.
+Person: Vdnqoar at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {1, 3, 0, 2}
+Considering person_index 0: Euuopnq ( liar_index = 1 is_liar = false)
+Person Euuopnq claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Duoan ( liar_index = 1 is_liar = false)
+Person Duoan claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2, 4] position = None
+Considering person_index 3: Vdnqoar ( liar_index = 1 is_liar = false)
+Person Vdnqoar claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Euuopnq ( liar_index = 1 is_liar = false)
+Person Euuopnq claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 2: Duoan ( liar_index = 1 is_liar = false)
+Person Duoan claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 3: Vdnqoar ( liar_index = 1 is_liar = false)
+Person Vdnqoar claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Euuopnq ( liar_index = 1 is_liar = false)
+Person Euuopnq claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 2: Duoan ( liar_index = 1 is_liar = false)
+Person Duoan claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 3: Vdnqoar ( liar_index = 1 is_liar = false)
+Person Vdnqoar claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Person Alghi claims reverse position: 4
+END Liar Statements ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [1] position = Some(1)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [4] position = Some(4)
+Considering person_index 0: Euuopnq ( liar_index = 3 is_liar = false)
+Person Euuopnq claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Alghi ( liar_index = 3 is_liar = false)
+Person Alghi claims reverse position: 4
+002 Contradiction at: ReversePosition { from_end: 0 }
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Duoan ( liar_index = 3 is_liar = false)
+Person Duoan claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2, 4] position = None
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2, 4] position = None
+Considering person_index 1: Alghi ( liar_index = 0 is_liar = false)
+Person Alghi claims reverse position: 4
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Duoan ( liar_index = 0 is_liar = false)
+Person Duoan claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 3: Vdnqoar ( liar_index = 0 is_liar = false)
+Person Vdnqoar claims relative position: -1 relative for person_index 2
+IR Contradiction 902
+003 Contradiction at: RelPosition { relative: -1, person_index: 2 }
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [3] position = Some(3)
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 0: Euuopnq ( liar_index = 2 is_liar = false)
+Person Euuopnq claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Alghi ( liar_index = 2 is_liar = false)
+Person Alghi claims reverse position: 4
+002 Contradiction at: ReversePosition { from_end: 0 }
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Vdnqoar ( liar_index = 2 is_liar = false)
+Person Vdnqoar claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Alghi
+14 ==================== Test passed: actual value Some("Alghi") matches expected value Some("Alghi")
+(0) Eqoivoyoy:The man behind me is Ohilo.
+Person: Eqoivoyoy at index: 0
+Person: Ohilo at index: 1
+(1) Ohilo:There are 3 people in front of me.
+(2) Eizye:The man behind me is Eqoivoyoy.
+Person: Eizye at index: 2
+(3) Lfeznsr:I'm in 3rd position.
+Person: Lfeznsr at index: 3
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {0, 2, 3, 1}
+Considering person_index 1: Ohilo ( liar_index = 0 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Eizye ( liar_index = 0 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Lfeznsr ( liar_index = 0 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ohilo ( liar_index = 0 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 2: Eizye ( liar_index = 0 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Lfeznsr ( liar_index = 0 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ohilo ( liar_index = 0 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 2: Eizye ( liar_index = 0 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Lfeznsr ( liar_index = 0 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Person Eqoivoyoy claims relative position: 1 relative to person_index 1
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 1 1
+this_position, other_position , other_assignment.posisible_positions = 2, 3,,,[4]
+END Liar Statements ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Eqoivoyoy ( liar_index = 2 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ohilo ( liar_index = 2 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Lfeznsr ( liar_index = 2 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Eqoivoyoy ( liar_index = 2 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+IR Contradiction 902
+003 Contradiction at: RelPosition { relative: 1, person_index: 1 }
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 1: Ohilo ( liar_index = 2 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Lfeznsr ( liar_index = 2 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1, 2] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Eqoivoyoy ( liar_index = 3 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 1: Ohilo ( liar_index = 3 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Eizye ( liar_index = 3 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Eqoivoyoy ( liar_index = 3 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 1: Ohilo ( liar_index = 3 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [1, 2] position = None
+Considering person_index 2: Eizye ( liar_index = 3 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eqoivoyoy ( liar_index = 3 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ohilo ( liar_index = 3 is_liar = false)
+Person Ohilo claims absolute position: 4
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 2: Eizye ( liar_index = 3 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Person Lfeznsr claims absolute position: 3
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [2] position = Some(2)
+Assignment for person_index 3: possible_positions: [1] position = Some(1)
+Considering person_index 0: Eqoivoyoy ( liar_index = 1 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Eizye ( liar_index = 1 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Lfeznsr ( liar_index = 1 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [2, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 0: Eqoivoyoy ( liar_index = 1 is_liar = false)
+Person Eqoivoyoy claims relative position: 1 relative for person_index 1
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 1 1
+this_position, other_position , other_assignment.posisible_positions = 2, 3,,,[2, 4]
+003 Contradiction at: RelPosition { relative: 1, person_index: 1 }
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 2: Eizye ( liar_index = 1 is_liar = false)
+Person Eizye claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+Considering person_index 3: Lfeznsr ( liar_index = 1 is_liar = false)
+Person Lfeznsr claims absolute position: 3
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2] position = Some(2)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [3] position = Some(3)
+No Contradiction for liar indexes: [0, 3]
+Confirmed lies for liar indexes: [0, 3]
+No contradictions found, unable to identify Mr. Wrong.
+15 ==================== Test passed: actual value None matches expected value None
+(0) Gusytbnf:The man in front of me is Ekymeqoqf.
+Person: Gusytbnf at index: 0
+Person: Ekymeqoqf at index: 1
+(1) Yneyxk:The man behind me is Eeeo.
+Person: Yneyxk at index: 2
+Person: Eeeo at index: 3
+(2) Gusytbnf:The man behind me is Yneyxk.
+(3) Qpieskzr:The man behind me is Ekymeqoqf.
+Person: Qpieskzr at index: 4
+(4) Eeeo:The man in front of me is Ekymeqoqf.
+(5) Ekymeqoqf:The man in front of me is Qpieskzr.
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {3, 0, 2}
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Person Gusytbnf claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative for person_index 4
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3] position = None
+Assignment for person_index 2: possible_positions: [3, 4] position = None
+Assignment for person_index 3: possible_positions: [4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Person Gusytbnf claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1, 2] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative for person_index 4
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 0: Gusytbnf ( liar_index = 3 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Person Gusytbnf claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ekymeqoqf ( liar_index = 3 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative for person_index 4
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 2: Yneyxk ( liar_index = 3 is_liar = false)
+Person Yneyxk claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 4: Qpieskzr ( liar_index = 3 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Person Eeeo claims relative position: -1 relative to person_index 1
+this_person_index, other_person_index, relative 3 1 -1
+behind_front, behind 0 3
+END Liar Statements ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [2] position = Some(2)
+Assignment for person_index 2: possible_positions: [4] position = Some(4)
+Assignment for person_index 3: possible_positions: [5] position = Some(5)
+Assignment for person_index 4: possible_positions: [1] position = Some(1)
+Considering person_index 1: Ekymeqoqf ( liar_index = 0 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative for person_index 4
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Yneyxk ( liar_index = 0 is_liar = false)
+Person Yneyxk claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 3: Eeeo ( liar_index = 0 is_liar = false)
+Person Eeeo claims relative position: -1 relative for person_index 1
+this_person_index, other_person_index, relative 3 1 -1
+in_front_of, front 2 1
+003 Contradiction at: RelPosition { relative: -1, person_index: 1 }
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 0 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: true
+Assignment for person_index 0: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 0: Gusytbnf ( liar_index = 2 is_liar = false)
+Person Gusytbnf claims relative position: -1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Person Gusytbnf claims relative position: 1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3, 4, 5] position = None
+Considering person_index 1: Ekymeqoqf ( liar_index = 2 is_liar = false)
+Person Ekymeqoqf claims relative position: -1 relative for person_index 4
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 3: Eeeo ( liar_index = 2 is_liar = false)
+Person Eeeo claims relative position: -1 relative for person_index 1
+this_person_index, other_person_index, relative 3 1 -1
+behind_front, behind 0 3
+003 Contradiction at: RelPosition { relative: -1, person_index: 1 }
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+Considering person_index 4: Qpieskzr ( liar_index = 2 is_liar = false)
+Person Qpieskzr claims relative position: 1 relative for person_index 1
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 2: possible_positions: [3, 4, 5] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4, 5] position = None
+Assignment for person_index 4: possible_positions: [1, 2, 3] position = None
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+unique reason 1
+Mr. Wrong identified by solve3(): Eeeo
+16 ==================== Test passed: actual value Some("Eeeo") matches expected value Some("Eeeo")
+(0) Cpakay:I'm in 3rd position.
+Person: Cpakay at index: 0
+(1) Erqivmwt:The man behind me is Cpakay.
+Person: Erqivmwt at index: 1
+(2) Mjyagzhle:The man behind me is Xzknkeiau.
+Person: Mjyagzhle at index: 2
+Person: Xzknkeiau at index: 3
+(3) Xzknkeiau:The man in front of me is Mjyagzhle.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {0, 1}
+Considering person_index 1: Erqivmwt ( liar_index = 0 is_liar = false)
+Person Erqivmwt claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 3, 4] position = None
+Considering person_index 2: Mjyagzhle ( liar_index = 0 is_liar = false)
+Person Mjyagzhle claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+Considering person_index 3: Xzknkeiau ( liar_index = 0 is_liar = false)
+Person Xzknkeiau claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+Considering person_index 1: Erqivmwt ( liar_index = 0 is_liar = false)
+Person Erqivmwt claims relative position: 1 relative for person_index 0
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+Considering person_index 2: Mjyagzhle ( liar_index = 0 is_liar = false)
+Person Mjyagzhle claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+Considering person_index 3: Xzknkeiau ( liar_index = 0 is_liar = false)
+Person Xzknkeiau claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+END LOOP ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [2, 3, 4] position = None
+Assignment for person_index 1: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 3] position = None
+Assignment for person_index 3: possible_positions: [2, 3, 4] position = None
+Person Cpakay claims absolute position: 3
+END Liar Statements ****** Trial  with liar_index: 0  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [2, 4] position = None
+Considering person_index 0: Cpakay ( liar_index = 1 is_liar = false)
+Person Cpakay claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2, 4] position = None
+Assignment for person_index 3: possible_positions: [1, 2, 4] position = None
+Considering person_index 2: Mjyagzhle ( liar_index = 1 is_liar = false)
+Person Mjyagzhle claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 2, 4] position = None
+Assignment for person_index 2: possible_positions: [1, 2] position = None
+Assignment for person_index 3: possible_positions: [2, 4] position = None
+Considering person_index 3: Xzknkeiau ( liar_index = 1 is_liar = false)
+Person Xzknkeiau claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [1, 4] position = None
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Cpakay ( liar_index = 1 is_liar = false)
+Person Cpakay claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 2: Mjyagzhle ( liar_index = 1 is_liar = false)
+Person Mjyagzhle claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 3: Xzknkeiau ( liar_index = 1 is_liar = false)
+Person Xzknkeiau claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 0: Cpakay ( liar_index = 1 is_liar = false)
+Person Cpakay claims absolute position: 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 2: Mjyagzhle ( liar_index = 1 is_liar = false)
+Person Mjyagzhle claims relative position: 1 relative for person_index 3
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Considering person_index 3: Xzknkeiau ( liar_index = 1 is_liar = false)
+Person Xzknkeiau claims relative position: -1 relative for person_index 2
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+END LOOP ****** Trial  with liar_index: 1  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+Person Erqivmwt claims relative position: 1 relative to person_index 0
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 0 1
+this_position, other_position , other_assignment.posisible_positions = 4, 5,,,[3]
+END Liar Statements ****** Trial  with liar_index: 1  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [1] position = Some(1)
+Assignment for person_index 3: possible_positions: [2] position = Some(2)
+No Contradiction for liar indexes: [0, 1]
+Confirmed lies for liar indexes: [1]
+unique reason 2
+Mr. Wrong identified by solve3(): Erqivmwt
+17 ******************* Warning: actual value Some("Erqivmwt") does not match expected value None
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.34s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>

@@ -439,7 +439,26 @@ impl Trial {
         if has_contradiction {
             return (has_contradiction, false);
         }
+        // if there is no contradiction, by other persons, see if we can confirm a contradiction by
+        // the assumed liar...
+        has_contradiction = self.can_falsify_any(state, assignments);
 
+        return (false, has_contradiction);
+    } // is_contradictory
+
+    fn can_falsify_any(&self, state: &State, assignments: Vec<Assignment>) -> bool {
+        let ass_clone = assignments.clone();
+
+        let can_be_false = self.can_falsify(state, ass_clone);
+        can_be_false
+    }
+
+    fn pairwise_orders(&self, state: &State) -> Vec<(usize,usize)> {
+        let orders: Vec<(usize,usize)> = Vec::new();
+        return orders;
+    }
+
+    fn can_falsify(&self, state: &State, mut assignments: Vec<Assignment>) -> bool {
         // if there is no contradiction, by other persons, see if we can confirm a contradiction by
         // the assumed liar...
         // Now consider only the statements of the assumed liar..
@@ -449,10 +468,12 @@ impl Trial {
         let mut changed = false;
         let mut has_contradiction: bool = false;
 
+        let verbose5: bool = true;
+
         for statement in &person.statements {
             match statement {
                 Statement::AbsPosition { position } => {
-                    if verbose4 {
+                    if verbose5 {
                         println!(
                             "Person {} claims absolute position: {}",
                             person.name, position
@@ -465,7 +486,7 @@ impl Trial {
                 }
                 Statement::ReversePosition { from_end } => {
                     let position: usize = state.persons.len() - *from_end;
-                    if verbose4 {
+                    if verbose5 {
                         println!(
                             "Person {} claims reverse position: {}",
                             person.name, position
@@ -480,7 +501,7 @@ impl Trial {
                     relative,
                     person_index,
                 } => {
-                    if verbose4 {
+                    if verbose5 {
                         println!(
                             "Person {} claims relative position: {} relative to person_index {}",
                             person.name, relative, person_index
@@ -503,7 +524,7 @@ impl Trial {
         let (_, new_contradiction) = propagate(&mut assignments);
 
         has_contradiction = has_contradiction || new_contradiction;
-        if verbose4 {
+        if verbose5 {
             println!(
                 "END Liar Statements ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
@@ -515,9 +536,8 @@ impl Trial {
                 );
             }
         }
-
-        return (false, has_contradiction);
-    } // is_contradictory
+        has_contradiction
+    }
 
     fn relative_conflict(
         &self,
@@ -1226,8 +1246,7 @@ mod sample_tests {
         ),
     ];
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
-    (
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [(
         &[
             "Cpakay:I'm in 3rd position.",
             "Erqivmwt:The man behind me is Cpakay.",
@@ -1235,6 +1254,5 @@ mod sample_tests {
             "Xzknkeiau:The man in front of me is Mjyagzhle.",
         ],
         None,
-    ),
-    ];
+    )];
 }
