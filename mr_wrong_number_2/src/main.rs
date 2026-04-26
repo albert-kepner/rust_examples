@@ -1071,7 +1071,7 @@ mod sample_tests {
         }
     }
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 16] = [
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 17] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1215,9 +1215,19 @@ mod sample_tests {
             ],
             Some("Eeeo"),
         ),
+        (
+            &[
+                "Cpakay:I'm in 3rd position.",
+                "Erqivmwt:The man behind me is Cpakay.",
+                "Mjyagzhle:The man behind me is Xzknkeiau.",
+                "Xzknkeiau:The man in front of me is Mjyagzhle.",
+            ],
+            None,
+        ),
     ];
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [(
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [
+    (
         &[
             "Cpakay:I'm in 3rd position.",
             "Erqivmwt:The man behind me is Cpakay.",
@@ -1225,5 +1235,6 @@ mod sample_tests {
             "Xzknkeiau:The man in front of me is Mjyagzhle.",
         ],
         None,
-    )];
+    ),
+    ];
 }
