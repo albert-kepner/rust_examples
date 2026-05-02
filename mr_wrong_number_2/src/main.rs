@@ -447,14 +447,127 @@ impl Trial {
     } // is_contradictory
 
     fn can_falsify_any(&self, state: &State, assignments: Vec<Assignment>) -> bool {
+        let verbose6: bool = true;
         let ass_clone = assignments.clone();
+        let orders = self.pairwise_orders(state);
+        let level: usize = 0;
+        let all_assignments: Vec<Vec<Assignment>> = self.all_feasible(&assignments, &orders, level);
+        if verbose6 {
+            println!(
+                "orders for liar_index = {} are {:?}",
+                self.liar_index, orders
+            );
+            for (ix, aa) in all_assignments.iter().enumerate() {
+                println!("All assignments ({}):", ix);
+                for assignment in aa {
+                    println!(
+                        "Assignment for person_index {}: possible_positions: {:?} position = {:?}",
+                        assignment.person_index, assignment.possible_positions, assignment.position
+                    );
+                }
+            }
+        }
 
-        let can_be_false = self.can_falsify(state, ass_clone);
+        let mut can_be_false = false;
+        for aa in all_assignments {
+            if self.can_falsify(state, aa) {
+                can_be_false = true;
+                return can_be_false;
+            }
+        }
+        self.can_falsify(state, ass_clone);
         can_be_false
     }
 
-    fn pairwise_orders(&self, state: &State) -> Vec<(usize,usize)> {
-        let orders: Vec<(usize,usize)> = Vec::new();
+    fn all_feasible(
+        &self,
+        assignments: &Vec<Assignment>,
+        orders: &Vec<(usize, usize)>,
+        level: usize,
+    ) -> Vec<Vec<Assignment>> {
+        let verbose7: bool = true;
+        let mut level_assignments: Vec<Vec<Assignment>> = Vec::new();
+        if verbose7 {
+            println!("all_feasible called...level = {}", level);
+        }
+
+        for i in 0..assignments.len() {
+            if assignments[level].position.is_none() {
+                let mut a: Vec<Assignment> = assignments.clone();
+                a[level].position = Some(i);
+                a[level].possible_positions.retain(|&x| x == i);
+                self.fix_orders(&mut a, orders);
+                let (_, contradiction) = propagate(&mut a);
+                if !contradiction {
+                    level_assignments.push(a);
+                }
+            }
+        }
+        if level < assignments.len() - 1 {
+            let mut result_assignments: Vec<Vec<Assignment>> = Vec::new();
+
+            for j in 0..level_assignments.len() {
+                let next_level_assignments =
+                    self.all_feasible(&level_assignments[j], orders, level + 1);
+                result_assignments.extend(next_level_assignments);
+            }
+            return result_assignments;
+        } else {
+            return level_assignments;
+        }
+    }
+
+    fn fix_orders(&self, assignments: &mut Vec<Assignment>, orders: &Vec<(usize, usize)>) -> () {
+        for (front, back) in orders {
+            // person at index front is in front of person at index back.
+            let back_positions: Vec<usize> = assignments[*front]
+                .possible_positions
+                .iter()
+                .map(|x| x + 1)
+                .collect();
+            let front_positions: Vec<usize> = assignments[*back]
+                .possible_positions
+                .iter()
+                .map(|x| x - 1)
+                .collect();
+            assignments[*front]
+                .possible_positions
+                .retain(|x| front_positions.contains(x));
+            assignments[*back]
+                .possible_positions
+                .retain(|x| back_positions.contains(x));
+        }
+    }
+
+    fn pairwise_orders(&self, state: &State) -> Vec<(usize, usize)> {
+        let mut orders: Vec<(usize, usize)> = Vec::new();
+        let liar_index: usize = self.liar_index;
+        for (ix, person) in state.persons.iter().enumerate() {
+            if ix == liar_index {
+                continue;
+            }
+            for statement in &person.statements {
+                match statement {
+                    Statement::RelPosition {
+                        relative,
+                        person_index,
+                    } => {
+                        let pair: (usize, usize);
+                        if *relative < 0 {
+                            // person before me
+                            pair = (*person_index, ix);
+                        } else {
+                            // person after me
+                            pair = (ix, *person_index);
+                        }
+                        orders.push(pair);
+                    }
+                    _ => {
+                        // ignore other statements
+                    }
+                }
+            }
+        }
         return orders;
     }
 
@@ -1091,7 +1204,7 @@ mod sample_tests {
         }
     }
 
-    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 17] = [
+    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 17] = [
         (
             &[
                 "John:I'm in 1st position.",
@@ -1246,13 +1359,13 @@ mod sample_tests {
         ),
     ];
 
-    const _SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [(
+    const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [(
         &[
-            "Cpakay:I'm in 3rd position.",
-            "Erqivmwt:The man behind me is Cpakay.",
-            "Mjyagzhle:The man behind me is Xzknkeiau.",
-            "Xzknkeiau:The man in front of me is Mjyagzhle.",
+            "Eteyjm:The man behind me is Ucuaei.",
+            "Ucuaei:The man in front of me is Eteyjm.",
+            "Vaqzcyicr:There is 1 people in front of me.",
+            "Aujyuhoee:There are 3 people behind me.",
         ],
-        None,
+        Some("Vaqzcyicr"),
     )];
 }
