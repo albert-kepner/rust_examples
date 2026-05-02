@@ -326,7 +326,8 @@ impl Trial {
         let mut assignments: Vec<Assignment> = self.make_assignments();
         let mut has_contradiction = false;
 
-        let verbose4: bool = true;
+        let verbose4: bool = false;
+        let verbose8: bool = true;
         let _debug: bool = true;
         // if _debug {
         //     if self.liar_index == 3 {
@@ -431,7 +432,7 @@ impl Trial {
                 break; // No changes made,  or have contradiction,  stop the loop.
             }
         } // End of loop to consider reprocess statements until no changes...
-        if verbose4 {
+        if verbose8 {
             println!(
                 "END LOOP ****** Trial  with liar_index: {}  has_contradiction: {}",
                 self.liar_index, has_contradiction
@@ -502,7 +503,7 @@ impl Trial {
         orders: &Vec<(usize, usize)>,
         level_param: usize,
     ) -> Vec<Vec<Assignment>> {
-        let verbose7: bool = true;
+        let verbose7: bool = false;
         let mut level = level_param;
         while level < assignments.len() - 1 && assignments[level].position.is_some() {
             level = level + 1;
