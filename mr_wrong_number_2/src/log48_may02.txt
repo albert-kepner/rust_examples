@@ -1,0 +1,53 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.40s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+(0) Aron:The man behind me is Jack.
+Person: Aron at index: 0
+Person: Jack at index: 1
+(1) Iris:There are 0 people behind me.
+Person: Iris at index: 2
+(2) Vole:The man in front of me is Danny.
+Person: Vole at index: 3
+Person: Danny at index: 4
+(3) Danny:I'm in 8th position.
+(4) Vane:The man in front of me is Ned.
+Person: Vane at index: 5
+Person: Ned at index: 6
+(5) Dirk:The man behind me is Aron.
+Person: Dirk at index: 7
+(6) Aron:The man in front of me is Dirk.
+(7) Danny:The man in front of me is Vane.
+(8) Jack:The man in front of me is Aron.
+(9) Ned:The man behind me is Vane.
+(10) Ethan:The man in front of me is Ulm.
+Person: Ethan at index: 8
+Person: Ulm at index: 9
+(11) Ulm:I'm in 1st position.
+(12) Ethan:There are 5 people behind me.
+exclude_supporting_pairs: persons: 10 possible_liars: 5 {3, 4, 8, 9, 2}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+No Contradiction for liar indexes: [8, 9]
+Confirmed lies for liar indexes: [8, 9]
+No contradictions found, unable to identify Mr. Wrong.
+1 ******************* Warning: actual value None does not match expected value Some("Ulm")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>

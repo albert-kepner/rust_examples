@@ -1,0 +1,405 @@
+Time: 7878ms Passed: 5Failed: 1Exit Code: 101
+Test Results:
+tests::_1_fixed_tests
+Log
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1 
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 2, 1}
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:I'm in 2nd position.
+Person: Peter at index: 1 
+(2) Tom:I'm in 1st position.
+Person: Tom at index: 2 
+(3) Peter:The man in front of me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {2, 0, 1}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 2 -1
+this_position, other_position , other_assignment.posisible_positions = 2, 1,,,[3]
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): John
+(0) John:I'm in 1st position.
+Person: John at index: 0 
+(1) Peter:There is 1 people in front of me.
+Person: Peter at index: 1 
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {1, 2, 0}
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Tom
+(0) John:The man behind me is Peter.
+Person: John at index: 0 
+Person: Peter at index: 1 
+(1) Peter:There is 1 people in front of me.
+(2) Tom:There are 2 people behind me.
+Person: Tom at index: 2 
+(3) Peter:The man behind me is Tom.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 1, 2}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 2 1
+this_position, other_position , other_assignment.posisible_positions = 3, 4,,,[1]
+No Contradiction for liar indexes: [1, 2]
+Confirmed lies for liar indexes: [1, 2]
+No contradictions found, unable to identify Mr. Wrong.
+(0) Dowfls:There is 0 people behind me.
+Person: Dowfls at index: 0 
+(1) Dowfls:I'm in 4th position.
+(2) Ljiyxbmr:I'm in 2nd position.
+Person: Ljiyxbmr at index: 1 
+(3) Ljiyxbmr:There is 1 people in front of me.
+(4) Cvvugb:There are 2 people in front of me.
+Person: Cvvugb at index: 2 
+(5) Cvvugb:There is 1 people behind me.
+(6) Tzjlvruhk:The man behind me is Dowfls.
+Person: Tzjlvruhk at index: 3 
+(7) Tzjlvruhk:There are 2 people in front of me.
+exclude_supporting_pairs: persons: 4 possible_liars: 4 {2, 3, 0, 1}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 3 0 1
+this_position, other_position , other_assignment.posisible_positions = 1, 2,,,[4]
+IR Contradiction 902
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: [2, 3]
+No contradictions found, unable to identify Mr. Wrong.
+(0) Fixsq:The man in front of me is Tnsrs.
+Person: Fixsq at index: 0 
+Person: Tnsrs at index: 1 
+(1) Pktj:The man in front of me is Tnsrs.
+Person: Pktj at index: 2 
+(2) Irnanfww:I'm in 6th position.
+Person: Irnanfww at index: 3 
+(3) Irnanfww:There are 5 people in front of me.
+(4) Zfgderkbm:There are 0 people in front of me.
+Person: Zfgderkbm at index: 4 
+(5) Vhayfjd:There are 4 people in front of me.
+Person: Vhayfjd at index: 5 
+(6) Tnsrs:There is 1 people in front of me.
+(7) Vhayfjd:I'm in 5th position.
+(8) Zfgderkbm:There are 5 people behind me.
+(9) Pktj:There are 2 people in front of me.
+(10) Tnsrs:The man in front of me is Zfgderkbm.
+(11) Fixsq:The man behind me is Tnsrs.
+Mr. Wrong identified by solve(): Fixsq
+(0) Jbnxqpisg:The man in front of me is Mavmynesz.
+Person: Jbnxqpisg at index: 0 
+Person: Mavmynesz at index: 1 
+(1) Jbnxqpisg:The man behind me is Noup.
+Person: Noup at index: 2 
+(2) Mavmynesz:The man in front of me is Jbnxqpisg.
+(3) Mavmynesz:The man behind me is Noup.
+(4) Noup:I'm in 3rd position.
+(5) Noup:The man in front of me is Jbnxqpisg.
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {1}
+this_person_index, other_person_index, relative 1 0 -1
+behind_front, behind 2 1 
+this_person_index, other_person_index, relative 1 2 1
+behind_front, behind 0 2 
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Mavmynesz
+(0) Clty:I'm in 1st position.
+Person: Clty at index: 0 
+(1) Clty:There are 0 people in front of me.
+(2) Nymiyudwu:The man in front of me is Ypzoncwc.
+Person: Nymiyudwu at index: 1 
+Person: Ypzoncwc at index: 2 
+(3) Nymiyudwu:The man behind me is Wtkdw.
+Person: Wtkdw at index: 3 
+(4) Wtkdw:The man in front of me is Ypzoncwc.
+(5) Wtkdw:There are 0 people behind me.
+(6) Ypzoncwc:I'm in 3rd position.
+(7) Ypzoncwc:The man behind me is Wtkdw.
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {1, 0}
+this_person_index, other_person_index, relative 1 2 -1
+behind_front, behind 3 1 
+this_person_index, other_person_index, relative 1 3 1
+in_front_of, front 2 1 
+this_person_index, other_person_index, relative 2 3 1
+behind_front, behind 1 3 
+this_person_index, other_person_index, relative 3 2 -1
+behind_front, behind 1 3 
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Nymiyudwu
+(0) Bcdvt:The man in front of me is Fhnb.
+Person: Bcdvt at index: 0 
+Person: Fhnb at index: 1 
+(1) Bcdvt:The man behind me is Ofulabc.
+Person: Ofulabc at index: 2 
+(2) Ewryjljj:There are 4 people behind me.
+Person: Ewryjljj at index: 3 
+(3) Ewryjljj:I'm in 3rd position.
+(4) Fhnb:The man behind me is Bcdvt.
+(5) Fhnb:There are 3 people behind me.
+(6) Iycbhshv:There are 6 people in front of me.
+Person: Iycbhshv at index: 4 
+(7) Iycbhshv:I'm in 7th position.
+(8) Ofulabc:The man behind me is Iycbhshv.
+(9) Ofulabc:The man in front of me is Bcdvt.
+(10) Rhwrubvz:There are 0 people in front of me.
+Person: Rhwrubvz at index: 5 
+(11) Rhwrubvz:There is 1 people behind me.
+(12) Yaxhtf:There are 0 people in front of me.
+Person: Yaxhtf at index: 6 
+(13) Yaxhtf:The man behind me is Rhwrubvz.
+Mr. Wrong identified by solve(): Rhwrubvz
+(0) Tkdiuzr:There are 3 people behind me.
+Person: Tkdiuzr at index: 0 
+(1) Yxmem:There are 4 people in front of me.
+Person: Yxmem at index: 1 
+(2) Itpharzq:The man behind me is Lwoeza.
+Person: Itpharzq at index: 2 
+Person: Lwoeza at index: 3 
+(3) Zfacyrnv:The man behind me is Tkdiuzr.
+Person: Zfacyrnv at index: 4 
+(4) Jycugp:I'm in 3rd position.
+Person: Jycugp at index: 5 
+(5) Yxmem:I'm in 5th position.
+(6) Itpharzq:I'm in 1st position.
+(7) Jycugp:The man in front of me is Lwoeza.
+(8) Rlhdc:The man behind me is Yxmem.
+Person: Rlhdc at index: 6 
+(9) Tkdiuzr:The man behind me is Zfacyrnv.
+(10) Lwoeza:There are 5 people behind me.
+(11) Zfacyrnv:I'm in 6th position.
+(12) Rlhdc:The man in front of me is Jycugp.
+(13) Lwoeza:There is 1 people in front of me.
+exclude_supporting_pairs: persons: 7 possible_liars: 7 {2, 0, 3, 4, 1, 5, 6}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 4 0 1
+this_position, other_position , other_assignment.posisible_positions = 5, 6,,,[4]
+IR Contradiction 902
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 4 1
+this_position, other_position , other_assignment.posisible_positions = 7, 8,,,[6]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 4 0 1
+this_position, other_position , other_assignment.posisible_positions = 5, 6,,,[4]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 6 5 -1
+this_position, other_position , other_assignment.posisible_positions = 6, 5,,,[3]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 6 5 -1
+this_position, other_position , other_assignment.posisible_positions = 6, 5,,,[3]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 4 0 1
+this_position, other_position , other_assignment.posisible_positions = 5, 6,,,[4]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 6 5 -1
+this_position, other_position , other_assignment.posisible_positions = 6, 5,,,[3]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 4 0 1
+this_position, other_position , other_assignment.posisible_positions = 5, 6,,,[4]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 4 0 1
+this_position, other_position , other_assignment.posisible_positions = 5, 6,,,[4]
+No Contradiction for liar indexes: [0]
+Confirmed lies for liar indexes: [0]
+unique reason 1
+Mr. Wrong identified by solve3(): Tkdiuzr
+(0) Vprkxw:The man behind me is Eyqixjpd.
+Person: Vprkxw at index: 0 
+Person: Eyqixjpd at index: 1 
+(1) Nhhpkv:The man behind me is Vprkxw.
+Person: Nhhpkv at index: 2 
+(2) Vprkxw:There is 1 people behind me.
+(3) Nhhpkv:There are 2 people behind me.
+(4) Eyqixjpd:The man in front of me is Nhhpkv.
+(5) Eyqixjpd:The man behind me is Vprkxw.
+exclude_supporting_pairs: persons: 3 possible_liars: 3 {0, 1, 2}
+this_person_index, other_person_index, relative 2 0 1
+behind_front, behind 1 0 
+this_person_index, other_person_index, relative 1 2 -1
+behind_front, behind 0 1 
+this_person_index, other_person_index, relative 1 0 1
+in_front_of, front 2 1 
+this_person_index, other_person_index, relative 1 2 -1
+in_front_of, front 0 2 
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 0 1
+this_position, other_position , other_assignment.posisible_positions = 3, 4,,,[2]
+No Contradiction for liar indexes: [1]
+Confirmed lies for liar indexes: [1]
+unique reason 1
+Mr. Wrong identified by solve3(): Eyqixjpd
+(0) Oappmqcyj:The man behind me is Ofmb.
+Person: Oappmqcyj at index: 0 
+Person: Ofmb at index: 1 
+(1) Bkano:I'm in 2nd position.
+Person: Bkano at index: 2 
+(2) Ofmb:There are 5 people in front of me.
+(3) Oappmqcyj:The man in front of me is Ffelkbks.
+Person: Ffelkbks at index: 3 
+(4) Ffelkbks:There are 2 people behind me.
+(5) Jfachafbe:There are 4 people behind me.
+Person: Jfachafbe at index: 4 
+(6) Bkano:There is 1 people behind me.
+(7) Vyxq:I'm in 3rd position.
+Person: Vyxq at index: 5 
+(8) Ofmb:There are 0 people behind me.
+(9) Jfachafbe:The man in front of me is Bkano.
+(10) Ffelkbks:I'm in 4th position.
+(11) Vyxq:There are 3 people behind me.
+Mr. Wrong identified by solve(): Bkano
+(0) Ysrn:The man in front of me is Ihji.
+Person: Ysrn at index: 0 
+Person: Ihji at index: 1 
+(1) Vgeg:There is 1 people in front of me.
+Person: Vgeg at index: 2 
+(2) Ysrn:There are 0 people behind me.
+(3) Ihji:The man behind me is Ysrn.
+(4) Vgeg:I'm in 2nd position.
+(5) Ihji:The man in front of me is Vgeg.
+exclude_supporting_pairs: persons: 3 possible_liars: 1 {2}
+No Contradiction for liar indexes: [2]
+Confirmed lies for liar indexes: [2]
+unique reason 1
+Mr. Wrong identified by solve3(): Vgeg
+(0) Dedwngbn:The man behind me is Nrxxvd.
+Person: Dedwngbn at index: 0 
+Person: Nrxxvd at index: 1 
+(1) Trazlwkdo:There is 1 people in front of me.
+Person: Trazlwkdo at index: 2 
+(2) Trazlwkdo:I'm in 2nd position.
+(3) Ywxc:The man in front of me is Trazlwkdo.
+Person: Ywxc at index: 3 
+(4) Ywxc:I'm in 3rd position.
+(5) Nrxxvd:The man in front of me is Dedwngbn.
+(6) Dedwngbn:The man in front of me is Ywxc.
+(7) Tnfyhbn:There is 1 people behind me.
+Person: Tnfyhbn at index: 4 
+(8) Tnfyhbn:There are 3 people in front of me.
+(9) Nrxxvd:I'm in 5th position.
+exclude_supporting_pairs: persons: 5 possible_liars: 3 {2, 3, 4}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 1 1
+this_position, other_position , other_assignment.posisible_positions = 2, 3,,,[5]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 3 -1
+this_position, other_position , other_assignment.posisible_positions = 2, 1,,,[3]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 0 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[2]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 3 2 -1
+this_position, other_position , other_assignment.posisible_positions = 3, 2,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 1 1
+this_position, other_position , other_assignment.posisible_positions = 3, 4,,,[5]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 0 3 -1
+this_position, other_position , other_assignment.posisible_positions = 3, 2,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 1 0 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[3]
+No Contradiction for liar indexes: [4]
+Confirmed lies for liar indexes: [4]
+unique reason 1
+Mr. Wrong identified by solve3(): Tnfyhbn
+(0) Tom:The man behind me is Bob.
+Person: Tom at index: 0 
+Person: Bob at index: 1 
+(1) Bob:The man in front of me is Tom.
+(2) Bob:The man behind me is Gary.
+Person: Gary at index: 2 
+(3) Gary:The man in front of me is Bob.
+(4) Fred:I'm in 1st position.
+Person: Fred at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 1 {3}
+No Contradiction for liar indexes: [3]
+Confirmed lies for liar indexes: [3]
+unique reason 1
+Mr. Wrong identified by solve3(): Fred
+(0) Jgatt:The man in front of me is Wafxmw.
+Person: Jgatt at index: 0 
+Person: Wafxmw at index: 1 
+(1) Wafxmw:The man behind me is Jgatt.
+(2) Pamqaabuj:There are 2 people in front of me.
+Person: Pamqaabuj at index: 2 
+(3) Dsfy:I'm in 4th position.
+Person: Dsfy at index: 3 
+exclude_supporting_pairs: persons: 4 possible_liars: 2 {2, 3}
+No Contradiction for liar indexes: [2, 3]
+Confirmed lies for liar indexes: [2]
+unique reason 2
+Mr. Wrong identified by solve3(): Pamqaabuj
+(0) Aron:The man behind me is Jack.
+Person: Aron at index: 0 
+Person: Jack at index: 1 
+(1) Iris:There are 0 people behind me.
+Person: Iris at index: 2 
+(2) Vole:The man in front of me is Danny.
+Person: Vole at index: 3 
+Person: Danny at index: 4 
+(3) Danny:I'm in 8th position.
+(4) Vane:The man in front of me is Ned.
+Person: Vane at index: 5 
+Person: Ned at index: 6 
+(5) Dirk:The man behind me is Aron.
+Person: Dirk at index: 7 
+(6) Aron:The man in front of me is Dirk.
+(7) Danny:The man in front of me is Vane.
+(8) Jack:The man in front of me is Aron.
+(9) Ned:The man behind me is Vane.
+(10) Ethan:The man in front of me is Ulm.
+Person: Ethan at index: 8 
+Person: Ulm at index: 9 
+(11) Ulm:I'm in 1st position.
+(12) Ethan:There are 5 people behind me.
+exclude_supporting_pairs: persons: 10 possible_liars: 5 {3, 2, 4, 8, 9}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+No Contradiction for liar indexes: [8, 9]
+Confirmed lies for liar indexes: [8, 9]
+No contradictions found, unable to identify Mr. Wrong.
+assertion failed: `(left == right)`
+  left: `None`,
+ right: `Some("Ulm")`: 
+Your result (left) did not match the expected output (right)
+Conversation:
+[
+    "Aron:The man behind me is Jack.",
+    "Iris:There are 0 people behind me.",
+    "Vole:The man in front of me is Danny.",
+    "Danny:I'm in 8th position.",
+    "Vane:The man in front of me is Ned.",
+    "Dirk:The man behind me is Aron.",
+    "Aron:The man in front of me is Dirk.",
+    "Danny:The man in front of me is Vane.",
+    "Jack:The man in front of me is Aron.",
+    "Ned:The man behind me is Vane.",
+    "Ethan:The man in front of me is Ulm.",
+    "Ulm:I'm in 1st position.",
+    "Ethan:There are 5 people behind me.",
+]
+tests::_2_random_tests::_1_very_short_conversations
+tests::_2_random_tests::_2_short_conversations
+tests::_2_random_tests::_3_short_conversations_2
+tests::_2_random_tests::_4_long_conversations
+tests::_2_random_tests::_5_very_long_conversations

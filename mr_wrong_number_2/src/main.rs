@@ -327,6 +327,14 @@ impl Trial {
         let mut has_contradiction = false;
 
         let verbose4: bool = true;
+        let _debug: bool = true;
+        // if _debug {
+        //     if self.liar_index == 3 {
+        //         // DEBGUGGING ONLY....
+        //         println!("For debug assuming person 3 (A) is not the liar...");
+        //         return (false, false);
+        //     }
+        // }
 
         loop {
             let mut changed = false;
@@ -479,30 +487,59 @@ impl Trial {
         can_be_false
     }
 
+    fn print_assignments(&self, label: &str, assignments: &Vec<Assignment>) -> () {
+        for assignment in assignments {
+            println!(
+                "{} Assignment for person_index {}: possible_positions: {:?} position = {:?}",
+                label, assignment.person_index, assignment.possible_positions, assignment.position
+            );
+        }
+    }
+
     fn all_feasible(
         &self,
         assignments: &Vec<Assignment>,
         orders: &Vec<(usize, usize)>,
-        level: usize,
+        level_param: usize,
     ) -> Vec<Vec<Assignment>> {
         let verbose7: bool = true;
+        let mut level = level_param;
+        while level < assignments.len() - 1 && assignments[level].position.is_some() {
+            level = level + 1;
+        }
         let mut level_assignments: Vec<Vec<Assignment>> = Vec::new();
         if verbose7 {
             println!("all_feasible called...level = {}", level);
         }
 
-        for i in 0..assignments.len() {
-            if assignments[level].position.is_none() {
+        if assignments[level].position.is_none() {
+            for jx in 0..assignments[level].possible_positions.len() {
+                let j = assignments[level].possible_positions[jx];
+                if verbose7 {
+                    println!("***************************** -- level = {} **", level);
+                }
                 let mut a: Vec<Assignment> = assignments.clone();
-                a[level].position = Some(i);
-                a[level].possible_positions.retain(|&x| x == i);
+                a[level].position = Some(j);
+                a[level].possible_positions.retain(|&x| x == j);
+                if verbose7 {
+                    self.print_assignments("before orders 001", &a);
+                }
                 self.fix_orders(&mut a, orders);
+                if verbose7 {
+                    self.print_assignments("after orders 002", &a);
+                }
                 let (_, contradiction) = propagate(&mut a);
+                if verbose7 {
+                    self.print_assignments("after propagate 003", &a);
+                }
                 if !contradiction {
                     level_assignments.push(a);
                 }
             }
+        } else {
+            level_assignments.push(assignments.clone());
         }
+        
         if level < assignments.len() - 1 {
             let mut result_assignments: Vec<Vec<Assignment>> = Vec::new();
 
@@ -1361,11 +1398,20 @@ mod sample_tests {
 
     const SAMPLE_TEST_CASES: [(&[&str], Option<&str>); 1] = [(
         &[
-            "Eteyjm:The man behind me is Ucuaei.",
-            "Ucuaei:The man in front of me is Eteyjm.",
-            "Vaqzcyicr:There is 1 people in front of me.",
-            "Aujyuhoee:There are 3 people behind me.",
+            "Aron:The man behind me is Jack.",
+            "Iris:There are 0 people behind me.",
+            "Vole:The man in front of me is Danny.",
+            "Danny:I'm in 8th position.",
+            "Vane:The man in front of me is Ned.",
+            "Dirk:The man behind me is Aron.",
+            "Aron:The man in front of me is Dirk.",
+            "Danny:The man in front of me is Vane.",
+            "Jack:The man in front of me is Aron.",
+            "Ned:The man behind me is Vane.",
+            "Ethan:The man in front of me is Ulm.",
+            "Ulm:I'm in 1st position.",
+            "Ethan:There are 5 people behind me.",
         ],
-        Some("Vaqzcyicr"),
+        Some("Ulm"),
     )];
 }
