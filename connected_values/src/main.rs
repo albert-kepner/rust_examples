@@ -6,6 +6,10 @@ use std::collections::HashSet;
 
 fn connected_values(arr: &[Vec<u8>], val: u8, coord: (usize, usize)) -> Vec<(usize, usize)> {
     let result: Vec<(usize, usize)> = Vec::new();
+    if arr[coord.0][coord.1] != val {
+        println!("No match to val, returning early...");
+        return result;
+    }
     result
 }
 
