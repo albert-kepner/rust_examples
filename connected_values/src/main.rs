@@ -3,13 +3,18 @@ fn main() {
 }
 
 use std::collections::HashSet;
+use std::collections::VecDeque;
 
-fn connected_values(arr: &[Vec<u8>], val: u8, coord: (usize, usize)) -> Vec<(usize, usize)> {
-    let result: Vec<(usize, usize)> = Vec::new();
+type Coord = (usize, usize);
+
+fn connected_values(arr: &[Vec<u8>], val: u8, coord: Coord) -> Vec<Coord> {
+    let result: Vec<Coord> = Vec::new();
     if arr[coord.0][coord.1] != val {
         println!("No match to val, returning early...");
         return result;
     }
+    let mut open: VecDeque<Coord> = VecDeque::new();
+    open.push_back(coord);
     result
 }
 
@@ -23,14 +28,16 @@ fn connected_values(arr: &[Vec<u8>], val: u8, coord: (usize, usize)) -> Vec<(usi
 mod tests {
     use super::connected_values;
     use itertools::Itertools;
+    // type Coord = (usize, usize);
+    use super::Coord;
 
-    fn dotest(arr: &[Vec<u8>], val: u8, coord: (usize, usize), expected: &[(usize, usize)]) {
+    fn dotest(arr: &[Vec<u8>], val: u8, coord: Coord, expected: &[Coord]) {
         try_equal(
             &connected_values(arr, val, coord)
                 .iter()
                 .sorted()
                 .map(|x| *x)
-                .collect::<Vec<(usize, usize)>>(),
+                .collect::<Vec<Coord>>(),
             expected,
             val,
             coord,
@@ -38,10 +45,10 @@ mod tests {
     }
 
     fn try_equal(
-        connected: &Vec<(usize, usize)>,
-        expected: &[(usize, usize)],
+        connected: &Vec<Coord>,
+        expected: &[Coord],
         val: u8,
-        coord: (usize, usize),
+        coord: Coord,
     ) -> () {
         if connected != expected {
             let err_msg = "NOT EQUAL";
