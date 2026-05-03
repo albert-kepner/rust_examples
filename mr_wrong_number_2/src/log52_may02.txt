@@ -1,0 +1,135 @@
+
+C:\_A\rust_examples\mr_wrong_number_2>cargo test -- --nocapture
+   Compiling mr_wrong_number_2 v0.1.0 (C:\_A\rust_examples\mr_wrong_number_2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.14s
+     Running unittests src\main.rs (target\debug\deps\mr_wrong_number_2-f08ead4c0e4b04c3.exe)
+
+running 1 test
+(0) Aron:The man behind me is Jack.
+Person: Aron at index: 0
+Person: Jack at index: 1
+(1) Iris:There are 0 people behind me.
+Person: Iris at index: 2
+(2) Vole:The man in front of me is Danny.
+Person: Vole at index: 3
+Person: Danny at index: 4
+(3) Danny:I'm in 8th position.
+(4) Vane:The man in front of me is Ned.
+Person: Vane at index: 5
+Person: Ned at index: 6
+(5) Dirk:The man behind me is Aron.
+Person: Dirk at index: 7
+(6) Aron:The man in front of me is Dirk.
+(7) Danny:The man in front of me is Vane.
+(8) Jack:The man in front of me is Aron.
+(9) Ned:The man behind me is Vane.
+(10) Ethan:The man in front of me is Ulm.
+Person: Ethan at index: 8
+Person: Ulm at index: 9
+(11) Ulm:I'm in 1st position.
+(12) Ethan:There are 5 people behind me.
+exclude_supporting_pairs: persons: 10 possible_liars: 5 {3, 4, 8, 2, 9}
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+END LOOP ****** Trial  with liar_index: 3  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [2] position = Some(2)
+Assignment for person_index 8: possible_positions: [5] position = Some(5)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+END LOOP ****** Trial  with liar_index: 4  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3, 4, 6, 7, 8] position = None
+Assignment for person_index 1: possible_positions: [4, 6, 7, 8, 9] position = None
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [3, 4, 6, 7, 8, 9] position = None
+Assignment for person_index 4: possible_positions: [2, 3, 4, 6, 7, 8] position = None
+Assignment for person_index 5: possible_positions: [3, 4, 6, 7, 8, 9] position = None
+Assignment for person_index 6: possible_positions: [2, 3, 4, 6, 7, 8] position = None
+Assignment for person_index 7: possible_positions: [2, 3, 4, 6, 7] position = None
+Assignment for person_index 8: possible_positions: [5] position = Some(5)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+END LOOP ****** Trial  with liar_index: 8  has_contradiction: false
+Assignment for person_index 0: possible_positions: [3, 4] position = None
+Assignment for person_index 1: possible_positions: [4, 5] position = None
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [2, 3] position = None
+Assignment for person_index 8: possible_positions: [2, 3, 4, 5] position = None
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+orders for liar_index = 8 are [(0, 1), (7, 0), (0, 1), (4, 3), (5, 4), (6, 5), (6, 5), (7, 0)]
+All assignments (0):
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [2] position = Some(2)
+Assignment for person_index 8: possible_positions: [5] position = Some(5)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+All assignments (1):
+Assignment for person_index 0: possible_positions: [4] position = Some(4)
+Assignment for person_index 1: possible_positions: [5] position = Some(5)
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [3] position = Some(3)
+Assignment for person_index 8: possible_positions: [2] position = Some(2)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+Person Ethan claims relative position: -1 relative to person_index 9
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+Person Ethan claims reverse position: 5
+END Liar Statements ****** Trial  with liar_index: 8  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [2] position = Some(2)
+Assignment for person_index 8: possible_positions: [5] position = Some(5)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+Infer Relative Contradiction 901
+this_person_index, other_person_index, relative 8 9 -1
+this_position, other_position , other_assignment.posisible_positions = 5, 4,,,[1]
+END LOOP ****** Trial  with liar_index: 2  has_contradiction: true
+Assignment for person_index 0: possible_positions: [3] position = Some(3)
+Assignment for person_index 1: possible_positions: [4] position = Some(4)
+Assignment for person_index 2: possible_positions: [10] position = Some(10)
+Assignment for person_index 3: possible_positions: [9] position = Some(9)
+Assignment for person_index 4: possible_positions: [8] position = Some(8)
+Assignment for person_index 5: possible_positions: [7] position = Some(7)
+Assignment for person_index 6: possible_positions: [6] position = Some(6)
+Assignment for person_index 7: possible_positions: [2] position = Some(2)
+Assignment for person_index 8: possible_positions: [5] position = Some(5)
+Assignment for person_index 9: possible_positions: [1] position = Some(1)
+For debug assuming person 9 (Ulm) is not the liar...
+No Contradiction for liar indexes: [8, 9]
+Confirmed lies for liar indexes: [8]
+unique reason 2
+Mr. Wrong identified by solve3(): Ethan
+1 ******************* Warning: actual value Some("Ethan") does not match expected value Some("Ulm")
+test sample_tests::basic_tests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+
+C:\_A\rust_examples\mr_wrong_number_2>
